@@ -232,7 +232,7 @@ WebBrowserHost::WebBrowserHost(Context* context) : Object (context)
     // Ensure cookie manager is created
     CefCookieManager::GetGlobalManager(nullptr);
 
-    SubscribeToEvent(E_UPDATE, ATOMIC_HANDLER(WebBrowserHost, HandleUpdate));
+    SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(WebBrowserHost, HandleUpdate));
 
     instance_ = this;
 

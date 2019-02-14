@@ -47,16 +47,16 @@ SceneSelection::SceneSelection(Context* context, SceneEditor3D *sceneEditor) : O
     sceneEditor3D_ = sceneEditor;
     scene_ = sceneEditor3D_->GetScene();
 
-    SubscribeToEvent(E_POSTRENDERUPDATE, ATOMIC_HANDLER(SceneSelection, HandlePostRenderUpdate));
-    SubscribeToEvent(scene_, E_NODEREMOVED, ATOMIC_HANDLER(SceneSelection, HandleNodeRemoved));
+    SubscribeToEvent(E_POSTRENDERUPDATE, URHO3D_HANDLER(SceneSelection, HandlePostRenderUpdate));
+    SubscribeToEvent(scene_, E_NODEREMOVED, URHO3D_HANDLER(SceneSelection, HandleNodeRemoved));
 
-    SubscribeToEvent(scene_, E_SCENEEDITPREFABSAVE, ATOMIC_HANDLER(SceneSelection, HandleSceneEditPrefabSave));
-    SubscribeToEvent(scene_, E_SCENEEDITPREFABREVERT, ATOMIC_HANDLER(SceneSelection, HandleSceneEditPrefabRevert));
-    SubscribeToEvent(scene_, E_SCENEEDITPREFABBREAK, ATOMIC_HANDLER(SceneSelection, HandleSceneEditPrefabBreak));
-    SubscribeToEvent(scene_, E_SCENEEDITPREFABCOPY, ATOMIC_HANDLER(SceneSelection, HandleSceneEditPrefabCopy));
-    SubscribeToEvent(scene_, E_SCENEEDITPREFABPASTE, ATOMIC_HANDLER(SceneSelection, HandleSceneEditPrefabPaste));
-    SubscribeToEvent(scene_, E_SCENEEDITCOMPONENTCOPY, ATOMIC_HANDLER(SceneSelection, HandleSceneEditComponentCopy));
-    SubscribeToEvent(scene_, E_SCENEEDITCOMPONENTPASTE, ATOMIC_HANDLER(SceneSelection, HandleSceneEditComponentPaste));
+    SubscribeToEvent(scene_, E_SCENEEDITPREFABSAVE, URHO3D_HANDLER(SceneSelection, HandleSceneEditPrefabSave));
+    SubscribeToEvent(scene_, E_SCENEEDITPREFABREVERT, URHO3D_HANDLER(SceneSelection, HandleSceneEditPrefabRevert));
+    SubscribeToEvent(scene_, E_SCENEEDITPREFABBREAK, URHO3D_HANDLER(SceneSelection, HandleSceneEditPrefabBreak));
+    SubscribeToEvent(scene_, E_SCENEEDITPREFABCOPY, URHO3D_HANDLER(SceneSelection, HandleSceneEditPrefabCopy));
+    SubscribeToEvent(scene_, E_SCENEEDITPREFABPASTE, URHO3D_HANDLER(SceneSelection, HandleSceneEditPrefabPaste));
+    SubscribeToEvent(scene_, E_SCENEEDITCOMPONENTCOPY, URHO3D_HANDLER(SceneSelection, HandleSceneEditComponentCopy));
+    SubscribeToEvent(scene_, E_SCENEEDITCOMPONENTPASTE, URHO3D_HANDLER(SceneSelection, HandleSceneEditComponentPaste));
 }
 
 SceneSelection::~SceneSelection()

@@ -165,7 +165,7 @@ bool EditorMode::PlayProject(String addArgs, bool debug)
             return false;
         }
 
-        SubscribeToEvent(build, E_NETBUILDRESULT, ATOMIC_HANDLER(EditorMode, HandleNETBuildResult));
+        SubscribeToEvent(build, E_NETBUILDRESULT, URHO3D_HANDLER(EditorMode, HandleNETBuildResult));
 
         return true;
     }
@@ -307,17 +307,17 @@ bool EditorMode::PlayProjectInternal(const String &addArgs, bool debug)
 
     if (playerBroker_)
     {
-        SubscribeToEvent(playerBroker_, E_IPCWORKERSTART, ATOMIC_HANDLER(EditorMode, HandleIPCWorkerStarted));
+        SubscribeToEvent(playerBroker_, E_IPCWORKERSTART, URHO3D_HANDLER(EditorMode, HandleIPCWorkerStarted));
 
-        SubscribeToEvent(E_IPCPLAYERPAUSERESUMEREQUEST, ATOMIC_HANDLER(EditorMode, HandleIPCPlayerPauseResumeRequest));
-        SubscribeToEvent(E_IPCPLAYERUPDATESPAUSEDRESUMED, ATOMIC_HANDLER(EditorMode, HandleIPCPlayerUpdatesPausedResumed));
-        SubscribeToEvent(E_IPCPLAYERPAUSESTEPREQUEST, ATOMIC_HANDLER(EditorMode, HandleIPCPlayerPauseStepRequest));
-        SubscribeToEvent(E_IPCPLAYEREXITREQUEST, ATOMIC_HANDLER(EditorMode, HandleIPCPlayerExitRequest));
+        SubscribeToEvent(E_IPCPLAYERPAUSERESUMEREQUEST, URHO3D_HANDLER(EditorMode, HandleIPCPlayerPauseResumeRequest));
+        SubscribeToEvent(E_IPCPLAYERUPDATESPAUSEDRESUMED, URHO3D_HANDLER(EditorMode, HandleIPCPlayerUpdatesPausedResumed));
+        SubscribeToEvent(E_IPCPLAYERPAUSESTEPREQUEST, URHO3D_HANDLER(EditorMode, HandleIPCPlayerPauseStepRequest));
+        SubscribeToEvent(E_IPCPLAYEREXITREQUEST, URHO3D_HANDLER(EditorMode, HandleIPCPlayerExitRequest));
 
 
-        SubscribeToEvent(playerBroker_, E_IPCJSERROR, ATOMIC_HANDLER(EditorMode, HandleIPCJSError));
-        SubscribeToEvent(playerBroker_, E_IPCWORKEREXIT, ATOMIC_HANDLER(EditorMode, HandleIPCWorkerExit));
-        SubscribeToEvent(playerBroker_, E_IPCWORKERLOG, ATOMIC_HANDLER(EditorMode, HandleIPCWorkerLog));
+        SubscribeToEvent(playerBroker_, E_IPCJSERROR, URHO3D_HANDLER(EditorMode, HandleIPCJSError));
+        SubscribeToEvent(playerBroker_, E_IPCWORKEREXIT, URHO3D_HANDLER(EditorMode, HandleIPCWorkerExit));
+        SubscribeToEvent(playerBroker_, E_IPCWORKERLOG, URHO3D_HANDLER(EditorMode, HandleIPCWorkerLog));
     }
 
     return playerBroker_.NotNull();

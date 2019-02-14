@@ -60,15 +60,15 @@ PlayerMode::PlayerMode(Context* context) :
 
     ipc_ = GetSubsystem<IPC>();
 
-    SubscribeToEvent(E_LOGMESSAGE, ATOMIC_HANDLER(PlayerMode, HandleLogMessage));
-    SubscribeToEvent(E_JSERROR, ATOMIC_HANDLER(PlayerMode, HandleJSError));
-    SubscribeToEvent(E_EXITREQUESTED, ATOMIC_HANDLER(PlayerMode, HandleExitRequest));
-    SubscribeToEvent(E_SCREENMODE, ATOMIC_HANDLER(PlayerMode, HandlePlayerWindowChanged));
-    SubscribeToEvent(E_WINDOWPOS, ATOMIC_HANDLER(PlayerMode, HandlePlayerWindowChanged));
-    SubscribeToEvent(E_UPDATESPAUSEDRESUMED, ATOMIC_HANDLER(PlayerMode, HandleUpdatesPausedResumed));
+    SubscribeToEvent(E_LOGMESSAGE, URHO3D_HANDLER(PlayerMode, HandleLogMessage));
+    SubscribeToEvent(E_JSERROR, URHO3D_HANDLER(PlayerMode, HandleJSError));
+    SubscribeToEvent(E_EXITREQUESTED, URHO3D_HANDLER(PlayerMode, HandleExitRequest));
+    SubscribeToEvent(E_SCREENMODE, URHO3D_HANDLER(PlayerMode, HandlePlayerWindowChanged));
+    SubscribeToEvent(E_WINDOWPOS, URHO3D_HANDLER(PlayerMode, HandlePlayerWindowChanged));
+    SubscribeToEvent(E_UPDATESPAUSEDRESUMED, URHO3D_HANDLER(PlayerMode, HandleUpdatesPausedResumed));
 
     // BEGIN LICENSE MANAGEMENT
-    SubscribeToEvent(E_BEGINVIEWRENDER, ATOMIC_HANDLER(PlayerMode, HandleViewRender));
+    SubscribeToEvent(E_BEGINVIEWRENDER, URHO3D_HANDLER(PlayerMode, HandleViewRender));
     // END LICENSE MANAGEMENT
 }
 
@@ -167,7 +167,7 @@ void PlayerMode::ProcessArguments() {
     if (id > 0 && fd_[0] != INVALID_IPCHANDLE_VALUE && fd_[1] != INVALID_IPCHANDLE_VALUE)
     {
         launchedByEditor_ = true;
-        SubscribeToEvent(E_IPCINITIALIZE, ATOMIC_HANDLER(PlayerMode, HandleIPCInitialize));
+        SubscribeToEvent(E_IPCINITIALIZE, URHO3D_HANDLER(PlayerMode, HandleIPCInitialize));
         ipc_->InitWorker((unsigned) id, fd_[0], fd_[1]);
     }
 }

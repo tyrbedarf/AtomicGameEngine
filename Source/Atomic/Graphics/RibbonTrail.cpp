@@ -164,7 +164,7 @@ void RibbonTrail::OnSetEnabled()
     if (scene)
     {
         if (IsEnabledEffective())
-            SubscribeToEvent(scene, E_SCENEPOSTUPDATE, ATOMIC_HANDLER(RibbonTrail, HandleScenePostUpdate));
+            SubscribeToEvent(scene, E_SCENEPOSTUPDATE, URHO3D_HANDLER(RibbonTrail, HandleScenePostUpdate));
         else
             UnsubscribeFromEvent(scene, E_SCENEPOSTUPDATE);
     }
@@ -417,7 +417,7 @@ void RibbonTrail::OnSceneSet(Scene* scene)
     Drawable::OnSceneSet(scene);
 
     if (scene && IsEnabledEffective())
-        SubscribeToEvent(scene, E_SCENEPOSTUPDATE, ATOMIC_HANDLER(RibbonTrail, HandleScenePostUpdate));
+        SubscribeToEvent(scene, E_SCENEPOSTUPDATE, URHO3D_HANDLER(RibbonTrail, HandleScenePostUpdate));
     else if (!scene)
          UnsubscribeFromEvent(E_SCENEPOSTUPDATE);
 }

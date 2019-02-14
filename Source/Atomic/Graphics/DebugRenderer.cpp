@@ -62,7 +62,7 @@ DebugRenderer::DebugRenderer(Context* context) :
 {
     vertexBuffer_ = new VertexBuffer(context_);
 
-    SubscribeToEvent(E_ENDFRAME, ATOMIC_HANDLER(DebugRenderer, HandleEndFrame));
+    SubscribeToEvent(E_ENDFRAME, URHO3D_HANDLER(DebugRenderer, HandleEndFrame));
 }
 
 DebugRenderer::~DebugRenderer()

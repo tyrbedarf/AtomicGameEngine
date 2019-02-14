@@ -156,7 +156,7 @@ void Text3DText::ApplyAttributes()
 void Text3DText::OnAttributeAnimationAdded()
 {
     if (attributeAnimationInfos_.Size() == 1)
-        SubscribeToEvent(E_POSTUPDATE, ATOMIC_HANDLER(Text3DText, HandlePostUpdate));
+        SubscribeToEvent(E_POSTUPDATE, URHO3D_HANDLER(Text3DText, HandlePostUpdate));
 }
 
 void Text3DText::OnAttributeAnimationRemoved()
@@ -436,7 +436,7 @@ void Text3DText::SetAutoLocalizable(bool enable)
             stringId_ = text_;
             Localization* l10n = GetSubsystem<Localization>();
             text_ = l10n->Get(stringId_);
-            SubscribeToEvent(E_CHANGELANGUAGE, ATOMIC_HANDLER(Text3DText, HandleChangeLanguage));
+            SubscribeToEvent(E_CHANGELANGUAGE, URHO3D_HANDLER(Text3DText, HandleChangeLanguage));
         }
         else
         {

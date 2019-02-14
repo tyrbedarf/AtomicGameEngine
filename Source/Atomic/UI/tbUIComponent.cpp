@@ -113,10 +113,10 @@ void tbUIComponent::UpdateMouseEventSubscriptions(bool unsubscribe)
 {
     if (!unsubscribe)
     {
-        SubscribeToEvent(E_MOUSEBUTTONDOWN, ATOMIC_HANDLER(tbUIComponent, HandleMouseButtonDown));
-        SubscribeToEvent(E_MOUSEBUTTONUP, ATOMIC_HANDLER(tbUIComponent, HandleMouseButtonUp));
-        SubscribeToEvent(E_MOUSEMOVE, ATOMIC_HANDLER(tbUIComponent, HandleMouseMove));
-        SubscribeToEvent(E_MOUSEWHEEL, ATOMIC_HANDLER(tbUIComponent, HandleMouseWheel));
+        SubscribeToEvent(E_MOUSEBUTTONDOWN, URHO3D_HANDLER(tbUIComponent, HandleMouseButtonDown));
+        SubscribeToEvent(E_MOUSEBUTTONUP, URHO3D_HANDLER(tbUIComponent, HandleMouseButtonUp));
+        SubscribeToEvent(E_MOUSEMOVE, URHO3D_HANDLER(tbUIComponent, HandleMouseMove));
+        SubscribeToEvent(E_MOUSEWHEEL, URHO3D_HANDLER(tbUIComponent, HandleMouseWheel));
     }
     else
     {
@@ -133,7 +133,7 @@ void tbUIComponent::UpdateEventSubscriptions(bool subscribe)
 
     if (subscribe && scene)
     {
-        SubscribeToEvent(scene, E_SCENEPOSTUPDATE, ATOMIC_HANDLER(tbUIComponent, HandleScenePostUpdate));
+        SubscribeToEvent(scene, E_SCENEPOSTUPDATE, URHO3D_HANDLER(tbUIComponent, HandleScenePostUpdate));
         UpdateMouseEventSubscriptions();
     }
     else

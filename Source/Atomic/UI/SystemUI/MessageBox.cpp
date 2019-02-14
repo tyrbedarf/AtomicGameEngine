@@ -41,7 +41,7 @@ MessageBox::MessageBox(Context* context, const String& messageString, const Stri
     Graphics* graphics = GetSubsystem<Graphics>();
     windowSize_ = ImVec2(300, 150);
     windowPosition_ = ImVec2(graphics->GetWidth() / 2 - windowSize_.x / 2, graphics->GetHeight() / 2 - windowSize_.y / 2);
-    SubscribeToEvent(E_SYSTEMUIFRAME, ATOMIC_HANDLER(MessageBox, RenderFrame));
+    SubscribeToEvent(E_SYSTEMUIFRAME, URHO3D_HANDLER(MessageBox, RenderFrame));
 }
 
 MessageBox::~MessageBox()

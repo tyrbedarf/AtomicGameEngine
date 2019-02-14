@@ -139,7 +139,7 @@ tbUI::tbUI(Context* context) :
 
     RegisterUILibrary(context);
 
-    SubscribeToEvent(E_EXITREQUESTED, ATOMIC_HANDLER(tbUI, HandleExitRequested));
+    SubscribeToEvent(E_EXITREQUESTED, URHO3D_HANDLER(tbUI, HandleExitRequested));
 
 }
 
@@ -233,11 +233,11 @@ void tbUI::Initialize(const String& languageFile)
     rootWidget_->SetSize(width, height);
     rootWidget_->SetVisibilility(tb::WIDGET_VISIBILITY_VISIBLE);
 
-    SubscribeToEvent(E_UPDATE, ATOMIC_HANDLER(tbUI, HandleUpdate));
-    SubscribeToEvent(E_SCREENMODE, ATOMIC_HANDLER(tbUI, HandleScreenMode));
-    SubscribeToEvent(E_CONSOLECLOSED, ATOMIC_HANDLER(tbUI, HandleConsoleClosed));
-    SubscribeToEvent(E_POSTUPDATE, ATOMIC_HANDLER(tbUI, HandlePostUpdate));
-    SubscribeToEvent(E_RENDERUPDATE, ATOMIC_HANDLER(tbUI, HandleRenderUpdate));
+    SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(tbUI, HandleUpdate));
+    SubscribeToEvent(E_SCREENMODE, URHO3D_HANDLER(tbUI, HandleScreenMode));
+    SubscribeToEvent(E_CONSOLECLOSED, URHO3D_HANDLER(tbUI, HandleConsoleClosed));
+    SubscribeToEvent(E_POSTUPDATE, URHO3D_HANDLER(tbUI, HandlePostUpdate));
+    SubscribeToEvent(E_RENDERUPDATE, URHO3D_HANDLER(tbUI, HandleRenderUpdate));
 
     // register the UIDragDrop subsystem (after we have subscribed to events, so it is processed after)
     context_->RegisterSubsystem(new tbUIDragDrop(context_));

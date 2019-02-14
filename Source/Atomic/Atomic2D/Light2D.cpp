@@ -589,8 +589,8 @@ Light2DGroup::Light2DGroup(Context* context) : Drawable2D(context),
 {
     sourceBatches_.Resize(1);
     sourceBatches_[0].owner_ = this;
-    SubscribeToEvent(E_BEGINRENDERING, ATOMIC_HANDLER(Light2DGroup, HandleBeginRendering));
-    SubscribeToEvent(E_BEGINVIEWUPDATE, ATOMIC_HANDLER(Light2DGroup, HandleBeginViewUpdate));
+    SubscribeToEvent(E_BEGINRENDERING, URHO3D_HANDLER(Light2DGroup, HandleBeginRendering));
+    SubscribeToEvent(E_BEGINVIEWUPDATE, URHO3D_HANDLER(Light2DGroup, HandleBeginViewUpdate));
 }
 
 Light2DGroup::~Light2DGroup()

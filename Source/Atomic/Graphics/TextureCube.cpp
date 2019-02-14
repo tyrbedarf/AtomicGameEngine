@@ -302,7 +302,7 @@ bool TextureCube::SetSize(int size, unsigned format, TextureUsage usage, int mul
     }
 
     if (usage == TEXTURE_RENDERTARGET)
-        SubscribeToEvent(E_RENDERSURFACEUPDATE, ATOMIC_HANDLER(TextureCube, HandleRenderSurfaceUpdate));
+        SubscribeToEvent(E_RENDERSURFACEUPDATE, URHO3D_HANDLER(TextureCube, HandleRenderSurfaceUpdate));
     else
         UnsubscribeFromEvent(E_RENDERSURFACEUPDATE);
 

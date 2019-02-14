@@ -38,15 +38,15 @@ SceneEditHistory::SceneEditHistory(Context* context, SceneEditor3D* sceneEditor)
     curSelEditOp_(0),
     addingRemovingNodes_(false)
 {
-    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENENODESELECTED, ATOMIC_HANDLER(SceneEditHistory, HandleSceneNodeSelected));
+    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENENODESELECTED, URHO3D_HANDLER(SceneEditHistory, HandleSceneNodeSelected));
 
-    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITBEGIN, ATOMIC_HANDLER(SceneEditHistory, HandleSceneEditBegin));
-    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITEND, ATOMIC_HANDLER(SceneEditHistory, HandleSceneEditEnd));
+    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITBEGIN, URHO3D_HANDLER(SceneEditHistory, HandleSceneEditBegin));
+    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITEND, URHO3D_HANDLER(SceneEditHistory, HandleSceneEditEnd));
 
-    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITADDREMOVENODES, ATOMIC_HANDLER(SceneEditHistory, HandleSceneEditAddRemoveNodes));
+    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITADDREMOVENODES, URHO3D_HANDLER(SceneEditHistory, HandleSceneEditAddRemoveNodes));
 
-    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITNODEADDED, ATOMIC_HANDLER(SceneEditHistory, HandleSceneEditNodeAdded));
-    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITNODEREMOVED, ATOMIC_HANDLER(SceneEditHistory, HandleSceneEditNodeRemoved));
+    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITNODEADDED, URHO3D_HANDLER(SceneEditHistory, HandleSceneEditNodeAdded));
+    SubscribeToEvent(sceneEditor_->GetScene(), E_SCENEEDITNODEREMOVED, URHO3D_HANDLER(SceneEditHistory, HandleSceneEditNodeRemoved));
 
 }
 

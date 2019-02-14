@@ -55,7 +55,7 @@ Web::Web(Context* context) :
 #ifndef EMSCRIPTEN
     d->curlm = curl_multi_init();
 #endif
-    SubscribeToEvent(E_UPDATE, ATOMIC_HANDLER(Web, internalUpdate));
+    SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(Web, internalUpdate));
 }
 
 Web::~Web()

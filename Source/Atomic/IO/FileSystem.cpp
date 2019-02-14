@@ -292,7 +292,7 @@ FileSystem::FileSystem(Context* context) :
     nextAsyncExecID_(1),
     executeConsoleCommands_(false)
 {
-    SubscribeToEvent(E_BEGINFRAME, ATOMIC_HANDLER(FileSystem, HandleBeginFrame));
+    SubscribeToEvent(E_BEGINFRAME, URHO3D_HANDLER(FileSystem, HandleBeginFrame));
 
     // Subscribe to console commands
     SetExecuteConsoleCommands(true);
@@ -372,7 +372,7 @@ void FileSystem::SetExecuteConsoleCommands(bool enable)
 
     executeConsoleCommands_ = enable;
     if (enable)
-        SubscribeToEvent(E_CONSOLECOMMAND, ATOMIC_HANDLER(FileSystem, HandleConsoleCommand));
+        SubscribeToEvent(E_CONSOLECOMMAND, URHO3D_HANDLER(FileSystem, HandleConsoleCommand));
     else
         UnsubscribeFromEvent(E_CONSOLECOMMAND);
 }

@@ -52,9 +52,9 @@ namespace Urho3D
 
 tbUIDragDrop::tbUIDragDrop(Context* context) : Object(context)
 {
-    SubscribeToEvent(E_UIUPDATE, ATOMIC_HANDLER(tbUIDragDrop, HandleUIUpdate));
-    SubscribeToEvent(E_MOUSEMOVE, ATOMIC_HANDLER(tbUIDragDrop,HandleMouseMove));
-    SubscribeToEvent(E_MOUSEBUTTONUP, ATOMIC_HANDLER(tbUIDragDrop,HandleMouseUp));
+    SubscribeToEvent(E_UIUPDATE, URHO3D_HANDLER(tbUIDragDrop, HandleUIUpdate));
+    SubscribeToEvent(E_MOUSEMOVE, URHO3D_HANDLER(tbUIDragDrop,HandleMouseMove));
+    SubscribeToEvent(E_MOUSEBUTTONUP, URHO3D_HANDLER(tbUIDragDrop,HandleMouseUp));
 
     SharedPtr<tbUIFontDescription> fd(new tbUIFontDescription(context));
     fd->SetId("Vera");

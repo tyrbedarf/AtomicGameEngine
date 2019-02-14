@@ -1077,7 +1077,7 @@ void DynamicNavigationMesh::OnSceneSet(Scene* scene)
 {
     // Subscribe to the scene subsystem update, which will trigger the tile cache to update the nav mesh
     if (scene)
-        SubscribeToEvent(scene, E_SCENESUBSYSTEMUPDATE, ATOMIC_HANDLER(DynamicNavigationMesh, HandleSceneSubsystemUpdate));
+        SubscribeToEvent(scene, E_SCENESUBSYSTEMUPDATE, URHO3D_HANDLER(DynamicNavigationMesh, HandleSceneSubsystemUpdate));
     else
         UnsubscribeFromEvent(E_SCENESUBSYSTEMUPDATE);
 }

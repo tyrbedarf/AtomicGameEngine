@@ -125,8 +125,8 @@ void PlatformAndroid::RefreshAndroidTargets()
     if (refreshAndroidTargetsProcess_.NotNull())
     {
 
-        SubscribeToEvent(refreshAndroidTargetsProcess_, E_SUBPROCESSCOMPLETE, ATOMIC_HANDLER(PlatformAndroid, HandleRefreshAndroidTargetsEvent));
-        SubscribeToEvent(refreshAndroidTargetsProcess_, E_SUBPROCESSOUTPUT, ATOMIC_HANDLER(PlatformAndroid, HandleRefreshAndroidTargetsEvent));
+        SubscribeToEvent(refreshAndroidTargetsProcess_, E_SUBPROCESSCOMPLETE, URHO3D_HANDLER(PlatformAndroid, HandleRefreshAndroidTargetsEvent));
+        SubscribeToEvent(refreshAndroidTargetsProcess_, E_SUBPROCESSOUTPUT, URHO3D_HANDLER(PlatformAndroid, HandleRefreshAndroidTargetsEvent));
 
 
     }

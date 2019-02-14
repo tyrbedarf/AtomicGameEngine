@@ -66,7 +66,7 @@ UISceneView::UISceneView(Context* context, bool createWidget) : tbUIWidget(conte
 
     renderer_ = ui->GetRenderer();
 
-    SubscribeToEvent(E_ENDFRAME, ATOMIC_HANDLER(UISceneView, HandleEndFrame));
+    SubscribeToEvent(E_ENDFRAME, URHO3D_HANDLER(UISceneView, HandleEndFrame));
 }
 
 UISceneView::~UISceneView()

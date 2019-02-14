@@ -67,7 +67,7 @@ DebugHud::DebugHud(Context* context) :
 {
     ResetExtents();
     RecalculateWindowPositions();
-    SubscribeToEvent(E_SYSTEMUIFRAME, ATOMIC_HANDLER(DebugHud, RenderUi));
+    SubscribeToEvent(E_SYSTEMUIFRAME, URHO3D_HANDLER(DebugHud, RenderUi));
 }
 
 DebugHud::~DebugHud()

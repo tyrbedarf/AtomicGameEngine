@@ -273,7 +273,7 @@ void StaticModel::SetModel(Model* model)
 
     if (model)
     {
-        SubscribeToEvent(model, E_RELOADFINISHED, ATOMIC_HANDLER(StaticModel, HandleModelReloadFinished));
+        SubscribeToEvent(model, E_RELOADFINISHED, URHO3D_HANDLER(StaticModel, HandleModelReloadFinished));
 
         // Copy the subgeometry & LOD level structure
         SetNumGeometries(model->GetNumGeometries());

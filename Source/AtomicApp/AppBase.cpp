@@ -100,7 +100,7 @@ namespace Urho3D
 
                 if (argument == "--log-std")
                 {
-                    SubscribeToEvent(E_LOGMESSAGE, ATOMIC_HANDLER(AppBase, HandleLogMessage));
+                    SubscribeToEvent(E_LOGMESSAGE, URHO3D_HANDLER(AppBase, HandleLogMessage));
                 }
             }
         }
@@ -127,7 +127,7 @@ namespace Urho3D
         context_->RegisterSubsystem(javascript);
         vm_ = javascript->InstantiateVM("MainVM");
 
-        SubscribeToEvent(E_JSERROR, ATOMIC_HANDLER(AppBase, HandleJSError));
+        SubscribeToEvent(E_JSERROR, URHO3D_HANDLER(AppBase, HandleJSError));
 
     }
 

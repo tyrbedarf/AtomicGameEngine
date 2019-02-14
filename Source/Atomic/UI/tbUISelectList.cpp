@@ -44,7 +44,7 @@ tbUISelectList::tbUISelectList(Context* context, bool createWidget) : tbUIWidget
         GetSubsystem<tbUI>()->WrapWidget(this, widget_);
     }
 
-    SubscribeToEvent(E_UIUPDATE, ATOMIC_HANDLER(tbUISelectList, HandleUIUpdate));
+    SubscribeToEvent(E_UIUPDATE, URHO3D_HANDLER(tbUISelectList, HandleUIUpdate));
 }
 
 tbUISelectList::~tbUISelectList()

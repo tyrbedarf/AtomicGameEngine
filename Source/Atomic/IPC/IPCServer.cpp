@@ -66,9 +66,9 @@ namespace Urho3D
         serverBroker_->PostMessage(E_IPCINITIALIZE, startupData);
         brokerEnabled_ = true;
 
-        SubscribeToEvent(E_UPDATE, ATOMIC_HANDLER(IPCServer, HandleUpdate));
+        SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(IPCServer, HandleUpdate));
 
-        SubscribeToEvent(serverBroker_, E_IPCCMDRESULT, ATOMIC_HANDLER(IPCServer, HandleIPCCmdResult));
+        SubscribeToEvent(serverBroker_, E_IPCCMDRESULT, URHO3D_HANDLER(IPCServer, HandleIPCCmdResult));
     }
 
     void IPCServer::HandleIPCWorkerExit(StringHash eventType, VariantMap& eventData)
@@ -118,9 +118,9 @@ namespace Urho3D
 
         if (serverBroker_)
         {
-            SubscribeToEvent(serverBroker_, E_IPCWORKERSTART, ATOMIC_HANDLER(IPCServer, HandleIPCWorkerStarted));
-            SubscribeToEvent(serverBroker_, E_IPCWORKEREXIT, ATOMIC_HANDLER(IPCServer, HandleIPCWorkerExit));
-            SubscribeToEvent(serverBroker_, E_IPCWORKERLOG, ATOMIC_HANDLER(IPCServer, HandleIPCWorkerLog));
+            SubscribeToEvent(serverBroker_, E_IPCWORKERSTART, URHO3D_HANDLER(IPCServer, HandleIPCWorkerStarted));
+            SubscribeToEvent(serverBroker_, E_IPCWORKEREXIT, URHO3D_HANDLER(IPCServer, HandleIPCWorkerExit));
+            SubscribeToEvent(serverBroker_, E_IPCWORKERLOG, URHO3D_HANDLER(IPCServer, HandleIPCWorkerLog));
         }
         else
         {

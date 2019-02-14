@@ -150,7 +150,7 @@ void BuildIOS::Initialize()
 
     Vector<String> defaultResourcePaths;
     GetDefaultResourcePaths(defaultResourcePaths);
-    
+
 
     for (unsigned i = 0; i < defaultResourcePaths.Size(); i++)
     {
@@ -188,8 +188,8 @@ void BuildIOS::RunConvertPList()
     SendEvent(E_BUILDOUTPUT, buildOutput);
 
 
-    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, ATOMIC_HANDLER(BuildIOS, HandleConvertPListComplete));
-    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, ATOMIC_HANDLER(BuildBase, HandleSubprocessOutputEvent));
+    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, URHO3D_HANDLER(BuildIOS, HandleConvertPListComplete));
+    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, URHO3D_HANDLER(BuildBase, HandleSubprocessOutputEvent));
 
 }
 
@@ -237,8 +237,8 @@ void BuildIOS::RunCodeSign()
     buildOutput[BuildOutput::P_TEXT] = "\n\n<color #D4FB79>Code Signing iOS Deployment</color>\n\n";
     SendEvent(E_BUILDOUTPUT, buildOutput);
 
-    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, ATOMIC_HANDLER(BuildIOS, HandleCodeSignComplete));
-    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, ATOMIC_HANDLER(BuildBase, HandleSubprocessOutputEvent));
+    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, URHO3D_HANDLER(BuildIOS, HandleCodeSignComplete));
+    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, URHO3D_HANDLER(BuildBase, HandleSubprocessOutputEvent));
 
 }
 
@@ -286,8 +286,8 @@ void BuildIOS::RunDeploy()
     buildOutput[BuildOutput::P_TEXT] = "\n\n<color #D4FB79>Deploying to iOS Device</color>\n\n";
     SendEvent(E_BUILDOUTPUT, buildOutput);
 
-    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, ATOMIC_HANDLER(BuildIOS, HandleDeployComplete));
-    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, ATOMIC_HANDLER(BuildBase, HandleSubprocessOutputEvent));
+    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, URHO3D_HANDLER(BuildIOS, HandleDeployComplete));
+    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, URHO3D_HANDLER(BuildBase, HandleSubprocessOutputEvent));
 
 
 }
@@ -339,7 +339,7 @@ void BuildIOS::Build(const String& buildPath)
         return;
     if (!BuildCopyFile(iosSettings->GetProvisionFile(), buildDestDist + "/embedded.mobileprovision"))
         return;
-        
+
     String entitlements = GenerateEntitlements();
     String plist = GenerateInfoPlist();
 

@@ -397,7 +397,7 @@ void AnimatedModel::SetModel(Model* model, bool createBones)
 
     if (model)
     {
-        SubscribeToEvent(model, E_RELOADFINISHED, ATOMIC_HANDLER(AnimatedModel, HandleModelReloadFinished));
+        SubscribeToEvent(model, E_RELOADFINISHED, URHO3D_HANDLER(AnimatedModel, HandleModelReloadFinished));
 
         // Copy the subgeometry & LOD level structure
         SetNumGeometries(model->GetNumGeometries());

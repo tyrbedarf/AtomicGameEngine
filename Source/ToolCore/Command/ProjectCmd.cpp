@@ -38,7 +38,7 @@
 namespace ToolCore
 {
 
-ProjectCmd::ProjectCmd(Context* context) : 
+ProjectCmd::ProjectCmd(Context* context) :
     Command(context),
     requiresProjectLoad_(false),
     options_(0)
@@ -65,7 +65,7 @@ bool ProjectCmd::ParseInternal(const Vector<String>& arguments, unsigned startIn
     if (command_ == "cache")
     {
         requiresProjectLoad_ = true;
-        SubscribeToEvent(E_PROJECTLOADED, ATOMIC_HANDLER(ProjectCmd, HandleProjectLoaded));
+        SubscribeToEvent(E_PROJECTLOADED, URHO3D_HANDLER(ProjectCmd, HandleProjectLoaded));
 
         for (unsigned i = startIndex + 3; i < arguments.Size(); i++)
         {
@@ -77,7 +77,7 @@ bool ProjectCmd::ParseInternal(const Vector<String>& arguments, unsigned startIn
                 if (argument == "clean")
                 {
                     options_ = options_ | PROJECTCMD_CACHE_CLEAN;
-                    SubscribeToEvent(E_PROJECTBEGINLOAD, ATOMIC_HANDLER(ProjectCmd, HandleProjectBeginLoad));
+                    SubscribeToEvent(E_PROJECTBEGINLOAD, URHO3D_HANDLER(ProjectCmd, HandleProjectBeginLoad));
                     i++;
                 }
             }

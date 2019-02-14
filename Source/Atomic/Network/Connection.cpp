@@ -212,11 +212,11 @@ void Connection::SetScene(Scene* newScene)
     {
         // Make sure there is no existing async loading
         scene_->StopAsyncLoading();
-        SubscribeToEvent(scene_, E_ASYNCLOADFINISHED, ATOMIC_HANDLER(Connection, HandleAsyncLoadFinished));
+        SubscribeToEvent(scene_, E_ASYNCLOADFINISHED, URHO3D_HANDLER(Connection, HandleAsyncLoadFinished));
     }
 
     // ATOMIC BEGIN
-    SubscribeToEvent(scene_, E_COMPONENTREMOVED, ATOMIC_HANDLER(Connection, HandleComponentRemoved));
+    SubscribeToEvent(scene_, E_COMPONENTREMOVED, URHO3D_HANDLER(Connection, HandleComponentRemoved));
     // ATOMIC END
 }
 

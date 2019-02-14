@@ -31,7 +31,7 @@ MasterServerClient::MasterServerClient(Context *context) :
         masterTCPConnection_(NULL),
         clientToServerSocket_(NULL)
 {
-    SubscribeToEvent(E_BEGINFRAME, ATOMIC_HANDLER(MasterServerClient, HandleBeginFrame));
+    SubscribeToEvent(E_BEGINFRAME, URHO3D_HANDLER(MasterServerClient, HandleBeginFrame));
 }
 
 MasterServerClient::~MasterServerClient()

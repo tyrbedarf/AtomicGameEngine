@@ -17,7 +17,7 @@ namespace Urho3D
 PrefabComponent::PrefabComponent(Context* context) :
     Component(context)
 {
-    SubscribeToEvent(E_PREFABCHANGED, ATOMIC_HANDLER(PrefabComponent, HandlePrefabChanged));
+    SubscribeToEvent(E_PREFABCHANGED, URHO3D_HANDLER(PrefabComponent, HandlePrefabChanged));
 }
 
 PrefabComponent::~PrefabComponent()

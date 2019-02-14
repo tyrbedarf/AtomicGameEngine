@@ -184,10 +184,10 @@ Engine::Engine(Context* context) :
     RegisterNavigationLibrary(context_);
 #endif
 
-    SubscribeToEvent(E_EXITREQUESTED, ATOMIC_HANDLER(Engine, HandleExitRequested));
+    SubscribeToEvent(E_EXITREQUESTED, URHO3D_HANDLER(Engine, HandleExitRequested));
     // ATOMIC BEGIN
-    SubscribeToEvent(E_PAUSERESUMEREQUESTED, ATOMIC_HANDLER(Engine, HandlePauseResumeRequested));
-    SubscribeToEvent(E_PAUSESTEPREQUESTED, ATOMIC_HANDLER(Engine, HandlePauseStepRequested));
+    SubscribeToEvent(E_PAUSERESUMEREQUESTED, URHO3D_HANDLER(Engine, HandlePauseResumeRequested));
+    SubscribeToEvent(E_PAUSESTEPREQUESTED, URHO3D_HANDLER(Engine, HandlePauseStepRequested));
 
     context_->engine_ = context_->GetSubsystem<Engine>();
     context_->time_ = context_->GetSubsystem<Time>();

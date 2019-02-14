@@ -47,9 +47,9 @@ AssetDatabase::AssetDatabase(Context* context) : Object(context),
     assetScanImport_(false),
     cacheEnabled_(true)
 {
-    SubscribeToEvent(E_LOADFAILED, ATOMIC_HANDLER(AssetDatabase, HandleResourceLoadFailed));
-    SubscribeToEvent(E_PROJECTLOADED, ATOMIC_HANDLER(AssetDatabase, HandleProjectLoaded));
-    SubscribeToEvent(E_PROJECTUNLOADED, ATOMIC_HANDLER(AssetDatabase, HandleProjectUnloaded));
+    SubscribeToEvent(E_LOADFAILED, URHO3D_HANDLER(AssetDatabase, HandleResourceLoadFailed));
+    SubscribeToEvent(E_PROJECTLOADED, URHO3D_HANDLER(AssetDatabase, HandleProjectLoaded));
+    SubscribeToEvent(E_PROJECTUNLOADED, URHO3D_HANDLER(AssetDatabase, HandleProjectUnloaded));
 }
 
 AssetDatabase::~AssetDatabase()
@@ -247,7 +247,7 @@ void AssetDatabase::AddAsset(SharedPtr<Asset>& asset, bool newAsset)
     VariantMap eventData;
 
     if (newAsset)
-    {        
+    {
         eventData[AssetNew::P_GUID] = asset->GetGUID();
         SendEvent(E_ASSETNEW, eventData);
     }
@@ -469,7 +469,7 @@ void AssetDatabase::Scan()
     if (!assetScanDepth_)
     {
         UpdateAssetCacheMap();
-        SendEvent(E_ASSETSCANEND);        
+        SendEvent(E_ASSETSCANEND);
     }
 }
 
@@ -542,7 +542,7 @@ void AssetDatabase::HandleProjectLoaded(StringHash eventType, VariantMap& eventD
         InitCache();
     }
 
-    SubscribeToEvent(E_FILECHANGED, ATOMIC_HANDLER(AssetDatabase, HandleFileChanged));
+    SubscribeToEvent(E_FILECHANGED, URHO3D_HANDLER(AssetDatabase, HandleFileChanged));
 }
 
 void AssetDatabase::HandleProjectUnloaded(StringHash eventType, VariantMap& eventData)

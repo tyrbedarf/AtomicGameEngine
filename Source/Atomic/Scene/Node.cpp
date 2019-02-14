@@ -1914,7 +1914,7 @@ void Node::SetTransformSilent(const Vector3& position, const Quaternion& rotatio
 void Node::OnAttributeAnimationAdded()
 {
     if (attributeAnimationInfos_.Size() == 1)
-        SubscribeToEvent(GetScene(), E_ATTRIBUTEANIMATIONUPDATE, ATOMIC_HANDLER(Node, HandleAttributeAnimationUpdate));
+        SubscribeToEvent(GetScene(), E_ATTRIBUTEANIMATIONUPDATE, URHO3D_HANDLER(Node, HandleAttributeAnimationUpdate));
 }
 
 void Node::OnAttributeAnimationRemoved()

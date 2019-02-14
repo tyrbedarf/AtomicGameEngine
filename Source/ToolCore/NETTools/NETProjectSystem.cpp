@@ -214,7 +214,7 @@ namespace ToolCore
 
             if (build)
             {
-                build->SubscribeToEvent(E_NETBUILDRESULT, ATOMIC_HANDLER(NETProjectSystem, HandleNETBuildResult));
+                build->SubscribeToEvent(E_NETBUILDRESULT, URHO3D_HANDLER(NETProjectSystem, HandleNETBuildResult));
             }
 
             return build;
@@ -433,7 +433,7 @@ namespace ToolCore
         return projectAssemblyDirty_;
 
     }
-    
+
     void NETProjectSystem::CheckProjectAssembly()
     {
         FileSystem* fileSystem = GetSubsystem<FileSystem>();
@@ -487,27 +487,27 @@ namespace ToolCore
         }
 
     }
-    
+
     void NETProjectSystem::Initialize()
     {
         Clear();
 
-        SubscribeToEvent(E_UPDATE, ATOMIC_HANDLER(NETProjectSystem, HandleUpdate));
+        SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(NETProjectSystem, HandleUpdate));
 
-        SubscribeToEvent(E_PROJECTLOADED, ATOMIC_HANDLER(NETProjectSystem, HandleProjectLoaded));
-        SubscribeToEvent(E_PROJECTUNLOADED, ATOMIC_HANDLER(NETProjectSystem, HandleProjectUnloaded));
+        SubscribeToEvent(E_PROJECTLOADED, URHO3D_HANDLER(NETProjectSystem, HandleProjectLoaded));
+        SubscribeToEvent(E_PROJECTUNLOADED, URHO3D_HANDLER(NETProjectSystem, HandleProjectUnloaded));
 
-        SubscribeToEvent(E_ASSETSCANBEGIN, ATOMIC_HANDLER(NETProjectSystem, HandleAssetScanBegin));
-        SubscribeToEvent(E_ASSETSCANEND, ATOMIC_HANDLER(NETProjectSystem, HandleAssetScanEnd));
+        SubscribeToEvent(E_ASSETSCANBEGIN, URHO3D_HANDLER(NETProjectSystem, HandleAssetScanBegin));
+        SubscribeToEvent(E_ASSETSCANEND, URHO3D_HANDLER(NETProjectSystem, HandleAssetScanEnd));
 
-        SubscribeToEvent(E_FILECHANGED, ATOMIC_HANDLER(NETProjectSystem, HandleFileChanged));
+        SubscribeToEvent(E_FILECHANGED, URHO3D_HANDLER(NETProjectSystem, HandleFileChanged));
 
-        SubscribeToEvent(E_RESOURCEADDED, ATOMIC_HANDLER(NETProjectSystem, HandleResourceAdded));
-        SubscribeToEvent(E_RESOURCEREMOVED, ATOMIC_HANDLER(NETProjectSystem, HandleResourceRemoved));
+        SubscribeToEvent(E_RESOURCEADDED, URHO3D_HANDLER(NETProjectSystem, HandleResourceAdded));
+        SubscribeToEvent(E_RESOURCEREMOVED, URHO3D_HANDLER(NETProjectSystem, HandleResourceRemoved));
 
-        SubscribeToEvent(E_ASSETNEW, ATOMIC_HANDLER(NETProjectSystem, HandleAssetNew));
-        SubscribeToEvent(E_ASSETRENAMED, ATOMIC_HANDLER(NETProjectSystem, HandleAssetRenamed));
-        SubscribeToEvent(E_ASSETMOVED, ATOMIC_HANDLER(NETProjectSystem, HandleAssetMoved));
+        SubscribeToEvent(E_ASSETNEW, URHO3D_HANDLER(NETProjectSystem, HandleAssetNew));
+        SubscribeToEvent(E_ASSETRENAMED, URHO3D_HANDLER(NETProjectSystem, HandleAssetRenamed));
+        SubscribeToEvent(E_ASSETMOVED, URHO3D_HANDLER(NETProjectSystem, HandleAssetMoved));
 
 
 #ifdef ATOMIC_PLATFORM_WINDOWS

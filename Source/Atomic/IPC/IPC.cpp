@@ -48,7 +48,7 @@ namespace Urho3D
 IPC::IPC(Context* context) : Object(context),
     workerChannelID_(0)
 {
-    SubscribeToEvent(E_BEGINFRAME, ATOMIC_HANDLER(IPC, HandleBeginFrame));
+    SubscribeToEvent(E_BEGINFRAME, URHO3D_HANDLER(IPC, HandleBeginFrame));
 
 #ifdef ATOMIC_PLATFORM_WINDOWS
 

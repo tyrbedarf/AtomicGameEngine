@@ -39,7 +39,7 @@ PrefabImporter::PrefabImporter(Context* context, Asset* asset) : AssetImporter(c
 {
     requiresCacheFile_ = true;
 
-    SubscribeToEvent(E_PREFABSAVE, ATOMIC_HANDLER(PrefabImporter, HandlePrefabSave));
+    SubscribeToEvent(E_PREFABSAVE, URHO3D_HANDLER(PrefabImporter, HandlePrefabSave));
 }
 
 PrefabImporter::~PrefabImporter()

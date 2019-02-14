@@ -125,17 +125,17 @@ SceneView3D ::SceneView3D(Context* context, SceneEditor3D *sceneEditor) :
     SetView(scene_, camera_);
     SetAutoUpdate(false);
 
-    SubscribeToEvent(E_UPDATE, ATOMIC_HANDLER(SceneView3D, HandleUpdate));
-    SubscribeToEvent(E_POSTRENDERUPDATE, ATOMIC_HANDLER(SceneView3D, HandlePostRenderUpdate));
+    SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(SceneView3D, HandleUpdate));
+    SubscribeToEvent(E_POSTRENDERUPDATE, URHO3D_HANDLER(SceneView3D, HandlePostRenderUpdate));
 
-    SubscribeToEvent(E_MOUSEMOVE, ATOMIC_HANDLER(SceneView3D,HandleMouseMove));
+    SubscribeToEvent(E_MOUSEMOVE, URHO3D_HANDLER(SceneView3D,HandleMouseMove));
 
-    SubscribeToEvent(this, E_DRAGENTERWIDGET, ATOMIC_HANDLER(SceneView3D, HandleDragEnterWidget));
-    SubscribeToEvent(this, E_DRAGEXITWIDGET, ATOMIC_HANDLER(SceneView3D, HandleDragExitWidget));
-    SubscribeToEvent(this, E_DRAGENDED, ATOMIC_HANDLER(SceneView3D, HandleDragEnded));
+    SubscribeToEvent(this, E_DRAGENTERWIDGET, URHO3D_HANDLER(SceneView3D, HandleDragEnterWidget));
+    SubscribeToEvent(this, E_DRAGEXITWIDGET, URHO3D_HANDLER(SceneView3D, HandleDragExitWidget));
+    SubscribeToEvent(this, E_DRAGENDED, URHO3D_HANDLER(SceneView3D, HandleDragEnded));
 
-    SubscribeToEvent(E_UIUNHANDLEDSHORTCUT, ATOMIC_HANDLER(SceneView3D, HandleUIUnhandledShortcut));
-    SubscribeToEvent(E_UIWIDGETFOCUSESCAPED, ATOMIC_HANDLER(SceneView3D, HandleUIWidgetFocusEscaped));
+    SubscribeToEvent(E_UIUNHANDLEDSHORTCUT, URHO3D_HANDLER(SceneView3D, HandleUIUnhandledShortcut));
+    SubscribeToEvent(E_UIWIDGETFOCUSESCAPED, URHO3D_HANDLER(SceneView3D, HandleUIWidgetFocusEscaped));
 
     SetIsFocusable(true);
 

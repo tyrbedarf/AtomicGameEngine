@@ -91,8 +91,8 @@ void BuildAndroid::RunADBStartActivity()
     buildOutput[BuildOutput::P_TEXT] = "\n\n<color #D4FB79>Starting Android Activity</color>\n\n";
     SendEvent(E_BUILDOUTPUT, buildOutput);
 
-    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, ATOMIC_HANDLER(BuildAndroid, HandleADBStartActivityComplete));
-    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, ATOMIC_HANDLER(BuildBase, HandleSubprocessOutputEvent));
+    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, URHO3D_HANDLER(BuildAndroid, HandleADBStartActivityComplete));
+    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, URHO3D_HANDLER(BuildBase, HandleSubprocessOutputEvent));
 
 }
 
@@ -139,8 +139,8 @@ void BuildAndroid::RunADBInstall()
     buildOutput[BuildOutput::P_TEXT] = "\n\n<color #D4FB79>Installing on Android Device</color>\n\n";
     SendEvent(E_BUILDOUTPUT, buildOutput);
 
-    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, ATOMIC_HANDLER(BuildAndroid, HandleRunADBInstallComplete));
-    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, ATOMIC_HANDLER(BuildBase, HandleSubprocessOutputEvent));
+    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, URHO3D_HANDLER(BuildAndroid, HandleRunADBInstallComplete));
+    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, URHO3D_HANDLER(BuildBase, HandleSubprocessOutputEvent));
 
 }
 
@@ -223,8 +223,8 @@ void BuildAndroid::RunADBListDevices()
     buildOutput[BuildOutput::P_TEXT] = "\n\n<color #D4FB79>Listing Android Devices</color>\n\n";
     SendEvent(E_BUILDOUTPUT, buildOutput);
 
-    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, ATOMIC_HANDLER(BuildAndroid, HandleADBListDevicesComplete));
-    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, ATOMIC_HANDLER(BuildAndroid, HandleADBListDevicesOutputEvent));
+    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, URHO3D_HANDLER(BuildAndroid, HandleADBListDevicesComplete));
+    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, URHO3D_HANDLER(BuildAndroid, HandleADBListDevicesOutputEvent));
 
 }
 
@@ -273,7 +273,7 @@ void BuildAndroid::RunAntDebug()
     args.Push("\"" + antPath + "\"");
     args.Push(buildApk);
 #endif
-#ifdef ATOMIC_PLATFORM_LINUX 
+#ifdef ATOMIC_PLATFORM_LINUX
 
     String antCommand = tprefs->GetAntPath();
     if ( antCommand.Empty() ) // user didnt fill it out, use installed one
@@ -282,10 +282,10 @@ void BuildAndroid::RunAntDebug()
     }
     else
     {
-        antCommand.Append("/ant"); 
+        antCommand.Append("/ant");
     }
     FileSystem* fileSystem = GetSubsystem<FileSystem>();
-    if ( !fileSystem->FileExists ( antCommand) ) 
+    if ( !fileSystem->FileExists ( antCommand) )
     {
         FailBuild("The ant program can not be found, check the Ant Path in Build Settings.");
     }
@@ -306,8 +306,8 @@ void BuildAndroid::RunAntDebug()
     buildOutput[BuildOutput::P_TEXT] = "<color #D4FB79>Starting Android " + buildApk + " Deployment</color>\n\n";
     SendEvent(E_BUILDOUTPUT, buildOutput);
 
-    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, ATOMIC_HANDLER(BuildAndroid, HandleAntDebugComplete));
-    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, ATOMIC_HANDLER(BuildBase, HandleSubprocessOutputEvent));
+    SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, URHO3D_HANDLER(BuildAndroid, HandleAntDebugComplete));
+    SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, URHO3D_HANDLER(BuildBase, HandleSubprocessOutputEvent));
 
 }
 
@@ -318,7 +318,7 @@ void BuildAndroid::Initialize()
 
     Vector<String> defaultResourcePaths;
     GetDefaultResourcePaths(defaultResourcePaths);
-    
+
 
     for (unsigned i = 0; i < defaultResourcePaths.Size(); i++)
     {
@@ -345,7 +345,7 @@ void BuildAndroid::Build(const String& buildPath)
     buildPath_ = AddTrailingSlash(buildPath) + GetBuildSubfolder();
 
     Initialize();
- 
+
     if (!BuildClean(buildPath_))
         return;
 

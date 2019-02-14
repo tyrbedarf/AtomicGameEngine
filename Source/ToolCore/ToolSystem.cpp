@@ -64,7 +64,7 @@ ToolSystem::ToolSystem(Context* context) : Object(context),
     RegisterPlatform(new PlatformAndroid(context));
     RegisterPlatform(new PlatformLinux(context));
 
-    SubscribeToEvent(E_UPDATE, ATOMIC_HANDLER(ToolSystem, HandleUpdate));
+    SubscribeToEvent(E_UPDATE, URHO3D_HANDLER(ToolSystem, HandleUpdate));
 }
 
 ToolSystem::~ToolSystem()
@@ -77,7 +77,7 @@ void ToolSystem::HandleUpdate(StringHash eventType, VariantMap& eventData)
     using namespace Update;
 
     updateDelta_ += eventData[P_TIMESTEP].GetFloat();
-    
+
     if (updateDelta_ >= 0.5f)
     {
         updateDelta_ = 0.0f;

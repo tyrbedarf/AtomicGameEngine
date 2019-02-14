@@ -106,17 +106,17 @@ void tbUIView::BecomeFocused()
 {
     widget_->SetZ(WIDGET_Z_TOP);
 
-    SubscribeToEvent(E_MOUSEBUTTONDOWN, ATOMIC_HANDLER(tbUIView, HandleMouseButtonDown));
-    SubscribeToEvent(E_MOUSEBUTTONUP, ATOMIC_HANDLER(tbUIView, HandleMouseButtonUp));
-    SubscribeToEvent(E_MOUSEMOVE, ATOMIC_HANDLER(tbUIView, HandleMouseMove));
-    SubscribeToEvent(E_MOUSEWHEEL, ATOMIC_HANDLER(tbUIView, HandleMouseWheel));
-    SubscribeToEvent(E_KEYDOWN, ATOMIC_HANDLER(tbUIView, HandleKeyDown));
-    SubscribeToEvent(E_KEYUP, ATOMIC_HANDLER(tbUIView, HandleKeyUp));
-    SubscribeToEvent(E_TEXTINPUT, ATOMIC_HANDLER(tbUIView, HandleTextInput));
+    SubscribeToEvent(E_MOUSEBUTTONDOWN, URHO3D_HANDLER(tbUIView, HandleMouseButtonDown));
+    SubscribeToEvent(E_MOUSEBUTTONUP, URHO3D_HANDLER(tbUIView, HandleMouseButtonUp));
+    SubscribeToEvent(E_MOUSEMOVE, URHO3D_HANDLER(tbUIView, HandleMouseMove));
+    SubscribeToEvent(E_MOUSEWHEEL, URHO3D_HANDLER(tbUIView, HandleMouseWheel));
+    SubscribeToEvent(E_KEYDOWN, URHO3D_HANDLER(tbUIView, HandleKeyDown));
+    SubscribeToEvent(E_KEYUP, URHO3D_HANDLER(tbUIView, HandleKeyUp));
+    SubscribeToEvent(E_TEXTINPUT, URHO3D_HANDLER(tbUIView, HandleTextInput));
 
-    SubscribeToEvent(E_TOUCHBEGIN, ATOMIC_HANDLER(tbUIView, HandleTouchBegin));
-    SubscribeToEvent(E_TOUCHEND, ATOMIC_HANDLER(tbUIView, HandleTouchEnd));
-    SubscribeToEvent(E_TOUCHMOVE, ATOMIC_HANDLER(tbUIView, HandleTouchMove));
+    SubscribeToEvent(E_TOUCHBEGIN, URHO3D_HANDLER(tbUIView, HandleTouchBegin));
+    SubscribeToEvent(E_TOUCHEND, URHO3D_HANDLER(tbUIView, HandleTouchEnd));
+    SubscribeToEvent(E_TOUCHMOVE, URHO3D_HANDLER(tbUIView, HandleTouchMove));
 
 }
 

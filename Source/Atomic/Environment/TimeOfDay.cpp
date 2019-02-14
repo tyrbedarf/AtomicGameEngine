@@ -52,7 +52,7 @@ void TimeOfDay::OnNodeSet(Node* node)
 
     if (node && node->GetScene())
     {
-        SubscribeToEvent(node->GetScene(), E_SCENEUPDATE, ATOMIC_HANDLER(TimeOfDay, HandleSceneUpdate));
+        SubscribeToEvent(node->GetScene(), E_SCENEUPDATE, URHO3D_HANDLER(TimeOfDay, HandleSceneUpdate));
     }
 
 }

@@ -140,7 +140,7 @@ bool tbUIFinderWindow::OnEvent(const tb::TBWidgetEvent &ev)
             newBookmarkPtr_.Reset();
         }
         newBookmarkPtr_ = new tbUIPromptWindow(context_, this, "createbookmark",  true);
-        SubscribeToEvent(newBookmarkPtr_, E_UIPROMPTCOMPLETE, ATOMIC_HANDLER(tbUIFinderWindow, HandleCreateBookmark ));
+        SubscribeToEvent(newBookmarkPtr_, E_UIPROMPTCOMPLETE, URHO3D_HANDLER(tbUIFinderWindow, HandleCreateBookmark ));
 
         String prospect = "";
         char delim = '/';
@@ -159,7 +159,7 @@ bool tbUIFinderWindow::OnEvent(const tb::TBWidgetEvent &ev)
             newFolderPtr_.Reset();
         }
         newFolderPtr_ = new tbUIPromptWindow(context_, this, "createfolder",  true);
-        SubscribeToEvent(newFolderPtr_, E_UIPROMPTCOMPLETE, ATOMIC_HANDLER(tbUIFinderWindow, HandleCreateFolder));
+        SubscribeToEvent(newFolderPtr_, E_UIPROMPTCOMPLETE, URHO3D_HANDLER(tbUIFinderWindow, HandleCreateFolder));
         newFolderPtr_->Show("Create new folder", "Enter a name for the new folder", "" );
         return true;
     }

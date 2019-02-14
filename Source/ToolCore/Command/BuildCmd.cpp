@@ -141,7 +141,7 @@ void BuildCmd::Run()
 
     buildSystem->QueueBuild(buildBase);
 
-    SubscribeToEvent(E_BUILDCOMPLETE, ATOMIC_HANDLER(BuildCmd, HandleBuildComplete));
+    SubscribeToEvent(E_BUILDCOMPLETE, URHO3D_HANDLER(BuildCmd, HandleBuildComplete));
 
     // TODO: parallel/serial builds
     buildSystem->StartNextBuild();

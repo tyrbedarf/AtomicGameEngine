@@ -528,7 +528,7 @@ WebClient::WebClient(Context* context) : Object(context)
     d_ = new WebClientPrivate(this);
     d_->AddRef();
 
-    SubscribeToEvent(E_WEBVIEWGLOBALPROPERTIESCHANGED, ATOMIC_HANDLER(WebClient, HandleWebViewGlobalPropertiesChanged));
+    SubscribeToEvent(E_WEBVIEWGLOBALPROPERTIESCHANGED, URHO3D_HANDLER(WebClient, HandleWebViewGlobalPropertiesChanged));
 }
 
 WebClient::~WebClient()

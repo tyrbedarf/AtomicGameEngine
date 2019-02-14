@@ -126,9 +126,9 @@ namespace Urho3D
 
         if (clientBroker_)
         {
-            SubscribeToEvent(clientBroker_, E_IPCWORKERSTART, ATOMIC_HANDLER(IPCServerApp, HandleIPCWorkerStarted));
-            SubscribeToEvent(clientBroker_, E_IPCWORKEREXIT, ATOMIC_HANDLER(IPCServerApp, HandleIPCWorkerExit));
-            SubscribeToEvent(clientBroker_, E_IPCWORKERLOG, ATOMIC_HANDLER(IPCServerApp, HandleIPCWorkerLog));
+            SubscribeToEvent(clientBroker_, E_IPCWORKERSTART, URHO3D_HANDLER(IPCServerApp, HandleIPCWorkerStarted));
+            SubscribeToEvent(clientBroker_, E_IPCWORKEREXIT, URHO3D_HANDLER(IPCServerApp, HandleIPCWorkerExit));
+            SubscribeToEvent(clientBroker_, E_IPCWORKERLOG, URHO3D_HANDLER(IPCServerApp, HandleIPCWorkerLog));
         }
 
         return clientBroker_.NotNull();

@@ -169,14 +169,14 @@ void NETCmd::HandleNETBuildResult(StringHash eventType, VariantMap& eventData)
         Error(ToString("NETBuild Error for solution: %s", solutionPath_.CString()));
         Finished();
     }
-    
+
 }
 
 void NETCmd::Run()
 {
     if (command_ == "compile")
     {
-        
+
         NETBuildSystem* buildSystem = new NETBuildSystem(context_);
         context_->RegisterSubsystem(buildSystem);
 
@@ -189,7 +189,7 @@ void NETCmd::Run()
         String fileName;
         String ext;
 
-        // detect project        
+        // detect project
         SplitPath(solutionPath_, solutionPath, fileName, ext);
 
         if (ext == ".atomic")
@@ -224,7 +224,7 @@ void NETCmd::Run()
             return;
         }
 
-        build->SubscribeToEvent(E_NETBUILDRESULT, ATOMIC_HANDLER(NETCmd, HandleNETBuildResult));
+        build->SubscribeToEvent(E_NETBUILDRESULT, URHO3D_HANDLER(NETCmd, HandleNETBuildResult));
 
     }
     else if (command_ == "genresources")

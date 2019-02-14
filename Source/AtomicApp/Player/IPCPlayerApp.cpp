@@ -164,13 +164,13 @@ namespace Urho3D
 
         if (IPC::ProcessArguments(arguments_, id, fd_[0], fd_[1]))
         {
-            SubscribeToEvent(E_IPCINITIALIZE, ATOMIC_HANDLER(IPCPlayerApp, HandleIPCInitialize));
-            SubscribeToEvent(E_LOGMESSAGE, ATOMIC_HANDLER(IPCPlayerApp, HandleLogMessage));
-            SubscribeToEvent(E_JSERROR, ATOMIC_HANDLER(IPCPlayerApp, HandleJSError));
-            SubscribeToEvent(E_EXITREQUESTED, ATOMIC_HANDLER(IPCPlayerApp, HandleExitRequest));
-            SubscribeToEvent(E_SCREENMODE, ATOMIC_HANDLER(IPCPlayerApp, HandlePlayerWindowChanged));
-            SubscribeToEvent(E_WINDOWPOS, ATOMIC_HANDLER(IPCPlayerApp, HandlePlayerWindowChanged));
-            SubscribeToEvent(E_UPDATESPAUSEDRESUMED, ATOMIC_HANDLER(IPCPlayerApp, HandleUpdatesPausedResumed));
+            SubscribeToEvent(E_IPCINITIALIZE, URHO3D_HANDLER(IPCPlayerApp, HandleIPCInitialize));
+            SubscribeToEvent(E_LOGMESSAGE, URHO3D_HANDLER(IPCPlayerApp, HandleLogMessage));
+            SubscribeToEvent(E_JSERROR, URHO3D_HANDLER(IPCPlayerApp, HandleJSError));
+            SubscribeToEvent(E_EXITREQUESTED, URHO3D_HANDLER(IPCPlayerApp, HandleExitRequest));
+            SubscribeToEvent(E_SCREENMODE, URHO3D_HANDLER(IPCPlayerApp, HandlePlayerWindowChanged));
+            SubscribeToEvent(E_WINDOWPOS, URHO3D_HANDLER(IPCPlayerApp, HandlePlayerWindowChanged));
+            SubscribeToEvent(E_UPDATESPAUSEDRESUMED, URHO3D_HANDLER(IPCPlayerApp, HandleUpdatesPausedResumed));
 
             if (ipc_->InitWorker((unsigned)id, fd_[0], fd_[1]))
             {
@@ -191,7 +191,7 @@ namespace Urho3D
                 SendEvent(E_EXITREQUESTED);
             }
 
-            SubscribeToEvent(E_PLAYERQUIT, ATOMIC_HANDLER(IPCPlayerApp, HandleQuit));
+            SubscribeToEvent(E_PLAYERQUIT, URHO3D_HANDLER(IPCPlayerApp, HandleQuit));
         }
 
         GetSubsystem<Graphics>()->RaiseWindow();

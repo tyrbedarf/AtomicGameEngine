@@ -76,8 +76,8 @@ namespace ToolCore
         Object(context),
         verbose_(false)
     {
-        SubscribeToEvent(E_TOOLUPDATE, ATOMIC_HANDLER(NETBuildSystem, HandleToolUpdate));
-        SubscribeToEvent(E_NETBUILDATOMICPROJECT, ATOMIC_HANDLER(NETBuildSystem, HandleBuildAtomicProject));
+        SubscribeToEvent(E_TOOLUPDATE, URHO3D_HANDLER(NETBuildSystem, HandleToolUpdate));
+        SubscribeToEvent(E_NETBUILDATOMICPROJECT, URHO3D_HANDLER(NETBuildSystem, HandleBuildAtomicProject));
     }
 
     NETBuildSystem::~NETBuildSystem()
@@ -461,8 +461,8 @@ namespace ToolCore
             buildBeginEventData[NETBuildBegin::P_BUILD] = curBuild_;
             SendEvent(E_NETBUILDBEGIN, buildBeginEventData);
 
-            SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, ATOMIC_HANDLER(NETBuildSystem, HandleCompileProcessComplete));
-            SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, ATOMIC_HANDLER(NETBuildSystem, HandleSubprocessOutput));
+            SubscribeToEvent(subprocess, E_SUBPROCESSCOMPLETE, URHO3D_HANDLER(NETBuildSystem, HandleCompileProcessComplete));
+            SubscribeToEvent(subprocess, E_SUBPROCESSOUTPUT, URHO3D_HANDLER(NETBuildSystem, HandleSubprocessOutput));
 
             curBuild_->status_ = NETBUILD_BUILDING;
 

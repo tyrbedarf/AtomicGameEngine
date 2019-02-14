@@ -128,8 +128,8 @@ void ProcSky::OnNodeSet(Node* node)
 
     if (node && node->GetScene())
     {
-        SubscribeToEvent(node->GetScene(), E_SCENEUPDATE, ATOMIC_HANDLER(ProcSky, HandleSceneUpdate));
-        SubscribeToEvent(E_BEGINVIEWUPDATE, ATOMIC_HANDLER(ProcSky, HandleBeginViewUpdate));
+        SubscribeToEvent(node->GetScene(), E_SCENEUPDATE, URHO3D_HANDLER(ProcSky, HandleSceneUpdate));
+        SubscribeToEvent(E_BEGINVIEWUPDATE, URHO3D_HANDLER(ProcSky, HandleBeginViewUpdate));
     }
 
 }

@@ -89,7 +89,7 @@ ResourceCache::ResourceCache(Context* context) :
 #endif
 
     // Subscribe BeginFrame for handling directory watchers and background loaded resource finalization
-    SubscribeToEvent(E_BEGINFRAME, ATOMIC_HANDLER(ResourceCache, HandleBeginFrame));
+    SubscribeToEvent(E_BEGINFRAME, URHO3D_HANDLER(ResourceCache, HandleBeginFrame));
 }
 
 ResourceCache::~ResourceCache()

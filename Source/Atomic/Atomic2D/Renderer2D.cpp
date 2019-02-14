@@ -81,7 +81,7 @@ Renderer2D::Renderer2D(Context* context) :
     material_->SetCullMode(CULL_NONE);
 
     frame_.frameNumber_ = 0;
-    SubscribeToEvent(E_BEGINVIEWUPDATE, ATOMIC_HANDLER(Renderer2D, HandleBeginViewUpdate));
+    SubscribeToEvent(E_BEGINVIEWUPDATE, URHO3D_HANDLER(Renderer2D, HandleBeginViewUpdate));
 }
 
 Renderer2D::~Renderer2D()

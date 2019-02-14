@@ -276,8 +276,8 @@ void CrowdManager::SetNavigationMesh(NavigationMesh* navMesh)
 
         if (navMesh)
         {
-            SubscribeToEvent(navMesh, E_NAVIGATION_MESH_REBUILT, ATOMIC_HANDLER(CrowdManager, HandleNavMeshChanged));
-            SubscribeToEvent(scene, E_COMPONENTREMOVED, ATOMIC_HANDLER(CrowdManager, HandleNavMeshChanged));
+            SubscribeToEvent(navMesh, E_NAVIGATION_MESH_REBUILT, URHO3D_HANDLER(CrowdManager, HandleNavMeshChanged));
+            SubscribeToEvent(scene, E_COMPONENTREMOVED, URHO3D_HANDLER(CrowdManager, HandleNavMeshChanged));
         }
 
         CreateCrowd();
@@ -657,7 +657,7 @@ void CrowdManager::OnSceneSet(Scene* scene)
             return;
         }
 
-        SubscribeToEvent(scene, E_SCENESUBSYSTEMUPDATE, ATOMIC_HANDLER(CrowdManager, HandleSceneSubsystemUpdate));
+        SubscribeToEvent(scene, E_SCENESUBSYSTEMUPDATE, URHO3D_HANDLER(CrowdManager, HandleSceneSubsystemUpdate));
 
         // Attempt to auto discover a NavigationMesh component (or its derivative) under the scene node
         if (navigationMeshId_ == 0)
@@ -668,7 +668,7 @@ void CrowdManager::OnSceneSet(Scene* scene)
             else
             {
                 // If not found, attempt to find in a delayed manner
-                SubscribeToEvent(scene, E_COMPONENTADDED, ATOMIC_HANDLER(CrowdManager, HandleComponentAdded));
+                SubscribeToEvent(scene, E_COMPONENTADDED, URHO3D_HANDLER(CrowdManager, HandleComponentAdded));
             }
         }
     }

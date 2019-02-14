@@ -55,7 +55,7 @@ namespace Urho3D
         ipc_ = new IPC(context_);
         context_->RegisterSubsystem(ipc_);
 
-        SubscribeToEvent(E_LOGMESSAGE, ATOMIC_HANDLER(IPCClientApp, HandleLogMessage));
+        SubscribeToEvent(E_LOGMESSAGE, URHO3D_HANDLER(IPCClientApp, HandleLogMessage));
     }
 
     void IPCClientApp::HandleIPCInitialize(StringHash eventType, VariantMap& eventData)
@@ -70,7 +70,7 @@ namespace Urho3D
         if (!IPC::ProcessArguments(arguments, id, fd_[0], fd_[1]))
             return false;
 
-        SubscribeToEvent(E_IPCINITIALIZE, ATOMIC_HANDLER(IPCClientApp, HandleIPCInitialize));
+        SubscribeToEvent(E_IPCINITIALIZE, URHO3D_HANDLER(IPCClientApp, HandleIPCInitialize));
         ipc_->InitWorker((unsigned)id, fd_[0], fd_[1]);
 
         return true;

@@ -93,7 +93,7 @@ void AnimationController::OnSetEnabled()
     if (scene)
     {
         if (IsEnabledEffective())
-            SubscribeToEvent(scene, E_SCENEPOSTUPDATE, ATOMIC_HANDLER(AnimationController, HandleScenePostUpdate));
+            SubscribeToEvent(scene, E_SCENEPOSTUPDATE, URHO3D_HANDLER(AnimationController, HandleScenePostUpdate));
         else
             UnsubscribeFromEvent(scene, E_SCENEPOSTUPDATE);
     }
@@ -893,7 +893,7 @@ VariantVector AnimationController::GetNodeAnimationStatesAttr() const
 void AnimationController::OnSceneSet(Scene* scene)
 {
     if (scene && IsEnabledEffective())
-        SubscribeToEvent(scene, E_SCENEPOSTUPDATE, ATOMIC_HANDLER(AnimationController, HandleScenePostUpdate));
+        SubscribeToEvent(scene, E_SCENEPOSTUPDATE, URHO3D_HANDLER(AnimationController, HandleScenePostUpdate));
     else if (!scene)
         UnsubscribeFromEvent(E_SCENEPOSTUPDATE);
 }

@@ -157,8 +157,8 @@ void AtomicTool::DoActivation()
 
     licenseSystem->LicenseAgreementConfirmed();
 
-    SubscribeToEvent(E_LICENSE_ACTIVATIONERROR, ATOMIC_HANDLER(AtomicTool, HandleLicenseActivationError));
-    SubscribeToEvent(E_LICENSE_ACTIVATIONSUCCESS, ATOMIC_HANDLER(AtomicTool, HandleLicenseActivationSuccess));
+    SubscribeToEvent(E_LICENSE_ACTIVATIONERROR, URHO3D_HANDLER(AtomicTool, HandleLicenseActivationError));
+    SubscribeToEvent(E_LICENSE_ACTIVATIONSUCCESS, URHO3D_HANDLER(AtomicTool, HandleLicenseActivationSuccess));
 
 }
 
@@ -181,13 +181,13 @@ void AtomicTool::DoDeactivation()
 void AtomicTool::Start()
 {
     // Subscribe to events
-    SubscribeToEvent(E_COMMANDERROR, ATOMIC_HANDLER(AtomicTool, HandleCommandError));
-    SubscribeToEvent(E_COMMANDFINISHED, ATOMIC_HANDLER(AtomicTool, HandleCommandFinished));
+    SubscribeToEvent(E_COMMANDERROR, URHO3D_HANDLER(AtomicTool, HandleCommandError));
+    SubscribeToEvent(E_COMMANDFINISHED, URHO3D_HANDLER(AtomicTool, HandleCommandFinished));
 
-    SubscribeToEvent(E_LICENSE_EULAREQUIRED, ATOMIC_HANDLER(AtomicTool, HandleLicenseEulaRequired));
-    SubscribeToEvent(E_LICENSE_ACTIVATIONREQUIRED, ATOMIC_HANDLER(AtomicTool, HandleLicenseActivationRequired));
-    SubscribeToEvent(E_LICENSE_ERROR, ATOMIC_HANDLER(AtomicTool, HandleLicenseError));
-    SubscribeToEvent(E_LICENSE_SUCCESS, ATOMIC_HANDLER(AtomicTool, HandleLicenseSuccess));
+    SubscribeToEvent(E_LICENSE_EULAREQUIRED, URHO3D_HANDLER(AtomicTool, HandleLicenseEulaRequired));
+    SubscribeToEvent(E_LICENSE_ACTIVATIONREQUIRED, URHO3D_HANDLER(AtomicTool, HandleLicenseActivationRequired));
+    SubscribeToEvent(E_LICENSE_ERROR, URHO3D_HANDLER(AtomicTool, HandleLicenseError));
+    SubscribeToEvent(E_LICENSE_SUCCESS, URHO3D_HANDLER(AtomicTool, HandleLicenseSuccess));
 
     const Vector<String>& arguments = GetArguments();
 

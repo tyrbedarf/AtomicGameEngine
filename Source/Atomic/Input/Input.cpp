@@ -444,7 +444,7 @@ Input::Input(Context* context) :
     for (int i = 0; i < TOUCHID_MAX; i++)
         availableTouchIDs_.Push(i);
 
-    SubscribeToEvent(E_SCREENMODE, ATOMIC_HANDLER(Input, HandleScreenMode));
+    SubscribeToEvent(E_SCREENMODE, URHO3D_HANDLER(Input, HandleScreenMode));
 
 #if defined(__ANDROID__)
     SDL_SetHint(SDL_HINT_ANDROID_SEPARATE_MOUSE_AND_TOUCH, "1");
@@ -1645,7 +1645,7 @@ void Input::Initialize()
     ResetJoysticks();
     ResetState();
 
-    SubscribeToEvent(E_BEGINFRAME, ATOMIC_HANDLER(Input, HandleBeginFrame));
+    SubscribeToEvent(E_BEGINFRAME, URHO3D_HANDLER(Input, HandleBeginFrame));
 #ifdef __EMSCRIPTEN__
     SubscribeToEvent(E_ENDFRAME, ATOMIC_HANDLER(Input, HandleEndFrame));
 #endif

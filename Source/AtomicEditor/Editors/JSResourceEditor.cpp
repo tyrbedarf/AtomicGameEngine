@@ -74,9 +74,9 @@ JSResourceEditor ::JSResourceEditor(Context* context, const String &fullpath, tb
 
     webView_->GetWebTexture2D()->SetClearColor(Color(.23f, .23f, .23f, 1));
 
-    SubscribeToEvent(messageHandler_, E_WEBMESSAGE, ATOMIC_HANDLER(JSResourceEditor, HandleWebMessage));
+    SubscribeToEvent(messageHandler_, E_WEBMESSAGE, URHO3D_HANDLER(JSResourceEditor, HandleWebMessage));
 
-    SubscribeToEvent(E_RENAMERESOURCENOTIFICATION, ATOMIC_HANDLER(JSResourceEditor, HandleRenameResourceNotification));
+    SubscribeToEvent(E_RENAMERESOURCENOTIFICATION, URHO3D_HANDLER(JSResourceEditor, HandleRenameResourceNotification));
 
     c->AddChild(webView_->GetInternalWidget());
 

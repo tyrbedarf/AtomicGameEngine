@@ -186,9 +186,9 @@ UIWebView::UIWebView(Context* context, const String &initialURL) : tbUIWidget(co
 
     initialURL_ = initialURL;
 
-    SubscribeToEvent(E_KEYDOWN, ATOMIC_HANDLER(UIWebView, HandleKeyDown));
-    SubscribeToEvent(E_KEYUP, ATOMIC_HANDLER(UIWebView, HandleKeyUp));
-    SubscribeToEvent(E_TEXTINPUT, ATOMIC_HANDLER(UIWebView, HandleTextInput));
+    SubscribeToEvent(E_KEYDOWN, URHO3D_HANDLER(UIWebView, HandleKeyDown));
+    SubscribeToEvent(E_KEYUP, URHO3D_HANDLER(UIWebView, HandleKeyUp));
+    SubscribeToEvent(E_TEXTINPUT, URHO3D_HANDLER(UIWebView, HandleTextInput));
 }
 
 UIWebView::~UIWebView()

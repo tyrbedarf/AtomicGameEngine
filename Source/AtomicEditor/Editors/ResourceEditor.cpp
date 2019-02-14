@@ -154,8 +154,8 @@ ResourceEditor::ResourceEditor(Context* context, const String& fullpath, tbUITab
     rootContentWidget_->SetGravity(UI_GRAVITY_ALL);
     container_->GetContentRoot()->AddChild(rootContentWidget_);
 
-    SubscribeToEvent(E_FILECHANGED, ATOMIC_HANDLER(ResourceEditor, HandleFileChanged));
-    SubscribeToEvent(E_RENAMERESOURCENOTIFICATION, ATOMIC_HANDLER(ResourceEditor, HandleRenameResourceNotification));
+    SubscribeToEvent(E_FILECHANGED, URHO3D_HANDLER(ResourceEditor, HandleFileChanged));
+    SubscribeToEvent(E_RENAMERESOURCENOTIFICATION, URHO3D_HANDLER(ResourceEditor, HandleRenameResourceNotification));
 
 }
 

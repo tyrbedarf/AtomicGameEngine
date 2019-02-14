@@ -72,8 +72,8 @@ bool CubemapGenerator::Render()
     }
 
     GetScene()->SendEvent(E_CUBEMAPRENDERBEGIN);
-    SubscribeToEvent(E_BEGINFRAME, ATOMIC_HANDLER(CubemapGenerator, HandleBeginFrame));
-    SubscribeToEvent(E_ENDFRAME, ATOMIC_HANDLER(CubemapGenerator, HandleEndFrame));
+    SubscribeToEvent(E_BEGINFRAME, URHO3D_HANDLER(CubemapGenerator, HandleBeginFrame));
+    SubscribeToEvent(E_ENDFRAME, URHO3D_HANDLER(CubemapGenerator, HandleEndFrame));
 
     return true;
 
