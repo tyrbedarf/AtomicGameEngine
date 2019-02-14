@@ -28,7 +28,7 @@
 #include "../../Atomic/Graphics/GraphicsDefs.h"
 #include "ImportConfig.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 ImportConfig ImportConfig::importConfig_;

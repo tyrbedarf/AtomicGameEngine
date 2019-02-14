@@ -26,7 +26,7 @@
 
 #include <nanodbc.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Database query result.

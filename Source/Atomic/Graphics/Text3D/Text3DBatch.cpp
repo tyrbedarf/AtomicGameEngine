@@ -29,7 +29,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Vector3 Text3DBatch::posAdjust(0.0f, 0.0f, 0.0f);
@@ -309,7 +309,7 @@ void Text3DBatch::AddQuad(const Matrix3x4& transform, const IntVector2& a, const
     ((unsigned&)dest[9]) = color_;
     dest[10] = uv2.x_;
     dest[11] = uv2.y_;
-    
+
     dest[12] = v3.x_;
     dest[13] = v3.y_;
     dest[14] = 0.0f;
@@ -376,7 +376,7 @@ void Text3DBatch::AddQuad(const Matrix3x4& transform, const IntVector2& a, const
     ((unsigned&)dest[9]) = c2;
     dest[10] = uv2.x_;
     dest[11] = uv2.y_;
-    
+
     dest[12] = v3.x_;
     dest[13] = v3.y_;
     dest[14] = 0.0f;

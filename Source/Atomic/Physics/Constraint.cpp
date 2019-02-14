@@ -40,7 +40,7 @@
 #include <Bullet/src/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const char* typeNames[] =

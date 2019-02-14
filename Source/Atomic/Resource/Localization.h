@@ -25,7 +25,7 @@
 #include "../Core/Context.h"
 #include "../Resource/JSONValue.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Localization subsystem. Stores all the strings in all languages.

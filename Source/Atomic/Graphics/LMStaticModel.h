@@ -8,7 +8,7 @@
 #include "../Graphics/Texture2D.h"
 #include "../Graphics/Material.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class LMStaticModel: public StaticModel

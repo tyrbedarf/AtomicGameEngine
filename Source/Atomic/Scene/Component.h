@@ -24,7 +24,7 @@
 
 #include "../Scene/Animatable.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class DebugRenderer;

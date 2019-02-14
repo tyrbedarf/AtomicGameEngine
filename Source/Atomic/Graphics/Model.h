@@ -29,7 +29,7 @@
 #include "../Math/BoundingBox.h"
 #include "../Resource/Resource.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Geometry;

@@ -38,7 +38,7 @@
 #undef SendMessage
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 class File;
@@ -234,7 +234,7 @@ public:
     unsigned char timeStamp_;
     /// Identity map.
     VariantMap identity_;
-    
+
 // ATOMIC BEGIN
 
     /// Expose control methods for current controls
@@ -249,7 +249,7 @@ public:
 
     /// Send a message.
     void SendStringMessage(const String& message);
-    
+
 // ATOMIC END
 
 private:

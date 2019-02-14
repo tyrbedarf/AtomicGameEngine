@@ -33,7 +33,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const D3D11_FILTER d3dFilterMode[] =

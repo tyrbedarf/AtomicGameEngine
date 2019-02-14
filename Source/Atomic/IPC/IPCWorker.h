@@ -26,7 +26,7 @@
 #include "IPC.h"
 #include "IPCChannel.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ATOMIC_API IPCWorker : public IPCChannel

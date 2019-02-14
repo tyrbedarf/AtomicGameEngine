@@ -25,7 +25,7 @@
 #include "../Core/Object.h"
 #include "../Database/DbConnection.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Supported database API.

@@ -30,7 +30,7 @@
 #include <Bullet/src/LinearMath/btQuaternion.h>
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 inline btVector3 ToBtVector3(const Vector3& vector)

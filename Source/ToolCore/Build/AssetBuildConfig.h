@@ -26,7 +26,7 @@
 #include "../../Atomic/Resource/JSONValue.h"
 #include "../../Atomic/Resource/Configuration.h"
 
-namespace Atomic
+namespace Urho3D
 {
     class Context;
 

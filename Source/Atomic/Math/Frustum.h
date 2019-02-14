@@ -28,7 +28,7 @@
 #include "../Math/Rect.h"
 #include "../Math/Sphere.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Frustum planes.

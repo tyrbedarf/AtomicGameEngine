@@ -3,7 +3,7 @@
 #include "JSVM.h"
 #include <Atomic/Math/Ray.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 

@@ -24,7 +24,7 @@
 
 #include "../Core/Context.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 void ATOMIC_API RegisterEnvironmentLibrary(Context* context);

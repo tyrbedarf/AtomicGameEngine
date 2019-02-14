@@ -24,7 +24,7 @@
 
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Component which tags geometry for inclusion in the navigation mesh. Optionally auto-includes geometry from child nodes.

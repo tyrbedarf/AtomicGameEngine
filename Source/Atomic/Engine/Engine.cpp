@@ -72,7 +72,7 @@
 #include "../Resource/Localization.h"
 #include "../Scene/Scene.h"
 #include "../Scene/SceneEvents.h"
-#include "../UI/UI.h"
+#include "../UI/tbUI.h"
 #ifdef ATOMIC_ATOMIC2D
 #include "../Atomic2D/Atomic2D.h"
 #endif
@@ -104,7 +104,7 @@ typedef struct _CrtMemBlockHeader
 } _CrtMemBlockHeader;
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* logLevelPrefixes[];
@@ -167,7 +167,7 @@ Engine::Engine(Context* context) :
 #endif
     context_->RegisterSubsystem(new Input(context_));
     context_->RegisterSubsystem(new Audio(context_));
-    context_->RegisterSubsystem(new UI(context_));
+    context_->RegisterSubsystem(new tbUI(context_));
 
     // Register object factories for libraries which are not automatically registered along with subsystem creation
     RegisterSceneLibrary(context_);
@@ -212,7 +212,7 @@ Engine::Engine(Context* context) :
 #endif
     context_->input_ = context_->GetSubsystem<Input>();
     context_->audio_ = context_->GetSubsystem<Audio>();
-    context_->ui_ = context_->GetSubsystem<UI>();
+    context_->ui_ = context_->GetSubsystem<tbUI>();
     // ATOMIC END
 }
 
@@ -798,7 +798,7 @@ void Engine::Render()
         return;
 
     GetSubsystem<Renderer>()->Render();
-    GetSubsystem<UI>()->Render();
+    GetSubsystem<tbUI>()->Render();
     graphics->EndFrame();
 }
 

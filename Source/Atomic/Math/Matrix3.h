@@ -24,7 +24,7 @@
 
 #include "../Math/Vector3.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// 3x3 matrix for rotation and scaling.
@@ -272,7 +272,7 @@ public:
 
         for (unsigned i = 0; i < 9; ++i)
         {
-            if (!Atomic::Equals(leftData[i], rightData[i]))
+            if (!Urho3D::Equals(leftData[i], rightData[i]))
                 return false;
         }
 

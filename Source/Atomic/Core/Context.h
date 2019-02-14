@@ -26,7 +26,7 @@
 #include "../Core/Attribute.h"
 #include "../Core/Object.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 // ATOMIC BEGIN
@@ -241,7 +241,7 @@ public:
     Database* GetDatabase() const { return db_; }
     Input* GetInput() const { return input_; }
     Audio* GetAudio() const { return audio_; }
-    UI* GetUI() const { return ui_; }
+    tbUI* GetUI() const { return ui_; }
     SystemUI* GetSystemUI() const { return systemUi_; }
     Graphics* GetGraphics() const { return graphics_; }
     Renderer* GetRenderer() const { return renderer_; }
@@ -325,7 +325,7 @@ private:
     WeakPtr<Database> db_;
     WeakPtr<Input> input_;
     WeakPtr<Audio> audio_;
-    WeakPtr<UI> ui_;
+    WeakPtr<tbUI> ui_;
     WeakPtr<SystemUI> systemUi_;
     WeakPtr<Graphics> graphics_;
     WeakPtr<Renderer> renderer_;

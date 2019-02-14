@@ -28,7 +28,7 @@
 
 #include <d3d9.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 #define ATOMIC_SAFE_RELEASE(p) if (p) { ((IUnknown*)p)->Release();  p = 0; }

@@ -32,7 +32,7 @@
 class btCompoundShape;
 class btRigidBody;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class CollisionShape;

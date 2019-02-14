@@ -30,7 +30,7 @@ namespace tb
 class TBWidget;
 }
 
-namespace Atomic
+namespace Urho3D
 {
 
 class JSUI : public Object

@@ -24,7 +24,7 @@
 
 #include "../Core/Object.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %File entry within the package file.
@@ -88,7 +88,7 @@ public:
     // ATOMIC BEGIN
 
     /// Return a file name in the package at the specified index
-    const String& GetEntryName(unsigned index) const 
+    const String& GetEntryName(unsigned index) const
     {
         unsigned nn = 0;
         for (HashMap<String, PackageEntry>::ConstIterator j = entries_.Begin(); j != entries_.End(); ++j)
@@ -96,13 +96,13 @@ public:
             if (nn == index) return j->first_;
             nn++;
         }
-        return String::EMPTY; 
+        return String::EMPTY;
     }
 
 
     /// Scan package for specified files.
     void Scan(Vector<String>& result, const String& pathName, const String& filter, bool recursive) const;
-    
+
     // ATOMIC END
 private:
     /// File entries.

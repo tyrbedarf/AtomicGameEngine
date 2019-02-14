@@ -30,7 +30,7 @@
 
 #include <cstring>
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const unsigned MAX_NETWORK_ATTRIBUTES = 64;

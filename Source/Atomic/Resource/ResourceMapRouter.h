@@ -24,7 +24,7 @@
 
 #include "ResourceCache.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class JSONValue;

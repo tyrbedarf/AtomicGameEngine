@@ -27,7 +27,7 @@
 
 class CefRenderHandler;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebClient;

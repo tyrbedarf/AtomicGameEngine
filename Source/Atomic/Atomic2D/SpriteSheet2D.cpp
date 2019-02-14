@@ -36,7 +36,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 SpriteSheet2D::SpriteSheet2D(Context* context) :

@@ -32,7 +32,7 @@
 // ATOMIC END
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Named pipe for interprocess communication.

@@ -32,7 +32,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const unsigned ERROR_BUFFER_SIZE = 256;

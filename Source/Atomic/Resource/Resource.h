@@ -26,7 +26,7 @@
 #include "../Core/Timer.h"
 #include "../Resource/JSONValue.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Deserializer;

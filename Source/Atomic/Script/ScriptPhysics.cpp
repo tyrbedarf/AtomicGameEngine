@@ -27,7 +27,7 @@
 #include "ScriptPhysics.h"
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 void PhysicsNodeCollision::SetFromNodeCollisionEvent(VariantMap& eventData)
@@ -40,14 +40,14 @@ void PhysicsNodeCollision::SetFromNodeCollisionEvent(VariantMap& eventData)
     otherBody_ = static_cast<RigidBody*>(eventData[P_OTHERBODY].GetPtr());
 
     trigger_ = eventData[P_TRIGGER].GetBool();
-    
+
     MemoryBuffer contacts(eventData[P_CONTACTS].GetBuffer());
 
     while (!contacts.IsEof())
     {
         contacts_.Push(SharedPtr<PhysicsContact>(new PhysicsContact(contacts.ReadVector3(), contacts.ReadVector3(), contacts.ReadFloat(), contacts.ReadFloat())));
     }
-    
+
 }
 
 }

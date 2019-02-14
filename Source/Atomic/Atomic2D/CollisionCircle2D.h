@@ -24,7 +24,7 @@
 
 #include "../Atomic2D/CollisionShape2D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// 2D circle collision component.

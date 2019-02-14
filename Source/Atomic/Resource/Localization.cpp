@@ -30,7 +30,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Localization::Localization(Context* context) :

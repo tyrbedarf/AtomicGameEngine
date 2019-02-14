@@ -28,7 +28,7 @@
 #include "../Resource/Resource.h"
 #include "../Scene/ValueAnimationInfo.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Material;
@@ -239,7 +239,7 @@ public:
 
     /// Return render order.
     unsigned char GetRenderOrder() const { return renderOrder_; }
-    
+
     /// Return last auxiliary view rendered frame number.
     unsigned GetAuxViewFrameNumber() const { return auxViewFrameNumber_; }
 

@@ -24,7 +24,7 @@
 
 #include "../Atomic2D/SpriterData2D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Component;

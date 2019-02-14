@@ -32,7 +32,7 @@
 namespace profiler { class BaseBlockDescriptor {}; };
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const int PROFILER_DEFAULT_PORT = 28077;

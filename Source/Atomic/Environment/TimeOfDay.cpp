@@ -30,7 +30,7 @@
 #include "../Environment/TimeOfDay.h"
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 TimeOfDay::TimeOfDay(Context *context) : Component(context),

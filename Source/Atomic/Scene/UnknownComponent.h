@@ -24,7 +24,7 @@
 
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Placeholder for allowing unregistered components to be loaded & saved along with scenes.
@@ -74,13 +74,13 @@ public:
     bool GetUseXML() const { return useXML_; }
 
     /// Return static type.
-    static Atomic::StringHash GetTypeStatic()
+    static Urho3D::StringHash GetTypeStatic()
     {
         static const StringHash typeStatic("UnknownComponent");
         return typeStatic;
     }
     /// Return static type name.
-    static const Atomic::String& GetTypeNameStatic()
+    static const Urho3D::String& GetTypeNameStatic()
     {
         static const String typeNameStatic("UnknownComponent");
         return typeNameStatic;

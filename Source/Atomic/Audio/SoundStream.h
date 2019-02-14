@@ -24,7 +24,7 @@
 
 #include "../Container/RefCounted.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Base class for sound streams.
@@ -40,7 +40,7 @@ public:
 
     /// Seek to sample number. Return true on success. Need not be implemented by all streams.
     virtual bool Seek(unsigned sample_number);
-    
+
     /// Produce sound data into destination. Return number of bytes produced. Called by SoundSource from the mixing thread.
     virtual unsigned GetData(signed char* dest, unsigned numBytes) = 0;
 

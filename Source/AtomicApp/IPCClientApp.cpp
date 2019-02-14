@@ -33,7 +33,7 @@
 #include <windows.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
     IPCClientApp::IPCClientApp(Context* context) :

@@ -25,7 +25,7 @@
 #include "../Math/Vector3.h"
 #include "../Math/Matrix3x4.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class BoundingBox;

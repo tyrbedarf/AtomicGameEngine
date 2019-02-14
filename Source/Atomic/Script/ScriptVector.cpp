@@ -23,7 +23,7 @@
 
 #include "ScriptVector.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 

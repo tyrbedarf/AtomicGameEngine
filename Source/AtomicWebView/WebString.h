@@ -24,7 +24,7 @@
 
 #include <Atomic/Container/Str.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Convert a CEF3 string to a UTF8 String

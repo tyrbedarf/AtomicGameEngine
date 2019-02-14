@@ -24,7 +24,7 @@
 
 #include <Atomic/Core/Object.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -49,7 +49,7 @@ namespace ToolCore
     {
         NETBUILD_PENDING = 0,
         NETBUILD_BUILDING,
-        NETBUILD_COMPLETE        
+        NETBUILD_COMPLETE
     };
 
     class Subprocess;
@@ -59,7 +59,7 @@ namespace ToolCore
         friend class NETBuildSystem;
 
         ATOMIC_OBJECT(NETBuild, Object)
-    
+
     public:
 
         NETBuild(Context* context, const String& solutionPath = String::EMPTY);
@@ -84,7 +84,7 @@ namespace ToolCore
     // NET Build subsystem
     class NETBuildSystem : public Object
     {
-        
+
         ATOMIC_OBJECT(NETBuildSystem, Object)
 
     public:

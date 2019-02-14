@@ -26,7 +26,7 @@
 
 #include "JSBindTypes.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -66,7 +66,7 @@ namespace ToolCore
         void SetHeader(JSBHeader* header) { header_ = header; }
         JSBHeader* GetHeader() { return header_; }
 
-        JSBPackage* GetPackage();       
+        JSBPackage* GetPackage();
 
         static bool ScanModuleEvents(JSBModule* module);
 

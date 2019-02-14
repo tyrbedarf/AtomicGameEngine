@@ -31,7 +31,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const char* shaderParameterGroups[] = {
@@ -181,7 +181,7 @@ bool ShaderProgram::Link()
 
         if (semantic == MAX_VERTEX_ELEMENT_SEMANTICS)
         {
-            ATOMIC_LOGWARNING("Found vertex attribute " + name + " with no known semantic in shader program " + 
+            ATOMIC_LOGWARNING("Found vertex attribute " + name + " with no known semantic in shader program " +
                 vertexShader_->GetFullName() + " " + pixelShader_->GetFullName());
             continue;
         }

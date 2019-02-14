@@ -26,7 +26,7 @@
 #include "../Resource/Resource.h"
 #include "../Core/Variant.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 

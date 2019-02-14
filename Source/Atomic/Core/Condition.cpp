@@ -30,7 +30,7 @@
 #include <pthread.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 #ifdef _WIN32

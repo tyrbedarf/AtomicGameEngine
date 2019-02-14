@@ -26,7 +26,7 @@
 
 #pragma once
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ScriptSystem : public Object

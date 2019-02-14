@@ -32,7 +32,7 @@
 #pragma warning(disable:6293)
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 char String::endZero = 0;
@@ -482,9 +482,9 @@ void String::Clear()
 
 void String::Swap(String& str)
 {
-    Atomic::Swap(length_, str.length_);
-    Atomic::Swap(capacity_, str.capacity_);
-    Atomic::Swap(buffer_, str.buffer_);
+    Urho3D::Swap(length_, str.length_);
+    Urho3D::Swap(capacity_, str.capacity_);
+    Urho3D::Swap(buffer_, str.buffer_);
 }
 
 String String::Substring(unsigned pos) const
@@ -1013,9 +1013,9 @@ unsigned String::DecodeUTF16(const wchar_t*& src)
 {
     if (src == 0)
         return 0;
-    
+
     unsigned short word1 = *src++;
-    
+
     // Check if we are at a low surrogate
     if (word1 >= 0xdc00 && word1 < 0xe000)
     {
@@ -1023,7 +1023,7 @@ unsigned String::DecodeUTF16(const wchar_t*& src)
             ++src;
         return '?';
     }
-    
+
     if (word1 < 0xd800 || word1 >= 0xe000)
         return word1;
     else
@@ -1059,7 +1059,7 @@ Vector<String> String::Split(const char* str, char separator, bool keepEmptyStri
     const ptrdiff_t splitLen = strEnd - str;
     if (splitLen > 0 || keepEmptyStrings)
         ret.Push(String(str, splitLen));
-    
+
     return ret;
 }
 
@@ -1247,7 +1247,7 @@ WString::WString(const String& str) :
 #ifdef _WIN32
     unsigned neededSize = 0;
     wchar_t temp[3];
-    
+
     unsigned byteOffset = 0;
     while (byteOffset < str.Length())
     {
@@ -1255,9 +1255,9 @@ WString::WString(const String& str) :
         String::EncodeUTF16(dest, str.NextUTF8Char(byteOffset));
         neededSize += dest - temp;
     }
-    
+
     Resize(neededSize);
-    
+
     byteOffset = 0;
     wchar_t* dest = buffer_;
     while (byteOffset < str.Length())

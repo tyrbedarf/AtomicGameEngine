@@ -39,7 +39,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 bool HiresTimer::supported(false);

@@ -59,8 +59,8 @@ static int XErrorHandlerImpl(Display *display, XErrorEvent *event)
         char msg[132];
         XGetErrorText(display, event->error_code, msg, sizeof(msg));
         fprintf(stderr, "X11 Error %d (%s): request %d.%d \n",
-                        event->error_code, 
-                        msg, 
+                        event->error_code,
+                        msg,
                         event->request_code,
                         event->minor_code );
     }
@@ -83,7 +83,7 @@ static void TerminationSignalHandler(int signatl)
 #endif
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebBrowserHostPrivate
@@ -150,7 +150,7 @@ WebBrowserHost::WebBrowserHost(Context* context) : Object (context)
 #endif
 
     CefSettings settings;
-    settings.windowless_rendering_enabled = 1;    
+    settings.windowless_rendering_enabled = 1;
 
     FileSystem* fs = GetSubsystem<FileSystem>();
 
@@ -171,10 +171,10 @@ WebBrowserHost::WebBrowserHost(Context* context) : Object (context)
                 pathName = AddTrailingSlash(pathName) + "CEF.log";
                 CefString(&settings.log_file).FromASCII(GetNativePath(pathName).CString());
             }
-            
+
         }
-        
-    }        
+
+    }
 
     // default background is white, add a setting
     // settings.background_color = 0;
@@ -193,7 +193,7 @@ WebBrowserHost::WebBrowserHost(Context* context) : Object (context)
 
     // If we've specified the absolute path to a root cache folder, use it
     if (rootCacheFolder_.Length() && cacheName_.Length())
-    {        
+    {
         fullPath = rootCacheFolder_ + "/" + cacheName_;
         CefString(&settings.cache_path).FromASCII(fullPath.CString());
     }

@@ -24,7 +24,7 @@
 
 #include "../Atomic2D/Constraint2D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// 2D friction constraint component.

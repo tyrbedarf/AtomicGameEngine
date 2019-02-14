@@ -34,7 +34,7 @@
 #include "NETScriptEvents.h"
 #include "CSComponentAssembly.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
     HashMap<StringHash, VariantType> CSComponentAssembly::typeMap_;
@@ -112,7 +112,7 @@ namespace Atomic
                 JSONObject caNamed = jfield.Get("caNamed").GetObject();
 
                 if (!defaultValue.Length())
-                {                    
+                {
                     if (caNamed.Contains("DefaultValue"))
                         defaultValue = caNamed["DefaultValue"].GetString();
                 }
@@ -265,7 +265,7 @@ namespace Atomic
         String text = sourceFile->ReadText();
         JSONValue root;
 
-        if (!JSONFile::ParseJSON(text, root, false))        
+        if (!JSONFile::ParseJSON(text, root, false))
         {
             ATOMIC_LOGERRORF("Failed to load assembly json for %s ", fullAssemblyPath_.CString());
             return false;
@@ -343,7 +343,7 @@ namespace Atomic
         ATOMIC_LOGINFO("Preloading Class Assemblies");
 
         Context* context = ScriptSystem::GetContext();
-        
+
         if (!context)
             return false;
 

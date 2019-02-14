@@ -27,7 +27,7 @@
 #include <initializer_list>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Doubly-linked list template class.
@@ -489,12 +489,12 @@ private:
     }
 };
 
-template <class T> typename Atomic::List<T>::ConstIterator begin(const Atomic::List<T>& v) { return v.Begin(); }
+template <class T> typename Urho3D::List<T>::ConstIterator begin(const Urho3D::List<T>& v) { return v.Begin(); }
 
-template <class T> typename Atomic::List<T>::ConstIterator end(const Atomic::List<T>& v) { return v.End(); }
+template <class T> typename Urho3D::List<T>::ConstIterator end(const Urho3D::List<T>& v) { return v.End(); }
 
-template <class T> typename Atomic::List<T>::Iterator begin(Atomic::List<T>& v) { return v.Begin(); }
+template <class T> typename Urho3D::List<T>::Iterator begin(Urho3D::List<T>& v) { return v.Begin(); }
 
-template <class T> typename Atomic::List<T>::Iterator end(Atomic::List<T>& v) { return v.End(); }
+template <class T> typename Urho3D::List<T>::Iterator end(Urho3D::List<T>& v) { return v.End(); }
 
 }

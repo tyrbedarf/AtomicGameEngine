@@ -42,7 +42,7 @@ class btDispatcher;
 class btDynamicsWorld;
 class btPersistentManifold;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class CollisionShape;

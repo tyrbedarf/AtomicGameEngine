@@ -26,7 +26,7 @@
 #include "../../Container/List.h"
 #include "../../Math/AreaAllocator.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Text3DFont;

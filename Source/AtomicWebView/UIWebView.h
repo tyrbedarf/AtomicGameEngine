@@ -24,23 +24,23 @@
 
 #include <TurboBadger/tb_widgets.h>
 
-#include <Atomic/UI/UI.h>
-#include <Atomic/UI/UIWidget.h>
+#include <Atomic/UI/tbUI.h>
+#include <Atomic/UI/tbUIWidget.h>
 
 #include <Atomic/Graphics/Texture2D.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebClient;
 class WebTexture2D;
 
 /// UI widget for WebViews
-class UIWebView : public UIWidget
+class UIWebView : public tbUIWidget
 {
     friend class WebViewWidget;
 
-    ATOMIC_OBJECT(UIWebView, UIWidget)
+    ATOMIC_OBJECT(UIWebView, tbUIWidget)
 
 public:
 

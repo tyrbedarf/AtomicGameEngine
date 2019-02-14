@@ -25,7 +25,7 @@
 #include "../Graphics/GraphicsDefs.h"
 #include "../Resource/Resource.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Particle emitter shapes.

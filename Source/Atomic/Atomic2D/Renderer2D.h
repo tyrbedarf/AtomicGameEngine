@@ -25,7 +25,7 @@
 #include "../Graphics/Drawable.h"
 #include "../Math/Frustum.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Drawable2D;
@@ -118,7 +118,7 @@ private:
     /// Update view batch info.
     void UpdateViewBatchInfo(ViewBatchInfo2D& viewBatchInfo, Camera* camera);
     /// Add view batch.
-    void AddViewBatch(ViewBatchInfo2D& viewBatchInfo, Material* material, 
+    void AddViewBatch(ViewBatchInfo2D& viewBatchInfo, Material* material,
         unsigned indexStart, unsigned indexCount, unsigned vertexStart, unsigned vertexCount, float distance);
 
     /// Index buffer.

@@ -24,7 +24,7 @@
 
 #include "../Resource/Image.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Decompress a DXT compressed image to RGBA.

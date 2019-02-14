@@ -25,7 +25,7 @@
 #include "../Container/Ptr.h"
 #include "../Core/Variant.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Attribute shown only in the editor, but not serialized.

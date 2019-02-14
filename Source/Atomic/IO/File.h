@@ -30,7 +30,7 @@
 struct SDL_RWops;
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 #ifdef __ANDROID__

@@ -66,7 +66,7 @@
 
 typedef void *SDL_GLContext;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Context;

@@ -65,7 +65,7 @@
 #include <Atomic/Scene/Scene.h>
 #include <Atomic/Environment/ProcSky.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern void jsb_package_atomic_init(JSVM* vm);

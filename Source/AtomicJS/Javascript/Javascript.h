@@ -26,7 +26,7 @@
 #include <Atomic/Core/Object.h>
 #include "JSVM.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class JSVM;

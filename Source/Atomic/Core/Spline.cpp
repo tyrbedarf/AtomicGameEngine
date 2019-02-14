@@ -25,7 +25,7 @@
 #include "../Core/Spline.h"
 #include "../IO/Log.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 const char* interpolationModeNames[] =

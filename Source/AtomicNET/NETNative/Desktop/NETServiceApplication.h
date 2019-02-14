@@ -25,7 +25,7 @@
 
 #include <AtomicApp/IPCClientApp.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
     class NETServiceApplication : public IPCClientApp
@@ -43,9 +43,9 @@ namespace Atomic
         /// Construct.
         NETServiceApplication(Context* context);
 
-        /// Setup before engine initialization. 
+        /// Setup before engine initialization.
         virtual void Setup();
-        /// Cleanup after the main loop. 
+        /// Cleanup after the main loop.
         virtual void Stop();
 
     };

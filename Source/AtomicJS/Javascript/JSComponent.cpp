@@ -37,7 +37,7 @@
 #include "JSComponentFile.h"
 #include "JSComponent.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* LOGIC_CATEGORY;

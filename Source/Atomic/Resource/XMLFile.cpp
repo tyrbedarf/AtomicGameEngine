@@ -38,7 +38,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// XML writer for pugixml.
@@ -374,9 +374,9 @@ bool XMLFile::CombineText(const pugi::xml_node& patch, const pugi::xml_node& ori
         (patch.type() == pugi::node_cdata && original.type() == pugi::node_cdata))
     {
         if (prepend)
-            const_cast<pugi::xml_node&>(original).set_value(Atomic::ToString("%s%s", patch.value(), original.value()).CString());
+            const_cast<pugi::xml_node&>(original).set_value(Urho3D::ToString("%s%s", patch.value(), original.value()).CString());
         else
-            const_cast<pugi::xml_node&>(original).set_value(Atomic::ToString("%s%s", original.value(), patch.value()).CString());
+            const_cast<pugi::xml_node&>(original).set_value(Urho3D::ToString("%s%s", original.value(), patch.value()).CString());
 
         return true;
     }

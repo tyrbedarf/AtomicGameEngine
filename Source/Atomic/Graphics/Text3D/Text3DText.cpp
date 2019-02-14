@@ -37,7 +37,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 const char* textEffects[] =
@@ -198,7 +198,7 @@ void Text3DText::MarkDirty()
 }
 
 void Text3DText::GetBatches(PODVector<Text3DBatch>& batches, PODVector<float>& vertexData, const IntRect& currentScissor)
-{    
+{
     Text3DFontFace* face = font_ ? font_->GetFace(fontSize_) : (Text3DFontFace*)0;
     if (!face)
     {
@@ -312,7 +312,7 @@ void Text3DText::GetBatches(PODVector<Text3DBatch>& batches, PODVector<float>& v
                         if (x > -thickness && x < thickness &&
                             y > -thickness && y < thickness)
                             continue;
-    
+
                         ConstructBatch(pageBatch, pageGlyphLocation, x, y, &effectColor_, effectDepthBias_);
                     }
                 }

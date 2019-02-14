@@ -26,7 +26,7 @@
 #include "../Graphics/Texture.h"
 #include "../Math/Color.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Component that describes global rendering properties.

@@ -45,7 +45,7 @@
 
 */
 
-namespace Atomic
+namespace Urho3D
 {
 
     void js_class_get_prototype(duk_context* ctx, const char* package, const char *classname)
@@ -337,7 +337,7 @@ namespace Atomic
     void js_get_default_variant(VariantType variantType, Variant& value)
     {
         value = Variant::EMPTY;
-        
+
         switch (variantType)
         {
 
@@ -393,14 +393,14 @@ namespace Atomic
             value = 0.0f;
             break;
 
-        case VAR_RESOURCEREF:            
+        case VAR_RESOURCEREF:
             value = ResourceRef();
             break;
 
         default:
             break;
         }
-        
+
     }
 
     void js_to_variant(duk_context* ctx, int variantIdx, Variant &v, VariantType variantType)

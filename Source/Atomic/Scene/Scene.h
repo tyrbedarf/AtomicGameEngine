@@ -29,7 +29,7 @@
 #include "../Scene/Node.h"
 #include "../Scene/SceneResolver.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class File;

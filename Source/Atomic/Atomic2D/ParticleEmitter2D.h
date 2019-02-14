@@ -24,7 +24,7 @@
 
 #include "../Atomic2D/Drawable2D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ParticleEffect2D;

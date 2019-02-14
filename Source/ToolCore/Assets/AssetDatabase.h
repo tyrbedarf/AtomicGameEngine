@@ -26,7 +26,7 @@
 #include <Atomic/Container/List.h>
 #include "Asset.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -54,7 +54,7 @@ public:
     /// Get whether the asset cache is enabled
     bool GetCacheEnabled() const { return cacheEnabled_; }
 
-    /// Set whether the asset cache is enabled 
+    /// Set whether the asset cache is enabled
     void SetCacheEnabled(bool cacheEnabled);
 
     /// Cleans the asset Cache folder by removing and recreating it

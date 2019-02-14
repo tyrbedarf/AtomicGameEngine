@@ -24,7 +24,7 @@
 
 #include "../Math/Rect.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Rectangular area allocator.

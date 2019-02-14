@@ -54,7 +54,7 @@
 #pragma warning(disable:6293)
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const float dirLightVertexData[] =
@@ -420,7 +420,7 @@ void Renderer::SetShadowQuality(ShadowQuality quality)
     {
         if (quality == SHADOWQUALITY_SIMPLE_16BIT)
             quality = SHADOWQUALITY_PCF_16BIT;
-        
+
         if (quality == SHADOWQUALITY_SIMPLE_24BIT)
             quality = SHADOWQUALITY_PCF_24BIT;
     }
@@ -822,7 +822,7 @@ void Renderer::QueueViewport(RenderSurface* renderTarget, Viewport* viewport)
 {
     if (viewport)
     {
-        Pair<WeakPtr<RenderSurface>, WeakPtr<Viewport> > newView = 
+        Pair<WeakPtr<RenderSurface>, WeakPtr<Viewport> > newView =
             MakePair(WeakPtr<RenderSurface>(renderTarget), WeakPtr<Viewport>(viewport));
 
         // Prevent double add of the same rendertarget/viewport combination
@@ -1187,7 +1187,7 @@ void Renderer::SetBatchShaders(Batch& batch, Technique* tech, bool allowShadows,
 
     Vector<SharedPtr<ShaderVariation> >& vertexShaders = queue.hasExtraDefines_ ? pass->GetVertexShaders(queue.vsExtraDefinesHash_) : pass->GetVertexShaders();
     Vector<SharedPtr<ShaderVariation> >& pixelShaders = queue.hasExtraDefines_ ? pass->GetPixelShaders(queue.psExtraDefinesHash_) : pass->GetPixelShaders();
-    
+
     // Load shaders now if necessary
     if (!vertexShaders.Size() || !pixelShaders.Size())
         LoadPassShaders(pass, vertexShaders, pixelShaders, queue);
@@ -1642,7 +1642,7 @@ void Renderer::LoadShaders()
 
     // Construct new names for deferred light volume pixel shaders based on rendering options
     deferredLightPSVariations_.Resize(MAX_DEFERRED_LIGHT_PS_VARIATIONS);
-    
+
     for (unsigned i = 0; i < MAX_DEFERRED_LIGHT_PS_VARIATIONS; ++i)
     {
         deferredLightPSVariations_[i] = lightPSVariations[i % DLPS_ORTHO];

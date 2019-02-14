@@ -24,7 +24,7 @@
 
 #include <Atomic/Core/Object.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebBrowserHostPrivate;
@@ -63,7 +63,7 @@ public:
     /// Set value that will be returned as the User-Agent HTTP header.
     static void SetUserAgent(const String& userAgent) { userAgent_ = userAgent; }
 
-    /// Set value that will be inserted as the product portion of the default User-Agent string 
+    /// Set value that will be inserted as the product portion of the default User-Agent string
     static void SetProductVersion(const String& productVersion) { productVersion_ = productVersion; }
 
     /// Set to a value between 1024 and 65535 to enable remote debugging on the specified port
@@ -87,7 +87,7 @@ public:
     /// Get User-Agent of the HTTP header. If empty the default User-Agent string will be used
     static const String& GetUserAgent() { return userAgent_; }
 
-    /// Get value that will be inserted as the product portion of the default User-Agent string.  If empty the Chromium product version will be used      
+    /// Get value that will be inserted as the product portion of the default User-Agent string.  If empty the Chromium product version will be used
     static const String& GetProductVersion() { return productVersion_; }
 
     /// Get whether web security is enabled

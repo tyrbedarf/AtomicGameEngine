@@ -28,7 +28,7 @@
 #include "../../Atomic/Graphics/GraphicsDefs.h"
 #include "AssetBuildConfig.h"
 
-namespace Atomic
+namespace Urho3D
 {
     AssetBuildConfig AssetBuildConfig::assetBuildConfig_;
 

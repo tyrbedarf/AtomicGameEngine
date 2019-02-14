@@ -46,7 +46,7 @@
 #pragma warning(disable:6293)
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* GEOMETRY_CATEGORY;
@@ -1015,14 +1015,14 @@ void DecalSet::UpdateBuffers()
     unsigned newElementMask = skinned_ ? SKINNED_ELEMENT_MASK : STATIC_ELEMENT_MASK;
     unsigned newVBSize = optimizeBufferSize_ ? numVertices_ : maxVertices_;
     unsigned newIBSize = optimizeBufferSize_ ? numIndices_ : maxIndices_;
-    
+
     if (vertexBuffer_->GetElementMask() != newElementMask || vertexBuffer_->GetVertexCount() != newVBSize)
         vertexBuffer_->SetSize(newVBSize, newElementMask);
     if (indexBuffer_->GetIndexCount() != newIBSize)
         indexBuffer_->SetSize(newIBSize, false);
     geometry_->SetVertexBuffer(0, vertexBuffer_);
     geometry_->SetDrawRange(TRIANGLE_LIST, 0, numIndices_, 0, numVertices_);
-    
+
     float* vertices = numVertices_ ? (float*)vertexBuffer_->Lock(0, numVertices_) : (float*)0;
     unsigned short* indices = numIndices_ ? (unsigned short*)indexBuffer_->Lock(0, numIndices_) : (unsigned short*)0;
 

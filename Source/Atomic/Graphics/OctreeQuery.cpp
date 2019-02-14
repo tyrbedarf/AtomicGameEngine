@@ -26,7 +26,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Intersection PointOctreeQuery::TestOctant(const BoundingBox& box, bool inside)

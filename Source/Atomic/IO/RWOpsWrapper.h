@@ -28,7 +28,7 @@
 #include <SDL/include/SDL_rwops.h>
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Template wrapper class for using Serializer / Deserializer or their subclasses through SDL's RWOps structure.

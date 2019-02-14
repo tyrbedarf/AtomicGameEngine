@@ -44,15 +44,15 @@ using namespace AtomicEditor;
 
 static int RunEditorApplication()
 {
-    Atomic::SharedPtr<Atomic::Context> context(new Atomic::Context());
-    Atomic::SharedPtr<AEEditorApp> application(new AEEditorApp(context));
+    Urho3D::SharedPtr<Urho3D::Context> context(new Urho3D::Context());
+    Urho3D::SharedPtr<AEEditorApp> application(new AEEditorApp(context));
     return application->Run();
 }
 
 static int RunPlayerApplication()
 {
-    Atomic::SharedPtr<Atomic::Context> context(new Atomic::Context());
-    Atomic::SharedPtr<AEPlayerApplication> application(new AEPlayerApplication(context));
+    Urho3D::SharedPtr<Urho3D::Context> context(new Urho3D::Context());
+    Urho3D::SharedPtr<AEPlayerApplication> application(new AEPlayerApplication(context));
     return application->Run();
 }
 
@@ -148,12 +148,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 #else
 int main(int argc, char** argv)
 {
-  Atomic::ParseArguments(argc, argv);
+  Urho3D::ParseArguments(argc, argv);
 
 #if defined(ATOMIC_PLATFORM_WINDOWS) || defined (ATOMIC_PLATFORM_LINUX)
 #ifdef ATOMIC_WEBVIEW
 
-    int exit_code = Atomic::WebMain(argc, argv);
+    int exit_code = Urho3D::WebMain(argc, argv);
 
     if (exit_code >= 0)
     {

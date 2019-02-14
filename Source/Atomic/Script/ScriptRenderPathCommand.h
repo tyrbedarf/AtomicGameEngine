@@ -25,7 +25,7 @@
 #include "../Core/Variant.h"
 #include "../Graphics/RenderPath.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
     /// Wrapper around RenderPathCommand as that is setup as a struct and usage a significant delta in order to change to RefCounted

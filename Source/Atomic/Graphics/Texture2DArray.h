@@ -26,7 +26,7 @@
 #include "../Graphics/RenderSurface.h"
 #include "../Graphics/Texture.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Deserializer;

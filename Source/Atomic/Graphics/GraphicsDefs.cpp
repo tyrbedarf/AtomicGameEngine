@@ -27,7 +27,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 // The extern keyword is required when building Urho3D.dll for Windows platform

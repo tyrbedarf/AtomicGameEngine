@@ -25,7 +25,7 @@
 #include "WebAppBrowser.h"
 #include "../WebBrowserHost.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 WebAppBrowser::WebAppBrowser()

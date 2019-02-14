@@ -28,7 +28,7 @@
 #include "../Container/Hash.h"
 #include "../Container/Swap.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Hash set/map node base class.
@@ -113,10 +113,10 @@ public:
     /// Swap with another hash set or map.
     void Swap(HashBase& rhs)
     {
-        Atomic::Swap(head_, rhs.head_);
-        Atomic::Swap(tail_, rhs.tail_);
-        Atomic::Swap(ptrs_, rhs.ptrs_);
-        Atomic::Swap(allocator_, rhs.allocator_);
+        Urho3D::Swap(head_, rhs.head_);
+        Urho3D::Swap(tail_, rhs.tail_);
+        Urho3D::Swap(ptrs_, rhs.ptrs_);
+        Urho3D::Swap(allocator_, rhs.allocator_);
     }
 
     /// Return number of elements.

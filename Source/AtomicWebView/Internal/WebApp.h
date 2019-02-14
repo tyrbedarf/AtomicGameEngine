@@ -25,7 +25,7 @@
 #include <include/cef_app.h>
 #include "WebApp.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 // Base class for customizing process-type-based behavior.

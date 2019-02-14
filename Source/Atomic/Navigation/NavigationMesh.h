@@ -38,7 +38,7 @@ class dtNavMesh;
 class dtNavMeshQuery;
 class dtQueryFilter;
 
-namespace Atomic
+namespace Urho3D
 {
 
 enum NavmeshPartitionType

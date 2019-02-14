@@ -26,7 +26,7 @@
 #include "../Core/Main.h"
 #include "../Engine/Engine.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Engine;
@@ -86,8 +86,8 @@ protected:
 #define ATOMIC_DEFINE_APPLICATION_MAIN(className) \
 int RunApplication() \
 { \
-    Atomic::SharedPtr<Atomic::Context> context(new Atomic::Context()); \
-    Atomic::SharedPtr<className> application(new className(context)); \
+    Urho3D::SharedPtr<Urho3D::Context> context(new Urho3D::Context()); \
+    Urho3D::SharedPtr<className> application(new className(context)); \
     return application->Run(); \
 } \
 ATOMIC_DEFINE_MAIN(RunApplication());
@@ -96,7 +96,7 @@ ATOMIC_DEFINE_MAIN(RunApplication());
 #define ATOMIC_DEFINE_APPLICATION_MAIN(className) \
 int RunApplication() \
 { \
-    Atomic::Context* context = new Atomic::Context(); \
+    Urho3D::Context* context = new Urho3D::Context(); \
     className* application = new className(context); \
     return application->Run(); \
 } \

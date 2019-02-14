@@ -25,7 +25,7 @@
 #include <Atomic/Core/Object.h>
 #include <Atomic/Container/List.h>
 
-namespace Atomic
+namespace Urho3D
 {
     ATOMIC_EVENT(E_IPCCMD, IPCCmd)
     {

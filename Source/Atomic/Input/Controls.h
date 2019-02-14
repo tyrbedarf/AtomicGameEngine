@@ -24,7 +24,7 @@
 
 #include "../Core/Variant.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Controls sent over the network.

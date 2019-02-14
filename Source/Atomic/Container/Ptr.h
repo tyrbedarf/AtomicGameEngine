@@ -31,7 +31,7 @@
 #include <utility>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Shared pointer template class with intrusive reference counting.

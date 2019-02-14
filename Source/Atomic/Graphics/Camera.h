@@ -27,7 +27,7 @@
 #include "../Math/Ray.h"
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const float DEFAULT_NEARCLIP = 0.1f;
@@ -95,7 +95,7 @@ public:
     /// Set vertical flipping mode. Called internally by View to resolve OpenGL / Direct3D9 rendertarget sampling differences.
     void SetFlipVertical(bool enable);
     /// Set custom projection matrix, which should be specified in D3D convention with depth range 0 - 1. Disables auto aspect ratio.
-    /** Change any of the standard view parameters (FOV, far clip, zoom etc.) to revert to the standard projection. 
+    /** Change any of the standard view parameters (FOV, far clip, zoom etc.) to revert to the standard projection.
         Note that the custom projection is not serialized or replicated through the network.
      */
     void SetProjection(const Matrix4& projection);

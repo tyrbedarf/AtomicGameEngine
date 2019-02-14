@@ -28,7 +28,7 @@
 #include "../Core/Mutex.h"
 #include "../Container/Pair.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Sound stream that supports manual buffering of data from the main thread.

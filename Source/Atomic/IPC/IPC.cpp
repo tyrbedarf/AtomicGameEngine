@@ -42,7 +42,7 @@
 
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 IPC::IPC(Context* context) : Object(context),

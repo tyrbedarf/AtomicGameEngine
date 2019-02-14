@@ -28,7 +28,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 const Rect Rect::FULL(-1.0f, -1.0f, 1.0f, 1.0f);

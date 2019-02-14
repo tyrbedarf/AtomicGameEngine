@@ -24,7 +24,7 @@
 
 #include "../Input/Controls.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Controls::Controls() :

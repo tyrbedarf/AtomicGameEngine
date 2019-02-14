@@ -26,12 +26,12 @@
 #include "BuildTypes.h"
 #include "../Platform/Platform.h"
 
-namespace Atomic
+namespace Urho3D
 {
     class File;
 }
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {

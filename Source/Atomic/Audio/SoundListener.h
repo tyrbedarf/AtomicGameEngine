@@ -24,7 +24,7 @@
 
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Sound listener component

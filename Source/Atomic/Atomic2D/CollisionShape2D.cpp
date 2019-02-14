@@ -32,7 +32,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 CollisionShape2D::CollisionShape2D(Context* context) :

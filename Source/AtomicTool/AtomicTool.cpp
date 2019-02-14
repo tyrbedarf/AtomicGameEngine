@@ -313,12 +313,12 @@ void AtomicTool::ErrorExit(const String& message)
     if (!message.Length())
     {
         #ifdef WIN32
-        Atomic::ErrorExit(startupErrors_.Length() ? startupErrors_ :
+        Urho3D::ErrorExit(startupErrors_.Length() ? startupErrors_ :
             "Application has been terminated due to unexpected error.", exitCode_);
         #endif
     }
     else
-        Atomic::ErrorExit(message, exitCode_);
+        Urho3D::ErrorExit(message, exitCode_);
 }
 
 

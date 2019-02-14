@@ -29,7 +29,7 @@
 #include "WebClient.h"
 #include "WebMessageHandler.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebMessageHandlerPrivate : public CefMessageRouterBrowserSide::Handler

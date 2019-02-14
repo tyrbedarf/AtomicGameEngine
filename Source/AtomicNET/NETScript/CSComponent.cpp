@@ -32,7 +32,7 @@
 #include "NETScriptEvents.h"
 #include "CSComponent.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* LOGIC_CATEGORY;
@@ -40,7 +40,7 @@ extern const char* LOGIC_CATEGORY;
 CSComponent::CSComponent(Context* context) :
     ScriptComponent(context)
 {
-    
+
 }
 
 CSComponent::~CSComponent()
@@ -68,7 +68,7 @@ void CSComponent::ApplyAttributes()
 void CSComponent::ApplyFieldValues()
 {
     if (!fieldValues_.Size())
-        return;   
+        return;
 }
 
 void CSComponent::SetComponentClassName(const String& name)

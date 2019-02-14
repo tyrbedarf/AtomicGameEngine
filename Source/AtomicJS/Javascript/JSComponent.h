@@ -27,7 +27,7 @@
 
 #include "JSComponentFile.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class JSVM;
@@ -74,7 +74,7 @@ public:
 
     void SetDestroyed() { destroyed_ = true; }
 
-    bool IsInstanceInitialized();    
+    bool IsInstanceInitialized();
     void InitInstance(bool hasArgs = false, int argIdx = 0);
 
     /// Get script attribute

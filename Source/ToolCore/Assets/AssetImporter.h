@@ -26,7 +26,7 @@
 #include <Atomic/Resource/JSONFile.h>
 #include <Atomic/Scene/Node.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {

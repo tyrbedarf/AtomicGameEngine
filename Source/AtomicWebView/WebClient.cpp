@@ -59,7 +59,7 @@
 
 #include <ThirdParty/SDL/include/SDL_syswm.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 #ifdef ATOMIC_PLATFORM_OSX
@@ -357,7 +357,7 @@ public:
         browserSettings.javascript_dom_paste = STATE_ENABLED;
 
         windowInfo.width = width;
-        windowInfo.height = height;        
+        windowInfo.height = height;
         windowInfo.transparent_painting_enabled = 1;
 
         Graphics* graphics = webClient_->GetSubsystem<Graphics>();
@@ -549,7 +549,7 @@ WebClient::~WebClient()
     }
 
     d_ = nullptr;
-    renderHandler_ = 0;    
+    renderHandler_ = 0;
 }
 
 void WebClient::SendMouseClickEvent(int x, int y, unsigned button, bool mouseUp, unsigned modifier, int clickCount) const

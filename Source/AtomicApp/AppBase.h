@@ -24,7 +24,7 @@
 
 #include <Atomic/Engine/Application.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
     class JSVM;
@@ -38,11 +38,11 @@ namespace Atomic
         AppBase(Context* context);
         virtual ~AppBase();
 
-        /// Setup before engine initialization. 
+        /// Setup before engine initialization.
         virtual void Setup();
         /// Setup after engine initialization. L
         virtual void Start();
-        /// Cleanup after the main loop. 
+        /// Cleanup after the main loop.
         virtual void Stop();
 
         /// Run a single frame, return's true if engine is exiting

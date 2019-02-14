@@ -27,7 +27,7 @@
 #include <Atomic/Resource/XMLFile.h>
 #include <Atomic/Resource/JSONFile.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -159,7 +159,7 @@ namespace ToolCore
         String codesignEntitlements_;
         String infoPList_;
 
-        
+
     };
 
     class NETSolution : public NETProjectBase

@@ -24,7 +24,7 @@
 
 #include "../Graphics/Drawable.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Model;

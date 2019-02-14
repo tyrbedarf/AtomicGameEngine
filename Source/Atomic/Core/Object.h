@@ -33,7 +33,7 @@
 #include <functional>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Context;
@@ -53,7 +53,7 @@ class Web;
 class Database;
 class Input;
 class Audio;
-class UI;
+class tbUI;
 class SystemUI;
 class Graphics;
 class Renderer;
@@ -98,16 +98,16 @@ private:
     public: \
         typedef typeName ClassName; \
         typedef baseTypeName BaseClassName; \
-        virtual Atomic::StringHash GetType() const { return GetTypeInfoStatic()->GetType(); } \
-        virtual const Atomic::String& GetTypeName() const { return GetTypeInfoStatic()->GetTypeName(); } \
-        virtual const Atomic::TypeInfo* GetTypeInfo() const { return GetTypeInfoStatic(); } \
-        static Atomic::StringHash GetTypeStatic() { return GetTypeInfoStatic()->GetType(); } \
-        static const Atomic::String& GetTypeNameStatic() { return GetTypeInfoStatic()->GetTypeName(); } \
-        static const Atomic::TypeInfo* GetTypeInfoStatic() { static const Atomic::TypeInfo typeInfoStatic(#typeName, BaseClassName::GetTypeInfoStatic()); return &typeInfoStatic; } \
-        virtual Atomic::StringHash GetBaseType() const { return GetBaseTypeStatic(); } \
-        virtual Atomic::ClassID GetClassID() const { return GetClassIDStatic(); } \
-        static Atomic::ClassID GetClassIDStatic() { static const int typeID = 0; return (Atomic::ClassID) &typeID; } \
-        static Atomic::StringHash GetBaseTypeStatic() { static const Atomic::StringHash baseTypeStatic(#baseTypeName); return baseTypeStatic; }
+        virtual Urho3D::StringHash GetType() const { return GetTypeInfoStatic()->GetType(); } \
+        virtual const Urho3D::String& GetTypeName() const { return GetTypeInfoStatic()->GetTypeName(); } \
+        virtual const Urho3D::TypeInfo* GetTypeInfo() const { return GetTypeInfoStatic(); } \
+        static Urho3D::StringHash GetTypeStatic() { return GetTypeInfoStatic()->GetType(); } \
+        static const Urho3D::String& GetTypeNameStatic() { return GetTypeInfoStatic()->GetTypeName(); } \
+        static const Urho3D::TypeInfo* GetTypeInfoStatic() { static const Urho3D::TypeInfo typeInfoStatic(#typeName, BaseClassName::GetTypeInfoStatic()); return &typeInfoStatic; } \
+        virtual Urho3D::StringHash GetBaseType() const { return GetBaseTypeStatic(); } \
+        virtual Urho3D::ClassID GetClassID() const { return GetClassIDStatic(); } \
+        static Urho3D::ClassID GetClassIDStatic() { static const int typeID = 0; return (Urho3D::ClassID) &typeID; } \
+        static Urho3D::StringHash GetBaseTypeStatic() { static const Urho3D::StringHash baseTypeStatic(#baseTypeName); return baseTypeStatic; }
 
 
 /// Base class for objects with type identification, subsystem access and event sending/receiving capability.
@@ -214,7 +214,7 @@ public:
     void UnsubscribeFromEventReceiver(Object* receiver);
 
     static ClassID GetClassIDStatic() { static const int typeID = 0; return (ClassID) &typeID; }
-    static const Atomic::String& GetTypeNameStatic() { static const Atomic::String typeNameStatic("Object"); return typeNameStatic; }
+    static const Urho3D::String& GetTypeNameStatic() { static const Urho3D::String typeNameStatic("Object"); return typeNameStatic; }
     /// Send event with parameters to all subscribers.
     void SendEvent(StringHash eventType, const VariantMap& eventData);
     /// Block object from sending and receiving events.
@@ -436,13 +436,13 @@ struct ATOMIC_API EventNameRegistrar
 };
 
 /// Describe an event's hash ID and begin a namespace in which to define its parameters.
-#define ATOMIC_EVENT(eventID, eventName) static const Atomic::StringHash eventID(Atomic::EventNameRegistrar::RegisterEventName(#eventName)); namespace eventName
+#define ATOMIC_EVENT(eventID, eventName) static const Urho3D::StringHash eventID(Urho3D::EventNameRegistrar::RegisterEventName(#eventName)); namespace eventName
 /// Describe an event's parameter hash ID. Should be used inside an event namespace.
-#define ATOMIC_PARAM(paramID, paramName) static const Atomic::StringHash paramID(#paramName)
+#define ATOMIC_PARAM(paramID, paramName) static const Urho3D::StringHash paramID(#paramName)
 /// Convenience macro to construct an EventHandler that points to a receiver object and its member function.
-#define ATOMIC_HANDLER(className, function) (new Atomic::EventHandlerImpl<className>(this, &className::function))
+#define ATOMIC_HANDLER(className, function) (new Urho3D::EventHandlerImpl<className>(this, &className::function))
 /// Convenience macro to construct an EventHandler that points to a receiver object and its member function, and also defines a userdata pointer.
-#define ATOMIC_HANDLER_USERDATA(className, function, userData) (new Atomic::EventHandlerImpl<className>(this, &className::function, userData))
+#define ATOMIC_HANDLER_USERDATA(className, function, userData) (new Urho3D::EventHandlerImpl<className>(this, &className::function, userData))
 
 
 // ATOMIC BEGIN
@@ -461,7 +461,7 @@ template <> Web* Object::GetSubsystem<Web>() const;
 template <> Database* Object::GetSubsystem<Database>() const;
 template <> Input* Object::GetSubsystem<Input>() const;
 template <> Audio* Object::GetSubsystem<Audio>() const;
-template <> UI* Object::GetSubsystem<UI>() const;
+template <> tbUI* Object::GetSubsystem<tbUI>() const;
 template <> SystemUI* Object::GetSubsystem<SystemUI>() const;
 template <> Graphics* Object::GetSubsystem<Graphics>() const;
 template <> Renderer* Object::GetSubsystem<Renderer>() const;

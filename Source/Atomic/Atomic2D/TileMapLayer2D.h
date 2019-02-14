@@ -29,7 +29,7 @@
 #undef GetObject
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 class DebugRenderer;

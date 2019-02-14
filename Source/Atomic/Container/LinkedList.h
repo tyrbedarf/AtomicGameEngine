@@ -28,7 +28,7 @@
 #include <initializer_list>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Singly-linked list node base class.

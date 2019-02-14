@@ -22,7 +22,7 @@
 
 #pragma once
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Register Atomic2D library objects.

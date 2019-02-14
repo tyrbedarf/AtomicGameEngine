@@ -38,8 +38,8 @@
 
 // ATOMIC BEGIN
 // #include "../UI/Text.h"
-#include "../UI/UI.h"
-#include "../UI/UIWidget.h"
+#include "../UI/tbUI.h"
+#include "../UI/tbUIWidget.h"
 #include <SDL/include/SDL.h>
 
 // ATOMIC END
@@ -57,7 +57,7 @@ extern "C" int SDL_AddTouch(SDL_TouchID touchID, const char* name);
 #define REQUIRE_CLICK_TO_FOCUS
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 const int SCREEN_JOYSTICK_START_ID = 0x40000000;
@@ -77,7 +77,7 @@ int ConvertSDLKeyCode(int keySym, int scanCode)
         return SDL_tolower(keySym);
 }
 // ATOMIC BEGIN
-UIWidget* TouchState::GetTouchedElement()
+tbUIWidget* TouchState::GetTouchedElement()
 {
     return touchedWidget_.Get();
 }
@@ -313,7 +313,7 @@ void JoystickState::Reset()
 {
 // ATOMIC BEGIN
     StopRumble();
-// ATOMIC END    
+// ATOMIC END
     for (unsigned i = 0; i < buttons_.Size(); ++i)
     {
         buttons_[i] = false;
@@ -348,7 +348,7 @@ bool JoystickState::StartRumble()
         {
             ATOMIC_LOGERRORF( "The device `%s` does not support haptic operations", hname ? hname : "Unknown");
             SDL_HapticClose(haptic_);
-            haptic_ = NULL;   
+            haptic_ = NULL;
             canRumble_ = false;
             return false;
         }
@@ -365,13 +365,13 @@ bool JoystickState::StartRumble()
     return true;
 }
 
-/// clean up rumble 
+/// clean up rumble
 void JoystickState::StopRumble()
 {
     if ( haptic_ )
     {
         SDL_HapticRumbleStop(haptic_);
-        SDL_HapticClose(haptic_);        
+        SDL_HapticClose(haptic_);
         haptic_ = NULL;
     }
     canRumble_ = true;
@@ -381,9 +381,9 @@ void JoystickState::StopRumble()
 bool JoystickState::IsRumble()
 {
     if ( canRumble_ )
-        if ( !StartRumble() ) 
+        if ( !StartRumble() )
             return false;
-    
+
     if ( haptic_ )
     {
         return SDL_HapticRumbleSupported(haptic_);
@@ -395,16 +395,16 @@ bool JoystickState::IsRumble()
 void JoystickState::DoRumble( float strength, unsigned int len)
 {
     StartRumble();  // lazy initialization
- 
+
     if ( haptic_ && canRumble_ )
     {
-        float stren1 = Clamp (strength, 0.0f, 1.0f ); 
+        float stren1 = Clamp (strength, 0.0f, 1.0f );
         if (SDL_HapticRumblePlay(haptic_, stren1, len ) != 0 )
             ATOMIC_LOGINFOF( "Failed to play rumble: %s\n", SDL_GetError() );
     }
  }
-// ATOMIC END    
-    
+// ATOMIC END
+
 
 Input::Input(Context* context) :
     Object(context),
@@ -1244,7 +1244,7 @@ bool Input::RemoveScreenJoystick(SDL_JoystickID id)
 
     joysticks_.Erase(id);
 */
-    // ATOMIC END    
+    // ATOMIC END
     return true;
 }
 
@@ -1367,7 +1367,7 @@ SDL_JoystickID Input::OpenJoystick(unsigned index)
     joysticks_[joystickID] = nstate;
     JoystickState& state = *nstate;
 // ATOMIC END
-    
+
     state.joystick_ = joystick;
     state.joystickID_ = joystickID;
     state.name_ = SDL_JoystickName(joystick);
@@ -1622,7 +1622,7 @@ void Input::Initialize()
 // ATOMIC BEGIN
     //  get user gamecontroller configs for SDL
     FileSystem* fs = GetSubsystem<FileSystem>();
-    const String configName = fs->GetUserDocumentsDir() + "/gamecontrollerdb.txt"; 
+    const String configName = fs->GetUserDocumentsDir() + "/gamecontrollerdb.txt";
     SDL_GameControllerAddMappingsFromFile(configName.CString());
 // ATOMIC END
 
@@ -2231,7 +2231,7 @@ void Input::HandleSDLEvent(void* sdlEvent)
             state.delta_ = state.position_ - state.lastPosition_;
             state.pressure_ = evt.tfinger.pressure;
             // ATOMIC BEGIN
-            state.touchedWidget_ = GetSubsystem<UI>()->GetWidgetAt(state.position_.x_, state.position_.y_, true);
+            state.touchedWidget_ = GetSubsystem<tbUI>()->GetWidgetAt(state.position_.x_, state.position_.y_, true);
             // ATOMIC END
 
             using namespace TouchMove;
@@ -2770,7 +2770,7 @@ void Input::HandleScreenJoystickTouch(StringHash eventType, VariantMap& eventDat
 }
 
 // ATOMIC BEGIN
-void Input::BindButton(UIButton* touchButton, int button)
+void Input::BindButton(tbUIButton* touchButton, int button)
 {
     touchButton->SetEmulationButton(button);
 }

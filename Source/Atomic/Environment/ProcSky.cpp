@@ -42,7 +42,7 @@
 #include <stdint.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* GEOMETRY_CATEGORY;
@@ -255,7 +255,7 @@ float ProcSky::SetDayTime(float time)
 
     float dawnGlow = sinf( time * M_PI * 1.0f );
     int glowX = dawnGlow > 0.0f ? 0 : 7;
-    dawnGlow = Atomic::Max( 0.0f, fabs( dawnGlow * dawnGlow * dawnGlow ) * 1.1f - 0.1f );
+    dawnGlow = Urho3D::Max( 0.0f, fabs( dawnGlow * dawnGlow * dawnGlow ) * 1.1f - 0.1f );
 
     Color top = Color(0,0,0,1).Lerp(topColor_, daylight);
     Color horiz = Color(.1,.1,.1,1).Lerp(horizColor_, daylight);
@@ -279,11 +279,11 @@ float ProcSky::SetDayTime(float time)
     {
         for( uint32_t x = 0; x < 8; x++ )
         {
-            float xGlow = Atomic::Max( 0, -abs((int)x-glowX) + 5 ) / 5.0f;
+            float xGlow = Urho3D::Max( 0, -abs((int)x-glowX) + 5 ) / 5.0f;
             float hGlow = z/31.0f;
             float glow = (dawnGlow * hGlow * hGlow * sqrtf( xGlow ));
 
-            Color baseColor = top.Lerp(horiz, Atomic::Min( 1.0f, float (z*11) / 255.0f));
+            Color baseColor = top.Lerp(horiz, Urho3D::Min( 1.0f, float (z*11) / 255.0f));
             baseColor = baseColor.Lerp(lerpColor_, glow );
 
             // pic a color from the mid - horizon (this is cheesy!)
@@ -328,7 +328,7 @@ float ProcSky::SetDayTime(float time)
 
 
 
-    return Atomic::Max( 4.0f/15.0f, daylight );
+    return Urho3D::Max( 4.0f/15.0f, daylight );
 }
 
 void ProcSky::UpdateIndexBuffer()

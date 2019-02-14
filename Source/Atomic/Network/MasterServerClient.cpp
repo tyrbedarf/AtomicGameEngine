@@ -15,7 +15,7 @@
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/prettywriter.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 MasterServerClient::MasterServerClient(Context *context) :
@@ -115,7 +115,7 @@ void MasterServerClient::RegisterServerWithMaster(const String &name)
     char str[256];
     sprintf(str, "%d.%d.%d.%d", (unsigned int)ip[0], (unsigned int)ip[1], (unsigned int)ip[2], (unsigned int)ip[3]);
 
-    Atomic::Network* network = GetSubsystem<Network>();
+    Urho3D::Network* network = GetSubsystem<Network>();
     unsigned int localPort = network->GetServerPort();
 
     String msg = String("{") +
@@ -190,7 +190,7 @@ void MasterServerClient::CheckForNatPunchThroughRequests(float dt)
     if (clientConnectToGameServerState_ == GAME_CONNECTING_EXTERNAL_IP &&
         clientToServerSocket_ != NULL && timeTillNextClientConnectAttempt_ <= 0)
     {
-        Atomic::Network* network = GetSubsystem<Network>();
+        Urho3D::Network* network = GetSubsystem<Network>();
 
         if (!network->GetServerConnection() || !network->GetServerConnection()->IsConnected())
         {
@@ -293,7 +293,7 @@ void MasterServerClient::HandleBeginFrame(StringHash eventType, VariantMap& even
 
 void MasterServerClient::SetConnectToMasterState(ConnectToMasterState state)
 {
-    Atomic::Network* network = GetSubsystem<Network>();
+    Urho3D::Network* network = GetSubsystem<Network>();
 
     kNet::Network* kNetNetwork = network->GetKnetNetwork();
 
@@ -315,7 +315,7 @@ void MasterServerClient::SetConnectToMasterState(ConnectToMasterState state)
     else if (connectToMasterState_ == MASTER_CONNECTING_TCP &&
              state == MASTER_CONNECTING_UDP)
     {
-        Atomic::Network* network = GetSubsystem<Network>();
+        Urho3D::Network* network = GetSubsystem<Network>();
         kNet::Network* kNetNetwork = network->GetKnetNetwork();
 
         kNet::NetworkServer* server = kNetNetwork->GetServer().ptr();
@@ -384,7 +384,7 @@ void MasterServerClient::SetConnectToGameServerState(ClientConnectToGameServerSt
                                                  masterUDPConnection_->LocalAddress(), serverEndPoint, "",
                                                  kNet::SocketOverUDP, kNet::ClientConnectionLessSocket, 1400);
 
-        Atomic::Network* network = GetSubsystem<Network>();
+        Urho3D::Network* network = GetSubsystem<Network>();
         network->ConnectWithExistingSocket(clientToServerSocket_, remoteGameServerInfo_.clientScene);
 
         connectToGameServerSecondsRemaining_ = 5.0f;
@@ -420,7 +420,7 @@ void MasterServerClient::SetConnectToGameServerState(ClientConnectToGameServerSt
                                                  masterUDPConnection_->LocalAddress(), serverEndPoint, "",
                                                  kNet::SocketOverUDP, kNet::ClientConnectionLessSocket, 1400);
 
-        Atomic::Network* network = GetSubsystem<Network>();
+        Urho3D::Network* network = GetSubsystem<Network>();
         network->ConnectWithExistingSocket(clientToServerSocket_, remoteGameServerInfo_.clientScene);
 
         connectToGameServerSecondsRemaining_ = 5.0f;
@@ -448,7 +448,7 @@ void MasterServerClient::ConnectToGameServerUpdate(float dt)
        return;
     }
 
-    Atomic::Network* network = GetSubsystem<Network>();
+    Urho3D::Network* network = GetSubsystem<Network>();
 
     // If we are connected then set the final state
     if (network->GetServerConnection() && network->GetServerConnection()->IsConnected())

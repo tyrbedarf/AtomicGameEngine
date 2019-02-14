@@ -38,7 +38,7 @@
 #pragma warning(disable:6293)
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const char* commandTypeNames[] =
@@ -500,7 +500,7 @@ const Variant& RenderPath::GetShaderParameter(const String& name) const
 bool RenderPath::GetCommand(unsigned index, ScriptRenderPathCommand* dst)
 {
     if (!dst || index >= commands_.Size())
-        return false;    
+        return false;
 
     dst->renderPathCommand_ = commands_[index];
 

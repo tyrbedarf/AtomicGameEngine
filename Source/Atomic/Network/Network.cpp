@@ -45,7 +45,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const int DEFAULT_UPDATE_FPS = 30;

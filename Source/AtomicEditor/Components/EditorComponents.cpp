@@ -28,7 +28,7 @@
 namespace AtomicEditor
 {
 
-void RegisterEditorComponentLibrary(Atomic::Context* context)
+void RegisterEditorComponentLibrary(Urho3D::Context* context)
 {
     EditorComponent::RegisterObject(context);
     CubemapGenerator::RegisterObject(context);

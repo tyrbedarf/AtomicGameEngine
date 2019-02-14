@@ -21,7 +21,7 @@
 //
 
 #include <Atomic/Container/ArrayPtr.h>
-#include <Atomic/UI/UI.h>
+#include <Atomic/UI/tbUI.h>
 #include <Atomic/IO/Log.h>
 #include <Atomic/IO/File.h>
 #include <Atomic/IO/FileSystem.h>
@@ -51,7 +51,7 @@ using namespace ToolCore;
 namespace AtomicEditor
 {
 
-JSResourceEditor ::JSResourceEditor(Context* context, const String &fullpath, UITabContainer *container, const String &editorUrl) :
+JSResourceEditor ::JSResourceEditor(Context* context, const String &fullpath, tbUITabContainer *container, const String &editorUrl) :
     ResourceEditor(context, fullpath, container)
 {
 
@@ -208,7 +208,7 @@ bool JSResourceEditor::OnEvent(const TBWidgetEvent &ev)
             webClient_->SendKeyEvent( StringHash("KeyDown"), map);
         } else {
             String shortcut;
-            UI* ui = GetSubsystem<UI>();
+            tbUI* ui = GetSubsystem<tbUI>();
             ui->GetTBIDString(ev.ref_id, shortcut);
 
             webClient_->ExecuteJavaScript(ToString("HOST_invokeShortcut(\"%s\");", shortcut.CString()));

@@ -36,9 +36,9 @@
 
 #include "SceneView3D.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
-namespace Atomic
+namespace Urho3D
 {
     class Node;
 }
@@ -88,7 +88,7 @@ public:
         // Update selected status only when not dragging
         if (!drag)
         {
-            selected_ = Atomic::Abs(d_) < axisMaxD * scale && t_ >= -axisMaxD * scale && t_ <= axisMaxT * scale;
+            selected_ = Urho3D::Abs(d_) < axisMaxD * scale && t_ >= -axisMaxD * scale && t_ <= axisMaxT * scale;
             lastT_ = t_;
             lastD_ = d_;
         }

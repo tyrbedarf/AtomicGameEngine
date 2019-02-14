@@ -27,7 +27,7 @@
 #include "WebClient.h"
 #include "WebRenderHandler.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 WebRenderHandler::WebRenderHandler(Context* context) : Object (context)

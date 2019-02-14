@@ -76,7 +76,7 @@ extern "C"
 }
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const unsigned glCmpFunc[] =
@@ -2116,7 +2116,7 @@ PODVector<int> Graphics::GetMultiSampleLevels() const
     for (int i = 2; i <= maxSamples && i <= 16; i *= 2)
         ret.Push(i);
 #endif
-    
+
     return ret;
 }
 

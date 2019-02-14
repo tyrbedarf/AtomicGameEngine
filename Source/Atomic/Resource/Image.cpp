@@ -110,7 +110,7 @@ static const unsigned DDPF_NORMAL = 0x80000000;  // nvidia specific
 // ATOMIC END
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// DirectDraw color key definition.

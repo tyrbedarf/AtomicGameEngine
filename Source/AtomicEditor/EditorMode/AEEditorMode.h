@@ -26,12 +26,12 @@
 
 #include "AEEditorEvents.h"
 
-namespace Atomic
+namespace Urho3D
 {
     class IPCBroker;
 }
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicEditor
 {

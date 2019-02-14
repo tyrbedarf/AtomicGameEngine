@@ -26,7 +26,7 @@
 #include "../Atomic2D/Drawable2D.h"
 #include "../Atomic2D/PhysicsWorld2D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Light2DGroup;

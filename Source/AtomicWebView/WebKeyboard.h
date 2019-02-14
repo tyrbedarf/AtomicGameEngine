@@ -24,7 +24,7 @@
 
 #include <Atomic/Core/Variant.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Input;

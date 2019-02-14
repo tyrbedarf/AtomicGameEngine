@@ -27,7 +27,7 @@
 #include "../Math/Frustum.h"
 #include "../Graphics/Texture.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Camera;

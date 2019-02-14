@@ -28,7 +28,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const String base64_chars =
@@ -792,7 +792,7 @@ static inline bool IsBase64(char c) {
     return (isalnum(c) || (c == '+') || (c == '/'));
 }
 
-PODVector<unsigned char> DecodeBase64(String encodedString) 
+PODVector<unsigned char> DecodeBase64(String encodedString)
 {
     int inLen = encodedString.Length();
     int i = 0;
@@ -801,9 +801,9 @@ PODVector<unsigned char> DecodeBase64(String encodedString)
     unsigned char charArray4[4], charArray3[3];
     PODVector<unsigned char> ret;
 
-    while (inLen-- && (encodedString[in_] != '=') && IsBase64(encodedString[in_])) 
+    while (inLen-- && (encodedString[in_] != '=') && IsBase64(encodedString[in_]))
     {
-        charArray4[i++] = encodedString[in_]; 
+        charArray4[i++] = encodedString[in_];
         in_++;
 
         if (i == 4)
@@ -834,7 +834,7 @@ PODVector<unsigned char> DecodeBase64(String encodedString)
         charArray3[1] = ((charArray4[1] & 0xf) << 4) + ((charArray4[2] & 0x3c) >> 2);
         charArray3[2] = ((charArray4[2] & 0x3) << 6) + charArray4[3];
 
-        for (j = 0; (j < i - 1); j++) 
+        for (j = 0; (j < i - 1); j++)
             ret.Push(charArray3[j]);
     }
 

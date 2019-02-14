@@ -27,7 +27,7 @@
 
 #include <cassert>
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Shared array pointer template class. Uses non-intrusive reference counting.

@@ -38,7 +38,7 @@
 #include "../DebugNew.h"
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 // ATOMIC BEGIN
@@ -475,7 +475,7 @@ bool TmxFile2D::BeginLoad(Deserializer& source)
                 }
                 // ATOMIC END
                 tsxXMLFiles_[source] = tsxXMLFile;
-                
+
                 String textureFilePath =
                     GetParentPath(GetName()) + tsxXMLFile->GetRoot("tileset").GetChild("image").GetAttribute("source");
                 GetSubsystem<ResourceCache>()->BackgroundLoadResource<Texture2D>(textureFilePath, true, this);
@@ -806,7 +806,7 @@ bool TmxFile2D::LoadTileSet(const XMLElement& element)
             propertySet->Load(tileElem.GetChild("properties"));
             gidToPropertySetMapping_[gid] = propertySet;
         }
-        
+
         // ATOMIC BEGIN
 
         // collision information
@@ -840,7 +840,7 @@ bool TmxFile2D::LoadTileSet(const XMLElement& element)
         }
 
         // ATOMIC END
-        
+
     }
 
     if (!isSingleTileSet)

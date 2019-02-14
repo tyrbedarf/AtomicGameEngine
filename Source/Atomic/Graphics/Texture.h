@@ -27,7 +27,7 @@
 #include "../Math/Color.h"
 #include "../Resource/Resource.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const int MAX_TEXTURE_QUALITY_LEVELS = 3;

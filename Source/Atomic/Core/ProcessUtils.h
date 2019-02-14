@@ -26,7 +26,7 @@
 
 #include <cstdlib>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Mutex;
@@ -70,13 +70,13 @@ ATOMIC_API void SetMiniDumpDir(const String& pathName);
 /// Return minidump write location.
 ATOMIC_API String GetMiniDumpDir();
 /// Return the total amount of usable memory in bytes.
-ATOMIC_API unsigned long long GetTotalMemory(); 
+ATOMIC_API unsigned long long GetTotalMemory();
 /// Return the name of the currently logged in user, or (?) if not identified.
-ATOMIC_API String GetLoginName(); 
-/// Return the name of the running machine. 
+ATOMIC_API String GetLoginName();
+/// Return the name of the running machine.
 ATOMIC_API String GetHostName();
 /// Return the version of the currently running OS, or (?) if not identified.
-ATOMIC_API String GetOSVersion(); 
+ATOMIC_API String GetOSVersion();
 
 // ATOMIC BEGIN
 

@@ -38,7 +38,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 #ifndef MINI_URHO
@@ -377,7 +377,7 @@ const String& Context::GetTypeName(StringHash objectType) const
     // Search factories to find the hash-to-name mapping
     HashMap<StringHash, SharedPtr<ObjectFactory> >::ConstIterator i = factories_.Find(objectType);
     return i != factories_.End() ? i->second_->GetFactoryTypeName() : String::EMPTY;
-    
+
     // ATOMIC END
 }
 

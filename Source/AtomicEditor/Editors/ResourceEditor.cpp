@@ -60,7 +60,7 @@ public:
             TBMessageWindowSettings settings(TB_MSG_NONE, TBID(uint32(0)));
             settings.dimmer = true;
             settings.styling = true;
-            String windowString = Atomic::ToString("%s has unsaved modifications.\nDo you wish to discard them and close?", GetFileNameAndExtension(editor_->GetFullPath()).CString());
+            String windowString = Urho3D::ToString("%s has unsaved modifications.\nDo you wish to discard them and close?", GetFileNameAndExtension(editor_->GetFullPath()).CString());
             msg_win->Show("Unsaved Modifications",  windowString.CString(), &settings, 640, 360);
             msg_win->AddButtonLeft("dont_save", false);
             msg_win->AddButton("TBMessageWindow.cancel", false);
@@ -120,7 +120,7 @@ public:
 
 };
 
-ResourceEditor::ResourceEditor(Context* context, const String& fullpath, UITabContainer *container):
+ResourceEditor::ResourceEditor(Context* context, const String& fullpath, tbUITabContainer *container):
     Object(context), fullpath_(fullpath), container_(container),
     editorTabLayout_(nullptr), rootContentWidget_(nullptr), button_(nullptr), modified_(false)
 {
@@ -130,7 +130,7 @@ ResourceEditor::ResourceEditor(Context* context, const String& fullpath, UITabCo
     editorTabLayout_ = new EditorTabLayout();
     editorTabLayout_->SetID(TBIDC("tab"));
 
-    button_ = new UIButton(context_);
+    button_ = new tbUIButton(context_);
     button_->SetText(filename.CString());
     button_->SetSqueezable(true);
     button_->SetSkinBg("TBButton.flat");
@@ -150,7 +150,7 @@ ResourceEditor::ResourceEditor(Context* context, const String& fullpath, UITabCo
 
     ((TBTabContainer*)container_->GetInternalWidget())->GetTabLayout()->AddChild(editorTabLayout_);
 
-    rootContentWidget_ = new UIWidget(context_);
+    rootContentWidget_ = new tbUIWidget(context_);
     rootContentWidget_->SetGravity(UI_GRAVITY_ALL);
     container_->GetContentRoot()->AddChild(rootContentWidget_);
 
@@ -233,7 +233,7 @@ void ResourceEditor::SetModified(bool modified)
     }
 }
 
-    
+
 void ResourceEditor::Delete() {}
 
 

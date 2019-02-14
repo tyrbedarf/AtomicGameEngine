@@ -28,7 +28,7 @@
 #include "../Math/Rect.h"
 #include "../Math/Vector2.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Camera;

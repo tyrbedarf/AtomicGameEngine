@@ -24,7 +24,7 @@
 
 #include "../AppBase.h"
 
-namespace Atomic
+namespace Urho3D
 {
     /// Player launch mode
     enum PlayerLaunchMode
@@ -46,11 +46,11 @@ namespace Atomic
         PlayerApp(Context* context);
         virtual ~PlayerApp();
 
-        /// Setup before engine initialization. 
+        /// Setup before engine initialization.
         virtual void Setup();
         /// Setup after engine initialization. L
         virtual void Start();
-        /// Cleanup after the main loop. 
+        /// Cleanup after the main loop.
         virtual void Stop();
 
         virtual void ProcessArguments();

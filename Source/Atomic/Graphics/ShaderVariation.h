@@ -28,7 +28,7 @@
 #include "../Graphics/GPUObject.h"
 #include "../Graphics/GraphicsDefs.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ConstantBuffer;

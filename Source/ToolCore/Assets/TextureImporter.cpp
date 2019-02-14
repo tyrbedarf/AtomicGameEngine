@@ -76,7 +76,7 @@ bool TextureImporter::Import()
     if (compressTextures_ &&
         !image->IsCompressed())
     {
-        fileSystem->CreateDirs(cachePath, "DDS/" + Atomic::GetPath(asset_->GetRelativePath()));
+        fileSystem->CreateDirs(cachePath, "DDS/" + Urho3D::GetPath(asset_->GetRelativePath()));
 
         float resizefactor;
         float width = image->GetWidth();

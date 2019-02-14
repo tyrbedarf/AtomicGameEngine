@@ -43,7 +43,7 @@
 
 // IMPORTANT: methods here are prefaced with csi_ instead of csb_, the later being automatically generated bindings
 
-namespace Atomic
+namespace Urho3D
 {
 
 #ifdef ATOMIC_PLATFORM_IOS
@@ -148,8 +148,8 @@ namespace Atomic
         }
 
 
-        ATOMIC_EXPORT_API ClassID csi_Atomic_NETCore_Initialize(NETCoreEventDispatchFunction eventDispatch, 
-            NETCoreUpdateDispatchFunction updateDispatch, 
+        ATOMIC_EXPORT_API ClassID csi_Atomic_NETCore_Initialize(NETCoreEventDispatchFunction eventDispatch,
+            NETCoreUpdateDispatchFunction updateDispatch,
             NETCoreRefCountedDeletedFunction refCountedDeleted,
             NETCoreThrowManagedExceptionFunction throwManagedException)
         {
@@ -380,11 +380,11 @@ namespace Atomic
         {
             delete resultVector;
         }
-    
+
 
         // Any result vector must be freed with csi_Atomic_Octree_Raycast_FreeResult
         ATOMIC_EXPORT_API RayQueryResult* csi_Atomic_Octree_Raycast(Octree *octree, const Ray& ray, const RayQueryLevel& level, float maxDistance, unsigned int flags, unsigned int viewMask,
-            bool single, void** resultVector, int *count) 
+            bool single, void** resultVector, int *count)
         {
             PODVector<RayQueryResult>* results = new PODVector<RayQueryResult>();
 
@@ -392,7 +392,7 @@ namespace Atomic
             *resultVector = 0;
 
             RayOctreeQuery query(*results, ray, level, maxDistance, flags, viewMask);
-            
+
             if (single)
                 octree->RaycastSingle(query);
             else
@@ -409,7 +409,7 @@ namespace Atomic
             return &(*results)[0];
         }
 
-        
+
         // NavigationMesh
 
         ATOMIC_EXPORT_API void csi_Atomic_NavigationMesh_FindPath_FreeResult(PODVector<Vector3>* resultVector)
@@ -509,7 +509,7 @@ namespace Atomic
             if (index >= skeleton->GetNumBones())
                 return 0;
 
-            return skeleton->GetBone(index);            
+            return skeleton->GetBone(index);
         }
 
         ATOMIC_EXPORT_API Bone* csi_Atomic_Skeleton_GetBone_ByName(Skeleton *skeleton, const char* name)
@@ -549,7 +549,7 @@ namespace Atomic
         }
 
         // Controls
-        
+
         ATOMIC_EXPORT_API unsigned csi_Atomic_Controls_GetButtons(Controls *controls)
         {
             return controls->buttons_;

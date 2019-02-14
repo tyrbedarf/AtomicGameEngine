@@ -58,7 +58,7 @@
 // ATOMIC END
 #include <StanHull/hull.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const float DEFAULT_COLLISION_MARGIN = 0.04f;

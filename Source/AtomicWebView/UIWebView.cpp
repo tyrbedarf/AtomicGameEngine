@@ -24,8 +24,8 @@
 #include <Atomic/Input/InputEvents.h>
 #include <Atomic/Input/Input.h>
 
-#include <Atomic/UI/UIView.h>
-#include <Atomic/UI/UIRenderer.h>
+#include <Atomic/UI/tbUIView.h>
+#include <Atomic/UI/tbUIRenderer.h>
 
 #include "WebClient.h"
 #include "WebTexture2D.h"
@@ -35,7 +35,7 @@
 
 using namespace tb;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebViewWidget : public tb::TBWidget
@@ -102,7 +102,7 @@ public:
 
         float* data = &vertexData_[0];
 
-        UI* ui = webView_->GetSubsystem<UI>();
+        tbUI* ui = webView_->GetSubsystem<tbUI>();
 
         float color;
         float fopacity = GetOpacity() * ui->GetRenderer()->GetOpacity();
@@ -149,7 +149,7 @@ public:
         data[30] = x;
         data[31] = y + h;
 
-        UIView *view = webView_->GetView();
+        tbUIView *view = webView_->GetView();
 
         if (view)
         {
@@ -169,7 +169,7 @@ private:
 
 };
 
-UIWebView::UIWebView(Context* context, const String &initialURL) : UIWidget(context, false)
+UIWebView::UIWebView(Context* context, const String &initialURL) : tbUIWidget(context, false)
 {
     widget_ = new WebViewWidget();
     widget_->SetDelegate(this);
@@ -177,7 +177,7 @@ UIWebView::UIWebView(Context* context, const String &initialURL) : UIWidget(cont
     widget_->SetIsFocusable(true);
     ((WebViewWidget*)widget_)->webView_ = this;
 
-    UI* ui = GetSubsystem<UI>();
+    tbUI* ui = GetSubsystem<tbUI>();
     ui->WrapWidget(this, widget_);
 
     webClient_ = new WebClient(context);
@@ -288,7 +288,7 @@ bool UIWebView::OnEvent(const TBWidgetEvent &ev)
         return true;
     }
 
-    return UIWidget::OnEvent(ev);
+    return tbUIWidget::OnEvent(ev);
 }
 
 void UIWebView::OnFocusChanged(bool focused)

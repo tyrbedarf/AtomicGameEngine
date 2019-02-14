@@ -60,7 +60,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 const char* ATOMIC2D_CATEGORY = "Atomic2D";

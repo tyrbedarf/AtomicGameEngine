@@ -26,7 +26,7 @@
 #include "../Scene/Serializable.h"
 #include "../Scene/ValueAnimationInfo.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Animatable;

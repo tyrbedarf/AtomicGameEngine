@@ -22,7 +22,7 @@
 
 #pragma once
 
-namespace Atomic
+namespace Urho3D
 {
 
 #if defined(_MSC_VER) && defined(ATOMIC_MINIDUMPS)

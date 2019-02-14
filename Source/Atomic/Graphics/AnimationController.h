@@ -26,7 +26,7 @@
 #include "../Scene/Component.h"
 #include "../Graphics/AnimationState.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class AnimatedModel;

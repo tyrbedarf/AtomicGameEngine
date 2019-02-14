@@ -24,7 +24,7 @@
 
 #include "../IO/MemoryBuffer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 MemoryBuffer::MemoryBuffer(void* data, unsigned size) :

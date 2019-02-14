@@ -29,7 +29,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 SmoothedTransform::SmoothedTransform(Context* context) :

@@ -34,7 +34,7 @@ class xpath_node;
 
 }
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// XML document resource.

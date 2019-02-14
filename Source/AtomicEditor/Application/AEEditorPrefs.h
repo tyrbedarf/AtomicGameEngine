@@ -24,7 +24,7 @@
 
 #include <Atomic/Resource/JSONFile.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicEditor
 {
@@ -37,7 +37,7 @@ namespace AtomicEditor
         /// Construct.
         AEEditorPrefs(Context* context);
         virtual ~AEEditorPrefs();
-        
+
         bool ReadPreferences(VariantMap& engineParameters);
         void ValidateWindow();
 

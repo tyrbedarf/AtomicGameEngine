@@ -23,10 +23,10 @@
 #include <AtomicJS/Javascript/JSVM.h>
 #include <AtomicPlayer/Player.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 using namespace AtomicPlayer;
 
-namespace Atomic
+namespace Urho3D
 {
 
     extern void jsb_package_atomicplayer_init(JSVM* vm);

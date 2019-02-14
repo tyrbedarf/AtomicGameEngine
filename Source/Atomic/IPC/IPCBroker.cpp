@@ -32,7 +32,7 @@
 #include "IPCBroker.h"
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 unsigned IPCBroker::idCounter_ = 1;

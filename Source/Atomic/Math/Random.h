@@ -24,7 +24,7 @@
 
 #include "Atomic/Atomic.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Set the random seed. The default seed is 1.

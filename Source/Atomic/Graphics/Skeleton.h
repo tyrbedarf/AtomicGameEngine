@@ -25,7 +25,7 @@
 #include "../Math/BoundingBox.h"
 #include "../Scene/Node.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const unsigned BONECOLLISION_NONE = 0x0;

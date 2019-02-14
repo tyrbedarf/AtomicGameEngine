@@ -25,7 +25,7 @@
 #include "TimeOfDay.h"
 #include "ProcSky.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 void RegisterEnvironmentLibrary(Context* context)

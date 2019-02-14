@@ -26,7 +26,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 void SinCos(float angle, float& sin, float& cos)

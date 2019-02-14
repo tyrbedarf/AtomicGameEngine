@@ -28,7 +28,7 @@
 #include <cstring>
 #include <cctype>
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const int CONVERSION_BUFFER_LENGTH = 128;

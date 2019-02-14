@@ -36,7 +36,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 void Texture2D::OnDeviceLost()
@@ -332,7 +332,7 @@ bool Texture2D::GetData(unsigned level, void* dest) const
         ATOMIC_LOGERROR("Can not get data from multisampled texture without autoresolve");
         return false;
     }
-    
+
     if (resolveDirty_)
         graphics_->ResolveToTexture(const_cast<Texture2D*>(this));
 

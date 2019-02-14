@@ -25,7 +25,7 @@
 #include "../Container/ArrayPtr.h"
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Image;
@@ -117,10 +117,10 @@ public:
 
     /// Return maximum number of LOD levels for terrain patches. This can be between 1-4.
     unsigned GetMaxLodLevels() const { return maxLodLevels_; }
-    
+
     /// Return LOD level used for occlusion.
     unsigned GetOcclusionLodLevel() const { return occlusionLodLevel_; }
-    
+
     /// Return whether smoothing is in use.
     bool GetSmoothing() const { return smoothing_; }
 
@@ -145,13 +145,13 @@ public:
 
     /// Return north neighbor terrain.
     Terrain* GetNorthNeighbor() const { return north_; }
-    
+
     /// Return south neighbor terrain.
     Terrain* GetSouthNeighbor() const { return south_; }
-    
+
     /// Return west neighbor terrain.
     Terrain* GetWestNeighbor() const { return west_; }
-    
+
     /// Return east neighbor terrain.
     Terrain* GetEastNeighbor() const { return east_; }
 

@@ -50,7 +50,7 @@ using websocketpp::lib::placeholders::_2;
 using websocketpp::lib::bind;
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 struct WebSocketInternalState

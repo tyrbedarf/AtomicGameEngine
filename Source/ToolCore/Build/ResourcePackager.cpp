@@ -194,7 +194,7 @@ void ResourcePackager::GeneratePackage(const String& destFilePath)
 
         if (!file.Open(entry->absolutePath_))
         {
-            buildBase_->FailBuild(Atomic::ToString("Could not open resource file %s", entry->absolutePath_.CString()));
+            buildBase_->FailBuild(Urho3D::ToString("Could not open resource file %s", entry->absolutePath_.CString()));
             return;
         }
 

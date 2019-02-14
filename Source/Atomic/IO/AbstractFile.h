@@ -25,7 +25,7 @@
 #include "../IO/Serializer.h"
 #include "../IO/Deserializer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// A common root class for objects that implement both Serializer and Deserializer.

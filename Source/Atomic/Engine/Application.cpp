@@ -43,7 +43,7 @@
 #include "../Engine/EngineDefs.h"
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 // ATOMIC BEGIN

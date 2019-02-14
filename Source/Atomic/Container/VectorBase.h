@@ -26,7 +26,7 @@
 
 #include "../Container/Swap.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Random access iterator.
@@ -298,9 +298,9 @@ public:
     /// Swap with another vector.
     void Swap(VectorBase& rhs)
     {
-        Atomic::Swap(size_, rhs.size_);
-        Atomic::Swap(capacity_, rhs.capacity_);
-        Atomic::Swap(buffer_, rhs.buffer_);
+        Urho3D::Swap(size_, rhs.size_);
+        Urho3D::Swap(capacity_, rhs.capacity_);
+        Urho3D::Swap(buffer_, rhs.buffer_);
     }
 
 protected:

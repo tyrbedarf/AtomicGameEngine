@@ -37,7 +37,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const unsigned PIPE_BUFFER_SIZE = 65536;

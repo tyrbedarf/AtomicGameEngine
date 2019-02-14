@@ -44,7 +44,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const int STATS_INTERVAL_MSEC = 2000;
@@ -90,7 +90,7 @@ Connection::Connection(Context* context, bool isClient, kNet::SharedPtr<kNet::Me
     // in which case we would log a zero address:port on disconnect)
     kNet::EndPoint endPoint = connection_->RemoteEndPoint();
     ///\todo Not IPv6-capable.
-    address_ = Atomic::ToString("%d.%d.%d.%d", endPoint.ip[0], endPoint.ip[1], endPoint.ip[2], endPoint.ip[3]);
+    address_ = Urho3D::ToString("%d.%d.%d.%d", endPoint.ip[0], endPoint.ip[1], endPoint.ip[2], endPoint.ip[3]);
     port_ = endPoint.port;
 }
 
@@ -1625,7 +1625,7 @@ void Connection::SendStringMessage(const String& message)
     SendMessage(MSG_STRING, true, true, msg);
 }
 
-void Connection::ProcessStringMessage(int msgID, MemoryBuffer &msg) 
+void Connection::ProcessStringMessage(int msgID, MemoryBuffer &msg)
 {
     using namespace NetworkMessage;
 

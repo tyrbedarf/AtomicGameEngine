@@ -36,7 +36,7 @@
 #pragma warning(disable:6293)
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Vector template class.
@@ -1064,21 +1064,21 @@ private:
     }
 };
 
-template <class T> typename Atomic::Vector<T>::ConstIterator begin(const Atomic::Vector<T>& v) { return v.Begin(); }
+template <class T> typename Urho3D::Vector<T>::ConstIterator begin(const Urho3D::Vector<T>& v) { return v.Begin(); }
 
-template <class T> typename Atomic::Vector<T>::ConstIterator end(const Atomic::Vector<T>& v) { return v.End(); }
+template <class T> typename Urho3D::Vector<T>::ConstIterator end(const Urho3D::Vector<T>& v) { return v.End(); }
 
-template <class T> typename Atomic::Vector<T>::Iterator begin(Atomic::Vector<T>& v) { return v.Begin(); }
+template <class T> typename Urho3D::Vector<T>::Iterator begin(Urho3D::Vector<T>& v) { return v.Begin(); }
 
-template <class T> typename Atomic::Vector<T>::Iterator end(Atomic::Vector<T>& v) { return v.End(); }
+template <class T> typename Urho3D::Vector<T>::Iterator end(Urho3D::Vector<T>& v) { return v.End(); }
 
-template <class T> typename Atomic::PODVector<T>::ConstIterator begin(const Atomic::PODVector<T>& v) { return v.Begin(); }
+template <class T> typename Urho3D::PODVector<T>::ConstIterator begin(const Urho3D::PODVector<T>& v) { return v.Begin(); }
 
-template <class T> typename Atomic::PODVector<T>::ConstIterator end(const Atomic::PODVector<T>& v) { return v.End(); }
+template <class T> typename Urho3D::PODVector<T>::ConstIterator end(const Urho3D::PODVector<T>& v) { return v.End(); }
 
-template <class T> typename Atomic::PODVector<T>::Iterator begin(Atomic::PODVector<T>& v) { return v.Begin(); }
+template <class T> typename Urho3D::PODVector<T>::Iterator begin(Urho3D::PODVector<T>& v) { return v.Begin(); }
 
-template <class T> typename Atomic::PODVector<T>::Iterator end(Atomic::PODVector<T>& v) { return v.End(); }
+template <class T> typename Urho3D::PODVector<T>::Iterator end(Urho3D::PODVector<T>& v) { return v.End(); }
 
 }
 

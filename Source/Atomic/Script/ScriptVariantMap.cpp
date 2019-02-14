@@ -23,7 +23,7 @@
 
 #include "ScriptVariantMap.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 

@@ -15,7 +15,7 @@
 #undef PostMessage
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
     IPCServerApp::IPCServerApp(Context* context) :
@@ -69,7 +69,7 @@ namespace Atomic
         {
 #ifdef ATOMIC_DEV_BUILD
 
-#ifdef ATOMIC_DEBUG        
+#ifdef ATOMIC_DEBUG
             clientBinary = projectPath + "AtomicNET/Debug/Bin/Desktop/" + projectExe;
 #else
             clientBinary = projectPath + "AtomicNET/Release/Bin/Desktop/" + projectExe;
@@ -95,7 +95,7 @@ namespace Atomic
 
         Vector<String> vargs;
 
-        
+
         String args = ToString("--project \"%s\"", projectPath.CString());
 
         vargs = args.Split(' ');
@@ -169,7 +169,7 @@ namespace Atomic
         playerLogData["level"] = eventData[P_LEVEL].GetInt();
 
     }
-    
+
     void IPCServerApp::RequestTogglePlayerUpdatesPaused()
     {
         if (!clientBroker_)

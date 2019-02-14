@@ -38,7 +38,7 @@ class xpath_variable_set;
 
 }
 
-namespace Atomic
+namespace Urho3D
 {
 
 class XMLFile;

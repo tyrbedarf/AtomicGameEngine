@@ -35,7 +35,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 // ATOMIC BEGIN

@@ -37,7 +37,7 @@
 #include <stdio.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
     NETIPCPlayerApp::NETIPCPlayerApp(Context* context) :
@@ -50,7 +50,7 @@ namespace Atomic
     {
         IPCPlayerApp::Setup();
 
-        // TODO: we should always have a --project for IPCPlayer, however it is doing 
+        // TODO: we should always have a --project for IPCPlayer, however it is doing
         // double duty right now as managed player
         StringVector args = GetArguments();
         if (!args.Contains("--project"))
@@ -95,7 +95,7 @@ namespace Atomic
 
         return 0;
     }
-    
+
     NETIPCPlayerApp* NETIPCPlayerApp::CreateInternal()
     {
         return new NETIPCPlayerApp(NETCore::GetContext());

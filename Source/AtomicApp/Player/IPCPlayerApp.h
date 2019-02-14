@@ -25,7 +25,7 @@
 #include "PlayerApp.h"
 #include <Atomic/IPC/IPC.h>
 
-namespace Atomic
+namespace Urho3D
 {
     class IPC;
 
@@ -38,11 +38,11 @@ namespace Atomic
         IPCPlayerApp(Context* context);
         virtual ~IPCPlayerApp();
 
-        /// Setup before engine initialization. 
+        /// Setup before engine initialization.
         virtual void Setup();
         /// Setup after engine initialization. L
         virtual void Start();
-        /// Cleanup after the main loop. 
+        /// Cleanup after the main loop.
         virtual void Stop();
 
         virtual void ProcessArguments();
@@ -50,7 +50,7 @@ namespace Atomic
     protected:
 
     private:
-        
+
         void HandleIPCInitialize(StringHash eventType, VariantMap& eventData);
         void HandleLogMessage(StringHash eventType, VariantMap& eventData);
         void HandleJSError(StringHash eventType, VariantMap& eventData);

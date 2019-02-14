@@ -23,7 +23,7 @@
 
 #include "WebAppOther.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 WebAppOther::WebAppOther()

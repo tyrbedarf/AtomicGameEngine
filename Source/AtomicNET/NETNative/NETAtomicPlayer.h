@@ -25,7 +25,7 @@
 
 #include <AtomicApp/Player/PlayerApp.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
     class NETAtomicPlayer : public PlayerApp

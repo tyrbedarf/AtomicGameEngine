@@ -32,7 +32,7 @@
 #endif
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 Metrics* Metrics::metrics_ = 0;
@@ -103,7 +103,7 @@ String MetricsSnapshot::PrintData(unsigned columns, unsigned minCount)
 
     static const int NAME_MAX_LENGTH = 20;
     static const int ENTRY_MAX_LENGTH = 128;
-    
+
     char name[NAME_MAX_LENGTH];
     char entry[ENTRY_MAX_LENGTH];
 
@@ -126,7 +126,7 @@ String MetricsSnapshot::PrintData(unsigned columns, unsigned minCount)
             continue;
 
         snprintf(name, NAME_MAX_LENGTH, "%-20s", metric.classname.CString());
-        
+
         // We use snprintf here as ToString doesn't seem to cover the unsigned %5u format
         snprintf(entry, ENTRY_MAX_LENGTH, "%s : %5u ( %5u, %5u, %5u )", name , metric.count, metric.nativeInstances, metric.jsInstances, metric.netInstances);
 
@@ -134,7 +134,7 @@ String MetricsSnapshot::PrintData(unsigned columns, unsigned minCount)
         {
             line += "\n";
             output += line;
-            line.Clear();                        
+            line.Clear();
             column = 0;
         }
 
@@ -155,7 +155,7 @@ String MetricsSnapshot::PrintData(unsigned columns, unsigned minCount)
 Metrics::Metrics(Context* context) :
     Object(context),
     enabled_(false)
-{    
+{
     Metrics::metrics_ = this;
 }
 
@@ -191,9 +191,9 @@ void Metrics::ProcessInstances()
         {
             names_[ninfo.typeID] = typeName;
         }
-        
+
         ninfo.typeNameOverride = StringHash::ZERO;
-       
+
         // for script components, setup typeNameOverride
         if (o && o->IsInstanceOf(scriptComponentType))
         {
@@ -206,7 +206,7 @@ void Metrics::ProcessInstances()
                 if (o->GetType() == jsComponentType)
                 {
                     name = classname + " (JS)";
-                }                    
+                }
                 else
                 {
                     name = classname + " (C#)";
@@ -221,7 +221,7 @@ void Metrics::ProcessInstances()
 
             }
         }
-        
+
         PODVector<RefCountedInfo>& infos = instances_[ninfo.typeID];
 
         RefCountedInfo* info = infos.Buffer();
@@ -256,7 +256,7 @@ void Metrics::ProcessInstances()
 }
 
 void Metrics::CaptureInstances(MetricsSnapshot* snapshot)
-{    
+{
     ProcessInstances();
 
     HashMap<StringHash, PODVector<RefCountedInfo>>::ConstIterator itr = instances_.Begin();
@@ -443,7 +443,7 @@ void Metrics::OnRefCountedDeleted(RefCounted* refCounted)
         return;
     }
 
-    metrics_->RemoveRefCounted(refCounted);    
+    metrics_->RemoveRefCounted(refCounted);
 }
 
 

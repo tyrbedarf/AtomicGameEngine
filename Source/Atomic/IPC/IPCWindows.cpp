@@ -36,7 +36,7 @@
 
 typedef std::wstring IPCWString;
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const wchar_t kPipePrefix[] = L"\\\\.\\pipe\\";
@@ -275,7 +275,7 @@ bool IPCProcess::Terminate()
         WaitForSingleObject(pid_, 1000);
         return true;
     }
-        
+
     return false;
 }
 

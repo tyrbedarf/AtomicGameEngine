@@ -34,7 +34,7 @@
 #include <cmath>
 #include <limits>
 
-namespace Atomic
+namespace Urho3D
 {
 
 #undef M_PI

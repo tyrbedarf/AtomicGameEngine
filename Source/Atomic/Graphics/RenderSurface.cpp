@@ -31,13 +31,13 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 RenderSurface::~RenderSurface()
 {
     // ATOMIC BEGIN
-    // only release if parent texture hasn't expired, in that case 
+    // only release if parent texture hasn't expired, in that case
     // parent texture was deleted and will have called release on render surface
     if (!parentTexture_.Expired())
     {

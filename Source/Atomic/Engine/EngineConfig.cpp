@@ -28,7 +28,7 @@
 #include "../Graphics/GraphicsDefs.h"
 #include "EngineConfig.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 EngineConfig EngineConfig::engineConfig_;

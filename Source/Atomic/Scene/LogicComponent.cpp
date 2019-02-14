@@ -30,7 +30,7 @@
 #include "../Scene/Scene.h"
 #include "../Scene/SceneEvents.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 LogicComponent::LogicComponent(Context* context) :

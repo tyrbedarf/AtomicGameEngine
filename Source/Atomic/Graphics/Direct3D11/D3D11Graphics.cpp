@@ -60,7 +60,7 @@ __declspec(dllexport) DWORD NvOptimusEnablement = 1;
 __declspec(dllexport) int AmdPowerXpressRequestHighPerformance = 1;
 }
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const D3D11_COMPARISON_FUNC d3dCmpFunc[] =
@@ -2112,7 +2112,7 @@ void Graphics::AdjustWindow(int& newWidth, int& newHeight, bool& newFullscreen, 
             SDL_MaximizeWindow(window_);
             SDL_GetWindowSize(window_, &newWidth, &newHeight);
         }
-        else 
+        else
         {
             SDL_Rect display_rect;
             SDL_GetDisplayBounds(monitor, &display_rect);

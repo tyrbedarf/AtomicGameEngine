@@ -29,7 +29,7 @@ namespace ToolCore
     class AtomicNETService;
 }
 
-using namespace Atomic;
+using namespace Urho3D;
 using namespace ToolCore;
 
 

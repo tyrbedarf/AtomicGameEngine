@@ -54,7 +54,7 @@ BuildBase::BuildBase(Context * context, Project* project, PlatformID platform) :
     if (UseResourcePackager())
         resourcePackager_ = new ResourcePackager(context, this);
 
-    fileIncludedResourcesLog_ = new File(context_, "BuildIncludedResources.log", Atomic::FILE_WRITE);
+    fileIncludedResourcesLog_ = new File(context_, "BuildIncludedResources.log", Urho3D::FILE_WRITE);
 
     ReadAssetBuildConfig();
 }
@@ -242,7 +242,7 @@ void BuildBase::BuildLog(const String& message, bool sendEvent)
 
     if (autoLog_)
         ATOMIC_LOGINFO(message);
-    
+
     if (sendEvent)
     {
         String colorMsg = ToString("<color #D4FB79>%s</color>\n", message.CString());
@@ -457,7 +457,7 @@ void BuildBase::BuildAllProjectResourceEntries()
             }
         }
 
-        Vector<String> fileNamesInProject;        
+        Vector<String> fileNamesInProject;
         fileSystem->ScanDir(fileNamesInProject, projectResourceDir, "*.*", SCAN_FILES, true);
 
         for (unsigned i = 0; i < fileNamesInProject.Size(); i++)
@@ -474,7 +474,7 @@ void BuildBase::BuildAllProjectResourceEntries()
             else
             {
                 AddToResourcePackager(fileNamesInProject[i], projectResourceDir);
-                
+
                 if (verbose_)
                 {
                     ATOMIC_LOGINFO(ToString("Project Resource Added: %s%s", projectResourceDir.CString(), fileNamesInProject[i].CString()));

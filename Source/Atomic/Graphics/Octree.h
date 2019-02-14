@@ -27,7 +27,7 @@
 #include "../Graphics/Drawable.h"
 #include "../Graphics/OctreeQuery.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Octree;

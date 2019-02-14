@@ -24,7 +24,7 @@
 
 #include "../Container/Ptr.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Graphics;

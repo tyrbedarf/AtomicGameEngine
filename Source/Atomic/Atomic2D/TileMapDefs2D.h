@@ -25,7 +25,7 @@
 #include "../Container/RefCounted.h"
 #include "../Atomic2D/Sprite2D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class XMLElement;

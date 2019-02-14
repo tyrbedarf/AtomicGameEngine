@@ -32,7 +32,7 @@
 // to in large chunks because some writes cause allocation. Reads should
 // perform well reguardless of the read chunk sizes.
 
-namespace Atomic
+namespace Urho3D
 {
 
 BufferQueue::BufferQueue(Context* context) :

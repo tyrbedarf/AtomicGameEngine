@@ -32,7 +32,7 @@
 #include <SDL/include/SDL_haptic.h>
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Mouse button pressed.

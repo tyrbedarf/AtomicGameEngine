@@ -23,7 +23,7 @@
 #include <Atomic/Core/Object.h>
 #include <Atomic/IO/FileSystem.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 #include "../Platform/Platform.h"
 

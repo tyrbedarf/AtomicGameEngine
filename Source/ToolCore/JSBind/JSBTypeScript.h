@@ -24,7 +24,7 @@
 
 #include <Atomic/Container/Str.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 class JSBFunction;
 class JSBPackage;

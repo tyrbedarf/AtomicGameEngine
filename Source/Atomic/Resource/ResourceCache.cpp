@@ -42,7 +42,7 @@
 
 #include <cstdio>
 
-namespace Atomic
+namespace Urho3D
 {
 
 // ATOMIC BEGIN
@@ -723,7 +723,7 @@ SharedPtr<Resource> ResourceCache::GetTempResource(StringHash type, const String
     // #623 BEGIN TODO: For now try to get DDS version of textures from /DDS cache sub directory,
     // ultimately should have per platform compressed versions saved in cache
 #ifdef ATOMIC_PLATFORM_DESKTOP
-    String ext = Atomic::GetExtension(name);
+    String ext = Urho3D::GetExtension(name);
     if (ext == ".jpg" || ext == ".png" || ext == ".tga")
     {
         String ddsName = "DDS/" + name + ".dds";

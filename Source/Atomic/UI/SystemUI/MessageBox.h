@@ -26,7 +26,7 @@
 #include "../../Core/Object.h"
 #include "../../UI/SystemUI/SystemUI.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Message box dialog.

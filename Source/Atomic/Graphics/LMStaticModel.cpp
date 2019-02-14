@@ -8,7 +8,7 @@
 #include "../Graphics/Technique.h"
 #include "LMStaticModel.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* GEOMETRY_CATEGORY;

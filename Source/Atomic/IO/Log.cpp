@@ -42,7 +42,7 @@ extern "C" void SDL_IOS_LogMessage(const char* message);
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 const char* logLevelPrefixes[] =

@@ -28,7 +28,7 @@
 
 #include <Atomic/Core/Object.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace CPlusPlus
 {

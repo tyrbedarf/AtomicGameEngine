@@ -30,7 +30,7 @@
 #include "../IO/Deserializer.h"
 #include "../IO/Serializer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Act as a continuous byte buffer which can be appened indefinatly.

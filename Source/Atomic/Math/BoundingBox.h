@@ -29,7 +29,7 @@
 #include <xmmintrin.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Polyhedron;

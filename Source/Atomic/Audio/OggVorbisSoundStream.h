@@ -25,7 +25,7 @@
 #include "../Audio/SoundStream.h"
 #include "../Container/ArrayPtr.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Sound;

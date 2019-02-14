@@ -39,7 +39,7 @@
 #include "JSRequire.h"
 #include "JSPlugin.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /*

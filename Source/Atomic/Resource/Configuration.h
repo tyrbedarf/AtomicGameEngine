@@ -25,7 +25,7 @@
 #include "../Core/Variant.h"
 #include "JSONValue.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Context;

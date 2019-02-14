@@ -24,7 +24,7 @@
 
 #include "../IO/AbstractFile.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Dynamically sized buffer that can be read and written to as a stream.

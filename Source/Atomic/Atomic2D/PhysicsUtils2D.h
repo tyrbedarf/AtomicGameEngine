@@ -28,7 +28,7 @@
 
 #include <Box2D/Box2D.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 inline Color ToColor(const b2Color& color)

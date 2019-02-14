@@ -27,7 +27,7 @@
 #include "../Scene/Scene.h"
 #include "../Scene/SplinePath.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* interpolationModeNames[];

@@ -34,7 +34,7 @@ class btTriangleMesh;
 
 struct btTriangleInfoMap;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class CustomGeometry;

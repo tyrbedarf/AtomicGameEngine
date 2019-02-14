@@ -31,7 +31,7 @@
 #include <d3d11.h>
 #include <dxgi.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 #define ATOMIC_SAFE_RELEASE(p) if (p) { ((IUnknown*)p)->Release();  p = 0; }

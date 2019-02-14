@@ -8,7 +8,7 @@
 #include "NETCore.h"
 #include "NETEventDispatcher.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 SharedPtr<Context> NETCore::csContext_;
@@ -38,7 +38,7 @@ NETCore::NETCore(Context* context, NETCoreDelegates* delegates) :
 NETCore::~NETCore()
 {
     RefCounted::RemoveRefCountedDeletedFunction(OnRefCountedDeleted);
-    assert (!csContext_);    
+    assert (!csContext_);
 }
 
 bool NETCore::EnsureMainThread(const String& throwMsg)

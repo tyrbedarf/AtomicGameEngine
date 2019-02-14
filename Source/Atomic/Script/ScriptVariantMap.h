@@ -27,7 +27,7 @@
 
 #include "ScriptSystem.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Wraps a VariantMap as a RefCounted so we can easily send it to script code

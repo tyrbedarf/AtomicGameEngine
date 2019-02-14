@@ -30,7 +30,7 @@
 #include <initializer_list>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Hash set template class.
@@ -415,7 +415,7 @@ public:
             ptr = ptr->Next();
         }
 
-        Atomic::Sort(RandomAccessIterator<Node*>(ptrs), RandomAccessIterator<Node*>(ptrs + numKeys), CompareNodes);
+        Urho3D::Sort(RandomAccessIterator<Node*>(ptrs), RandomAccessIterator<Node*>(ptrs + numKeys), CompareNodes);
 
         head_ = ptrs[0];
         ptrs[0]->prev_ = 0;
@@ -632,12 +632,12 @@ private:
     unsigned Hash(const T& key) const { return MakeHash(key) & (NumBuckets() - 1); }
 };
 
-template <class T> typename Atomic::HashSet<T>::ConstIterator begin(const Atomic::HashSet<T>& v) { return v.Begin(); }
+template <class T> typename Urho3D::HashSet<T>::ConstIterator begin(const Urho3D::HashSet<T>& v) { return v.Begin(); }
 
-template <class T> typename Atomic::HashSet<T>::ConstIterator end(const Atomic::HashSet<T>& v) { return v.End(); }
+template <class T> typename Urho3D::HashSet<T>::ConstIterator end(const Urho3D::HashSet<T>& v) { return v.End(); }
 
-template <class T> typename Atomic::HashSet<T>::Iterator begin(Atomic::HashSet<T>& v) { return v.Begin(); }
+template <class T> typename Urho3D::HashSet<T>::Iterator begin(Urho3D::HashSet<T>& v) { return v.Begin(); }
 
-template <class T> typename Atomic::HashSet<T>::Iterator end(Atomic::HashSet<T>& v) { return v.End(); }
+template <class T> typename Urho3D::HashSet<T>::Iterator end(Urho3D::HashSet<T>& v) { return v.End(); }
 
 }

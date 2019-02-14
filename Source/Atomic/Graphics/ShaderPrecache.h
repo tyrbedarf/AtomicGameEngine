@@ -26,7 +26,7 @@
 #include "../Core/Object.h"
 #include "../Resource/XMLFile.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Graphics;

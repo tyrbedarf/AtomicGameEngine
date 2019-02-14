@@ -26,7 +26,7 @@
 
 #include "EditorComponent.h"
 
-namespace Atomic
+namespace Urho3D
 {
 class Node;
 class Zone;
@@ -38,7 +38,7 @@ class RenderPath;
 class Image;
 }
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicEditor
 {

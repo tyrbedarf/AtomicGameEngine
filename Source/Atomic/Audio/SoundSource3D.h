@@ -24,7 +24,7 @@
 
 #include "../Audio/SoundSource.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Audio;

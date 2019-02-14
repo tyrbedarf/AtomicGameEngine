@@ -34,7 +34,7 @@ class dtCrowd;
 class dtQueryFilter;
 struct dtCrowdAgent;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class CrowdAgent;

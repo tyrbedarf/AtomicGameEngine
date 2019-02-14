@@ -22,7 +22,7 @@
 
 #include "JSScriptObject.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 ScriptObject::ScriptObject(Context* context) : Object(context)

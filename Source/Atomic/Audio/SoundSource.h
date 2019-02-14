@@ -25,7 +25,7 @@
 #include "../Audio/AudioDefs.h"
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Audio;

@@ -24,7 +24,7 @@
 
 #include <Atomic/Scene/Component.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicEditor
 {

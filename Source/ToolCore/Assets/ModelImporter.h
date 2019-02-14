@@ -24,13 +24,13 @@
 
 #include "AssetImporter.h"
 
-namespace Atomic
+namespace Urho3D
 {
     class Node;
     class Animation;
 }
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -41,7 +41,7 @@ class AnimationImportInfo : public Object
 
     ATOMIC_OBJECT(AnimationImportInfo, Object);
 
-public:    
+public:
 
     AnimationImportInfo(Context* context) : Object(context), startTime_(-1.0f), endTime_(-1.0f)
     {
@@ -89,7 +89,7 @@ public:
 
     Resource* GetResource(const String& typeName = String::EMPTY);
 
-    void GetAnimations(PODVector<Atomic::Animation *>& animations);
+    void GetAnimations(PODVector<Urho3D::Animation *>& animations);
 
     AnimationImportInfo* GetAnimationInfo(unsigned index) { return animationInfo_[index]; }
 

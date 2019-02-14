@@ -24,7 +24,7 @@
 
 #include <Atomic/Core/Object.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -78,7 +78,7 @@ protected:
 
     void ParseCommonArguments(const Vector<String>& arguments, String &errorMsg);
 
-    float timeOut_;    
+    float timeOut_;
 
     String projectPath_;
 

@@ -46,7 +46,7 @@
 #pragma warning(disable:6293)
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 const char* GEOMETRY_CATEGORY = "Geometry";

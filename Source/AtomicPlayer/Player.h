@@ -26,7 +26,7 @@
 #include <Atomic/Graphics/Viewport.h>
 #include <Atomic/Scene/Scene.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicPlayer
 {
@@ -54,14 +54,14 @@ public:
     /// Get the scene loaded at specified index
     Scene* GetScene(unsigned index) { return loadedScenes_[index]; }
 
-    /// Set the current scene 
+    /// Set the current scene
     void SetCurrentScene(Scene* scene, Camera* camera = NULL);
 
     /// Unload a scene
     void UnloadScene(Scene* scene);
 
     /// Unload all loaded scenes
-    void UnloadAllScenes();    
+    void UnloadAllScenes();
 
     /// Get the player default viewport
     Viewport* GetViewport() const { return viewport_; }

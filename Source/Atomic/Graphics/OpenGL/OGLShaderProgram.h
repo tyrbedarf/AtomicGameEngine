@@ -28,7 +28,7 @@
 #include "../../Graphics/GraphicsDefs.h"
 #include "../../Graphics/ShaderVariation.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ConstantBuffer;

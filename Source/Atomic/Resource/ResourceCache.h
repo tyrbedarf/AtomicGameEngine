@@ -28,7 +28,7 @@
 #include "../IO/File.h"
 #include "../Resource/Resource.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class BackgroundLoader;
@@ -234,12 +234,12 @@ public:
     String PrintMemoryUsage() const;
 
     // ATOMIC BEGIN
-    
+
     /// Get the number of resource directories
     unsigned GetNumResourceDirs() const { return resourceDirs_.Size(); }
     /// Get resource directory at a given index
     const String& GetResourceDir(unsigned index) const { return index < resourceDirs_.Size() ? resourceDirs_[index] : String::EMPTY; }
-    
+
     /// Scan for specified files.
     void Scan(Vector<String>& result, const String& pathName, const String& filter, unsigned flags, bool recursive) const;
     /// Scan specified files, returning them as an iterator

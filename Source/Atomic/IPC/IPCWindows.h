@@ -29,7 +29,7 @@
 #include "../Core/Object.h"
 #include "IPCTypes.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 #define ATOMIC_WINDOWS_IPC_BUFFER_SIZE 1048576
@@ -135,7 +135,7 @@ private:
 
     IPCHandle pid_;
     IPCHandle clientRead_;
-    IPCHandle clientWrite_;    
+    IPCHandle clientWrite_;
 };
 
 }

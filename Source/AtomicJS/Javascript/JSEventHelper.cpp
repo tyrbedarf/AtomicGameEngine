@@ -25,7 +25,7 @@
 #include "JSVM.h"
 #include "JSEventHelper.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 
@@ -124,7 +124,7 @@ void JSEventHelper::Clear()
     {
         object_->UnsubscribeFromEventReceiver(this);
     }
-    
+
 }
 
 void JSEventHelper::AddEventHandler(StringHash eventType)

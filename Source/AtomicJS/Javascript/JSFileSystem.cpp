@@ -26,7 +26,7 @@
 #include "JSEventHelper.h"
 #include "JSVM.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static int Atomic_SplitPath(duk_context* ctx)

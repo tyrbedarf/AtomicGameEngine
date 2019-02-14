@@ -34,7 +34,7 @@
 
 #include "AppBase.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
     Vector<String> AppBase::engineConfigSearchPaths_;
@@ -61,7 +61,7 @@ namespace Atomic
 
             arguments_ = GetArguments();
         }
-        
+
     }
 
     AppBase::~AppBase()

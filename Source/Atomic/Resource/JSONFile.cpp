@@ -39,7 +39,7 @@
 
 using namespace rapidjson;
 
-namespace Atomic
+namespace Urho3D
 {
 
 JSONFile::JSONFile(Context* context) :
@@ -187,7 +187,7 @@ static void ToRapidjsonValue(rapidjson::Value& rapidjsonValue, const JSONValue& 
             {
                 rapidjson::Value value;
                 ToRapidjsonValue(value, jsonArray[i], allocator);
-                rapidjsonValue.PushBack(value, allocator);                
+                rapidjsonValue.PushBack(value, allocator);
             }
         }
         break;

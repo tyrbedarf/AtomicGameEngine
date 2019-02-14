@@ -24,7 +24,7 @@
 
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Network interest management settings component.

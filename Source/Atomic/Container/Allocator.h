@@ -26,7 +26,7 @@
 
 #include <stddef.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 struct AllocatorBlock;

@@ -26,7 +26,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static unsigned randomSeed = 1;

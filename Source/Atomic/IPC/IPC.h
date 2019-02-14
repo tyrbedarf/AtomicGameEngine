@@ -28,7 +28,7 @@
 
 #include "IPCTypes.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class IPCBroker;

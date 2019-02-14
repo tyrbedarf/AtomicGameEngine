@@ -25,12 +25,12 @@
 
 #include <Atomic/Engine/Application.h>
 
-namespace Atomic
+namespace Urho3D
 {
     class JSVM;
 }
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicPlayer
 {

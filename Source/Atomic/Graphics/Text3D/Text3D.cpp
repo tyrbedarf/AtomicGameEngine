@@ -36,7 +36,7 @@
 #include "Text3DText.h"
 #include "Text3D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* horizontalAlignments[];

@@ -36,10 +36,10 @@
 
 
 using namespace std::placeholders;
-namespace Atomic
+namespace Urho3D
 {
 
-SystemUI::SystemUI(Atomic::Context* context)
+SystemUI::SystemUI(Urho3D::Context* context)
         : Object(context)
           , vertexBuffer_(context)
           , indexBuffer_(context)
@@ -333,7 +333,7 @@ ImFont* SystemUI::AddFont(const String& font_path, float size, const unsigned sh
     return 0;
 }
 
-ImFont* SystemUI::AddFont(const Atomic::String& font_path, float size,
+ImFont* SystemUI::AddFont(const Urho3D::String& font_path, float size,
                           const std::initializer_list<unsigned short>& ranges, bool merge)
 {
     return AddFont(font_path, size, ranges.size() ? &*ranges.begin() : 0, merge);

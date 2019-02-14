@@ -34,7 +34,7 @@
 
 //#define JSVM_DEBUG
 
-namespace Atomic
+namespace Urho3D
 {
 
 class JSFile;
@@ -124,7 +124,7 @@ public:
         if (itr != removedHeapPtr_.End())
             removedHeapPtr_.Erase(itr);
 #endif
-        
+
         if (instantiationType != INSTANTIATION_JAVASCRIPT)
         {
             if (!object->Refs())

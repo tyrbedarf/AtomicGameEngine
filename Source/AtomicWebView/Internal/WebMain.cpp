@@ -24,7 +24,7 @@
 #include "WebAppOther.h"
 #include "WebAppRenderer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 int WebMain(int argc, char* argv[])

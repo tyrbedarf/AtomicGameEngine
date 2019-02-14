@@ -29,7 +29,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const char* valueTypeNames[] =
@@ -67,7 +67,7 @@ JSONValue& JSONValue::operator =(bool rhs)
 JSONValue& JSONValue::operator =(int rhs)
 {
     SetType(JSON_NUMBER, JSONNT_INT);
-    numberValue_ = rhs;    
+    numberValue_ = rhs;
 
     return *this;
 }
@@ -415,7 +415,7 @@ void JSONValue::SetVariantValue(const Variant& variant, Context* context)
     case VAR_BOOL:
         *this = variant.GetBool();
         return;
-    
+
     case VAR_INT:
         *this = variant.GetInt();
         return;

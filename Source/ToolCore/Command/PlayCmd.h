@@ -24,7 +24,7 @@
 
 #include "Command.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -36,7 +36,7 @@ class PlayCmd: public Command
 public:
 
     PlayCmd(Context* context);
-    virtual ~PlayCmd();    
+    virtual ~PlayCmd();
 
     void Run();
 

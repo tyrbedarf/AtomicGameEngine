@@ -32,7 +32,7 @@ struct dtTileCacheLayer;
 struct dtTileCacheContourSet;
 struct dtTileCachePolyMesh;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class OffMeshConnection;

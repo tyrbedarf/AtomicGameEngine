@@ -35,7 +35,7 @@
 
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 const StringHash StringHash::ZERO;

@@ -37,7 +37,7 @@
 #include "WebBrowserHost.h"
 #include "WebSchemeHandler.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static WeakPtr<WebBrowserHost> webBrowserHost_;

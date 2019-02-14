@@ -27,7 +27,7 @@
 
 struct SDL_Surface;
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const int COLOR_LUT_SIZE = 16;

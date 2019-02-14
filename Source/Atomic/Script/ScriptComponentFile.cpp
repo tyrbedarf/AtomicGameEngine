@@ -23,7 +23,7 @@
 
 #include "ScriptComponentFile.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 FieldMap ScriptComponentFile::emptyFieldMap_;
@@ -43,7 +43,7 @@ ScriptComponentFile::~ScriptComponentFile()
 
 void ScriptComponentFile::RegisterObject(Context* context)
 {
-    
+
 }
 
 void ScriptComponentFile::AddEnum(const String& enumName, const EnumInfo& enumInfo, const String& classname)

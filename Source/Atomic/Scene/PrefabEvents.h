@@ -2,7 +2,7 @@
 
 #include "../Core/Object.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 ATOMIC_EVENT(E_PREFABSAVE, PrefabSave)

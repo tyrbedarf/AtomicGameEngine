@@ -36,7 +36,7 @@
 #include "JSComponent.h"
 #include "JSVM.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 void jsapi_init_scene_serializable(JSVM* vm);
@@ -45,7 +45,7 @@ static int Node_CreateJSComponent(duk_context* ctx)
 {
     String path = duk_require_string(ctx, 0);
 
-    if (Atomic::GetExtension(path).Empty()) {
+    if (Urho3D::GetExtension(path).Empty()) {
         path += ".js";
     }
 

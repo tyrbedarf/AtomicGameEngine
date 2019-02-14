@@ -24,7 +24,7 @@
 
 #include "JSInput.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
     static int Input_GetTouch(duk_context* ctx)
@@ -46,7 +46,7 @@ namespace Atomic
         vmap["touchedWidget"] = touchState->touchedWidget_;
 
         js_push_variantmap(ctx, vmap);
-        
+
         return 1;
     }
 

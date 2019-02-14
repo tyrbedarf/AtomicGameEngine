@@ -24,7 +24,7 @@
 
 #include "../Math/Vector3.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class BoundingBox;

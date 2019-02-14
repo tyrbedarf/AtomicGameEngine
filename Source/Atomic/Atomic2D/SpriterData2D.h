@@ -27,7 +27,7 @@ namespace pugi
 class xml_node;
 }
 
-namespace Atomic
+namespace Urho3D
 {
 
 namespace Spriter
@@ -210,7 +210,7 @@ struct Timeline
 };
 
 /// Curve type.
-enum CurveType 
+enum CurveType
 {
     INSTANT = 0,
     LINEAR,

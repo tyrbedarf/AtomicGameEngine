@@ -38,7 +38,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* GEOMETRY_CATEGORY;
@@ -555,7 +555,7 @@ void BillboardSet::UpdateBufferSize()
         }
         geometryTypeUpdate_ = false;
     }
-    
+
     bool largeIndices = (numBillboards * 4) >= 65536;
 
     if (indexBuffer_->GetIndexCount() != numBillboards * 6)
@@ -585,7 +585,7 @@ void BillboardSet::UpdateBufferSize()
             dest[3] = vertexIndex + 2;
             dest[4] = vertexIndex + 3;
             dest[5] = vertexIndex;
-            
+
             dest += 6;
             vertexIndex += 4;
         }

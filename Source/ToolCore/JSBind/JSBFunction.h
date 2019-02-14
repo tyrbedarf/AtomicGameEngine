@@ -28,7 +28,7 @@
 #include "JSBType.h"
 #include "JSBSymbol.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -307,7 +307,7 @@ private:
     bool isVirtual_;
     bool isStatic_;
     bool hasMutatedReturn_;
-    bool skip_;    
+    bool skip_;
     PODVector<BindingLanguage> skipLanguages_;
 };
 

@@ -26,7 +26,7 @@
 #include <Atomic/Audio/Sound.h>
 #include <Atomic/Audio/SoundStream.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 static int Sound_SetData(duk_context* ctx)

@@ -32,7 +32,7 @@
 
 using namespace tb;
 
-namespace Atomic
+namespace Urho3D
 {
 
 JSUI::JSUI(Context* context) : Object(context),

@@ -34,7 +34,7 @@
 #include <unistd.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 IPCWorker::IPCWorker(Context* context, IPCHandle clientRead, IPCHandle clientWrite, unsigned id) : IPCChannel(context, id)
@@ -102,7 +102,7 @@ void IPCWorker::ThreadFunction()
     while (shouldRun_)
     {
 
-// On windows we use a job object to control process lifetime, we don't have a 
+// On windows we use a job object to control process lifetime, we don't have a
 // parent pid (these change and are reused on Windows, so we would need to DuplicateHandle and pass
 // to child on command line
 #ifndef ATOMIC_PLATFORM_WINDOWS

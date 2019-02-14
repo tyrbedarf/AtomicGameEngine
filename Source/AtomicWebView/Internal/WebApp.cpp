@@ -25,7 +25,7 @@
 #include "WebApp.h"
 #include "../WebString.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 // These flags must match the Chromium values.

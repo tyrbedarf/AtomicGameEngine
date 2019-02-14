@@ -24,7 +24,7 @@
 
 #include "Command.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -36,7 +36,7 @@ class EditCmd: public Command
 public:
 
     EditCmd(Context* context);
-    virtual ~EditCmd();    
+    virtual ~EditCmd();
 
     void Run();
 

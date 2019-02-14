@@ -25,7 +25,7 @@
 #include <Atomic/Core/Object.h>
 #include <Atomic/Resource/JSONValue.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -65,9 +65,9 @@ class WebBuildSettings : public RefCounted
 
 public:
 
-    WebBuildSettings() 
+    WebBuildSettings()
     {
-        pageTheme_ = 0;  
+        pageTheme_ = 0;
         gameWidth_ = "800";
         gameHeight_ = "512";
     }

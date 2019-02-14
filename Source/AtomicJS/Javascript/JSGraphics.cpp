@@ -30,7 +30,7 @@
 #include <Atomic/Scene/Node.h>
 #include <Atomic/Script/ScriptRenderPathCommand.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 static int Light_SetShadowCascade(duk_context* ctx)

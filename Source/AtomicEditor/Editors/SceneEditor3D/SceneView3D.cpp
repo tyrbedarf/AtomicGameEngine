@@ -46,8 +46,8 @@
 #include <Atomic/Resource/ResourceCache.h>
 #include <Atomic/Resource/XMLFile.h>
 #include <Atomic/Physics/PhysicsWorld.h>
-#include <Atomic/UI/UI.h>
-#include <Atomic/UI/UIEvents.h>
+#include <Atomic/UI/tbUI.h>
+#include <Atomic/UI/tbUIEvents.h>
 
 #include <Atomic/Resource/ResourceEvents.h>
 
@@ -74,7 +74,7 @@ const int CAMERASNAP_FRONT = 5;
 const int CAMERASNAP_BACK = 6;
 
 SceneView3D ::SceneView3D(Context* context, SceneEditor3D *sceneEditor) :
-    UISceneView(context),
+	UISceneView(context),
     yaw_(0.0f),
     pitch_(0.0f),
     mouseLeftDown_(false),
@@ -228,7 +228,7 @@ void SceneView3D::MoveCamera(float timeStep)
         IntVector2 mouseMove = input->GetMouseMove();
         yaw_ += MOUSE_SENSITIVITY * mouseMove.x_;
         pitch_ += MOUSE_SENSITIVITY * mouseMove.y_;
-        pitch_ = Atomic::Clamp(pitch_, -90.0f, 90.0f);
+        pitch_ = Urho3D::Clamp(pitch_, -90.0f, 90.0f);
         input->SetMouseVisible(false);
     }
     else
@@ -623,7 +623,7 @@ void SceneView3D::HandlePostRenderUpdate(StringHash eventType, VariantMap& event
     else
     {
         mouseLeftDown_ = true;
-        if (Atomic::Abs(input->GetMouseMoveX() > 3 || input->GetMouseMoveY() >  3))
+        if (Urho3D::Abs(input->GetMouseMoveX() > 3 || input->GetMouseMoveY() >  3))
         {
             mouseMoved_ = true;
         }
@@ -748,12 +748,12 @@ void SceneView3D::HandleDragEnterWidget(StringHash eventType, VariantMap& eventD
 {
     using namespace DragEnterWidget;
 
-    UIWidget* widget = static_cast<UIWidget*>(eventData[P_WIDGET].GetPtr());
+    tbUIWidget* widget = static_cast<tbUIWidget*>(eventData[P_WIDGET].GetPtr());
 
     if (widget != this)
         return;
 
-    UIDragObject* dragObject = static_cast<UIDragObject*>(eventData[P_DRAGOBJECT].GetPtr());
+    tbUIDragObject* dragObject = static_cast<tbUIDragObject*>(eventData[P_DRAGOBJECT].GetPtr());
 
     Object* object = dragObject->GetObject();
 
@@ -799,7 +799,7 @@ void SceneView3D::HandleDragEnded(StringHash eventType, VariantMap& eventData)
 {
     using namespace DragEnded;
 
-    UIDragObject* dragObject = static_cast<UIDragObject*>(eventData[P_DRAGOBJECT].GetPtr());
+    tbUIDragObject* dragObject = static_cast<tbUIDragObject*>(eventData[P_DRAGOBJECT].GetPtr());
 
     if (dragNode_.NotNull())
     {

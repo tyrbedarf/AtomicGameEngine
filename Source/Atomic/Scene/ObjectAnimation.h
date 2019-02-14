@@ -25,7 +25,7 @@
 #include "../Resource/Resource.h"
 #include "../Scene/AnimationDefs.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ValueAnimation;

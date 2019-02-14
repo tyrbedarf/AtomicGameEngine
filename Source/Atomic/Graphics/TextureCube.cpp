@@ -40,7 +40,7 @@
 #pragma warning(disable:4355)
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const char* cubeMapLayoutNames[] = {
@@ -142,10 +142,10 @@ bool TextureCube::BeginLoad(Deserializer& source)
         }
         else
         {
-        
+
             CubeMapLayout layout =
                 (CubeMapLayout)GetStringListIndex(imageElem.GetAttribute("layout").CString(), cubeMapLayoutNames, CML_HORIZONTAL);
-            
+
             switch (layout)
             {
             case CML_HORIZONTAL:

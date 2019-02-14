@@ -28,7 +28,7 @@
 
 #include <Atomic/Network/HttpRequest.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 static int HttpRequest_Read(duk_context* ctx)

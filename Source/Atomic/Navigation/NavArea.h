@@ -25,7 +25,7 @@
 #include "../Math/BoundingBox.h"
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ATOMIC_API NavArea : public Component

@@ -31,7 +31,7 @@
 #include <Atomic/Core/Thread.h>
 #include <Atomic/Core/Object.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {

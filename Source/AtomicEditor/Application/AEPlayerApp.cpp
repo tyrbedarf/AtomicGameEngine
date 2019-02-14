@@ -25,7 +25,7 @@
 #include "AEEditorPrefs.h"
 #include "AEPlayerApp.h"
 
-namespace Atomic
+namespace Urho3D
 {
     void jsapi_init_webview(JSVM* vm, const VariantMap& engineParameters);
 }

@@ -28,7 +28,7 @@
 #include <emmintrin.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Rotation represented as a four-dimensional normalized vector.
@@ -318,7 +318,7 @@ public:
         _mm_storeu_ps(&w_, _mm_mul_ps(q, n));
 #else
         float lenSquared = LengthSquared();
-        if (!Atomic::Equals(lenSquared, 1.0f) && lenSquared > 0.0f)
+        if (!Urho3D::Equals(lenSquared, 1.0f) && lenSquared > 0.0f)
         {
             float invLen = 1.0f / sqrtf(lenSquared);
             w_ *= invLen;
@@ -344,7 +344,7 @@ public:
         return Quaternion(_mm_mul_ps(q, n));
 #else
         float lenSquared = LengthSquared();
-        if (!Atomic::Equals(lenSquared, 1.0f) && lenSquared > 0.0f)
+        if (!Urho3D::Equals(lenSquared, 1.0f) && lenSquared > 0.0f)
         {
             float invLen = 1.0f / sqrtf(lenSquared);
             return *this * invLen;
@@ -406,11 +406,11 @@ public:
     /// Test for equality with another quaternion with epsilon.
     bool Equals(const Quaternion& rhs) const
     {
-        return Atomic::Equals(w_, rhs.w_) && Atomic::Equals(x_, rhs.x_) && Atomic::Equals(y_, rhs.y_) && Atomic::Equals(z_, rhs.z_);
+        return Urho3D::Equals(w_, rhs.w_) && Urho3D::Equals(x_, rhs.x_) && Urho3D::Equals(y_, rhs.y_) && Urho3D::Equals(z_, rhs.z_);
     }
 
     /// Return whether is NaN.
-    bool IsNaN() const { return Atomic::IsNaN(w_) || Atomic::IsNaN(x_) || Atomic::IsNaN(y_) || Atomic::IsNaN(z_); }
+    bool IsNaN() const { return Urho3D::IsNaN(w_) || Urho3D::IsNaN(x_) || Urho3D::IsNaN(y_) || Urho3D::IsNaN(z_); }
 
     /// Return conjugate.
     Quaternion Conjugate() const

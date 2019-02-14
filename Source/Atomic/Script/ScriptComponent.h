@@ -25,7 +25,7 @@
 
 #include <Atomic/Scene/Component.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ScriptComponentFile;

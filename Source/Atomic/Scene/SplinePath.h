@@ -32,7 +32,7 @@
 #include "../Scene/Component.h"
 #include "../Scene/Node.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Spline for creating smooth movement based on Speed along a set of Control Points modified by the Interpolation Mode.
@@ -77,7 +77,7 @@ public:
 
     /// Get the movement Speed.
     float GetSpeed() const { return speed_; }
-    
+
     /// Get the length of SplinePath;
     float GetLength() const { return length_; }
 

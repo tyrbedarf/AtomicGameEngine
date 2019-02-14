@@ -31,7 +31,7 @@
 
 #include "IPCServer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 

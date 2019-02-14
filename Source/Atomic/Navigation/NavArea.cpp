@@ -28,7 +28,7 @@
 #include "../Navigation/NavArea.h"
 #include "../Scene/Node.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const unsigned MAX_NAV_AREA_ID = 255;

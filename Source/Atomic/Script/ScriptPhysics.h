@@ -28,7 +28,7 @@
 #include <Atomic/Physics/RigidBody.h>
 #include <Atomic/Scene/Node.h>
 
-namespace Atomic
+namespace Urho3D
 {
     class Node;
 

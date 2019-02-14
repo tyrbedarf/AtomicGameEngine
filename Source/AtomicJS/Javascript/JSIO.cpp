@@ -25,7 +25,7 @@
 #include <Atomic/IO/BufferQueue.h>
 #include <Atomic/IO/File.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 enum IO_MAGIC_TYPE

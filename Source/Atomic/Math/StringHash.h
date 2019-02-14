@@ -24,7 +24,7 @@
 
 #include "../Container/Str.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// 32-bit hash value for a string.

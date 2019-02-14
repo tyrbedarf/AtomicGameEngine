@@ -28,7 +28,7 @@
 
 #include <ThirdParty/SDL/include/SDL.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
     typedef bool(*atomic_plugin_validate_function)(int version, void *jsvmImports, size_t jsvmImportsSize);

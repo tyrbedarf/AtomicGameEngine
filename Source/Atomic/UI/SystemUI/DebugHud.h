@@ -27,9 +27,9 @@
 #include "../../Core/Timer.h"
 #include "../../Metrics/Metrics.h"
 
-#include "../UIEnums.h"
+#include "../tbUIEnums.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const unsigned DEBUGHUD_SHOW_NONE = 0x0;
@@ -105,7 +105,7 @@ private:
     Timer profilerTimer_;
     /// Profiler max block depth.
     unsigned profilerMaxDepth_;
-    /// Profiler mode 
+    /// Profiler mode
     DebugHudProfileMode profilerMode_;
     /// Profiler accumulation interval.
     unsigned profilerInterval_;

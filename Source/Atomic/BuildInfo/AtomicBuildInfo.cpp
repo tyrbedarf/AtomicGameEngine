@@ -3,7 +3,7 @@
 #include "AtomicGitSHA.h"
 #include "AtomicBuildInfo.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 String AtomicBuildInfo::GetBuildString()

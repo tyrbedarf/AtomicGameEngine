@@ -36,7 +36,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Text3DBitmap::Text3DBitmap(Text3DFont* font) :

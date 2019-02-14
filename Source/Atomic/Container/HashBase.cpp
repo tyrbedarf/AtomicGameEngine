@@ -24,7 +24,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 void HashBase::AllocateBuckets(unsigned size, unsigned numBuckets)

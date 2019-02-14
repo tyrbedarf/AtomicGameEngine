@@ -24,7 +24,7 @@
 
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// A link between otherwise unconnected regions of the navigation mesh.

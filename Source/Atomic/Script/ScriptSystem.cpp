@@ -24,7 +24,7 @@
 #include "ScriptComponent.h"
 #include "ScriptComponentFile.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 WeakPtr<Context> ScriptSystem::scriptContext_;

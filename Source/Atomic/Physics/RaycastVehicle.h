@@ -26,7 +26,7 @@
 #include "../Physics/PhysicsUtils.h"
 #include "../Physics/RigidBody.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 struct RaycastVehicleData;
@@ -37,13 +37,13 @@ class ATOMIC_API RaycastVehicle : public LogicComponent
 
 public:
     /// Construct.
-    RaycastVehicle(Atomic::Context* context);
+    RaycastVehicle(Urho3D::Context* context);
     /// Destruct.
     ~RaycastVehicle();
 
     /// Register object factory and attributes.
     static void RegisterObject(Context* context);
-    
+
     /// Handle enabled/disabled state change.
     virtual void OnSetEnabled();
 

@@ -25,7 +25,7 @@
 
 #include <AtomicApp/IPCServerApp.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
     class NETIPCServerApp : public IPCServerApp

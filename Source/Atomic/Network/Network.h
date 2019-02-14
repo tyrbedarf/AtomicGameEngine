@@ -35,7 +35,7 @@
 #undef SendMessage
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 class HttpRequest;
@@ -190,7 +190,7 @@ private:
     String packageCacheDir_;
 
     // ATOMIC BEGIN
-    
+
     void HandleClientConnected(StringHash eventType, VariantMap& eventData);
 
     kNet::Network* GetKnetNetwork() { return network_.Get(); }

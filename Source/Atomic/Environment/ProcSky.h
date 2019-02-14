@@ -36,7 +36,7 @@
 #include "../Graphics/Zone.h"
 #include "../Scene/Node.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 

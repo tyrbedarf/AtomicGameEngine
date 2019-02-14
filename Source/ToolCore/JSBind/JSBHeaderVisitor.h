@@ -25,7 +25,7 @@
 #include <Atomic/IO/Log.h>
 #include <Atomic/Core/ProcessUtils.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 
 #include "JSBHeader.h"
@@ -332,7 +332,7 @@ public:
                 return NULL;
         }
 
-        // We don't support pointers to Vector2/Vector3/etc which are generally out values 
+        // We don't support pointers to Vector2/Vector3/etc which are generally out values
         if (isPointer && jtype->asClassType() && jtype->asClassType()->class_->IsNumberArray())
             return NULL;
 

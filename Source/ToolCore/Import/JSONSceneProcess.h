@@ -32,7 +32,7 @@
 #include <Atomic/Graphics/Model.h>
 #include <Atomic/Scene/Scene.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {

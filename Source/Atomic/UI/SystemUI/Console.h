@@ -25,7 +25,7 @@
 
 #include "../../Core/Object.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Console window with log history and command line prompt.

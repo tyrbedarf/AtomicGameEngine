@@ -34,7 +34,7 @@
 #include "JSComponentFile.h"
 #include "JSVM.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Javascript::Javascript(Context* context) :

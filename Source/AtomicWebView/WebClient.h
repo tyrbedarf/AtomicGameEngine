@@ -28,7 +28,7 @@
 
 class CefClient;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebClientPrivate;

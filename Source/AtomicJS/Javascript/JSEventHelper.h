@@ -25,7 +25,7 @@
 #include <Atomic/Core/Object.h>
 #include <Atomic/Core/Context.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class JSEventDispatcher : public Object, public GlobalEventListener

@@ -28,7 +28,7 @@
 #include "../Core/Thread.h"
 #include "../IO/Deserializer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// HTTP connection state

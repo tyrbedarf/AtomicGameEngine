@@ -48,11 +48,11 @@
 #include "../IO/Log.h"
 #include "../Resource/ResourceCache.h"
 #include "../Scene/Scene.h"
-#include "../UI/UI.h"
+#include "../UI/tbUI.h"
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const Vector3* directions[] =
@@ -1724,7 +1724,7 @@ void View::ExecuteRenderPathCommands()
             case CMD_RENDERUI:
                 {
                     SetRenderTargets(command);
-                    GetSubsystem<UI>()->Render(false);
+                    GetSubsystem<tbUI>()->Render(false);
                 }
                 break;
 
@@ -3188,9 +3188,9 @@ RenderSurface* View::GetRenderSurfaceFromTexture(Texture* texture, CubeMapFace f
 void View::SendViewEvent(StringHash eventType)
 {
     using namespace BeginViewRender;
-    
+
     VariantMap& eventData = GetEventDataMap();
-    
+
     eventData[P_VIEW] = this;
     eventData[P_SURFACE] = renderTarget_;
     eventData[P_TEXTURE] = (renderTarget_ ? renderTarget_->GetParentTexture() : 0);

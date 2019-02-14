@@ -28,7 +28,7 @@
 #include "../Math/Ray.h"
 #include "../Math/Sphere.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Drawable;

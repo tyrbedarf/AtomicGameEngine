@@ -24,7 +24,7 @@
 
 #include "AssetImporter.h"
 
-namespace Atomic
+namespace Urho3D
 {
 class Scene;
 }
@@ -62,7 +62,7 @@ private:
 
     void HandlePrefabSave(StringHash eventType, VariantMap& eventData);
 
-    SharedPtr<Atomic::Scene> preloadResourceScene_;
+    SharedPtr<Urho3D::Scene> preloadResourceScene_;
 
     /// The last time the file was access, to avoid double loading based on saving prefabs
     unsigned lastFileStamp_;

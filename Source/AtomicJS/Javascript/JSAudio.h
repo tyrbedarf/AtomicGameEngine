@@ -24,7 +24,7 @@
 
 #include "JSAPI.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class JSVM;

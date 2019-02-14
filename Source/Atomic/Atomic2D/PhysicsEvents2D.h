@@ -28,7 +28,7 @@
 // on whether 3D physics support or Bullet has been compiled in.
 #include "../Physics/PhysicsEvents.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Physics update contact. Global event sent by PhysicsWorld2D.

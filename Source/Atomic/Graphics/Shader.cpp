@@ -33,7 +33,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 void CommentOutFunction(String& code, const String& signature)

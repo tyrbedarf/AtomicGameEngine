@@ -31,7 +31,7 @@
 #include <BulletDynamics/Vehicle/btRaycastVehicle.h>
 #include <BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 struct RaycastVehicleData
@@ -129,7 +129,7 @@ struct RaycastVehicleData
     bool added_;
 };
 
-RaycastVehicle::RaycastVehicle(Context* context) : 
+RaycastVehicle::RaycastVehicle(Context* context) :
     LogicComponent(context)
 {
     // fixed update() for inputs and post update() to sync wheels for rendering

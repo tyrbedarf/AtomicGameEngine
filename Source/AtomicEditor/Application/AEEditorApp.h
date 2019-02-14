@@ -24,7 +24,7 @@
 
 #include <AtomicApp/AppBase.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicEditor
 {
@@ -37,11 +37,11 @@ namespace AtomicEditor
         AEEditorApp(Context* context);
         virtual ~AEEditorApp();
 
-        /// Setup before engine initialization. 
+        /// Setup before engine initialization.
         virtual void Setup();
         /// Setup after engine initialization. L
         virtual void Start();
-        /// Cleanup after the main loop. 
+        /// Cleanup after the main loop.
         virtual void Stop();
 
         virtual void ProcessArguments();

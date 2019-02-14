@@ -24,7 +24,7 @@
 
 #include "../Core/Object.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// A command has been entered on the console.

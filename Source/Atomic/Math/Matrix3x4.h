@@ -28,7 +28,7 @@
 #include <emmintrin.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// 3x4 matrix for scene node transform calculations.
@@ -683,7 +683,7 @@ public:
 
         for (unsigned i = 0; i < 12; ++i)
         {
-            if (!Atomic::Equals(leftData[i], rightData[i]))
+            if (!Urho3D::Equals(leftData[i], rightData[i]))
                 return false;
         }
 

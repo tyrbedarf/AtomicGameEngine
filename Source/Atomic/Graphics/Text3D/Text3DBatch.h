@@ -26,7 +26,7 @@
 #include "../../Math/Rect.h"
 #include "../GraphicsDefs.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class PixelShader;

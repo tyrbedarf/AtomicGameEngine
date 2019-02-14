@@ -41,7 +41,7 @@ enum LoopMode2D
     LM_FORCE_CLAMPED
 };
 
-namespace Atomic
+namespace Urho3D
 {
 
 namespace Spriter
@@ -141,7 +141,7 @@ protected:
     /// Animation state.
     spAnimationState* animationState_;
 #endif
-    
+
     /// Spriter instance.
     UniquePtr<Spriter::SpriterInstance> spriterInstance_;
 };

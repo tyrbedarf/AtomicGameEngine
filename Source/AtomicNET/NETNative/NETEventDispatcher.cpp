@@ -27,7 +27,7 @@
 #include "NETCore.h"
 #include "NETEventDispatcher.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 

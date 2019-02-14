@@ -40,7 +40,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 inline float FixedToFloat(FT_Pos value)

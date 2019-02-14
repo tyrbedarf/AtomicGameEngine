@@ -27,7 +27,7 @@
 
 #include "WebRenderHandler.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebTexture2DPrivate;

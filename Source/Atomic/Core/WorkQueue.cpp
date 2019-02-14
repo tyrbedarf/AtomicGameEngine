@@ -28,7 +28,7 @@
 #include "../Core/WorkQueue.h"
 #include "../IO/Log.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Worker thread managed by the work queue.
@@ -384,7 +384,7 @@ void WorkQueue::ReturnToPool(SharedPtr<WorkItem>& item)
     // Check if this was a pooled item and set it to usable
     if (item->pooled_)
     {
-        // Reset the values to their defaults. This should 
+        // Reset the values to their defaults. This should
         // be safe to do here as the completed event has
         // already been handled and this is part of the
         // internal pool.

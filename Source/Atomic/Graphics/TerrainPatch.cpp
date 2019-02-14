@@ -38,7 +38,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const float LOD_CONSTANT = 1.0f / 150.0f;

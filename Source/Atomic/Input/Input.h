@@ -27,13 +27,13 @@
 #include "../Core/Object.h"
 #include "../Container/List.h"
 #include "../Input/InputEvents.h"
-#include "../UI/UIButton.h"
+#include "../UI/tbUIButton.h"
 
 // ATOMIC BEGIN
 // #include "../UI/Cursor.h"
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Input Mouse Modes.
@@ -49,9 +49,9 @@ enum MouseMode
 class Deserializer;
 class Graphics;
 class Serializer;
-class UIWidget;
+class tbUIWidget;
 class XMLFile;
-class UIButton;
+class tbUIButton;
 
 const IntVector2 MOUSE_POSITION_OFFSCREEN = IntVector2(M_MIN_INT, M_MIN_INT);
 
@@ -59,7 +59,7 @@ const IntVector2 MOUSE_POSITION_OFFSCREEN = IntVector2(M_MIN_INT, M_MIN_INT);
 struct TouchState
 {
     /// Return last touched UI element, used by scripting integration.
-    UIWidget* GetTouchedElement();
+    tbUIWidget* GetTouchedElement();
 
     /// Touch (finger) ID.
     int touchID_;
@@ -73,7 +73,7 @@ struct TouchState
     float pressure_;
 // ATOMIC BEGIN
     /// Last touched UI widget
-    WeakPtr<UIWidget> touchedWidget_;
+    WeakPtr<tbUIWidget> touchedWidget_;
 // ATOMIC END
 };
 
@@ -131,7 +131,7 @@ public:
     bool StartRumble();
     void StopRumble();
     bool IsRumble();
-    void DoRumble( float strength, unsigned int length); 
+    void DoRumble( float strength, unsigned int length);
     // ATOMIC END
 
     /// SDL joystick.
@@ -336,11 +336,11 @@ public:
 
 // ATOMIC BEGIN
     /// Binds UIButton element to the given button
-    void BindButton(UIButton* touchButton, int button);
+    void BindButton(tbUIButton* touchButton, int button);
 
     void SimulateButtonDown(int button);
     void SimulateButtonUp(int button);
-    
+
     bool GetJoystickRumble(unsigned int id);  /// return if rumble is supported on game controller
     void JoystickRumble(unsigned int id, float strength, unsigned int length); /// produce rumble
     void JoystickSimulateMouseMove(int xpos, int ypos); /// moves the on screen cursor
@@ -351,7 +351,7 @@ public:
     const IntVector2& GetTouchLastPosition(unsigned index) { if (index >= touches_.Size()) return IntVector2::ZERO; return touches_[index].lastPosition_; }
     const IntVector2& GetTouchDelta(unsigned index) { if (index >= touches_.Size()) return IntVector2::ZERO; return touches_[index].delta_; }
     const float GetTouchPressure(unsigned index) { if (index >= touches_.Size()) return 0.0f; return touches_[index].pressure_; }
-    UIWidget* GetTouchWidget(unsigned index) { if (index >= touches_.Size()) return 0; return touches_[index].touchedWidget_; }    
+    tbUIWidget* GetTouchWidget(unsigned index) { if (index >= touches_.Size()) return 0; return touches_[index].touchedWidget_; }
 
 // ATOMIC END
 

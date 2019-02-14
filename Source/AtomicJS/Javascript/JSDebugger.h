@@ -24,7 +24,7 @@
 
 #include <Atomic/Core/Object.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 

@@ -43,7 +43,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* blendModeNames[];
@@ -465,7 +465,7 @@ void Renderer2D::UpdateViewBatchInfo(ViewBatchInfo2D& viewBatchInfo, Camera* cam
         Vector3 worldPos = sourceBatch->owner_->GetNode()->GetWorldPosition();
         sourceBatch->distance_ = camera->GetDistance(worldPos);
     }
-    
+
     Sort(sourceBatches.Begin(), sourceBatches.End(), CompareSourceBatch2Ds);
 
     viewBatchInfo.batchCount_ = 0;
@@ -520,7 +520,7 @@ void Renderer2D::UpdateViewBatchInfo(ViewBatchInfo2D& viewBatchInfo, Camera* cam
     viewBatchInfo.batchUpdatedFrameNumber_ = frame_.frameNumber_;
 }
 
-void Renderer2D::AddViewBatch(ViewBatchInfo2D& viewBatchInfo, Material* material, 
+void Renderer2D::AddViewBatch(ViewBatchInfo2D& viewBatchInfo, Material* material,
     unsigned indexStart, unsigned indexCount, unsigned vertexStart, unsigned vertexCount, float distance)
 {
     if (!material || indexCount == 0 || vertexCount == 0)

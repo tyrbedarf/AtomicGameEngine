@@ -25,10 +25,10 @@
 #include "../Graphics/Drawable.h"
 #include "../Graphics/GraphicsDefs.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
-class Drawable2D; 
+class Drawable2D;
 class Renderer2D;
 class Texture2D;
 class VertexBuffer;

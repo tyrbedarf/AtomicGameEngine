@@ -43,7 +43,7 @@
 #include <Atomic/Math/Matrix3x4.h>
 #include <Atomic/Math/BoundingBox.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {

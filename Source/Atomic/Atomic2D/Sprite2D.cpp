@@ -32,7 +32,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Sprite2D::Sprite2D(Context* context) :

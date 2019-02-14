@@ -27,7 +27,7 @@
 #include "../../Math/Matrix3x4.h"
 #include "Text3DText.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Text3DText;
@@ -185,7 +185,7 @@ protected:
     void UpdateTextMaterials(bool forceUpdate = false);
     /// Recalculate camera facing and fixed screen size.
     void CalculateFixedScreenSize(const FrameInfo& frame);
-    
+
     /// Internally used text element.
     Text3DText text_;
     /// Geometries.

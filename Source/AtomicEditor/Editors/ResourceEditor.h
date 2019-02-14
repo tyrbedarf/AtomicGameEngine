@@ -24,10 +24,10 @@
 
 #include <Atomic/Core/Object.h>
 
-#include <Atomic/UI/UIButton.h>
-#include <Atomic/UI/UITabContainer.h>
+#include <Atomic/UI/tbUIButton.h>
+#include <Atomic/UI/tbUITabContainer.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 using namespace tb;
 
 namespace AtomicEditor
@@ -41,11 +41,11 @@ class ResourceEditor: public Object
 
 public:
 
-    ResourceEditor(Context* context, const String& fullpath, UITabContainer* container);
+    ResourceEditor(Context* context, const String& fullpath, tbUITabContainer* container);
 
     virtual ~ResourceEditor();
 
-    UIButton* GetButton() { return button_; }
+    tbUIButton* GetButton() { return button_; }
 
     virtual bool HasUnsavedModifications() { return modified_; }
 
@@ -68,7 +68,7 @@ public:
 
     virtual void Delete();
 
-    UIWidget* GetRootContentWidget() { return rootContentWidget_; }
+    tbUIWidget* GetRootContentWidget() { return rootContentWidget_; }
 
     virtual void InvokeShortcut(const String& shortcut);
 
@@ -84,9 +84,9 @@ protected:
 
     EditorTabLayout* editorTabLayout_;
 
-    SharedPtr<UITabContainer> container_;
-    SharedPtr<UIWidget> rootContentWidget_;
-    SharedPtr<UIButton> button_;
+    SharedPtr<tbUITabContainer> container_;
+    SharedPtr<tbUIWidget> rootContentWidget_;
+    SharedPtr<tbUIButton> button_;
 
 private:
 

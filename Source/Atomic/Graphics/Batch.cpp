@@ -37,7 +37,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 inline bool CompareBatchesState(Batch* lhs, Batch* rhs)
@@ -735,11 +735,11 @@ void BatchQueue::SortBackToFront()
     Sort(sortedBatches_.Begin(), sortedBatches_.End(), CompareBatchesBackToFront);
 
     sortedBatchGroups_.Resize(batchGroups_.Size());
-    
+
     unsigned index = 0;
     for (HashMap<BatchGroupKey, BatchGroup>::Iterator i = batchGroups_.Begin(); i != batchGroups_.End(); ++i)
         sortedBatchGroups_[index++] = &i->second_;
-    
+
     Sort(sortedBatchGroups_.Begin(), sortedBatchGroups_.End(), CompareBatchGroupOrder);
 }
 

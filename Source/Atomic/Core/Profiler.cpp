@@ -24,7 +24,7 @@
 #include "../Core/Profiler.h"
 #include "../Core/StringUtils.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Profiler::Profiler(Context* context)

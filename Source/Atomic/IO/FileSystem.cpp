@@ -84,7 +84,7 @@ const char* SDL_IOS_GetDocumentsDir();
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 int DoSystemCommand(const String& commandLine, bool redirectToLog, Context* context)

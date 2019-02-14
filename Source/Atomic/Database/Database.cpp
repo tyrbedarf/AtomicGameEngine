@@ -25,7 +25,7 @@
 #include "../Core/Profiler.h"
 #include "../Database/Database.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Database::Database(Context* context_) :

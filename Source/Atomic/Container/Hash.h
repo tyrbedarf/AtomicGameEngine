@@ -24,7 +24,7 @@
 
 #include <cstddef>
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Pointer hash function.

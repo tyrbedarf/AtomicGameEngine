@@ -28,7 +28,7 @@
 
 #include <Atomic/Container/Sort.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 JSMetrics::JSMetrics(Context* context, JSVM *vm) : Object(context),

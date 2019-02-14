@@ -24,7 +24,7 @@
 
 #include "../Graphics/StaticModel.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Static model component with fixed position in relation to the camera.

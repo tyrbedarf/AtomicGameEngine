@@ -43,7 +43,7 @@
 #include "../Resource/ResourceCache.h"
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* ATOMIC2D_CATEGORY;

@@ -43,7 +43,7 @@ extern "C"
 }
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 #ifndef __APPLE__
 static const unsigned BUFFERSIZE = 4096;

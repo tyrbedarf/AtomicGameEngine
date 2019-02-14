@@ -26,7 +26,7 @@
 
 #include "JSAtomic3D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 
@@ -63,14 +63,14 @@ static int CustomGeometry_SetMaterialIndex(duk_context* ctx) {
     return 0;
 }
 
-static int BillboardSet_GetBillboard(duk_context* ctx) 
+static int BillboardSet_GetBillboard(duk_context* ctx)
 {
     duk_push_this(ctx);
 
     BillboardSet* billboardSet = js_to_class_instance<BillboardSet>(ctx, -1, 0);
 
     unsigned index = (unsigned)duk_to_number(ctx, 0);
-    
+
     Billboard* billboard = billboardSet->GetBillboard(index);
 
     js_push_class_object_instance(ctx, billboard, "Billboard");

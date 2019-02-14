@@ -30,7 +30,7 @@
 #include "../Graphics/DebugRenderer.h"
 #include "../Scene/Node.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const float DEFAULT_NEARDISTANCE = 0.0f;

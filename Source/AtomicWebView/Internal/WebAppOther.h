@@ -24,7 +24,7 @@
 
 #include "WebApp.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebAppOther : public WebApp

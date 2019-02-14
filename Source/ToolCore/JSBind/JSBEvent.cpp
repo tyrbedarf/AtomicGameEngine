@@ -29,14 +29,14 @@
 #include "JSBPackage.h"
 #include "JSBEvent.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
 
 JSBEvent::JSBEvent(Context* context, JSBModule* module, const String& eventID, const String& eventName, const String& eventComment) :
     Object(context),
-    module_(module), 
+    module_(module),
     header_(0),
     eventID_(eventID),
     eventName_(eventName),
@@ -144,7 +144,7 @@ bool JSBEvent::ScanModuleEvents(JSBModule* module)
                 eventName.Replace(")", "");
 
                 curEvent = new JSBEvent(module->GetContext(), module, eventID, eventName, eventComment);
-            }            
+            }
 
             if (line.Contains("}") && curEvent.NotNull())
             {
@@ -214,7 +214,7 @@ bool JSBEvent::ScanModuleEvents(JSBModule* module)
 
                 if (!typeInfo.Length())
                 {
-                    ATOMIC_LOGWARNINGF("Could not get type info for event param : %s : (%s) file: %s", 
+                    ATOMIC_LOGWARNINGF("Could not get type info for event param : %s : (%s) file: %s",
                         curEvent->GetEventID().CString(), line.CString(), header->GetFilePath().CString());
                     continue;
                 }
@@ -242,7 +242,7 @@ bool JSBEvent::ScanModuleEvents(JSBModule* module)
             }
 
         }
-        
+
     }
 
     return true;

@@ -24,10 +24,10 @@
 
 #include "ResourceEditor.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 using namespace tb;
 
-namespace Atomic
+namespace Urho3D
 {
     class UIWebView;
     class WebClient;
@@ -43,7 +43,7 @@ class JSResourceEditor: public ResourceEditor
 
 public:
 
-    JSResourceEditor(Context* context, const String& fullpath, UITabContainer* container, const String& editorUrl);
+    JSResourceEditor(Context* context, const String& fullpath, tbUITabContainer* container, const String& editorUrl);
 
     virtual ~JSResourceEditor();
 

@@ -25,7 +25,7 @@
 #include "../Core/Object.h"
 #include "../Core/Timer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Console;
@@ -131,7 +131,7 @@ public:
 
     /// Return the engine's current framerate (updated at 1/2 second intervals)
     unsigned GetFps() const { return fps_; }
-    
+
     bool GetDebugBuild() const;
 
     // ATOMIC END
@@ -179,7 +179,7 @@ private:
     bool headless_;
     /// Audio paused flag.
     bool audioPaused_;
-    
+
     // ATOMIC BEGIN
     /// Engine paused flag
     bool paused_;
@@ -194,7 +194,7 @@ private:
     unsigned fps_;
 
     // ATOMIC END
-   
+
 };
 
 }

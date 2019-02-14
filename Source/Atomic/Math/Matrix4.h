@@ -29,7 +29,7 @@
 #include <emmintrin.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Matrix3x4;
@@ -622,7 +622,7 @@ public:
 
         for (unsigned i = 0; i < 16; ++i)
         {
-            if (!Atomic::Equals(leftData[i], rightData[i]))
+            if (!Urho3D::Equals(leftData[i], rightData[i]))
                 return false;
         }
 

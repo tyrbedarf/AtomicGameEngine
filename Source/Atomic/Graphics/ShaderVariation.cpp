@@ -28,7 +28,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 ShaderVariation::ShaderVariation(Shader* owner, ShaderType type) :

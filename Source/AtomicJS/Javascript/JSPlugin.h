@@ -24,7 +24,7 @@
 
 #include <Atomic/Container/Str.h>
 
-namespace Atomic
+namespace Urho3D
 {
     class JSVM;
 

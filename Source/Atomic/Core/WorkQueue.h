@@ -26,7 +26,7 @@
 #include "../Core/Mutex.h"
 #include "../Core/Object.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Work item completed event.

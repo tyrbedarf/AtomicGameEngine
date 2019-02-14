@@ -22,7 +22,7 @@
 
 #pragma once
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Client->server: send VariantMap of identity and authentication data.

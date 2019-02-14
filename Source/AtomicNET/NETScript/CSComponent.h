@@ -27,7 +27,7 @@
 
 #include "CSComponentAssembly.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class CSComponent : public ScriptComponent

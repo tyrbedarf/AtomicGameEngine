@@ -31,7 +31,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const DXGI_FORMAT d3dElementFormats[] =

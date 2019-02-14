@@ -24,7 +24,7 @@
 
 #include "WebString.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 bool ConvertCEFString(const CefString& cefString, String& output)

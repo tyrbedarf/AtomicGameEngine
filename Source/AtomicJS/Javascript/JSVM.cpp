@@ -43,7 +43,7 @@
 #include "JSMetrics.h"
 #include "JSEventHelper.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 JSVM* JSVM::instance_ = NULL;
@@ -111,7 +111,7 @@ void JSVM::InitJSContext()
 }
 
 void JSVM::InitializePackages()
-{   
+{
     for (unsigned i = 0; i < packageRegistrations_.Size(); i++)
     {
         JSAPIPackageRegistration* pkgReg = packageRegistrations_.At(i);
@@ -129,7 +129,7 @@ void JSVM::InitializePackages()
     }
 
     packageRegistrations_.Clear();
-    
+
 }
 
 void JSVM::RegisterPackage(JSVMPackageRegistrationFunction regFunction)
@@ -188,7 +188,7 @@ void JSVM::Stash(RefCounted* refCounted)
 
     duk_push_pointer(ctx_, refCounted);
     duk_push_heapptr(ctx_, refCounted->JSGetHeapPtr());
-    
+
     duk_put_prop(ctx_, -3);
     duk_pop_2(ctx_);
 
@@ -217,7 +217,7 @@ void JSVM::Unstash(RefCounted* refCounted)
 */
 
     duk_push_pointer(ctx_, refCounted);
-    duk_del_prop(ctx_, -2);   
+    duk_del_prop(ctx_, -2);
     duk_pop_2(ctx_);
 }
 

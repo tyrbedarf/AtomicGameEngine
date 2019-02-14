@@ -25,7 +25,7 @@
 #include "../Container/HashMap.h"
 #include "../Container/Ptr.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Animation;

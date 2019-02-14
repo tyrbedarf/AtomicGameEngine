@@ -29,7 +29,7 @@
 #include <Recast/include/Recast.h>
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 NavBuildData::NavBuildData() :

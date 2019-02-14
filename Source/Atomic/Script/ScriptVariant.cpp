@@ -22,7 +22,7 @@
 
 #include "ScriptVariant.h"
 
-namespace Atomic
+namespace Urho3D
 
 {
 
@@ -37,7 +37,7 @@ Resource* ScriptVariant::GetResource() const
 
         ResourceCache* cache = ScriptSystem::GetContext()->GetSubsystem<ResourceCache>();
 
-        return cache->GetResource(ref.type_, ref.name_);       
+        return cache->GetResource(ref.type_, ref.name_);
     }
 
     return 0;

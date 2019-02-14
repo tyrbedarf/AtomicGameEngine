@@ -34,15 +34,15 @@
 #include <imgui.h>
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 class SystemUI
-        : public Atomic::Object
+        : public Urho3D::Object
 {
-ATOMIC_OBJECT(SystemUI, Atomic::Object);
+ATOMIC_OBJECT(SystemUI, Urho3D::Object);
 public:
-    SystemUI(Atomic::Context* context);
+    SystemUI(Urho3D::Context* context);
     ~SystemUI();
 
     //! Get ui scale.
@@ -59,7 +59,7 @@ public:
       \param merge set to true if new font should be merged to last active font.
       \return ImFont instance that may be used for setting current font when drawing GUI.
     */
-    ImFont* AddFont(const Atomic::String& font_path, float size = 0, const unsigned short* ranges = 0,
+    ImFont* AddFont(const Urho3D::String& font_path, float size = 0, const unsigned short* ranges = 0,
                     bool merge = false);
     //! Add font to imgui subsystem.
     /*!
@@ -70,19 +70,19 @@ public:
       \return ImFont instance that may be used for setting current font when drawing GUI.
     */
     ImFont* AddFont(
-            const Atomic::String& font_path, float size = 0,
+            const Urho3D::String& font_path, float size = 0,
             const std::initializer_list<unsigned short>& ranges = {}, bool merge = false);
 
 protected:
     float uiScale_ = 1.f;
-    Atomic::Matrix4 projection_;
-    Atomic::VertexBuffer vertexBuffer_;
-    Atomic::IndexBuffer indexBuffer_;
-    Atomic::SharedPtr<Texture2D> fontTexture_;
+    Urho3D::Matrix4 projection_;
+    Urho3D::VertexBuffer vertexBuffer_;
+    Urho3D::IndexBuffer indexBuffer_;
+    Urho3D::SharedPtr<Texture2D> fontTexture_;
 
     void ReallocateFontTexture();
     void UpdateProjectionMatrix();
-    void OnEndRendering(Atomic::VariantMap& args);
+    void OnEndRendering(Urho3D::VariantMap& args);
     void OnRenderDrawLists(ImDrawData* data);
     void OnRawEvent(VariantMap& args);
 };

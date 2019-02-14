@@ -21,7 +21,7 @@
 //
 
 #include <Atomic/Input/Input.h>
-#include <Atomic/UI/UI.h>
+#include <Atomic/UI/tbUI.h>
 #include <AtomicJS/Javascript/Javascript.h>
 #include <Atomic/IPC/IPC.h>
 #include <Atomic/Engine/EngineDefs.h>
@@ -45,7 +45,7 @@
 using namespace ToolCore;
 
 // Fix these externs
-namespace Atomic
+namespace Urho3D
 {
     void jsapi_init_webview(JSVM* vm, const VariantMap& engineParameters);
     extern void jsb_package_atomicnetscript_init(JSVM* vm);
@@ -147,15 +147,15 @@ namespace AtomicEditor
 
         context_->RegisterSubsystem(new EditorMode(context_));
         context_->RegisterSubsystem(new NETBuildSystem(context_));
-        context_->RegisterSubsystem(new EditorNETService(context_));        
+        context_->RegisterSubsystem(new EditorNETService(context_));
 
         AppBase::Start();
 
         vm_->SetModuleSearchPaths("AtomicEditor/JavaScript;AtomicEditor/EditorScripts;AtomicEditor/EditorScripts/AtomicEditor");
 
         // move UI initialization to JS
-        UI* ui = GetSubsystem<UI>();
-        ui->Initialize("AtomicEditor/resources/language/lng_en.tb.txt");        
+        tbUI* ui = GetSubsystem<tbUI>();
+        ui->Initialize("AtomicEditor/resources/language/lng_en.tb.txt");
 
         duk_get_global_string(vm_->GetJSContext(), "require");
         duk_push_string(vm_->GetJSContext(), "main");

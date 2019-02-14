@@ -22,7 +22,7 @@
 
 #include "NETScriptObject.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
     NETScriptObject::NETScriptObject(Context* context) : Object(context)

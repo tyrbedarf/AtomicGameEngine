@@ -35,7 +35,7 @@
 
 #include "JSVM.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
     /*
@@ -360,7 +360,7 @@ namespace Atomic
                                         // truncate
                                         vector->Resize(finfo->fixedArraySize_);
                                     }
-                                    
+
                                 }
                             }
 
@@ -401,12 +401,12 @@ namespace Atomic
 
                                 if (finfo->fixedArraySize_)
                                 {
-                                    
+
                                     VariantVector init(finfo->fixedArraySize_);
                                     init.Resize(finfo->fixedArraySize_);
                                     Variant value;
                                     js_get_default_variant(finfo->variantType_, value);
-                                    
+
                                     for (unsigned i = 0; i < finfo->fixedArraySize_; i++)
                                     {
                                         init[i] = value;
@@ -416,7 +416,7 @@ namespace Atomic
 
                                     vector->AdaptFromVector(init);
 
-                                    
+
 
                                 }
 
@@ -470,7 +470,7 @@ namespace Atomic
                         duk_put_prop_string(ctx, -2, "resourceTypeName");
                     }
                     else if (defaultFieldValues.Contains(fieldInfo.name_) && defaultFieldValues[fieldInfo.name_]->GetType() == VAR_RESOURCEREF)
-                    {       
+                    {
                         if (const Variant* value = defaultFieldValues[fieldInfo.name_])
                         {
                             if (value->GetType() == VAR_RESOURCEREF)

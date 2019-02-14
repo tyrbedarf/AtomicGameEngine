@@ -28,7 +28,7 @@
 
 #include <d3d9.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Graphics;

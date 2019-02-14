@@ -59,12 +59,12 @@ int SDL_main(int argc, char** argv)
     {
         return sdlEntryCallback();
     }
-#endif    
+#endif
     return 0;
 }
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
     NETAtomicPlayer::NETAtomicPlayer(Context* context) :

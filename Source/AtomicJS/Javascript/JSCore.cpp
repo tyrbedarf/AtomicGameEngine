@@ -27,7 +27,7 @@
 #include "JSEventHelper.h"
 #include "JSVM.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static int Object_SubscribeToEvent(duk_context* ctx)

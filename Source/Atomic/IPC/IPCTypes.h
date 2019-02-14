@@ -22,7 +22,7 @@
 
 #pragma once
 
-namespace Atomic
+namespace Urho3D
 {
 
 #ifdef ATOMIC_PLATFORM_WINDOWS

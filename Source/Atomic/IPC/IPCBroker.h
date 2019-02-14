@@ -24,7 +24,7 @@
 
 #include "IPCChannel.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class IPCProcess;

@@ -26,7 +26,7 @@
 #include "../Math/Matrix3x4.h"
 #include "../Scene/Animatable.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Component;
@@ -636,14 +636,14 @@ public:
     /// Return child scene nodes by name hash, optionally recursive
     void GetChildrenWithName(PODVector<Node*>& dest, StringHash nameHash, bool recursive = false) const;
 
-    /// Scripting interface to set user data, the data type can be 
+    /// Scripting interface to set user data, the data type can be
     ///   Int, Bool, Float, Vector2, Vector3, Vector4, Quaternion
     ///   String, Buffer, ResourceRef, ResourceRefList, IntRect,
     ///   IntVector2, Matrix3,Matrix3x4, Matrix4, Double, Color
     /// The data value must be formatted in the Variant type string format.
-    void SetVarFromString (const String& name, const String& vartype, const String& value) 
-    { 
-        vars_[name].FromString(vartype, value); 
+    void SetVarFromString (const String& name, const String& vartype, const String& value)
+    {
+        vars_[name].FromString(vartype, value);
     }
 
     /// Scripting interface to get user data as a string.

@@ -11,7 +11,7 @@
 #include "PrefabComponent.h"
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 PrefabComponent::PrefabComponent(Context* context) :
@@ -26,7 +26,7 @@ PrefabComponent::~PrefabComponent()
 }
 
 bool PrefabComponent::SavePrefab()
-{    
+{
     using namespace PrefabSave;
     VariantMap eventData;
     eventData[P_PREFABCOMPONENT] = this;

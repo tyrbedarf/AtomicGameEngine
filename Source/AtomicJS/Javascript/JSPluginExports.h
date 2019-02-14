@@ -25,7 +25,7 @@
 #include <Duktape/duktape.h>
 #include <Duktape/duk_logging.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
     #define ATOMIC_JSPLUGIN_VERSION 1

@@ -58,7 +58,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 const char* navmeshPartitionTypeNames[] =

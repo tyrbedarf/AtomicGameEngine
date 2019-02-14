@@ -27,7 +27,7 @@
 
 #include "ScriptSystem.h"
 
-namespace Atomic
+namespace Urho3D
 {
     /// Wraps a Variant as a RefCounted so we can easily send it to script code
     /// For performance sensitive code, specialized marshaling should be used instead

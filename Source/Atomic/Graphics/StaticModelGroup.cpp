@@ -35,7 +35,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* GEOMETRY_CATEGORY;
@@ -390,7 +390,7 @@ void StaticModelGroup::OnWorldBoundingBoxUpdate()
 
     worldBoundingBox_ = worldBox;
 
-    // Store the amount of valid instances we found instead of resizing worldTransforms_. This is because this function may be 
+    // Store the amount of valid instances we found instead of resizing worldTransforms_. This is because this function may be
     // called from multiple worker threads simultaneously
     numWorldTransforms_ = index;
 }

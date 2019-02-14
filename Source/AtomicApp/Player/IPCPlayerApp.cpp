@@ -36,7 +36,7 @@
 
 #include "IPCPlayerApp.h"
 
-namespace Atomic
+namespace Urho3D
 {
     IPCPlayerApp::IPCPlayerApp(Context* context) :
         PlayerApp(context),
@@ -45,7 +45,7 @@ namespace Atomic
         brokerActive_(false)
     {
         fd_[0] = INVALID_IPCHANDLE_VALUE;
-        fd_[1] = INVALID_IPCHANDLE_VALUE;        
+        fd_[1] = INVALID_IPCHANDLE_VALUE;
     }
 
     IPCPlayerApp::~IPCPlayerApp()
@@ -224,7 +224,7 @@ namespace Atomic
     {
         brokerActive_ = true;
 
-        // If the parent application has a profile mode up, sync 
+        // If the parent application has a profile mode up, sync
         DebugHud* debugHud = GetSubsystem<DebugHud>();
         if (debugHud)
         {

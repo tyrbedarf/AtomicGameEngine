@@ -44,7 +44,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 struct WebRequestInternalState
@@ -254,7 +254,7 @@ struct WebRequestInternalState
     }
 
     void onEnd(int code)
-    {       
+    {
         using namespace WebRequestComplete;
         VariantMap eventData;
 

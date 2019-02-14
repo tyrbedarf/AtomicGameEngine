@@ -28,7 +28,7 @@
 #include "../Graphics/GraphicsDefs.h"
 #include "../Math/Frustum.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class BoundingBox;

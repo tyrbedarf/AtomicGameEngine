@@ -31,7 +31,7 @@ typedef pthread_t ThreadID;
 typedef unsigned ThreadID;
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Operating system thread.

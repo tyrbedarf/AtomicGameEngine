@@ -25,7 +25,7 @@
 
 #include <AtomicApp/Player/IPCPlayerApp.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
     class NETIPCPlayerApp : public IPCPlayerApp

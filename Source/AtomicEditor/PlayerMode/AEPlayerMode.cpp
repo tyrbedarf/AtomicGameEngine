@@ -30,7 +30,7 @@
 #include <Atomic/Graphics/Camera.h>
 #include <Atomic/UI/SystemUI/DebugHud.h>
 #include <Atomic/UI/SystemUI/SystemUIEvents.h>
-#include <Atomic/UI/UI.h>
+#include <Atomic/UI/tbUI.h>
 #include <Atomic/IPC/IPCEvents.h>
 #include <Atomic/IPC/IPCWorker.h>
 
@@ -221,8 +221,7 @@ void PlayerMode::HandleLogMessage(StringHash eventType, VariantMap& eventData)
 
 void PlayerMode::HandleMessageAck(StringHash eventType, VariantMap& eventData)
 {
-    messageBox_ = 0;
-    GetSubsystem<UI>()->RequestExit();
+    GetSubsystem<tbUI>()->RequestExit();
 }
 
 void PlayerMode::HandleViewRender(StringHash eventType, VariantMap& eventData)
@@ -240,10 +239,7 @@ void PlayerMode::HandleViewRender(StringHash eventType, VariantMap& eventData)
 
     if (!done) {
 
-        done = true;
-
-        messageBox_ = GetSubsystem<UI>()->ShowSystemMessageBox("3D Module License Required", "A 3D Module License is required to display 3D content.\n\nUpgrade to Atomic Pro for all features and platforms.");
-        SubscribeToEvent(messageBox_, E_MESSAGEACK, ATOMIC_HANDLER(PlayerMode, HandleMessageAck));
+		done = true;
 
         if (brokerActive_)
         {

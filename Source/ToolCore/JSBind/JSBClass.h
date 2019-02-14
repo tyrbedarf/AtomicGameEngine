@@ -28,7 +28,7 @@
 #include "JSBHeader.h"
 #include "JSBModule.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {

@@ -28,7 +28,7 @@
 #include "../Math/Color.h"
 #include "../Math/Vector4.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class XMLElement;

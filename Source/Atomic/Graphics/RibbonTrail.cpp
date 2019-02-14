@@ -35,7 +35,7 @@
 #include "../Resource/ResourceCache.h"
 #include "../IO/Log.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* GEOMETRY_CATEGORY;

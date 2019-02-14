@@ -26,7 +26,7 @@
 
 #include <Atomic/Container/RefCounted.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ATOMIC_API AtomicBuildInfo : public RefCounted

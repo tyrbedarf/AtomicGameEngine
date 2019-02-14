@@ -25,7 +25,7 @@
 #include "../Graphics/GraphicsDefs.h"
 #include "../Resource/Resource.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ShaderVariation;
@@ -121,7 +121,7 @@ public:
 
     /// Return pixel shader defines.
     const String& GetPixelShaderDefines() const { return pixelShaderDefines_; }
-    
+
     /// Return vertex shader define excludes.
     const String& GetVertexShaderDefineExcludes() const { return vertexShaderDefineExcludes_; }
 

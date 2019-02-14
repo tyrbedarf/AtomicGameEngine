@@ -31,7 +31,7 @@
 #include "JSComponent.h"
 #include "JSVM.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 JSComponentFile::JSComponentFile(Context* context) :

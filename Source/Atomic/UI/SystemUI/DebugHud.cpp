@@ -27,14 +27,14 @@
 #include "../../Graphics/Graphics.h"
 #include "../../Graphics/Renderer.h"
 #include "../../IO/Log.h"
-#include "../../UI/UI.h"
+#include "../../UI/tbUI.h"
 #include "../../UI/SystemUI/SystemUI.h"
 #include "../../UI/SystemUI/DebugHud.h"
 
 #include "../../DebugNew.h"
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const char* qualityTexts[] =
@@ -106,7 +106,7 @@ void DebugHud::RecalculateWindowPositions()
 }
 
 void DebugHud::SetProfilerMode(DebugHudProfileMode mode)
-{ 
+{
     profilerMode_ = mode;
 }
 

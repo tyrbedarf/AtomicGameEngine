@@ -34,7 +34,7 @@ typedef void* JS_HEAP_PTR;
 // indexers for instance objects
 #define JS_INSTANCE_INDEX_FINALIZED 0
 
-namespace Atomic
+namespace Urho3D
 {
 
 class JSVM;

@@ -24,7 +24,7 @@
 
 #include "../Math/Vector4.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Two-dimensional bounding rectangle.

@@ -24,7 +24,7 @@
 
 #include "Atomic/Atomic.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Deserializer;

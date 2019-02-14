@@ -32,7 +32,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const int srcBlendFuncs[] =
@@ -518,7 +518,7 @@ SharedPtr<ParticleEffect2D> ParticleEffect2D::Clone(const String& cloneName) con
     ret->rotationEndVariance_ = rotationEndVariance_;
     /// \todo Zero if source was created programmatically
     ret->SetMemoryUse(GetMemoryUse());
-    
+
     return ret;
 }
 

@@ -38,7 +38,7 @@
 
 #include <Atomic/DebugNew.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 static const unsigned COMPRESSED_BLOCK_SIZE = 32768;
 

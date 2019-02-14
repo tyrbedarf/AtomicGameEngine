@@ -27,7 +27,7 @@
 #include "../Graphics/Skeleton.h"
 #include "../Math/Frustum.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class IndexBuffer;
@@ -161,7 +161,7 @@ public:
 
     /// Return maximum number of decal vertex indices.
     unsigned GetMaxIndices() const { return maxIndices_; }
-    
+
     /// Return whether is optimizing GPU buffer sizes according to current amount of decals.
     bool GetOptimizeBufferSize() const { return optimizeBufferSize_; }
 

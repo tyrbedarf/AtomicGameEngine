@@ -26,7 +26,7 @@
 #include "../Math/BoundingBox.h"
 #include "../Math/Rect.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Abstract stream for reading.

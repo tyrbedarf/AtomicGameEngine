@@ -33,7 +33,7 @@
 
 using namespace pugi;
 
-namespace Atomic
+namespace Urho3D
 {
 
 namespace Spriter
@@ -139,7 +139,7 @@ bool Folder::Load(const pugi::xml_node& node)
     return true;
 }
 
-File::File(Folder* folder) : 
+File::File(Folder* folder) :
     folder_(folder)
 {
 }
@@ -424,7 +424,7 @@ bool Timeline::Load(const pugi::xml_node& node)
         typeString = node.attribute("object_type").as_string("sprite");
     else
         typeString = typeAttr.as_string("sprite");
-    
+
     if (typeString == "bone")
     {
         objectType_ = BONE;
@@ -540,11 +540,11 @@ float TimelineKey::GetTByCurveType(float currentTime, float nextTimelineTime) co
 
 SpatialInfo::SpatialInfo(float x, float y, float angle, float scale_x, float scale_y, float a, int spin)
 {
-    this->x_ = x; 
-    this->y_ = y; 
+    this->x_ = x;
+    this->y_ = y;
     this->angle_ = angle;
-    this->scaleX_ = scale_x; 
-    this->scaleY_ = scale_y; 
+    this->scaleX_ = scale_x;
+    this->scaleY_ = scale_y;
     this->alpha_ = a;
     this->spin = spin;
 }
@@ -601,7 +601,7 @@ void SpatialInfo::Interpolate(const SpatialInfo& other, float t)
     alpha_ = Linear(alpha_, other.alpha_, t);
 }
 
-SpatialTimelineKey::SpatialTimelineKey(Timeline* timeline) : 
+SpatialTimelineKey::SpatialTimelineKey(Timeline* timeline) :
     TimelineKey(timeline)
 {
 
@@ -638,7 +638,7 @@ SpatialTimelineKey& SpatialTimelineKey::operator=(const SpatialTimelineKey& rhs)
     TimelineKey::operator=(rhs);
     info_ = rhs.info_;
     return *this;
-}   
+}
 
 void SpatialTimelineKey::Interpolate(const TimelineKey& other, float t)
 {
@@ -646,7 +646,7 @@ void SpatialTimelineKey::Interpolate(const TimelineKey& other, float t)
     info_.Interpolate(o.info_, t);
 }
 
-BoneTimelineKey::BoneTimelineKey(Timeline* timeline) : 
+BoneTimelineKey::BoneTimelineKey(Timeline* timeline) :
     SpatialTimelineKey(timeline)
 {
 
@@ -701,7 +701,7 @@ TimelineKey* SpriteTimelineKey::Clone() const
     return result;
 }
 
-SpriteTimelineKey::SpriteTimelineKey(Timeline* timeline) : 
+SpriteTimelineKey::SpriteTimelineKey(Timeline* timeline) :
     SpatialTimelineKey(timeline)
 {
 }
@@ -737,7 +737,7 @@ bool SpriteTimelineKey::Load(const pugi::xml_node& node)
 void SpriteTimelineKey::Interpolate(const TimelineKey& other, float t)
 {
     SpatialTimelineKey::Interpolate(other, t);
-        
+
     const SpriteTimelineKey& o = (const SpriteTimelineKey&)other;
     pivotX_ = Linear(pivotX_, o.pivotX_, t);
     pivotY_ = Linear(pivotY_, o.pivotY_, t);
@@ -746,7 +746,7 @@ void SpriteTimelineKey::Interpolate(const TimelineKey& other, float t)
 SpriteTimelineKey& SpriteTimelineKey::operator=(const SpriteTimelineKey& rhs)
 {
     SpatialTimelineKey::operator=(rhs);
-        
+
     folderId_ = rhs.folderId_;
     fileId_ = rhs.fileId_;
     useDefaultPivot_ = rhs.useDefaultPivot_;

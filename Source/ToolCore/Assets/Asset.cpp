@@ -259,7 +259,7 @@ bool Asset::CreateImporter()
     }
     else
     {
-        String ext = Atomic::GetExtension(path_);
+        String ext = Urho3D::GetExtension(path_);
 
         name_ = GetFileName(path_);
 
@@ -359,7 +359,7 @@ String Asset::GetCachePath() const
 String Asset::GetExtension() const
 {
 
-    return Atomic::GetExtension(path_);
+    return Urho3D::GetExtension(path_);
 
 }
 

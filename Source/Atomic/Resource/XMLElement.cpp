@@ -32,7 +32,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 const XMLElement XMLElement::EMPTY;
@@ -932,11 +932,11 @@ VariantMap XMLElement::GetVariantMap() const
     {
         // If this is a manually edited map, user can not be expected to calculate hashes manually. Also accept "name" attribute
         if (variantElem.HasAttribute("name"))
-        {   
+        {
             // ATOMIC BEGIN
             const String name = variantElem.GetAttribute("name");
             // register the name in the variant map, as significant for reverse lookup from hash
-            StringHash::RegisterSignificantString(name);            
+            StringHash::RegisterSignificantString(name);
             ret[StringHash(name)] = variantElem.GetVariant();
             // ATOMIC END
         }

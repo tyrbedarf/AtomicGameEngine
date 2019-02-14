@@ -25,7 +25,7 @@
 #include "../Core/Object.h"
 #include "../Database/DbConnection.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Database cursor. Event handler could set P_FILTER to true to filter out a row from resultset and P_ABORT to true to stop further cursor events.

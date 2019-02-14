@@ -28,7 +28,7 @@
 #include "../Core/Thread.h"
 #include "../Core/Timer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class FileSystem;
@@ -91,7 +91,7 @@ private:
     int watchHandle_;
 
 #elif defined(__APPLE__) && !defined(IOS) && !defined(TVOS)
-    
+
     /// Flag indicating whether the running OS supports individual file watching.
     bool supported_;
     /// Pointer to internal MacFileWatcher delegate.

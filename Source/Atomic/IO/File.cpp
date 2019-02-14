@@ -40,7 +40,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 #ifdef _WIN32
@@ -443,7 +443,7 @@ bool File::OpenInternal(const String& fileName, FileMode mode, bool fromPackage)
     compressed_ = false;
     readSyncNeeded_ = false;
     writeSyncNeeded_ = false;
-    
+
     FileSystem* fileSystem = GetSubsystem<FileSystem>();
     if (fileSystem && !fileSystem->CheckAccess(GetPath(fileName)))
     {

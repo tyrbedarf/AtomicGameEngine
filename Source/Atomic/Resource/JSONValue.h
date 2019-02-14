@@ -29,7 +29,7 @@
 
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// JSON value type.
@@ -78,7 +78,7 @@ class ATOMIC_API JSONValue
 {
 public:
     /// Construct null value.
-    JSONValue() : 
+    JSONValue() :
         type_(0)
     {
     }
@@ -135,7 +135,7 @@ public:
         type_(0)
     {
         *this = value;
-    }    
+    }
     /// Copy-construct from another JSON value.
     JSONValue(const JSONValue& value) :
         type_(0)

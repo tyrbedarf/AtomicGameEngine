@@ -29,7 +29,7 @@
 #include "../Graphics/GraphicsDefs.h"
 #include "Configuration.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
     bool Configuration::GetBoolValue(const JSONValue& jvalue, bool defaultValue)

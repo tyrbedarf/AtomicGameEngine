@@ -27,7 +27,7 @@
 #include "../Graphics/Texture.h"
 #include "../Resource/Image.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// 3D texture resource.

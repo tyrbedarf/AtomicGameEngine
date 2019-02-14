@@ -25,7 +25,7 @@
 
 #include "WebBrowserHost.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern void jsb_package_webview_init(JSVM* vm);

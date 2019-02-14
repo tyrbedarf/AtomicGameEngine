@@ -37,7 +37,7 @@
 #include "WebTexture2D.h"
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebTexture2DPrivate : public CefRenderHandler
@@ -224,7 +224,7 @@ public:
 
         if ((dstRect.left_ + dstRect.Width() > webTexture2D_->GetWidth()) || (dstRect.top_ + dstRect.Height() > webTexture2D_->GetHeight()))
             return;
-                
+
         D3D11_BOX box;
         box.left = dstRect.left_;
         box.right = dstRect.right_;
@@ -395,7 +395,7 @@ void WebTexture2D::SetSize(int width, int height)
         ATOMIC_LOGERRORF("Unable to set WebTexture2D size to %i x %i", width, height);
         return;
     }
-    
+
     SharedArrayPtr<unsigned> cleardata(new unsigned[width * height]);
     unsigned color = clearColor_.ToUInt();
     unsigned* ptr = cleardata.Get();

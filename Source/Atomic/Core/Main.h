@@ -40,7 +40,7 @@
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd) \
 { \
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); \
-    Atomic::ParseArguments(GetCommandLineW()); \
+    Urho3D::ParseArguments(GetCommandLineW()); \
     return function; \
 }
 // MSVC release mode: write minidump on crash
@@ -48,7 +48,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 #define ATOMIC_DEFINE_MAIN(function) \
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd) \
 { \
-    Atomic::ParseArguments(GetCommandLineW()); \
+    Urho3D::ParseArguments(GetCommandLineW()); \
     int exitCode; \
     __try \
     { \
@@ -64,7 +64,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 #define ATOMIC_DEFINE_MAIN(function) \
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, int showCmd) \
 { \
-    Atomic::ParseArguments(GetCommandLineW()); \
+    Urho3D::ParseArguments(GetCommandLineW()); \
     return function; \
 }
 // Android or iOS or tvOS: use SDL_main
@@ -73,7 +73,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 extern "C" int SDL_main(int argc, char** argv); \
 int SDL_main(int argc, char** argv) \
 { \
-    Atomic::ParseArguments(argc, argv); \
+    Urho3D::ParseArguments(argc, argv); \
     return function; \
 }
 // Linux or OS X: use main
@@ -81,7 +81,7 @@ int SDL_main(int argc, char** argv) \
 #define ATOMIC_DEFINE_MAIN(function) \
 int main(int argc, char** argv) \
 { \
-    Atomic::ParseArguments(argc, argv); \
+    Urho3D::ParseArguments(argc, argv); \
     return function; \
 }
 #endif

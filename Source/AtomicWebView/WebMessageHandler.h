@@ -24,7 +24,7 @@
 
 #include <Atomic/Core/Object.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebClient;
@@ -53,7 +53,7 @@ public:
     WebClient* GetWebClient() { return client_; }
 
     /// Set the WebClient associated with this WebMessageHandler
-    void SetWebClient(WebClient* client) { client_ = client; }       
+    void SetWebClient(WebClient* client) { client_ = client; }
 
     /// Get the CefMessageRouterBrowserSide::Handler* as a opaque void*
     void* GetCefHandler() { return (void*) d_; }

@@ -32,7 +32,7 @@
 #include "IPCWindows.h"
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 const unsigned IPC_MESSAGE_UNDEFINED = 0;

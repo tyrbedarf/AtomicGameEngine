@@ -34,7 +34,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static unsigned RemapAttributeIndex(const Vector<AttributeInfo>* attributes, const AttributeInfo& netAttr, unsigned netAttrIndex)

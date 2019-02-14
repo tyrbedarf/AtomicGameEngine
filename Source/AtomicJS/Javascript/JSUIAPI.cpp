@@ -31,7 +31,7 @@
 #include <Atomic/UI/UIButton.h>
 #include <Atomic/UI/UIWindow.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 static int UIButton_Popup(duk_context* ctx)
@@ -152,7 +152,7 @@ static int UIWidget_SearchWidgetId(duk_context* ctx)
 {
     const char* idName = duk_require_string(ctx, 0);
     duk_push_this(ctx);
- 
+
     UIWidget* uiwidget = js_to_class_instance<UIWidget>(ctx, -1, 0);
 
     PODVector<UIWidget*> dest;

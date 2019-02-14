@@ -25,7 +25,7 @@
 #include "../Navigation/CrowdManager.h"
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 enum CrowdAgentRequestedTarget

@@ -40,7 +40,7 @@ typedef void CURLM;
 }
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// HTTP connection state

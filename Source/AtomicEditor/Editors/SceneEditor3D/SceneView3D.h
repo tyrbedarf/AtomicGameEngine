@@ -26,11 +26,11 @@
 
 #include <Atomic/Core/Object.h>
 
-#include <Atomic/UI/UISceneView.h>
+#include <Atomic/UI/tbUISceneView.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
-namespace Atomic
+namespace Urho3D
 {
 class Scene;
 class Node;

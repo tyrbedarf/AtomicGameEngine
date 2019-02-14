@@ -25,7 +25,7 @@
 #include <Atomic/Core/Context.h>
 #include <Atomic/Core/Object.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 typedef void (*NETCoreEventDispatchFunction)(Object* refCounted, unsigned eventID, VariantMap* eventData);

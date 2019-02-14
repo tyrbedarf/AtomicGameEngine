@@ -13,7 +13,7 @@ static void duk_trans_socket_write_flush_cb(void *udata);
 static void debugger_detached (duk_context* ctx, void *udata);
 static void duk_trans_socket_finish(void);
 
-namespace Atomic
+namespace Urho3D
 {
 
 JSDebugger* JSDebugger::instance_ = NULL;
@@ -33,9 +33,9 @@ JSDebugger::~JSDebugger()
 
 void JSDebugger::Shutdown() const
 {
-    if (Atomic::JSDebugger::GetInstance())
+    if (Urho3D::JSDebugger::GetInstance())
     {
-        Atomic::JSDebugger::GetInstance()->SetAutoReconnect(false);
+        Urho3D::JSDebugger::GetInstance()->SetAutoReconnect(false);
     }
 }
 
@@ -73,7 +73,7 @@ void JSDebugger::Reconnect() const
 
 static void do_reconnect()
 {
-    Atomic::JSDebugger* dbg = Atomic::JSDebugger::GetInstance();
+    Urho3D::JSDebugger* dbg = Urho3D::JSDebugger::GetInstance();
     if (dbg && dbg->GetAutoReconnect())
     {
         dbg->Reconnect();

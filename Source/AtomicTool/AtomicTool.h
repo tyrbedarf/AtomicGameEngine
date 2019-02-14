@@ -24,7 +24,7 @@
 
 #include <Atomic/Engine/Application.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 #include <ToolCore/Command/Command.h>
 

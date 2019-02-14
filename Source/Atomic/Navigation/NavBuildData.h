@@ -38,7 +38,7 @@ struct rcHeightfieldLayerSet;
 struct rcPolyMesh;
 struct rcPolyMeshDetail;
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Navigation area stub.

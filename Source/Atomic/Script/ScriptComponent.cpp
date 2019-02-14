@@ -27,7 +27,7 @@
 #include "ScriptComponentFile.h"
 #include "ScriptComponent.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 ScriptComponent::ScriptComponent(Context* context) : Component(context),
@@ -69,10 +69,10 @@ bool ScriptComponent::LoadXML(const XMLElement& source, bool setInstanceDefault)
 
 bool ScriptComponent::Save(Serializer& dest) const
 {
-    saving_ = true;    
-    bool success = Component::Save(dest);    
+    saving_ = true;
+    bool success = Component::Save(dest);
     saving_ = false;
-    
+
     return success;
 }
 
@@ -131,7 +131,7 @@ const VariantMap& ScriptComponent::GetFieldValuesAttr() const
                 itr++;
                 continue;
             }
-           
+
             int intValue = v.GetInt();
 
             EnumMap::ConstIterator eitr = enums.Begin();
@@ -211,7 +211,7 @@ void ScriptComponent::SetFieldValuesAttr(const VariantMap& value)
             {
                 itr++;
                 continue;
-            }            
+            }
 
             EnumMap::ConstIterator eitr = enums.Begin();
             const String& svalue = itr->second_.GetString();

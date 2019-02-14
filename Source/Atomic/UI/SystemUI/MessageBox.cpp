@@ -28,7 +28,7 @@
 #include "../../UI/SystemUI/SystemUI.h"
 #include "../../UI/SystemUI/MessageBox.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 MessageBox::MessageBox(Context* context, const String& messageString, const String& titleString) :

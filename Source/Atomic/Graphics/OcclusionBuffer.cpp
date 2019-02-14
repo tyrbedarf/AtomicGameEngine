@@ -30,7 +30,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const unsigned CLIPMASK_X_POS = 0x1;

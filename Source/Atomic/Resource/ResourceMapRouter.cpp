@@ -26,7 +26,7 @@
 #include "ResourceCache.h"
 #include "ResourceMapRouter.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
     ResourceMapRouter::ResourceMapRouter(Context* context, const String& mapFile) : ResourceRouter(context)

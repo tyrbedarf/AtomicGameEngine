@@ -27,7 +27,7 @@
 #include "../Container/Allocator.h"
 #include "../Container/Swap.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Doubly-linked list node base class.
@@ -101,10 +101,10 @@ public:
     /// Swap with another linked list.
     void Swap(ListBase& rhs)
     {
-        Atomic::Swap(head_, rhs.head_);
-        Atomic::Swap(tail_, rhs.tail_);
-        Atomic::Swap(allocator_, rhs.allocator_);
-        Atomic::Swap(size_, rhs.size_);
+        Urho3D::Swap(head_, rhs.head_);
+        Urho3D::Swap(tail_, rhs.tail_);
+        Urho3D::Swap(allocator_, rhs.allocator_);
+        Urho3D::Swap(size_, rhs.size_);
     }
 
 protected:

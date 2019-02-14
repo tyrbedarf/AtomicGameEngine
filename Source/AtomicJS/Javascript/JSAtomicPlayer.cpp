@@ -22,7 +22,7 @@
 
 #include "JSAtomicPlayer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 

@@ -8,7 +8,7 @@
 #include <ThirdParty/kNet/include/kNet.h>
 #include "../Core/Object.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Scene;

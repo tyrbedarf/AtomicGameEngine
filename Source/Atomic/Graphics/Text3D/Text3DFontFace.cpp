@@ -31,7 +31,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Text3DFontGlyph::Text3DFontGlyph() :

@@ -27,7 +27,7 @@
 #include "../Container/Vector.h"
 #include "../Scene/AnimationDefs.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Object;

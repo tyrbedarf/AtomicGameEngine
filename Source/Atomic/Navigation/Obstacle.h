@@ -25,7 +25,7 @@
 #include "../Container/Ptr.h"
 #include "../Scene/Component.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class DynamicNavigationMesh;

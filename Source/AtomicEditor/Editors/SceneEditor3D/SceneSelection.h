@@ -24,9 +24,9 @@
 
 #include <Atomic/Core/Object.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
-namespace Atomic
+namespace Urho3D
 {
 class Node;
 class Scene;

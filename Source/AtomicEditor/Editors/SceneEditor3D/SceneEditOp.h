@@ -25,13 +25,13 @@
 #include <Atomic/Core/Object.h>
 #include <Atomic/IO/VectorBuffer.h>
 
-namespace Atomic
+namespace Urho3D
 {
 class Node;
 class Component;
 }
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicEditor
 {

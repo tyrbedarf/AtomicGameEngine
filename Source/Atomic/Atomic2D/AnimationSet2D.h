@@ -31,7 +31,7 @@ struct spSkeletonData;
 struct spAnimationStateData;
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 namespace Spriter
@@ -52,7 +52,7 @@ public:
     AnimationSet2D(Context* context);
     /// Destruct.
     virtual ~AnimationSet2D();
-    /// Register object factory. 
+    /// Register object factory.
     static void RegisterObject(Context* context);
 
     /// Load resource from stream. May be called from a worker thread. Return true if successful.
@@ -66,7 +66,7 @@ public:
     String GetAnimation(unsigned index) const;
     /// Check has animation.
     bool HasAnimation(const String& animation) const;
-    
+
     /// Return sprite.
     Sprite2D* GetSprite() const;
 
@@ -95,10 +95,10 @@ private:
     bool EndLoadSpriter();
     /// Dispose all data.
     void Dispose();
-    
+
     /// Spine sprite.
     SharedPtr<Sprite2D> sprite_;
-    
+
 #ifdef ATOMIC_SPINE
     /// Spine json data.
     SharedArrayPtr<char> jsonData_;
@@ -107,7 +107,7 @@ private:
     /// Spine atlas.
     spAtlas* atlas_;
 #endif
-    
+
     /// Spriter data.
     UniquePtr<Spriter::SpriterData> spriterData_;
     /// Has sprite sheet.

@@ -27,7 +27,7 @@
 #include "../Math/BoundingBox.h"
 #include "../Math/StringHash.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Color;

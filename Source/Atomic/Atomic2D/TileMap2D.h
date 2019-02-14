@@ -25,7 +25,7 @@
 #include "../Scene/Component.h"
 #include "../Atomic2D/TileMapDefs2D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class TileMapLayer2D;

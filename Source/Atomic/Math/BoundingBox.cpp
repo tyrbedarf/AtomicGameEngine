@@ -27,7 +27,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 void BoundingBox::Define(const Vector3* vertices, unsigned count)

@@ -24,7 +24,7 @@
 
 #include <Atomic/Core/Object.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicEditor
 {
@@ -47,7 +47,7 @@ public:
     String OpenProjectFileDialog();
     String NewProjectFileDialog();
     String GetBuildPath(const String& defaultPath);
-    void RevealInFinder(const String& fullpath);    
+    void RevealInFinder(const String& fullpath);
     String FindPath (const String& title, const String& defaultPath );
     String FindFile (const String& filterlist, const String& defaultPath );
 

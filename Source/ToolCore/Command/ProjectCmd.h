@@ -24,7 +24,7 @@
 
 #include "Command.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {
@@ -40,7 +40,7 @@ public:
 
     void Run();
 
-    bool RequiresProjectLoad() { return requiresProjectLoad_; }    
+    bool RequiresProjectLoad() { return requiresProjectLoad_; }
 
 protected:
 

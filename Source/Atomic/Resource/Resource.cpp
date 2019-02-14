@@ -28,7 +28,7 @@
 #include "../Resource/Resource.h"
 #include "../Resource/XMLElement.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Resource::Resource(Context* context) :

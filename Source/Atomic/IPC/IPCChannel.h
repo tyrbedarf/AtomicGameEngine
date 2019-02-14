@@ -38,7 +38,7 @@
 
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ATOMIC_API IPCChannel : public Object, public Thread

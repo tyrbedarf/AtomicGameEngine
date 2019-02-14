@@ -27,7 +27,7 @@
 
 #pragma once
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ScriptVector : public RefCounted
@@ -91,7 +91,7 @@ public:
         return refVector_.Size();
     }
 
-    void Resize(unsigned size) 
+    void Resize(unsigned size)
     {
         return refVector_.Resize(size);
     }

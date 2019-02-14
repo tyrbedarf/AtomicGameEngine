@@ -26,7 +26,7 @@
 #include "../Graphics/Skeleton.h"
 #include "../Graphics/StaticModel.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Animation;

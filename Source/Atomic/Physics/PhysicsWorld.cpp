@@ -50,7 +50,7 @@
 // ATOMIC END
 extern ContactAddedCallback gContactAddedCallback;
 
-namespace Atomic
+namespace Urho3D
 {
 
 const char* PHYSICS_CATEGORY = "Physics";

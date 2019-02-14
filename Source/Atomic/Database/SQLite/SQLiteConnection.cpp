@@ -25,7 +25,7 @@
 #include "../../Database/DatabaseEvents.h"
 #include "../../IO/Log.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 DbConnection::DbConnection(Context* context, const String& connectionString) :

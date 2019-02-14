@@ -3,9 +3,9 @@
 #include <Atomic/IPC/IPC.h>
 #include "AppBase.h"
 
-namespace Atomic
+namespace Urho3D
 {
-    
+
     class IPCServerApp : public AppBase
     {
 
@@ -32,8 +32,8 @@ namespace Atomic
         void HandleIPCWorkerStarted(StringHash eventType, VariantMap& eventData);
         void HandleIPCJSError(StringHash eventType, VariantMap& eventData);
         void HandleIPCWorkerLog(StringHash eventType, VariantMap& eventData);
-        void HandleIPCWorkerExit(StringHash eventType, VariantMap& eventData);        
-        
+        void HandleIPCWorkerExit(StringHash eventType, VariantMap& eventData);
+
         SharedPtr<IPCBroker> clientBroker_;
 
     };

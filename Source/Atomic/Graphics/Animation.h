@@ -27,7 +27,7 @@
 #include "../Math/Vector3.h"
 #include "../Resource/Resource.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Skeletal animation keyframe.

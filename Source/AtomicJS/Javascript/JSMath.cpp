@@ -2,7 +2,7 @@
 
 #include <Atomic/Math/Ray.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 bool duk_get_vector2(duk_context* ctx, duk_idx_t idx, Vector2& vec2)

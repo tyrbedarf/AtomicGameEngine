@@ -24,7 +24,7 @@
 
 #include "Text3DFontFace.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Image;

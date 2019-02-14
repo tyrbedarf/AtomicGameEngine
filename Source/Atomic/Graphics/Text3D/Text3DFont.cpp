@@ -35,7 +35,7 @@
 #include "../../Resource/XMLFile.h"
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 namespace

@@ -32,7 +32,7 @@
 #include "../DebugNew.h"
 
 
-namespace Atomic
+namespace Urho3D
 {
 
 TypeInfo::TypeInfo(const char* typeName, const TypeInfo* baseTypeInfo) :
@@ -588,7 +588,7 @@ void Object::RemoveEventSender(Object* sender)
 }
 
 
-Atomic::StringHash EventNameRegistrar::RegisterEventName(const char* eventName)
+Urho3D::StringHash EventNameRegistrar::RegisterEventName(const char* eventName)
 {
     StringHash id(eventName);
     GetEventNameMap()[id] = eventName;
@@ -702,7 +702,7 @@ template <> Audio* Object::GetSubsystem<Audio>() const
     return context_->audio_;
 }
 
-template <> UI* Object::GetSubsystem<UI>() const
+template <> tbUI* Object::GetSubsystem<tbUI>() const
 {
     return context_->ui_;
 }

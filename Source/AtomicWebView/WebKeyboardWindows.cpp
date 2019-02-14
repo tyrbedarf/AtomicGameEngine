@@ -36,7 +36,7 @@
 
 #include "WebKeyboard.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static bool SDLScanCodeToWindowsScanCode(SDL_Scancode code, LPARAM& lParam, WPARAM& wParam )

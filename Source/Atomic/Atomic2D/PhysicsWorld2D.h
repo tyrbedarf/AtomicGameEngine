@@ -27,7 +27,7 @@
 
 #include <Box2D/Box2D.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Camera;

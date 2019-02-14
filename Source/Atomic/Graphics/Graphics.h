@@ -35,7 +35,7 @@
 
 struct SDL_Window;
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ConstantBuffer;
@@ -311,7 +311,7 @@ public:
 
     /// Return whether the main window is using sRGB conversion on write.
     bool GetSRGB() const { return sRGB_; }
-    
+
     /// Return whether rendering output is dithered.
     bool GetDither() const;
 
@@ -572,7 +572,7 @@ public:
     bool GetMaximized();
     IntVector2 GetMonitorResolution(int monitorId) const;
     void RaiseWindow();
-    
+
     /// Return number of passes drawn this frame
     static unsigned GetNumPasses() { return numPasses_; }
     /// Set number of passes drawn this frame
@@ -582,7 +582,7 @@ public:
     static unsigned GetSinglePassPrimitives() { return numSinglePassPrimitives_; }
     /// Set number of single render pass primitives drawn this frame (D3D9 Only)
     static void SetSinglePassPrimitives(unsigned value) { numSinglePassPrimitives_ = value; }
-  
+
     // ATOMIC END
 
 private:

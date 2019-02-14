@@ -26,9 +26,9 @@
 
 #include "AppBase.h"
 
-namespace Atomic
+namespace Urho3D
 {
-    
+
     class IPCClientApp : public AppBase
     {
 

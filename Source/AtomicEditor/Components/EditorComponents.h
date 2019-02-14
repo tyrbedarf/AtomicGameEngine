@@ -22,7 +22,7 @@
 
 #pragma once
 
-namespace Atomic
+namespace Urho3D
 {
 class Context;
 }
@@ -30,6 +30,6 @@ class Context;
 namespace AtomicEditor
 {
 
-void RegisterEditorComponentLibrary(Atomic::Context* context);
+void RegisterEditorComponentLibrary(Urho3D::Context* context);
 
 }

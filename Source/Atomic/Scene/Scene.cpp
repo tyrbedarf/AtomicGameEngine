@@ -49,7 +49,7 @@
 #include "PrefabComponent.h"
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 const char* SCENE_CATEGORY = "Scene";

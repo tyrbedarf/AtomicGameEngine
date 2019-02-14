@@ -29,7 +29,7 @@
 #include "../Graphics/Viewport.h"
 #include "../Math/Color.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Geometry;

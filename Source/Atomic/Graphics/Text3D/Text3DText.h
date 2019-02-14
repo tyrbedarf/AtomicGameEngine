@@ -25,7 +25,7 @@
 #include "../../Scene/Animatable.h"
 #include "Text3DBatch.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const float TEXT3D_DEFAULT_FONT_SIZE = 12;

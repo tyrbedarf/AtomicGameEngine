@@ -29,7 +29,7 @@
 #include "../IO/FileSystem.h"
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 PackageFile::PackageFile(Context* context) :

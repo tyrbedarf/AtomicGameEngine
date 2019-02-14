@@ -35,7 +35,7 @@
 #include <stdio.h>
 #endif
 
-namespace Atomic
+namespace Urho3D
 {
 
     NETServiceApplication::NETServiceApplication(Context* context) :

@@ -26,7 +26,7 @@
 
 #include "cplusplus/CPlusPlus.h"
 using namespace CPlusPlus;
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {

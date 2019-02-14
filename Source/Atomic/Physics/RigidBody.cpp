@@ -43,7 +43,7 @@
 #include <Bullet/src/BulletCollision/CollisionShapes/btCompoundShape.h>
 // ATOMIC END
 
-namespace Atomic
+namespace Urho3D
 {
 
 static const float DEFAULT_MASS = 0.0f;
@@ -272,7 +272,7 @@ void RigidBody::SetRotation(const Quaternion& rotation)
                 interpTrans.setOrigin(worldTrans.getOrigin());
             body_->setInterpolationWorldTransform(interpTrans);
         }
-        
+
         body_->updateInertiaTensor();
 
         Activate();

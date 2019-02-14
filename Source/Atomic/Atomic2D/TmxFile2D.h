@@ -25,7 +25,7 @@
 #include "../Resource/Resource.h"
 #include "../Atomic2D/TileMapDefs2D.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class Sprite2D;
@@ -199,7 +199,7 @@ public:
     void AddLayer(unsigned index, TmxLayer2D *layer);
 
     /// Append layer to end.
-    void AddLayer(Atomic::TmxLayer2D* layer);
+    void AddLayer(Urho3D::TmxLayer2D* layer);
 
     /// Return Tilemap information.
     const TileMapInfo2D& GetInfo() const { return info_; }

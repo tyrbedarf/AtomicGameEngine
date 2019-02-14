@@ -25,7 +25,7 @@
 #include <Atomic/Container/List.h>
 #include "WebApp.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 // Web app implementation for the renderer process.

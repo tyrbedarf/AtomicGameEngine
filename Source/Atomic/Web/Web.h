@@ -26,7 +26,7 @@
 #include "../Container/ArrayPtr.h"
 #include "../IO/VectorBuffer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class WebRequest;

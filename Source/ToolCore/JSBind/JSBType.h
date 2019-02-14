@@ -24,7 +24,7 @@
 
 #include <Atomic/Container/Str.h>
 
-using namespace Atomic;
+using namespace Urho3D;
 
 #include "JSBClass.h"
 #include "JSBEnum.h"

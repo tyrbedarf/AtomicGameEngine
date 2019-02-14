@@ -24,9 +24,9 @@
 
 #include "../EditorMode/AEEditorMode.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
-namespace Atomic
+namespace Urho3D
 {
     extern void jsb_package_editor_init(JSVM* vm);
 }

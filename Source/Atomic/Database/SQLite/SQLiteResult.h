@@ -26,7 +26,7 @@
 
 #include <sqlite3.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// %Database query result.

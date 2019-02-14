@@ -33,7 +33,7 @@ namespace asio
 class io_service;
 }
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// WebSocket connection state

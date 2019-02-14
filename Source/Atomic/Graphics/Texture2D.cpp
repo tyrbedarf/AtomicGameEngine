@@ -36,7 +36,7 @@
 
 #include "../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 Texture2D::Texture2D(Context* context) :
@@ -134,7 +134,7 @@ bool Texture2D::SetSize(int width, int height, unsigned format, TextureUsage usa
     renderSurface_.Reset();
 
     usage_ = usage;
-    
+
     if (usage >= TEXTURE_RENDERTARGET)
     {
         renderSurface_ = new RenderSurface(this);

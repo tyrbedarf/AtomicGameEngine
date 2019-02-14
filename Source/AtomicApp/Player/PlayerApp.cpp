@@ -25,7 +25,7 @@
 #include <Atomic/Engine/Engine.h>
 #include <Atomic/Graphics/Graphics.h>
 #include <Atomic/Resource/ResourceMapRouter.h>
-#include <Atomic/UI/UI.h>
+#include <Atomic/UI/tbUI.h>
 #include <Atomic/Metrics/Metrics.h>
 
 #include <AtomicJS/Javascript/Javascript.h>
@@ -39,7 +39,7 @@ namespace AtomicPlayer
     extern void jsapi_init_atomicplayer(JSVM* vm);
 }
 
-namespace Atomic
+namespace Urho3D
 {
 
     PlayerLaunchMode PlayerApp::launchMode_ = PLAYER_LAUNCH_STANDALONE;
@@ -107,11 +107,11 @@ namespace Atomic
         // Initialize resource mapper
         SharedPtr<ResourceMapRouter> router(new ResourceMapRouter(context_, "__atomic_ResourceCacheMap.json"));
 
-        UI* ui = GetSubsystem<UI>();
+        tbUI* ui = GetSubsystem<tbUI>();
         ui->Initialize("DefaultUI/language/lng_en.tb.txt");
         ui->LoadDefaultPlayerSkin();
 
-        vm_->SetModuleSearchPaths("Modules");    
+        vm_->SetModuleSearchPaths("Modules");
 
         // Instantiate and register the Player subsystem
         context_->RegisterSubsystem(new AtomicPlayer::Player(context_));

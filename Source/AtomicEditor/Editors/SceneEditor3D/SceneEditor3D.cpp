@@ -36,7 +36,7 @@
 #include <Atomic/Physics/PhysicsWorld.h>
 
 #include <Atomic/Input/Input.h>
-#include <Atomic/UI/UI.h>
+#include <Atomic/UI/tbUI.h>
 
 #include <ToolCore/ToolSystem.h>
 #include <ToolCore/Project/Project.h>
@@ -61,7 +61,7 @@ namespace AtomicEditor
 
 Vector<WeakPtr<SceneEditor3D>> SceneEditor3D::sceneEditors_;
 
-SceneEditor3D::SceneEditor3D(Context* context, const String &fullpath, UITabContainer *container) :
+SceneEditor3D::SceneEditor3D(Context* context, const String &fullpath, tbUITabContainer *container) :
     ResourceEditor(context, fullpath, container),
     cubemapRenderCount_(0)
 {

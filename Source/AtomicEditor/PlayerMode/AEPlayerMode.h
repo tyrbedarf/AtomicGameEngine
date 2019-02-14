@@ -26,9 +26,7 @@
 #include <Atomic/IPC/IPC.h>
 #include <Atomic/IPC/IPCTypes.h>
 
-#include <Atomic/UI/SystemUI/MessageBox.h>
-
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace AtomicEditor
 {
@@ -63,7 +61,6 @@ private:
 // BEGIN LICENSE MANAGEMENT
     void HandleMessageAck(StringHash eventType, VariantMap& eventData);
     bool licenseModule3D_;
-    SharedPtr<MessageBox> messageBox_;
 // END LICENSE MANAGEMENT
 
     IPCHandle fd_[2];

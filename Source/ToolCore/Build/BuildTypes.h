@@ -24,7 +24,7 @@
 
 #pragma once
 
-using namespace Atomic;
+using namespace Urho3D;
 
 namespace ToolCore
 {

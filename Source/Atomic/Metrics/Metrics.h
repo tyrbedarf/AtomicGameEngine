@@ -25,7 +25,7 @@
 #include "../Core/Object.h"
 #include "../Container/List.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class ATOMIC_API MetricsSnapshot : public RefCounted
@@ -116,7 +116,7 @@ public:
     bool Enable();
 
     /// Get whether the Metrics subsystem is enabled or not
-    bool GetEnabled() const { return enabled_; }    
+    bool GetEnabled() const { return enabled_; }
 
     // Captures a snapshot of metrics data
     void Capture(MetricsSnapshot* snapshot);

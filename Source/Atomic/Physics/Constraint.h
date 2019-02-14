@@ -27,7 +27,7 @@
 
 class btTypedConstraint;
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Supported constraint types.

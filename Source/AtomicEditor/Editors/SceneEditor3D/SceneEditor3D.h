@@ -28,10 +28,10 @@
 #include "SceneView3D.h"
 #include "Gizmo3D.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 using namespace tb;
 
-namespace Atomic
+namespace Urho3D
 {
 class Scene;
 class Node;
@@ -62,7 +62,7 @@ class SceneEditor3D: public ResourceEditor
 
 public:
 
-    SceneEditor3D(Context* context, const String& fullpath, UITabContainer* container);
+    SceneEditor3D(Context* context, const String& fullpath, tbUITabContainer* container);
 
     virtual ~SceneEditor3D();
 

@@ -25,7 +25,7 @@
 #include "../Audio/SoundListener.h"
 #include "../Core/Context.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* AUDIO_CATEGORY;

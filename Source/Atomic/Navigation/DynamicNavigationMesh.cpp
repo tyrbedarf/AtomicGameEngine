@@ -53,7 +53,7 @@
 
 static const unsigned TILECACHE_MAXLAYERS = 255;
 
-namespace Atomic
+namespace Urho3D
 {
 
 extern const char* NAVIGATION_CATEGORY;

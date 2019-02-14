@@ -28,7 +28,7 @@
 
 #include <Atomic/Script/ScriptComponentFile.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
 class JSComponent;

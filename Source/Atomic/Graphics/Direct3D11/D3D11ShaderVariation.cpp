@@ -35,7 +35,7 @@
 
 #include "../../DebugNew.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 const char* ShaderVariation::elementSemanticNames[] =
@@ -335,7 +335,7 @@ bool ShaderVariation::Compile()
 
     ATOMIC_SAFE_RELEASE(shaderCode);
     ATOMIC_SAFE_RELEASE(errorMsgs);
-    
+
     return !byteCode_.Empty();
 }
 

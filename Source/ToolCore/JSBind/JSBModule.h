@@ -26,9 +26,9 @@
 #include <Atomic/Resource/JSONValue.h>
 #include "JSBindTypes.h"
 
-using namespace Atomic;
+using namespace Urho3D;
 
-namespace Atomic
+namespace Urho3D
 {
 class JSONFile;
 }

@@ -29,7 +29,7 @@
 
 #include <Atomic/Script/ScriptComponentFile.h>
 
-namespace Atomic
+namespace Urho3D
 {
 
     class CSComponent;
@@ -45,7 +45,7 @@ namespace Atomic
         /// Construct.
         CSComponentAssembly(Context* context);
         /// Destruct.
-        virtual ~CSComponentAssembly();        
+        virtual ~CSComponentAssembly();
 
         CSComponent* CreateCSComponent(const String& classname);
 

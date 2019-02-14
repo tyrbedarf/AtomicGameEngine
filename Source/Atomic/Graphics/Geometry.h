@@ -26,7 +26,7 @@
 #include "../Core/Object.h"
 #include "../Graphics/GraphicsDefs.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 class IndexBuffer;

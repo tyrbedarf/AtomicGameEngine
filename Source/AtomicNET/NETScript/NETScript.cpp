@@ -6,7 +6,7 @@
 #include "CSComponentAssembly.h"
 #include "NETScript.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 void RegisterNETScriptLibrary(Context* context)

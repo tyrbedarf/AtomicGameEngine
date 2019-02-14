@@ -25,7 +25,7 @@
 
 #include "WebAppRenderer.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 // Must match the value in client_handler.cc.
@@ -65,12 +65,12 @@ public:
         if (extra_info->GetSize() > 0)
         {
             if (extra_info->GetType(0) == CefValueType::VTYPE_DICTIONARY)
-                globalProperties_ = extra_info->GetDictionary(0)->Copy(false);            
+                globalProperties_ = extra_info->GetDictionary(0)->Copy(false);
         }
 
         // index 1 is name for jsMessageQuery function
         if (extra_info->GetSize() > 1)
-        {            
+        {
             jsMessageQueryFunctionName_ = extra_info->GetString(1);
         }
 

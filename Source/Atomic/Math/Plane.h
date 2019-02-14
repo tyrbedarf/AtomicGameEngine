@@ -24,7 +24,7 @@
 
 #include "../Math/Matrix3x4.h"
 
-namespace Atomic
+namespace Urho3D
 {
 
 /// Surface in three-dimensional space.
