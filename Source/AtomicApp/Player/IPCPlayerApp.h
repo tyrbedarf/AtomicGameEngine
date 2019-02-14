@@ -31,7 +31,7 @@ namespace Urho3D
 
     class IPCPlayerApp : public PlayerApp
     {
-        ATOMIC_OBJECT(IPCPlayerApp, PlayerApp)
+        URHO3D_OBJECT(IPCPlayerApp, PlayerApp)
 
     public:
         /// Construct.

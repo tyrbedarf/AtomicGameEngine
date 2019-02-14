@@ -31,9 +31,9 @@ namespace Urho3D
 class SoundStream;
 
 /// %Sound resource.
-class ATOMIC_API Sound : public ResourceWithMetadata
+class URHO3D_API Sound : public ResourceWithMetadata
 {
-    ATOMIC_OBJECT(Sound, ResourceWithMetadata);
+    URHO3D_OBJECT(Sound, ResourceWithMetadata);
 
 public:
     /// Construct.

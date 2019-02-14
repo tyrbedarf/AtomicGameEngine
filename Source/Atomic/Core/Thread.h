@@ -35,7 +35,7 @@ namespace Urho3D
 {
 
 /// Operating system thread.
-class ATOMIC_API Thread
+class URHO3D_API Thread
 {
 public:
     /// Construct. Does not start the thread yet.

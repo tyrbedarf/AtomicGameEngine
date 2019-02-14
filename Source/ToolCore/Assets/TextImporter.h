@@ -29,7 +29,7 @@ namespace ToolCore
 
 class TextImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(TextImporter, AssetImporter);
+    URHO3D_OBJECT(TextImporter, AssetImporter);
 
 public:
     /// Construct.

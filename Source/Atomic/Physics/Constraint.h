@@ -43,9 +43,9 @@ class PhysicsWorld;
 class RigidBody;
 
 /// Physics constraint component. Connects two rigid bodies together, or one rigid body to a static point.
-class ATOMIC_API Constraint : public Component
+class URHO3D_API Constraint : public Component
 {
-    ATOMIC_OBJECT(Constraint, Component);
+    URHO3D_OBJECT(Constraint, Component);
 
     friend class RigidBody;
 

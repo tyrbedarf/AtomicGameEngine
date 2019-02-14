@@ -48,9 +48,9 @@ struct Light2DRay
     float fraction_;
 };
 
-class ATOMIC_API Light2D : public Component
+class URHO3D_API Light2D : public Component
 {
-    ATOMIC_OBJECT(Light2D, Component);
+    URHO3D_OBJECT(Light2D, Component);
 
 public:
     /// Construct.
@@ -110,9 +110,9 @@ protected:
 };
 
 
-class ATOMIC_API DirectionalLight2D : public Light2D
+class URHO3D_API DirectionalLight2D : public Light2D
 {
-    ATOMIC_OBJECT(DirectionalLight2D, Light2D);
+    URHO3D_OBJECT(DirectionalLight2D, Light2D);
 
 public:
     /// Construct.
@@ -135,9 +135,9 @@ protected:
 };
 
 
-class ATOMIC_API PositionalLight2D : public Light2D
+class URHO3D_API PositionalLight2D : public Light2D
 {
-    ATOMIC_OBJECT(PositionalLight2D, Light2D);
+    URHO3D_OBJECT(PositionalLight2D, Light2D);
 
 public:
     /// Construct.
@@ -154,9 +154,9 @@ protected:
 };
 
 
-class ATOMIC_API PointLight2D : public PositionalLight2D
+class URHO3D_API PointLight2D : public PositionalLight2D
 {
-    ATOMIC_OBJECT(PointLight2D, PositionalLight2D);
+    URHO3D_OBJECT(PointLight2D, PositionalLight2D);
 
 public:
     /// Construct.
@@ -179,9 +179,9 @@ protected:
 
 };
 
-class ATOMIC_API Light2DGroup : public Drawable2D
+class URHO3D_API Light2DGroup : public Drawable2D
 {
-    ATOMIC_OBJECT(Light2DGroup, Drawable2D);
+    URHO3D_OBJECT(Light2DGroup, Drawable2D);
 
 public:
     /// Construct.

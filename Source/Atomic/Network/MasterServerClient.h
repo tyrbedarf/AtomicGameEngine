@@ -54,9 +54,9 @@ struct RemoteGameServer
 
 
 /// Client for master server, see Script/AtomicMasterServer for example master server implementation
-class ATOMIC_API MasterServerClient : public Object
+class URHO3D_API MasterServerClient : public Object
 {
-    ATOMIC_OBJECT(MasterServerClient, Object);
+    URHO3D_OBJECT(MasterServerClient, Object);
 
 public:
 

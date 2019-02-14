@@ -31,7 +31,7 @@ namespace ToolCore
 
 class PlayCmd: public Command
 {
-    ATOMIC_OBJECT(PlayCmd, Command);
+    URHO3D_OBJECT(PlayCmd, Command);
 
 public:
 

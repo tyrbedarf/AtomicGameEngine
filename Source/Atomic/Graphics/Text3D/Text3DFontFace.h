@@ -34,7 +34,7 @@ class Image;
 class Texture2D;
 
 /// %Font glyph description.
-struct ATOMIC_API Text3DFontGlyph
+struct URHO3D_API Text3DFontGlyph
 {
     /// Construct.
     Text3DFontGlyph();
@@ -64,7 +64,7 @@ struct ATOMIC_API Text3DFontGlyph
 };
 
 /// %Font face description.
-class ATOMIC_API Text3DFontFace : public RefCounted
+class URHO3D_API Text3DFontFace : public RefCounted
 {
     friend class Text3DFont;
 

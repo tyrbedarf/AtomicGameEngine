@@ -53,7 +53,7 @@ enum TransformSpace
 };
 
 /// Internal implementation structure for less performance-critical Node variables.
-struct ATOMIC_API NodeImpl
+struct URHO3D_API NodeImpl
 {
     /// Nodes this node depends on for network updates.
     PODVector<Node*> dependencyNodes_;
@@ -70,9 +70,9 @@ struct ATOMIC_API NodeImpl
 };
 
 /// %Scene node that may contain components and child nodes.
-class ATOMIC_API Node : public Animatable
+class URHO3D_API Node : public Animatable
 {
-    ATOMIC_OBJECT(Node, Animatable);
+    URHO3D_OBJECT(Node, Animatable);
 
     friend class Connection;
 

@@ -27,13 +27,13 @@
 namespace AtomicEditor
 {
 
-ATOMIC_EVENT(E_EDITORRESOURCECLOSE, EditorResourceClose)
+URHO3D_EVENT(E_EDITORRESOURCECLOSE, EditorResourceClose)
 {
-    ATOMIC_PARAM(P_EDITOR, Editor);            // ResourceEditor
-    ATOMIC_PARAM(P_NAVIGATE, NavigateToAvailableResource); // bool
+    URHO3D_PARAM(P_EDITOR, Editor);            // ResourceEditor
+    URHO3D_PARAM(P_NAVIGATE, NavigateToAvailableResource); // bool
 }
 
-ATOMIC_EVENT(E_EDITORRESOURCECLOSECANCELED, EditorResourceCloseCanceled)
+URHO3D_EVENT(E_EDITORRESOURCECLOSECANCELED, EditorResourceCloseCanceled)
 {
 
 }

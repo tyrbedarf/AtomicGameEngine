@@ -26,45 +26,45 @@ namespace ToolCore
 {
 
 
-ATOMIC_EVENT(E_RESOURCEADDED, ResourceAdded)
+URHO3D_EVENT(E_RESOURCEADDED, ResourceAdded)
 {
-    ATOMIC_PARAM(P_GUID, GUID);                  // string
+    URHO3D_PARAM(P_GUID, GUID);                  // string
 }
 
-ATOMIC_EVENT(E_RESOURCEREMOVED, ResourceRemoved)
+URHO3D_EVENT(E_RESOURCEREMOVED, ResourceRemoved)
 {
-    ATOMIC_PARAM(P_GUID, GUID);                  // string
+    URHO3D_PARAM(P_GUID, GUID);                  // string
 }
 
-ATOMIC_EVENT(E_ASSETIMPORTERROR, AssetImportError)
+URHO3D_EVENT(E_ASSETIMPORTERROR, AssetImportError)
 {
-    ATOMIC_PARAM(P_PATH, Path);                  // string
-    ATOMIC_PARAM(P_GUID, GUID);                  // string
-    ATOMIC_PARAM(P_ERROR, Error);                  // string
+    URHO3D_PARAM(P_PATH, Path);                  // string
+    URHO3D_PARAM(P_GUID, GUID);                  // string
+    URHO3D_PARAM(P_ERROR, Error);                  // string
 }
 
-ATOMIC_EVENT(E_ASSETSCANBEGIN, AssetScanBegin)
-{
-}
-
-ATOMIC_EVENT(E_ASSETSCANEND, AssetScanEnd)
+URHO3D_EVENT(E_ASSETSCANBEGIN, AssetScanBegin)
 {
 }
 
-ATOMIC_EVENT(E_ASSETNEW, AssetNew)
+URHO3D_EVENT(E_ASSETSCANEND, AssetScanEnd)
 {
-    ATOMIC_PARAM(P_GUID, GUID);                  // string
 }
 
-ATOMIC_EVENT(E_ASSETRENAMED, AssetRenamed)
+URHO3D_EVENT(E_ASSETNEW, AssetNew)
 {
-    ATOMIC_PARAM(P_ASSET, Asset);                  // asset ptr
+    URHO3D_PARAM(P_GUID, GUID);                  // string
 }
 
-ATOMIC_EVENT(E_ASSETMOVED, AssetMoved)
+URHO3D_EVENT(E_ASSETRENAMED, AssetRenamed)
 {
-    ATOMIC_PARAM(P_ASSET, Asset);                  // asset ptr
-    ATOMIC_PARAM(P_OLDPATH, OldPath);                  // string
+    URHO3D_PARAM(P_ASSET, Asset);                  // asset ptr
+}
+
+URHO3D_EVENT(E_ASSETMOVED, AssetMoved)
+{
+    URHO3D_PARAM(P_ASSET, Asset);                  // asset ptr
+    URHO3D_PARAM(P_OLDPATH, OldPath);                  // string
 
 }
 

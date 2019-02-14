@@ -29,7 +29,7 @@ namespace ToolCore
 
 class MaterialImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(MaterialImporter, AssetImporter);
+    URHO3D_OBJECT(MaterialImporter, AssetImporter);
 
 public:
     /// Construct.

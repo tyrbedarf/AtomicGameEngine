@@ -28,9 +28,9 @@ namespace Urho3D
 {
 
 
-class ATOMIC_API tbUIScrollBar : public tbUIWidget
+class URHO3D_API tbUIScrollBar : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIScrollBar, tbUIWidget)
+    URHO3D_OBJECT(tbUIScrollBar, tbUIWidget)
 
 public:
 

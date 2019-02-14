@@ -40,11 +40,11 @@ static int const UIVIEW_MIN_TEXTURE_SIZE = 64;
 static int const UIVIEW_MAX_TEXTURE_SIZE = 4096;
 
 /// Top level UIView management
-class ATOMIC_API tbUIView : public tbUIWidget
+class URHO3D_API tbUIView : public tbUIWidget
 {
     friend class tbUI;
 
-    ATOMIC_OBJECT(tbUIView, tbUIWidget)
+    URHO3D_OBJECT(tbUIView, tbUIWidget)
 
 public:
 

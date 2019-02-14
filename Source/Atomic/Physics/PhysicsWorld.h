@@ -59,7 +59,7 @@ class XMLElement;
 struct CollisionGeometryData;
 
 /// Physics raycast hit.
-struct ATOMIC_API PhysicsRaycastResult
+struct URHO3D_API PhysicsRaycastResult
 {
     /// Construct with defaults.
     PhysicsRaycastResult() :
@@ -129,9 +129,9 @@ struct PhysicsWorldConfig
 static const float DEFAULT_MAX_NETWORK_ANGULAR_VELOCITY = 100.0f;
 
 /// Physics simulation world component. Should be added only to the root scene node.
-class ATOMIC_API PhysicsWorld : public Component, public btIDebugDraw
+class URHO3D_API PhysicsWorld : public Component, public btIDebugDraw
 {
-    ATOMIC_OBJECT(PhysicsWorld, Component);
+    URHO3D_OBJECT(PhysicsWorld, Component);
 
     friend void InternalPreTickCallback(btDynamicsWorld* world, btScalar timeStep);
     friend void InternalTickCallback(btDynamicsWorld* world, btScalar timeStep);
@@ -361,6 +361,6 @@ private:
 };
 
 /// Register Physics library objects.
-void ATOMIC_API RegisterPhysicsLibrary(Context* context);
+void URHO3D_API RegisterPhysicsLibrary(Context* context);
 
 }

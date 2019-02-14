@@ -28,21 +28,21 @@ using namespace Urho3D;
 
 namespace ToolCore
 {
-    ATOMIC_EVENT(E_NETBUILDBEGIN, NETBuildBegin)
+    URHO3D_EVENT(E_NETBUILDBEGIN, NETBuildBegin)
     {
-        ATOMIC_PARAM(P_BUILD, Build); // NETBuild*
+        URHO3D_PARAM(P_BUILD, Build); // NETBuild*
     }
 
-    ATOMIC_EVENT(E_NETBUILDRESULT, NETBuildResult)
+    URHO3D_EVENT(E_NETBUILDRESULT, NETBuildResult)
     {
-        ATOMIC_PARAM(P_BUILD, Build); // NETBuild
-        ATOMIC_PARAM(P_SUCCESS, Success); // bool success = true;
-        ATOMIC_PARAM(P_ERRORTEXT, ErrorText); // String for failure, the compilation output
+        URHO3D_PARAM(P_BUILD, Build); // NETBuild
+        URHO3D_PARAM(P_SUCCESS, Success); // bool success = true;
+        URHO3D_PARAM(P_ERRORTEXT, ErrorText); // String for failure, the compilation output
     }
 
-    ATOMIC_EVENT(E_NETBUILDATOMICPROJECT, NETBuildAtomicProject)
+    URHO3D_EVENT(E_NETBUILDATOMICPROJECT, NETBuildAtomicProject)
     {
-        ATOMIC_PARAM(P_PROJECT, Project); // Project
+        URHO3D_PARAM(P_PROJECT, Project); // Project
     }
 
     enum NETBuildStatus
@@ -58,7 +58,7 @@ namespace ToolCore
     {
         friend class NETBuildSystem;
 
-        ATOMIC_OBJECT(NETBuild, Object)
+        URHO3D_OBJECT(NETBuild, Object)
 
     public:
 
@@ -85,7 +85,7 @@ namespace ToolCore
     class NETBuildSystem : public Object
     {
 
-        ATOMIC_OBJECT(NETBuildSystem, Object)
+		URHO3D_OBJECT(NETBuildSystem, Object)
 
     public:
 

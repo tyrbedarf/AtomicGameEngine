@@ -30,9 +30,9 @@ namespace Urho3D
 {
 
 
-class ATOMIC_API tbUIColorWheel : public tbUIWidget
+class URHO3D_API tbUIColorWheel : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIColorWheel, tbUIWidget)
+    URHO3D_OBJECT(tbUIColorWheel, tbUIWidget)
 
 public:
 

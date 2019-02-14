@@ -92,9 +92,9 @@ struct DebugTriangle
 };
 
 /// Debug geometry rendering component. Should be added only to the root scene node.
-class ATOMIC_API DebugRenderer : public Component
+class URHO3D_API DebugRenderer : public Component
 {
-    ATOMIC_OBJECT(DebugRenderer, Component);
+    URHO3D_OBJECT(DebugRenderer, Component);
 
 public:
     /// Construct.

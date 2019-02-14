@@ -29,7 +29,7 @@ namespace Urho3D
 {
 
     /// Wrapper around RenderPathCommand as that is setup as a struct and usage a significant delta in order to change to RefCounted
-    class ATOMIC_API ScriptRenderPathCommand : public RefCounted
+    class URHO3D_API ScriptRenderPathCommand : public RefCounted
     {
         ATOMIC_REFCOUNTED(ScriptRenderPathCommand)
 

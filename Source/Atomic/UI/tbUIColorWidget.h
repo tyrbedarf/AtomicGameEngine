@@ -31,9 +31,9 @@ namespace Urho3D
 
 /// A widget that can render a Texture2D, so the image data
 /// doesn't need to be loaded 2x (once for Texture2D and once for say a UIImageWidget)
-class ATOMIC_API tbUIColorWidget : public tbUIWidget
+class URHO3D_API tbUIColorWidget : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIColorWidget, tbUIWidget)
+    URHO3D_OBJECT(tbUIColorWidget, tbUIWidget)
 
 public:
 

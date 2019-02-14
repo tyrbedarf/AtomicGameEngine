@@ -29,7 +29,7 @@ namespace ToolCore
 
 class FolderImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(FolderImporter, AssetImporter);
+    URHO3D_OBJECT(FolderImporter, AssetImporter);
 
 public:
     /// Construct.

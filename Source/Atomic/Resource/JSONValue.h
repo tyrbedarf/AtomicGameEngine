@@ -74,7 +74,7 @@ typedef JSONObject::Iterator JSONObjectIterator;
 typedef JSONObject::ConstIterator ConstJSONObjectIterator;
 
 /// JSON value class.
-class ATOMIC_API JSONValue
+class URHO3D_API JSONValue
 {
 public:
     /// Construct null value.

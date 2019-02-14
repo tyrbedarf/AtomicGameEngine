@@ -40,9 +40,9 @@ namespace Urho3D
 {
 
 
-class ATOMIC_API ProcSky : public Drawable
+class URHO3D_API ProcSky : public Drawable
 {
-    ATOMIC_OBJECT(ProcSky, Drawable);
+    URHO3D_OBJECT(ProcSky, Drawable);
 
 public:
     /// Construct.

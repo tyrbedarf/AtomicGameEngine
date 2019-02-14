@@ -33,7 +33,7 @@ class PlatformAndroid;
 
 class BuildAndroid : public BuildBase
 {
-    ATOMIC_OBJECT(BuildAndroid, BuildBase);
+    URHO3D_OBJECT(BuildAndroid, BuildBase);
 
 public:
 

@@ -39,7 +39,7 @@ namespace AtomicEditor
 /// EditorMode subsystem
 class EditorMode : public Object
 {
-    ATOMIC_OBJECT(EditorMode, Object)
+	URHO3D_OBJECT(EditorMode, Object)
 
 public:
     /// Construct.

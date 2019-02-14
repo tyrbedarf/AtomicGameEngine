@@ -37,7 +37,7 @@ class JSBHeader;
 class JSBEnum : public Object
 {
 
-    ATOMIC_OBJECT(JSBEnum, Object)
+    URHO3D_OBJECT(JSBEnum, Object)
 
 public:
 

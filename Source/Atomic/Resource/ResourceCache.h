@@ -65,9 +65,9 @@ enum ResourceRequest
 
 // ATOMIC BEGIN
 /// Optional resource request processor. Can deny requests, re-route resource file names, or perform other processing per request.
-class ATOMIC_API ResourceRouter : public Object
+class URHO3D_API ResourceRouter : public Object
 {
-    ATOMIC_OBJECT(ResourceRouter, Object);
+    URHO3D_OBJECT(ResourceRouter, Object);
 
 public:
     /// Construct.
@@ -99,9 +99,9 @@ private:
 // ATOMIC END
 
 /// %Resource cache subsystem. Loads resources on demand and stores them for later access.
-class ATOMIC_API ResourceCache : public Object
+class URHO3D_API ResourceCache : public Object
 {
-    ATOMIC_OBJECT(ResourceCache, Object);
+    URHO3D_OBJECT(ResourceCache, Object);
 
 public:
     /// Construct.
@@ -339,11 +339,11 @@ template <class T> void ResourceCache::GetResources(PODVector<T*>& result) const
 }
 
 /// Register Resource library subsystems and objects.
-void ATOMIC_API RegisterResourceLibrary(Context* context);
+void URHO3D_API RegisterResourceLibrary(Context* context);
 
 // ATOMIC BEGIN
 /// Extension used for package files
-extern ATOMIC_API const char* PAK_EXTENSION;
+extern URHO3D_API const char* PAK_EXTENSION;
 // ATOMIC END
 
 

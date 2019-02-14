@@ -53,9 +53,9 @@ enum ProfilerBlockStatus
 
 
 /// Hierarchical performance profiler subsystem.
-class ATOMIC_API Profiler : public Object
+class URHO3D_API Profiler : public Object
 {
-    ATOMIC_OBJECT(Profiler, Object);
+    URHO3D_OBJECT(Profiler, Object);
 
 public:
     /// Construct.

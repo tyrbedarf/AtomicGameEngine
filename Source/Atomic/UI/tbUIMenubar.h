@@ -29,9 +29,9 @@ namespace Urho3D
 
 class UIMenuItemSource;
 
-class ATOMIC_API tbUIMenuItem : public tbUISelectItem
+class URHO3D_API tbUIMenuItem : public tbUISelectItem
 {
-    ATOMIC_OBJECT(tbUIMenuItem, tbUISelectItem)
+    URHO3D_OBJECT(tbUIMenuItem, tbUISelectItem)
 
 public:
 
@@ -49,7 +49,7 @@ private:
 
 class UIMenuItemSource : public tbUISelectItemSource
 {
-    ATOMIC_OBJECT(UIMenuItemSource, tbUISelectItemSource)
+    URHO3D_OBJECT(UIMenuItemSource, tbUISelectItemSource)
 
 public:
 

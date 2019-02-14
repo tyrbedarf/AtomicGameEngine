@@ -32,11 +32,11 @@ class tbUIRenderer;
 
 /// A widget that can render a Texture2D, so the image data
 /// doesn't need to be loaded 2x (once for Texture2D and once for say a UIImageWidget)
-class ATOMIC_API UITextureWidget : public tbUIWidget
+class URHO3D_API UITextureWidget : public tbUIWidget
 {
     friend class TBTextureWidget;
 
-    ATOMIC_OBJECT(UITextureWidget, tbUIWidget)
+    URHO3D_OBJECT(UITextureWidget, tbUIWidget)
 
 public:
 

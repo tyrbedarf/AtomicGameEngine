@@ -39,7 +39,7 @@ class AnimationImportInfo : public Object
 {
     friend class ModelImporter;
 
-    ATOMIC_OBJECT(AnimationImportInfo, Object);
+    URHO3D_OBJECT(AnimationImportInfo, Object);
 
 public:
 
@@ -66,7 +66,7 @@ private:
 
 class ModelImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(ModelImporter, AssetImporter)
+    URHO3D_OBJECT(ModelImporter, AssetImporter)
 
 public:
 

@@ -170,9 +170,9 @@ private:
 };
 
 /// Tile map file.
-class ATOMIC_API TmxFile2D : public Resource
+class URHO3D_API TmxFile2D : public Resource
 {
-    ATOMIC_OBJECT(TmxFile2D, Resource);
+    URHO3D_OBJECT(TmxFile2D, Resource);
 
 public:
     /** Construct.

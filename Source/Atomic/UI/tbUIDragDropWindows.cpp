@@ -346,7 +346,7 @@ namespace Urho3D
 
     class UIDragDropWindows : public Object
     {
-        ATOMIC_OBJECT(UIDragDropWindows, Object);
+        URHO3D_OBJECT(UIDragDropWindows, Object);
 
     public:
         /// Construct.

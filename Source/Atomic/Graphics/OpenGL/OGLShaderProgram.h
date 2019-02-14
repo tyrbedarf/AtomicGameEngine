@@ -35,7 +35,7 @@ class ConstantBuffer;
 class Graphics;
 
 /// Linked shader program on the GPU.
-class ATOMIC_API ShaderProgram : public RefCounted, public GPUObject
+class URHO3D_API ShaderProgram : public RefCounted, public GPUObject
 {
     ATOMIC_REFCOUNTED(ShaderProgram)
 

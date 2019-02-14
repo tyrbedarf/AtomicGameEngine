@@ -26,6 +26,6 @@ namespace Urho3D
 {
 
 /// Register Atomic2D library objects.
-void ATOMIC_API RegisterAtomic2DLibrary(Context* context);
+void URHO3D_API RegisterAtomic2DLibrary(Context* context);
 
 }

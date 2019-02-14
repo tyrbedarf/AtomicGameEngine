@@ -27,137 +27,137 @@
 namespace Urho3D
 {
 
-// UIUpdate event which is sent post engine update, ensuring all input events have been processed
-ATOMIC_EVENT(E_UIUPDATE, UIUpdate)
-{
+	// UIUpdate event which is sent post engine update, ensuring all input events have been processed
+	URHO3D_EVENT(E_UIUPDATE, UIUpdate)
+	{
 
-}
+	}
 
-ATOMIC_EVENT(E_WIDGETEVENT, WidgetEvent)
-{
-    ATOMIC_PARAM(P_HANDLER, Handler);           // UIWidget pointer of widget's OnEvent we are in
-    ATOMIC_PARAM(P_TARGET, Target);             // UIWidget pointer
-    ATOMIC_PARAM(P_TYPE, Type);                 // enum UI_EVENT_TYPE
-    ATOMIC_PARAM(P_X, X);                       // int
-    ATOMIC_PARAM(P_Y, Y);                       // int
-    ATOMIC_PARAM(P_DELTAX, DeltaX);             // int
-    ATOMIC_PARAM(P_DELTAY, DeltaY);             // int
-    ATOMIC_PARAM(P_COUNT, Count);               // int
-    ATOMIC_PARAM(P_KEY, Key);                   // int
-    ATOMIC_PARAM(P_SPECIALKEY, SpecialKey);     // enum SPECIAL_KEY
-    ATOMIC_PARAM(P_MODIFIERKEYS, ModifierKeys); // enum MODIFIER_KEYS
-    ATOMIC_PARAM(P_REFID, RefID);               // string (TBID)
-    ATOMIC_PARAM(P_TOUCH, Touch);               // bool
+	URHO3D_EVENT(E_WIDGETEVENT, WidgetEvent)
+	{
+		URHO3D_PARAM(P_HANDLER, Handler);           // UIWidget pointer of widget's OnEvent we are in
+		URHO3D_PARAM(P_TARGET, Target);             // UIWidget pointer
+		URHO3D_PARAM(P_TYPE, Type);                 // enum UI_EVENT_TYPE
+		URHO3D_PARAM(P_X, X);                       // int
+		URHO3D_PARAM(P_Y, Y);                       // int
+		URHO3D_PARAM(P_DELTAX, DeltaX);             // int
+		URHO3D_PARAM(P_DELTAY, DeltaY);             // int
+		URHO3D_PARAM(P_COUNT, Count);               // int
+		URHO3D_PARAM(P_KEY, Key);                   // int
+		URHO3D_PARAM(P_SPECIALKEY, SpecialKey);     // enum SPECIAL_KEY
+		URHO3D_PARAM(P_MODIFIERKEYS, ModifierKeys); // enum MODIFIER_KEYS
+		URHO3D_PARAM(P_REFID, RefID);               // string (TBID)
+		URHO3D_PARAM(P_TOUCH, Touch);               // bool
 
-    // EventHandled can be set by event receivers to stop event bubble
-    ATOMIC_PARAM(P_HANDLED, Handled);               // [OUT] -> bool
+		// EventHandled can be set by event receivers to stop event bubble
+		URHO3D_PARAM(P_HANDLED, Handled);               // [OUT] -> bool
 
-}
+	}
 
-ATOMIC_EVENT(E_WIDGETLOADED, WidgetLoaded)
-{
-    ATOMIC_PARAM(P_WIDGET, Widget);             // UIWidget pointer
-}
+	URHO3D_EVENT(E_WIDGETLOADED, WidgetLoaded)
+	{
+		URHO3D_PARAM(P_WIDGET, Widget);             // UIWidget pointer
+	}
 
-ATOMIC_EVENT(E_WIDGETFOCUSCHANGED, WidgetFocusChanged)
-{
-    ATOMIC_PARAM(P_WIDGET, Widget);             // UIWidget pointer
-    ATOMIC_PARAM(P_FOCUSED, Focused);             // bool
-}
-
-
-ATOMIC_EVENT(E_WIDGETDELETED, WidgetDeleted)
-{
-    ATOMIC_PARAM(P_WIDGET, Widget);             // UIWidget pointer
-}
-
-ATOMIC_EVENT(E_DRAGBEGIN, DragBegin)
-{
-    ATOMIC_PARAM(P_TARGET, Source);             // UIWidget source
-    ATOMIC_PARAM(P_DRAGOBJECT, DragObject);     // UIDragObject pointer
-}
-
-ATOMIC_EVENT(E_DRAGENTERWIDGET, DragEnterWidget)
-{
-    ATOMIC_PARAM(P_WIDGET, Widget);             // UIWidget pointer
-    ATOMIC_PARAM(P_DRAGOBJECT, DragObject);     // UIDragObject pointer
-}
-
-ATOMIC_EVENT(E_DRAGEXITWIDGET, DragExitWidget)
-{
-    ATOMIC_PARAM(P_WIDGET, Widget);             // UIWidget pointer
-    ATOMIC_PARAM(P_DRAGOBJECT, DragObject);     // UIDragObject pointer
-}
-
-ATOMIC_EVENT(E_DRAGENDED, DragEnded)
-{
-    ATOMIC_PARAM(P_TARGET, Target);             // UIWidget pointer
-    ATOMIC_PARAM(P_DRAGOBJECT, DragObject);     // UIDragObject pointer
-}
+	URHO3D_EVENT(E_WIDGETFOCUSCHANGED, WidgetFocusChanged)
+	{
+		URHO3D_PARAM(P_WIDGET, Widget);             // UIWidget pointer
+		URHO3D_PARAM(P_FOCUSED, Focused);             // bool
+	}
 
 
-ATOMIC_EVENT(E_POPUPMENUSELECT, PopupMenuSelect)
-{
-    ATOMIC_PARAM(P_BUTTON, Button);             // UIButton that created popup
-    ATOMIC_PARAM(P_REFID, RefID);             // string tbid
-}
+	URHO3D_EVENT(E_WIDGETDELETED, WidgetDeleted)
+	{
+		URHO3D_PARAM(P_WIDGET, Widget);             // UIWidget pointer
+	}
 
-ATOMIC_EVENT(E_UISHORTCUT, UIShortcut)
-{
-    ATOMIC_PARAM(P_KEY, Key);                    // int
-    ATOMIC_PARAM(P_QUALIFIERS, Qualifiers);        // int
+	URHO3D_EVENT(E_DRAGBEGIN, DragBegin)
+	{
+		URHO3D_PARAM(P_TARGET, Source);             // UIWidget source
+		URHO3D_PARAM(P_DRAGOBJECT, DragObject);     // UIDragObject pointer
+	}
 
-}
+	URHO3D_EVENT(E_DRAGENTERWIDGET, DragEnterWidget)
+	{
+		URHO3D_PARAM(P_WIDGET, Widget);             // UIWidget pointer
+		URHO3D_PARAM(P_DRAGOBJECT, DragObject);     // UIDragObject pointer
+	}
 
-ATOMIC_EVENT(E_WINDOWCLOSED, WindowClosed)
-{
-    ATOMIC_PARAM(P_WINDOW, Window);               // UIWindow
-}
+	URHO3D_EVENT(E_DRAGEXITWIDGET, DragExitWidget)
+	{
+		URHO3D_PARAM(P_WIDGET, Widget);             // UIWidget pointer
+		URHO3D_PARAM(P_DRAGOBJECT, DragObject);     // UIDragObject pointer
+	}
 
-ATOMIC_EVENT(E_UIWIDGETFOCUSCHANGED, UIWidgetFocusChanged)
-{
-    ATOMIC_PARAM(P_WIDGET, Widget);             // UIWidget pointer
-    ATOMIC_PARAM(P_FOCUSED, Focused);             // bool
-}
-ATOMIC_EVENT(E_UIWIDGETFOCUSESCAPED, UIWidgetFocusEscaped)
-{
-}
+	URHO3D_EVENT(E_DRAGENDED, DragEnded)
+	{
+		URHO3D_PARAM(P_TARGET, Target);             // UIWidget pointer
+		URHO3D_PARAM(P_DRAGOBJECT, DragObject);     // UIDragObject pointer
+	}
 
-ATOMIC_EVENT(E_UIWIDGETEDITCANCELED, UIWidgetEditCanceled)
-{
-    ATOMIC_PARAM(P_WIDGET, Widget);         // UIWidget pointer
-}
 
-ATOMIC_EVENT(E_UIWIDGETEDITCOMPLETE, UIWidgetEditComplete)
-{
-    ATOMIC_PARAM(P_WIDGET, Widget);             // UIWidget pointer
-}
+	URHO3D_EVENT(E_POPUPMENUSELECT, PopupMenuSelect)
+	{
+		URHO3D_PARAM(P_BUTTON, Button);             // UIButton that created popup
+		URHO3D_PARAM(P_REFID, RefID);             // string tbid
+	}
 
-ATOMIC_EVENT(E_UIUNHANDLEDSHORTCUT, UIUnhandledShortcut)
-{
-    ATOMIC_PARAM(P_REFID, RefID); // string tbid
-}
+	URHO3D_EVENT(E_UISHORTCUT, UIShortcut)
+	{
+		URHO3D_PARAM(P_KEY, Key);                    // int
+		URHO3D_PARAM(P_QUALIFIERS, Qualifiers);        // int
 
-ATOMIC_EVENT(E_UILISTVIEWSELECTIONCHANGED, UIListViewSelectionChanged)
-{
-    ATOMIC_PARAM(P_REFID, RefID); // string tbid
-    ATOMIC_PARAM(P_SELECTED, Selected);        // bool
-}
+	}
 
-/// event for PromptWindow
-ATOMIC_EVENT(E_UIPROMPTCOMPLETE, UIPromptComplete)
-{
-    ATOMIC_PARAM(P_TITLE, Title);  // string
-    ATOMIC_PARAM(P_REASON, Reason);  // string
-    ATOMIC_PARAM(P_SELECTED, Selected);  // string
-}
+	URHO3D_EVENT(E_WINDOWCLOSED, WindowClosed)
+	{
+		URHO3D_PARAM(P_WINDOW, Window);               // UIWindow
+	}
 
-/// event for FinderWindow
-ATOMIC_EVENT(E_UIFINDERCOMPLETE, UIFinderComplete)
-{
-    ATOMIC_PARAM(P_TITLE, Title);  // string
-    ATOMIC_PARAM(P_REASON, Reason);  // string
-    ATOMIC_PARAM(P_SELECTED, Selected);  // string
-}
+	URHO3D_EVENT(E_UIWIDGETFOCUSCHANGED, UIWidgetFocusChanged)
+	{
+		URHO3D_PARAM(P_WIDGET, Widget);             // UIWidget pointer
+		URHO3D_PARAM(P_FOCUSED, Focused);             // bool
+	}
+	URHO3D_EVENT(E_UIWIDGETFOCUSESCAPED, UIWidgetFocusEscaped)
+	{
+	}
+
+	URHO3D_EVENT(E_UIWIDGETEDITCANCELED, UIWidgetEditCanceled)
+	{
+		URHO3D_PARAM(P_WIDGET, Widget);         // UIWidget pointer
+	}
+
+	URHO3D_EVENT(E_UIWIDGETEDITCOMPLETE, UIWidgetEditComplete)
+	{
+		URHO3D_PARAM(P_WIDGET, Widget);             // UIWidget pointer
+	}
+
+	URHO3D_EVENT(E_UIUNHANDLEDSHORTCUT, UIUnhandledShortcut)
+	{
+		URHO3D_PARAM(P_REFID, RefID); // string tbid
+	}
+
+	URHO3D_EVENT(E_UILISTVIEWSELECTIONCHANGED, UIListViewSelectionChanged)
+	{
+		URHO3D_PARAM(P_REFID, RefID); // string tbid
+		URHO3D_PARAM(P_SELECTED, Selected);        // bool
+	}
+
+	/// event for PromptWindow
+	URHO3D_EVENT(E_UIPROMPTCOMPLETE, UIPromptComplete)
+	{
+		URHO3D_PARAM(P_TITLE, Title);  // string
+		URHO3D_PARAM(P_REASON, Reason);  // string
+		URHO3D_PARAM(P_SELECTED, Selected);  // string
+	}
+
+	/// event for FinderWindow
+	URHO3D_EVENT(E_UIFINDERCOMPLETE, UIFinderComplete)
+	{
+		URHO3D_PARAM(P_TITLE, Title);  // string
+		URHO3D_PARAM(P_REASON, Reason);  // string
+		URHO3D_PARAM(P_SELECTED, Selected);  // string
+	}
 
 }

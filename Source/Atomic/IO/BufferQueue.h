@@ -34,9 +34,9 @@ namespace Urho3D
 {
 
 /// %Act as a continuous byte buffer which can be appened indefinatly.
-class ATOMIC_API BufferQueue : public Object, public Deserializer, public Serializer
+class URHO3D_API BufferQueue : public Object, public Deserializer, public Serializer
 {
-    ATOMIC_OBJECT(BufferQueue, Object)
+    URHO3D_OBJECT(BufferQueue, Object)
 
 public:
     /// Construct.

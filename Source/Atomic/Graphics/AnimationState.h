@@ -66,7 +66,7 @@ struct AnimationStateTrack
 };
 
 /// %Animation instance.
-class ATOMIC_API AnimationState : public RefCounted
+class URHO3D_API AnimationState : public RefCounted
 {
     ATOMIC_REFCOUNTED(AnimationState)
 

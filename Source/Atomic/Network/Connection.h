@@ -104,9 +104,9 @@ enum ObserverPositionSendMode
 };
 
 /// %Connection to a remote network host.
-class ATOMIC_API Connection : public Object
+class URHO3D_API Connection : public Object
 {
-    ATOMIC_OBJECT(Connection, Object);
+    URHO3D_OBJECT(Connection, Object);
 
 public:
 // ATOMIC BEGIN

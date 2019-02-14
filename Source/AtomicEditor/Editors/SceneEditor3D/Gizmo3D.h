@@ -117,7 +117,7 @@ enum AxisMode
 
 class Gizmo3D: public Object
 {
-    ATOMIC_OBJECT(Gizmo3D, Object);
+    URHO3D_OBJECT(Gizmo3D, Object);
 
 public:
 

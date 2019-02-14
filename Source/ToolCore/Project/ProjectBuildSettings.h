@@ -239,7 +239,7 @@ private:
 
 class ProjectBuildSettings : public Object
 {
-    ATOMIC_OBJECT(ProjectBuildSettings, Object);
+    URHO3D_OBJECT(ProjectBuildSettings, Object);
 
 public:
     /// Construct.

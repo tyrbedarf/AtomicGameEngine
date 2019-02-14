@@ -32,7 +32,7 @@ namespace Urho3D
 class ScriptObject : public Object
 {
 
-    ATOMIC_OBJECT(ScriptObject, Object);
+	URHO3D_OBJECT(ScriptObject, Object);
 
 public:
     /// Construct.

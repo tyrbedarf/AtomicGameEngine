@@ -40,7 +40,7 @@ class WebClient : public Object
     friend class WebBrowserHost;
     friend class WebClientPrivate;
 
-    ATOMIC_OBJECT(WebClient, Object)
+    URHO3D_OBJECT(WebClient, Object)
 
 public:
 

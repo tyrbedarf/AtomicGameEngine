@@ -31,9 +31,9 @@ namespace Urho3D
 
 struct RaycastVehicleData;
 
-class ATOMIC_API RaycastVehicle : public LogicComponent
+class URHO3D_API RaycastVehicle : public LogicComponent
 {
-    ATOMIC_OBJECT(RaycastVehicle, LogicComponent)
+    URHO3D_OBJECT(RaycastVehicle, LogicComponent)
 
 public:
     /// Construct.

@@ -33,9 +33,9 @@ namespace Urho3D
 class Text3DText;
 
 /// 3D text component.
-class ATOMIC_API Text3D : public Drawable
+class URHO3D_API Text3D : public Drawable
 {
-    ATOMIC_OBJECT(Text3D, Drawable)
+    URHO3D_OBJECT(Text3D, Drawable)
 
 public:
     /// Construct.

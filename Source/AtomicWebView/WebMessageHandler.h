@@ -33,7 +33,7 @@ class WebMessageHandlerPrivate;
 class WebMessageHandler : public Object
 {
 
-    ATOMIC_OBJECT(WebMessageHandler, Object);
+    URHO3D_OBJECT(WebMessageHandler, Object);
 
 public:
 

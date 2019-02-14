@@ -70,9 +70,9 @@ struct StoredLogMessage
 };
 
 /// Logging subsystem.
-class ATOMIC_API Log : public Object
+class URHO3D_API Log : public Object
 {
-    ATOMIC_OBJECT(Log, Object);
+    URHO3D_OBJECT(Log, Object);
 
 public:
     /// Construct.

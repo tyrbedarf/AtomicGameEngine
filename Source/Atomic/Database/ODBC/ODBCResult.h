@@ -30,7 +30,7 @@ namespace Urho3D
 {
 
 /// %Database query result.
-class ATOMIC_API DbResult
+class URHO3D_API DbResult
 {
     friend class DbConnection;
 

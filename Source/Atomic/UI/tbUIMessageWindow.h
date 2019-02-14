@@ -37,9 +37,9 @@ enum UI_MESSAGEWINDOW_SETTINGS
 };
 
 
-class ATOMIC_API tbUIMessageWindow : public tbUIWindow
+class URHO3D_API tbUIMessageWindow : public tbUIWindow
 {
-    ATOMIC_OBJECT(tbUIMessageWindow, tbUIWindow)
+    URHO3D_OBJECT(tbUIMessageWindow, tbUIWindow)
 
 public:
 

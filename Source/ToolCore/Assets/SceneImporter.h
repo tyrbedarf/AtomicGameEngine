@@ -29,7 +29,7 @@ namespace ToolCore
 
 class SceneImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(SceneImporter, AssetImporter);
+    URHO3D_OBJECT(SceneImporter, AssetImporter);
 
 public:
     /// Construct.

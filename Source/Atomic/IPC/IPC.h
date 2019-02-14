@@ -41,9 +41,9 @@ struct QueuedEvent
     VariantMap eventData_;
 };
 
-class ATOMIC_API IPC : public Object
+class URHO3D_API IPC : public Object
 {
-    ATOMIC_OBJECT(IPC, Object);
+    URHO3D_OBJECT(IPC, Object);
 
 public:
 

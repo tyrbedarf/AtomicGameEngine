@@ -29,7 +29,7 @@ namespace Urho3D
 {
 
 /// Two-dimensional vector with integer values.
-class ATOMIC_API IntVector2
+class URHO3D_API IntVector2
 {
 public:
     /// Construct a zero vector.
@@ -160,7 +160,7 @@ public:
 };
 
 /// Two-dimensional vector.
-class ATOMIC_API Vector2
+class URHO3D_API Vector2
 {
 public:
     /// Construct a zero vector.

@@ -29,9 +29,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API IPCWorker : public IPCChannel
+class URHO3D_API IPCWorker : public IPCChannel
 {
-    ATOMIC_OBJECT(IPCWorker, IPCChannel);
+    URHO3D_OBJECT(IPCWorker, IPCChannel);
 
 public:
     /// POSIX Constructor

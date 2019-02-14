@@ -47,9 +47,9 @@ enum UI_WINDOW_SETTINGS {
 };
 
 
-class ATOMIC_API tbUIWindow : public tbUIWidget
+class URHO3D_API tbUIWindow : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIWindow, tbUIWidget)
+    URHO3D_OBJECT(tbUIWindow, tbUIWidget)
 
     public:
 

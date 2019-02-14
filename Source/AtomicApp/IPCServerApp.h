@@ -9,7 +9,7 @@ namespace Urho3D
     class IPCServerApp : public AppBase
     {
 
-        ATOMIC_OBJECT(IPCServerApp, AppBase)
+        URHO3D_OBJECT(IPCServerApp, AppBase)
 
     public:
         /// Construct.

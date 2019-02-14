@@ -28,9 +28,9 @@ namespace Urho3D
 {
 
 /// Renders several object instances while culling and receiving light as one unit. Can be used as a CPU-side optimization, but note that also regular StaticModels will use instanced rendering if possible.
-class ATOMIC_API StaticModelGroup : public StaticModel
+class URHO3D_API StaticModelGroup : public StaticModel
 {
-    ATOMIC_OBJECT(StaticModelGroup, StaticModel);
+    URHO3D_OBJECT(StaticModelGroup, StaticModel);
 
 public:
     /// Construct.

@@ -41,9 +41,9 @@ struct NetworkState;
 struct ReplicationState;
 
 /// Base class for objects with automatic serialization through attributes.
-class ATOMIC_API Serializable : public Object
+class URHO3D_API Serializable : public Object
 {
-    ATOMIC_OBJECT(Serializable, Object);
+	URHO3D_OBJECT(Serializable, Object);
 
 public:
     /// Construct.

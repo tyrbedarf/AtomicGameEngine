@@ -87,9 +87,9 @@ typedef HashMap<StringHash, VariantMap> ClassDefaultValueMap;
 
 
 /// NET Assembly resource.
-class ATOMIC_API ScriptComponentFile : public Resource
+class URHO3D_API ScriptComponentFile : public Resource
 {
-    ATOMIC_OBJECT(ScriptComponentFile, Resource)
+    URHO3D_OBJECT(ScriptComponentFile, Resource)
 
 public:
 

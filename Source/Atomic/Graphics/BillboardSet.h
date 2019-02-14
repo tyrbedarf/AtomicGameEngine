@@ -36,7 +36,7 @@ class VertexBuffer;
 
 // ATOMIC BEGIN
 /// One billboard in the billboard set.
-class ATOMIC_API Billboard : public RefCounted
+class URHO3D_API Billboard : public RefCounted
 {
     friend class BillboardSet;
     friend class ParticleEmitter;
@@ -97,9 +97,9 @@ static const unsigned MAX_BILLBOARDS = 65536 / 4;
 // ATOMIC END
 
 /// %Billboard component.
-class ATOMIC_API BillboardSet : public Drawable
+class URHO3D_API BillboardSet : public Drawable
 {
-    ATOMIC_OBJECT(BillboardSet, Drawable);
+    URHO3D_OBJECT(BillboardSet, Drawable);
 
 public:
     /// Construct.

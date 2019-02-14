@@ -34,10 +34,10 @@ class tbUITextField;
 class tbUIDragObject;
 
 /// UIDragDrop subsystem
-class ATOMIC_API tbUIDragDrop : public Object
+class URHO3D_API tbUIDragDrop : public Object
 {
 
-    ATOMIC_OBJECT(tbUIDragDrop, Object);
+    URHO3D_OBJECT(tbUIDragDrop, Object);
 
 public:
     /// Construct.

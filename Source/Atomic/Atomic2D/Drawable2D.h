@@ -69,9 +69,9 @@ static const float PIXEL_SIZE = 0.01f;
 // ATOMIC END
 
 /// Base class for 2D visible components.
-class ATOMIC_API Drawable2D : public Drawable
+class URHO3D_API Drawable2D : public Drawable
 {
-    ATOMIC_OBJECT(Drawable2D, Drawable);
+    URHO3D_OBJECT(Drawable2D, Drawable);
 
 public:
     /// Construct.

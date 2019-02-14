@@ -169,9 +169,9 @@ enum DeferredLightPSVariation
 };
 
 /// High-level rendering subsystem. Manages drawing of 3D views.
-class ATOMIC_API Renderer : public Object
+class URHO3D_API Renderer : public Object
 {
-    ATOMIC_OBJECT(Renderer, Object);
+    URHO3D_OBJECT(Renderer, Object);
 
 public:
     typedef void(Object::*ShadowMapFilter)(View* view, Texture2D* shadowMap, float blurScale);

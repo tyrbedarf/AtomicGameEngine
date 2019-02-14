@@ -30,9 +30,9 @@ namespace Urho3D
 
 class ScriptComponentFile;
 
-class ATOMIC_API ScriptComponent : public Component
+class URHO3D_API ScriptComponent : public Component
 {
-    ATOMIC_OBJECT(ScriptComponent, Component)
+    URHO3D_OBJECT(ScriptComponent, Component)
 
 public:
 

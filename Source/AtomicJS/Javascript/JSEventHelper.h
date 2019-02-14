@@ -30,7 +30,7 @@ namespace Urho3D
 
 class JSEventDispatcher : public Object, public GlobalEventListener
 {
-    ATOMIC_OBJECT(JSEventDispatcher, Object)
+	URHO3D_OBJECT(JSEventDispatcher, Object)
 
 public:
     /// Construct.
@@ -51,7 +51,7 @@ private:
 
 class JSEventHelper : public Object
 {
-    ATOMIC_OBJECT(JSEventHelper, Object);
+	URHO3D_OBJECT(JSEventHelper, Object);
 
 public:
     /// Construct.

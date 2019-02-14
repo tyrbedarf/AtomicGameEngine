@@ -28,41 +28,41 @@ namespace Urho3D
 {
 
 /// AnimatedModel bone hierarchy created.
-ATOMIC_EVENT(E_BONEHIERARCHYCREATED, BoneHierarchyCreated)
+URHO3D_EVENT(E_BONEHIERARCHYCREATED, BoneHierarchyCreated)
 {
-    ATOMIC_PARAM(P_NODE, Node);                    // Node pointer
+    URHO3D_PARAM(P_NODE, Node);                    // Node pointer
 }
 
 /// AnimatedModel animation trigger.
-ATOMIC_EVENT(E_ANIMATIONTRIGGER, AnimationTrigger)
+URHO3D_EVENT(E_ANIMATIONTRIGGER, AnimationTrigger)
 {
-    ATOMIC_PARAM(P_NODE, Node);                    // Node pointer
-    ATOMIC_PARAM(P_ANIMATION, Animation);          // Animation pointer
-    ATOMIC_PARAM(P_NAME, Name);                    // String
-    ATOMIC_PARAM(P_TIME, Time);                    // Float
-    ATOMIC_PARAM(P_DATA, Data);                    // User-defined data type
+    URHO3D_PARAM(P_NODE, Node);                    // Node pointer
+    URHO3D_PARAM(P_ANIMATION, Animation);          // Animation pointer
+    URHO3D_PARAM(P_NAME, Name);                    // String
+    URHO3D_PARAM(P_TIME, Time);                    // Float
+    URHO3D_PARAM(P_DATA, Data);                    // User-defined data type
 }
 
 /// AnimatedModel animation finished or looped.
-ATOMIC_EVENT(E_ANIMATIONFINISHED, AnimationFinished)
+URHO3D_EVENT(E_ANIMATIONFINISHED, AnimationFinished)
 {
-    ATOMIC_PARAM(P_NODE, Node);                    // Node pointer
-    ATOMIC_PARAM(P_ANIMATION, Animation);          // Animation pointer
-    ATOMIC_PARAM(P_NAME, Name);                    // String
-    ATOMIC_PARAM(P_LOOPED, Looped);                // Bool
+    URHO3D_PARAM(P_NODE, Node);                    // Node pointer
+    URHO3D_PARAM(P_ANIMATION, Animation);          // Animation pointer
+    URHO3D_PARAM(P_NAME, Name);                    // String
+    URHO3D_PARAM(P_LOOPED, Looped);                // Bool
 }
 
 /// Particle effect finished.
-ATOMIC_EVENT(E_PARTICLEEFFECTFINISHED, ParticleEffectFinished)
+URHO3D_EVENT(E_PARTICLEEFFECTFINISHED, ParticleEffectFinished)
 {
-    ATOMIC_PARAM(P_NODE, Node);                    // Node pointer
-    ATOMIC_PARAM(P_EFFECT, Effect);                // ParticleEffect pointer
+    URHO3D_PARAM(P_NODE, Node);                    // Node pointer
+    URHO3D_PARAM(P_EFFECT, Effect);                // ParticleEffect pointer
 }
 
 /// Terrain geometry created.
-ATOMIC_EVENT(E_TERRAINCREATED, TerrainCreated)
+URHO3D_EVENT(E_TERRAINCREATED, TerrainCreated)
 {
-    ATOMIC_PARAM(P_NODE, Node);                    // Node pointer
+    URHO3D_PARAM(P_NODE, Node);                    // Node pointer
 }
 
 }

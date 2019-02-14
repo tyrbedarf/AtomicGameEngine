@@ -36,7 +36,7 @@ class PlayerMode : public Object
 {
     friend class AEPlayerApplication;
 
-    ATOMIC_OBJECT(PlayerMode, Object);
+	URHO3D_OBJECT(PlayerMode, Object);
 
 public:
     /// Construct.

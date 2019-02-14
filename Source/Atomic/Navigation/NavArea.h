@@ -28,9 +28,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API NavArea : public Component
+class URHO3D_API NavArea : public Component
 {
-    ATOMIC_OBJECT(NavArea, Component);
+    URHO3D_OBJECT(NavArea, Component);
 
 public:
     /// Construct.

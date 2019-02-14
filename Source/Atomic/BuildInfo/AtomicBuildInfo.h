@@ -29,7 +29,7 @@
 namespace Urho3D
 {
 
-class ATOMIC_API AtomicBuildInfo : public RefCounted
+class URHO3D_API AtomicBuildInfo : public RefCounted
 {
     ATOMIC_REFCOUNTED(AtomicBuildInfo)
 

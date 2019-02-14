@@ -39,7 +39,7 @@ namespace ToolCore
 
 class ToolEnvironment : public Object
 {
-    ATOMIC_OBJECT(ToolEnvironment, Object)
+    URHO3D_OBJECT(ToolEnvironment, Object)
 
 public:
 

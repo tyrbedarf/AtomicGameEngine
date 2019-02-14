@@ -38,7 +38,7 @@ class JSComponent : public ScriptComponent
     friend class JSComponentFactory;
     friend class JSComponentFile;
 
-    ATOMIC_OBJECT(JSComponent, ScriptComponent);
+	URHO3D_OBJECT(JSComponent, ScriptComponent);
 
     enum EventFlags
     {

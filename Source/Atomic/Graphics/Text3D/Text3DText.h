@@ -97,9 +97,9 @@ enum Text3DCorner
     MAX_TEXT_CORNERS
 };
 
-class ATOMIC_API Text3DText : public Animatable
+class URHO3D_API Text3DText : public Animatable
 {
-    ATOMIC_OBJECT(Text3DText, Animatable)
+    URHO3D_OBJECT(Text3DText, Animatable)
 
     friend class Text3D;
 

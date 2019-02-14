@@ -35,7 +35,7 @@ class NETCmd: public Command
 {
     friend class AtomicNETService;
 
-    ATOMIC_OBJECT(NETCmd, Command)
+    URHO3D_OBJECT(NETCmd, Command)
 
 public:
 

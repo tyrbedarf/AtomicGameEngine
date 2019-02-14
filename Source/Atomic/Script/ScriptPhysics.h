@@ -32,7 +32,7 @@ namespace Urho3D
 {
     class Node;
 
-    class ATOMIC_API PhysicsContact : public RefCounted
+    class URHO3D_API PhysicsContact : public RefCounted
     {
         friend class PhysicsNodeCollision;
 
@@ -64,7 +64,7 @@ namespace Urho3D
         float impulse_;
     };
 
-    class ATOMIC_API PhysicsNodeCollision : public RefCounted
+    class URHO3D_API PhysicsNodeCollision : public RefCounted
     {
         ATOMIC_REFCOUNTED(PhysicsNodeCollision)
 

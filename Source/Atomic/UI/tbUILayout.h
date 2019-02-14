@@ -86,9 +86,9 @@ enum UI_LAYOUT_DISTRIBUTION_POSITION
 
 
 
-class ATOMIC_API tbUILayoutParams : public Object
+class URHO3D_API tbUILayoutParams : public Object
 {
-    ATOMIC_OBJECT(tbUILayoutParams, Object)
+    URHO3D_OBJECT(tbUILayoutParams, Object)
 
 public:
 
@@ -113,9 +113,9 @@ private:
 };
 
 
-class ATOMIC_API UILayout : public tbUIWidget
+class URHO3D_API UILayout : public tbUIWidget
 {
-    ATOMIC_OBJECT(UILayout, tbUIWidget)
+    URHO3D_OBJECT(UILayout, tbUIWidget)
 
 public:
 

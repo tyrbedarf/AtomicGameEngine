@@ -29,7 +29,7 @@ namespace ToolCore
 
 class PlatformLinux : public Platform
 {
-    ATOMIC_OBJECT(PlatformLinux, Platform);
+    URHO3D_OBJECT(PlatformLinux, Platform);
 
 public:
 

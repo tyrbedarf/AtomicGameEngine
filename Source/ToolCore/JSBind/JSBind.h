@@ -34,7 +34,7 @@ class JSBPackage;
 class JSBind : public Object
 {
 
-    ATOMIC_OBJECT(JSBind, Object)
+    URHO3D_OBJECT(JSBind, Object)
 
 public:
 

@@ -30,7 +30,7 @@ namespace Urho3D
 
     class NETServiceApplication : public IPCClientApp
     {
-        ATOMIC_OBJECT(NETServiceApplication, IPCClientApp)
+        URHO3D_OBJECT(NETServiceApplication, IPCClientApp)
 
     public:
 

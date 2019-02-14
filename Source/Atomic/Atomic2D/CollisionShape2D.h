@@ -32,9 +32,9 @@ namespace Urho3D
 class RigidBody2D;
 
 /// 2D collision shape component.
-class ATOMIC_API CollisionShape2D : public Component
+class URHO3D_API CollisionShape2D : public Component
 {
-    ATOMIC_OBJECT(CollisionShape2D, Component);
+    URHO3D_OBJECT(CollisionShape2D, Component);
 
 public:
     /// Construct.

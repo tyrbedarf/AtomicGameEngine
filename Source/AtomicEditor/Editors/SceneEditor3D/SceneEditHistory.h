@@ -39,7 +39,7 @@ class SelectionEditOp;
 
 class SceneEditHistory: public Object
 {
-    ATOMIC_OBJECT(SceneEditHistory, Object);
+    URHO3D_OBJECT(SceneEditHistory, Object);
 
 public:
 

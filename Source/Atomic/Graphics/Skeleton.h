@@ -78,7 +78,7 @@ struct Bone
 };
 
 /// Hierarchical collection of bones.
-class ATOMIC_API Skeleton
+class URHO3D_API Skeleton
 {
 public:
     /// Construct an empty skeleton.

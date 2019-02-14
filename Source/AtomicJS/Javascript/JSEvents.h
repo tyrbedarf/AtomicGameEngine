@@ -27,36 +27,36 @@
 namespace Urho3D
 {
 
-/*
-name    standard    Name of error, e.g. TypeError, inherited
-message    standard    Optional message of error, own property, empty message inherited if absent
-fileName    Rhino    Filename related to error source, inherited accessor
-lineNumber    Rhino    Linenumber related to error source, inherited accessor
-stack    V8    Traceback as a multi-line human redable string, inherited accessor
-*/
+	/*
+	name    standard    Name of error, e.g. TypeError, inherited
+	message    standard    Optional message of error, own property, empty message inherited if absent
+	fileName    Rhino    Filename related to error source, inherited accessor
+	lineNumber    Rhino    Linenumber related to error source, inherited accessor
+	stack    V8    Traceback as a multi-line human redable string, inherited accessor
+	*/
 
-ATOMIC_EVENT(E_JSOBJECTADDED, ObjectAdded)
-{
-    ATOMIC_PARAM(P_OBJECT, Object); // object
-}
+	URHO3D_EVENT(E_JSOBJECTADDED, ObjectAdded)
+	{
+		URHO3D_PARAM(P_OBJECT, Object); // object
+	}
 
-ATOMIC_EVENT(E_JSOBJECTREMOVED, ObjectRemoved)
-{
-    ATOMIC_PARAM(P_OBJECT, Object); // object
-}
+	URHO3D_EVENT(E_JSOBJECTREMOVED, ObjectRemoved)
+	{
+		URHO3D_PARAM(P_OBJECT, Object); // object
+	}
 
-ATOMIC_EVENT(E_JSERROR, JSError)
-{
-    ATOMIC_PARAM(P_ERRORNAME, ErrorName); // string
-    ATOMIC_PARAM(P_ERRORMESSAGE, ErrorMessage); // string
-    ATOMIC_PARAM(P_ERRORFILENAME, ErrorFileName); // string
-    ATOMIC_PARAM(P_ERRORLINENUMBER, ErrorLineNumber); // int
-    ATOMIC_PARAM(P_ERRORSTACK, ErrorStack); // string
-}
+	URHO3D_EVENT(E_JSERROR, JSError)
+	{
+		URHO3D_PARAM(P_ERRORNAME, ErrorName); // string
+		URHO3D_PARAM(P_ERRORMESSAGE, ErrorMessage); // string
+		URHO3D_PARAM(P_ERRORFILENAME, ErrorFileName); // string
+		URHO3D_PARAM(P_ERRORLINENUMBER, ErrorLineNumber); // int
+		URHO3D_PARAM(P_ERRORSTACK, ErrorStack); // string
+	}
 
-ATOMIC_EVENT(E_JSPRINT, JSPrint)
-{
-    ATOMIC_PARAM(P_TEXT, Text); // string
-}
+	URHO3D_EVENT(E_JSPRINT, JSPrint)
+	{
+		URHO3D_PARAM(P_TEXT, Text); // string
+	}
 
 }

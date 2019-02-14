@@ -38,7 +38,7 @@ namespace Urho3D
 
 class tbUI;
 
-class ATOMIC_API tbUIRenderer : public tb::TBRendererBatcher
+class URHO3D_API tbUIRenderer : public tb::TBRendererBatcher
 {
     friend class tbUIView;
 

@@ -36,7 +36,7 @@ class JSComponent;
 /// Script document resource.
 class JSComponentFile : public ScriptComponentFile
 {
-    ATOMIC_OBJECT(JSComponentFile, ScriptComponentFile);
+	URHO3D_OBJECT(JSComponentFile, ScriptComponentFile);
 
 public:
 

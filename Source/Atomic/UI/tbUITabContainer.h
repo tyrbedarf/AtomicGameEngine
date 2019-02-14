@@ -29,9 +29,9 @@ namespace Urho3D
 
 class UILayout;
 
-class ATOMIC_API tbUITabContainer : public tbUIWidget
+class URHO3D_API tbUITabContainer : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUITabContainer, tbUIWidget)
+    URHO3D_OBJECT(tbUITabContainer, tbUIWidget)
 
 public:
 

@@ -82,9 +82,9 @@ struct AsyncProgress
 };
 
 /// Root scene node, represents the whole scene.
-class ATOMIC_API Scene : public Node
+class URHO3D_API Scene : public Node
 {
-    ATOMIC_OBJECT(Scene, Node);
+	URHO3D_OBJECT(Scene, Node);
 
     using Node::GetComponent;
     using Node::SaveXML;
@@ -335,6 +335,6 @@ private:
 };
 
 /// Register Scene library objects.
-void ATOMIC_API RegisterSceneLibrary(Context* context);
+void URHO3D_API RegisterSceneLibrary(Context* context);
 
 }

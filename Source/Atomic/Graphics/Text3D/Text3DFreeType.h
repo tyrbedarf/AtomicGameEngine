@@ -43,7 +43,7 @@ enum FontHintLevel
 };
 
 /// Free type font face description.
-class ATOMIC_API Text3DFreeType : public Text3DFontFace
+class URHO3D_API Text3DFreeType : public Text3DFontFace
 {
     ATOMIC_REFCOUNTED(Text3DFreeType)
 

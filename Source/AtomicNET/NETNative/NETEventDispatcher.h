@@ -30,7 +30,7 @@ namespace Urho3D
 
 class NETEventDispatcher : public Object, public GlobalEventListener
 {
-    ATOMIC_OBJECT(NETEventDispatcher, Object);
+    URHO3D_OBJECT(NETEventDispatcher, Object);
 
 public:
     /// Construct.

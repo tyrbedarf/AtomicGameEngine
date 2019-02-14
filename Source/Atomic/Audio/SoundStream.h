@@ -28,7 +28,7 @@ namespace Urho3D
 {
 
 /// Base class for sound streams.
-class ATOMIC_API SoundStream : public RefCounted
+class URHO3D_API SoundStream : public RefCounted
 {
     ATOMIC_REFCOUNTED(SoundStream)
 

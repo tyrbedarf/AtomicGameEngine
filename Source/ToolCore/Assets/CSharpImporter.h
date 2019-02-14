@@ -29,7 +29,7 @@ namespace ToolCore
 
     class CSharpImporter : public AssetImporter
     {
-        ATOMIC_OBJECT(CSharpImporter, AssetImporter)
+        URHO3D_OBJECT(CSharpImporter, AssetImporter)
 
     public:
         /// Construct.

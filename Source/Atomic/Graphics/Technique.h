@@ -39,7 +39,7 @@ enum PassLightingMode
 };
 
 /// %Material rendering pass, which defines shaders and render state.
-class ATOMIC_API Pass : public RefCounted
+class URHO3D_API Pass : public RefCounted
 {
     ATOMIC_REFCOUNTED(Pass)
 
@@ -187,9 +187,9 @@ private:
 };
 
 /// %Material technique. Consists of several passes.
-class ATOMIC_API Technique : public Resource
+class URHO3D_API Technique : public Resource
 {
-    ATOMIC_OBJECT(Technique, Resource);
+    URHO3D_OBJECT(Technique, Resource);
 
     friend class Renderer;
 

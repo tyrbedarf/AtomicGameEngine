@@ -36,9 +36,9 @@ class XMLElement;
 class XMLFile;
 
 /// Base class for texture resources.
-class ATOMIC_API Texture : public ResourceWithMetadata, public GPUObject
+class URHO3D_API Texture : public ResourceWithMetadata, public GPUObject
 {
-    ATOMIC_OBJECT(Texture, ResourceWithMetadata)
+    URHO3D_OBJECT(Texture, ResourceWithMetadata)
 
 public:
     /// Construct.

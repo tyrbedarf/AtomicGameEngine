@@ -31,7 +31,7 @@ class Project;
 
 class BuildMac : public BuildBase
 {
-    ATOMIC_OBJECT(BuildMac, BuildBase);
+    URHO3D_OBJECT(BuildMac, BuildBase);
 
 public:
 

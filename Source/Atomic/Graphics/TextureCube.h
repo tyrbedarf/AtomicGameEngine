@@ -33,9 +33,9 @@ class Deserializer;
 class Image;
 
 /// Cube texture resource.
-class ATOMIC_API TextureCube : public Texture
+class URHO3D_API TextureCube : public Texture
 {
-    ATOMIC_OBJECT(TextureCube, Texture);
+    URHO3D_OBJECT(TextureCube, Texture);
 
 public:
     /// Construct.

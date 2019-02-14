@@ -44,7 +44,7 @@ namespace ToolCore
 
     class NETProjectSystem : public Object
     {
-        ATOMIC_OBJECT(NETProjectSystem, Object)
+        URHO3D_OBJECT(NETProjectSystem, Object)
 
     public:
 

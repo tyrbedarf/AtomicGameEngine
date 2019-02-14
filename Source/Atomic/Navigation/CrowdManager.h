@@ -56,9 +56,9 @@ struct CrowdObstacleAvoidanceParams
 };
 
 /// Crowd manager scene component. Should be added only to the root scene node.
-class ATOMIC_API CrowdManager : public Component
+class URHO3D_API CrowdManager : public Component
 {
-    ATOMIC_OBJECT(CrowdManager, Component);
+    URHO3D_OBJECT(CrowdManager, Component);
 
     friend class CrowdAgent;
 

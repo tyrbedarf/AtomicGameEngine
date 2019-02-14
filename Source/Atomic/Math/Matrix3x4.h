@@ -32,7 +32,7 @@ namespace Urho3D
 {
 
 /// 3x4 matrix for scene node transform calculations.
-class ATOMIC_API Matrix3x4
+class URHO3D_API Matrix3x4
 {
 public:
     /// Construct an identity matrix.

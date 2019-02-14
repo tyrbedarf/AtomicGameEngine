@@ -41,7 +41,7 @@ public:
 // ATOMIC END
 
 /// Tracking structure for event receivers.
-class ATOMIC_API EventReceiverGroup : public RefCounted
+class URHO3D_API EventReceiverGroup : public RefCounted
 {
     ATOMIC_REFCOUNTED(EventReceiverGroup);
 public:
@@ -75,7 +75,7 @@ private:
 };
 
 /// Urho3D execution context. Provides access to subsystems, object factories and attributes, and event receivers.
-class ATOMIC_API Context : public RefCounted
+class URHO3D_API Context : public RefCounted
 {
     friend class Object;
 

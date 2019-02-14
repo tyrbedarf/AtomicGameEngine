@@ -49,9 +49,9 @@ enum AsyncLoadState
 };
 
 /// Base class for resources.
-class ATOMIC_API Resource : public Object
+class URHO3D_API Resource : public Object
 {
-    ATOMIC_OBJECT(Resource, Object);
+    URHO3D_OBJECT(Resource, Object);
 
 public:
     /// Construct.
@@ -109,9 +109,9 @@ private:
 };
 
 /// Base class for resources that support arbitrary metadata stored. Metadata serialization shall be implemented in derived classes.
-class ATOMIC_API ResourceWithMetadata : public Resource
+class URHO3D_API ResourceWithMetadata : public Resource
 {
-    ATOMIC_OBJECT(ResourceWithMetadata, Resource);
+	URHO3D_OBJECT(ResourceWithMetadata, Resource);
 
 public:
     /// Construct.

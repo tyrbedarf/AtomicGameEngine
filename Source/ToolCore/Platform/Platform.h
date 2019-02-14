@@ -45,7 +45,7 @@ enum PlatformID
 
 class Platform : public Object
 {
-    ATOMIC_OBJECT(Platform, Object);
+    URHO3D_OBJECT(Platform, Object);
 
 public:
 

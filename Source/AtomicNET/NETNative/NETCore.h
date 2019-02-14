@@ -44,7 +44,7 @@ struct NETCoreDelegates
 class NETCore : public Object
 {
 
-    ATOMIC_OBJECT(NETCore, Object)
+    URHO3D_OBJECT(NETCore, Object)
 
 public:
 

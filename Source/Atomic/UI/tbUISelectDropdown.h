@@ -28,9 +28,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API tbUISelectDropdown : public tbUIButton
+class URHO3D_API tbUISelectDropdown : public tbUIButton
 {
-    ATOMIC_OBJECT(tbUISelectDropdown, tbUIButton)
+    URHO3D_OBJECT(tbUISelectDropdown, tbUIButton)
 
 public:
 

@@ -28,9 +28,9 @@ namespace Urho3D
 {
 
 /// A link between otherwise unconnected regions of the navigation mesh.
-class ATOMIC_API OffMeshConnection : public Component
+class URHO3D_API OffMeshConnection : public Component
 {
-    ATOMIC_OBJECT(OffMeshConnection, Component);
+    URHO3D_OBJECT(OffMeshConnection, Component);
 
 public:
     /// Construct.

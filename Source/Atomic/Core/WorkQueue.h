@@ -30,9 +30,9 @@ namespace Urho3D
 {
 
 /// Work item completed event.
-ATOMIC_EVENT(E_WORKITEMCOMPLETED, WorkItemCompleted)
+URHO3D_EVENT(E_WORKITEMCOMPLETED, WorkItemCompleted)
 {
-    ATOMIC_PARAM(P_ITEM, Item);                        // WorkItem ptr
+    URHO3D_PARAM(P_ITEM, Item);                        // WorkItem ptr
 }
 
 class WorkerThread;
@@ -74,9 +74,9 @@ private:
 };
 
 /// Work queue subsystem for multithreading.
-class ATOMIC_API WorkQueue : public Object
+class URHO3D_API WorkQueue : public Object
 {
-    ATOMIC_OBJECT(WorkQueue, Object);
+    URHO3D_OBJECT(WorkQueue, Object);
 
     friend class WorkerThread;
 

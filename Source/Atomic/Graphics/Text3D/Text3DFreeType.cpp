@@ -51,7 +51,7 @@ inline float FixedToFloat(FT_Pos value)
 /// FreeType library subsystem.
 class FreeTypeLibrary : public Object
 {
-    ATOMIC_OBJECT(FreeTypeLibrary, Object);
+    URHO3D_OBJECT(FreeTypeLibrary, Object);
 
 public:
     /// Construct.

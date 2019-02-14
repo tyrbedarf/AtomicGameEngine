@@ -31,7 +31,7 @@ namespace ToolCore
 
 class BindCmd: public Command
 {
-    ATOMIC_OBJECT(BindCmd, Command);
+    URHO3D_OBJECT(BindCmd, Command);
 
 public:
 

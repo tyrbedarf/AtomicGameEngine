@@ -30,56 +30,56 @@ namespace ToolCore
 {
 
 // requires EULA agreement
-ATOMIC_EVENT(E_LICENSE_EULAREQUIRED, LicenseEulaRequired)
+URHO3D_EVENT(E_LICENSE_EULAREQUIRED, LicenseEulaRequired)
 {
 
 }
 
 // EULA agreement accepted
-ATOMIC_EVENT(E_LICENSE_EULAACCEPTED, LicenseEulaAccepted)
+URHO3D_EVENT(E_LICENSE_EULAACCEPTED, LicenseEulaAccepted)
 {
 
 }
 
 // activation required
-ATOMIC_EVENT(E_LICENSE_ACTIVATIONREQUIRED, LicenseActivationRequired)
+URHO3D_EVENT(E_LICENSE_ACTIVATIONREQUIRED, LicenseActivationRequired)
 {
 
 }
 
 // license verification required
-ATOMIC_EVENT(E_LICENSE_VERIFICATIONREQUIRED, LicenseVerificationRequired)
+URHO3D_EVENT(E_LICENSE_VERIFICATIONREQUIRED, LicenseVerificationRequired)
 {
 
 }
 
 // license success
-ATOMIC_EVENT(E_LICENSE_SUCCESS, LicenseSuccess)
+URHO3D_EVENT(E_LICENSE_SUCCESS, LicenseSuccess)
 {
 
 }
 
-ATOMIC_EVENT(E_LICENSE_ACTIVATIONSUCCESS, LicenseActivationSuccess)
+URHO3D_EVENT(E_LICENSE_ACTIVATIONSUCCESS, LicenseActivationSuccess)
 {
 }
 
-ATOMIC_EVENT(E_LICENSE_ACTIVATIONERROR, LicenseActivationError)
+URHO3D_EVENT(E_LICENSE_ACTIVATIONERROR, LicenseActivationError)
 {
-    ATOMIC_PARAM(P_MESSAGE, Message); // String
+    URHO3D_PARAM(P_MESSAGE, Message); // String
 }
 
-ATOMIC_EVENT(E_LICENSE_DEACTIVATIONSUCCESS, LicenseDeactivationSuccess)
+URHO3D_EVENT(E_LICENSE_DEACTIVATIONSUCCESS, LicenseDeactivationSuccess)
 {
 }
 
-ATOMIC_EVENT(E_LICENSE_DEACTIVATIONERROR, LicenseDeactivationError)
+URHO3D_EVENT(E_LICENSE_DEACTIVATIONERROR, LicenseDeactivationError)
 {
-    ATOMIC_PARAM(P_MESSAGE, Message); // String
+    URHO3D_PARAM(P_MESSAGE, Message); // String
 }
 
 
 // license error
-ATOMIC_EVENT(E_LICENSE_ERROR, LicenseError)
+URHO3D_EVENT(E_LICENSE_ERROR, LicenseError)
 {
 
 }

@@ -58,7 +58,7 @@ class SceneEditHistory;
 
 class SceneEditor3D: public ResourceEditor
 {
-    ATOMIC_OBJECT(SceneEditor3D, ResourceEditor);
+	URHO3D_OBJECT(SceneEditor3D, ResourceEditor);
 
 public:
 

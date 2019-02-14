@@ -28,9 +28,9 @@ namespace Urho3D
 {
 
 
-class ATOMIC_API tbUICheckBox : public tbUIWidget
+class URHO3D_API tbUICheckBox : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUICheckBox, tbUIWidget)
+    URHO3D_OBJECT(tbUICheckBox, tbUIWidget)
 
 public:
 

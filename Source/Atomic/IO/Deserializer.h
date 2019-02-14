@@ -30,7 +30,7 @@ namespace Urho3D
 {
 
 /// Abstract stream for reading.
-class ATOMIC_API Deserializer
+class URHO3D_API Deserializer
 {
 public:
     /// Construct with zero size.

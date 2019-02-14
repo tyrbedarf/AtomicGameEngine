@@ -28,7 +28,7 @@ namespace Urho3D
 {
 
 /// Memory area that can be read and written to as a stream.
-class ATOMIC_API MemoryBuffer : public AbstractFile
+class URHO3D_API MemoryBuffer : public AbstractFile
 {
 public:
     /// Construct with a pointer and size.

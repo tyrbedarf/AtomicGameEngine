@@ -37,7 +37,7 @@ namespace ToolCore
 
     class NETProjectBase : public Object
     {
-        ATOMIC_OBJECT(NETProjectBase, Object)
+        URHO3D_OBJECT(NETProjectBase, Object)
 
     public:
 
@@ -59,7 +59,7 @@ namespace ToolCore
     {
         friend class NETSolution;
 
-        ATOMIC_OBJECT(NETCSProject, NETProjectBase)
+        URHO3D_OBJECT(NETCSProject, NETProjectBase)
 
     public:
 
@@ -164,7 +164,7 @@ namespace ToolCore
 
     class NETSolution : public NETProjectBase
     {
-        ATOMIC_OBJECT(NETSolution, NETProjectBase)
+        URHO3D_OBJECT(NETSolution, NETProjectBase)
 
     public:
 
@@ -201,7 +201,7 @@ namespace ToolCore
 
     class NETProjectGen : public Object
     {
-        ATOMIC_OBJECT(NETProjectGen, Object)
+        URHO3D_OBJECT(NETProjectGen, Object)
 
     public:
 

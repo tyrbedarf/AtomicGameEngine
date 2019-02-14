@@ -30,7 +30,7 @@ namespace Urho3D
 
     class NETIPCServerApp : public IPCServerApp
     {
-        ATOMIC_OBJECT(NETIPCServerApp,IPCServerApp)
+        URHO3D_OBJECT(NETIPCServerApp,IPCServerApp)
 
     public:
 

@@ -37,9 +37,9 @@ namespace Urho3D
 
 class UIMultiItemSource;
 
-class ATOMIC_API tbUIMultiItem : public  tbUISelectItem
+class URHO3D_API tbUIMultiItem : public  tbUISelectItem
 {
-    ATOMIC_OBJECT(tbUIMultiItem, tbUISelectItem )
+    URHO3D_OBJECT(tbUIMultiItem, tbUISelectItem )
 
 public:
 
@@ -66,9 +66,9 @@ protected:
     int colHeight_;
 };
 
-class ATOMIC_API UIMultiItemSource : public tbUISelectItemSource
+class URHO3D_API UIMultiItemSource : public tbUISelectItemSource
 {
-    ATOMIC_OBJECT(UIMultiItemSource, tbUISelectItemSource )
+    URHO3D_OBJECT(UIMultiItemSource, tbUISelectItemSource )
 
 public:
 

@@ -31,7 +31,7 @@ namespace Urho3D
 class Context;
 
 /// Configuration base class for mapping JSON setting files to VariantMap configuration settings
-class ATOMIC_API Configuration
+class URHO3D_API Configuration
 {
 public:
 

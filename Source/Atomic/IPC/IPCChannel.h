@@ -41,9 +41,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API IPCChannel : public Object, public Thread
+class URHO3D_API IPCChannel : public Object, public Thread
 {
-    ATOMIC_OBJECT(IPCChannel, Object)
+    URHO3D_OBJECT(IPCChannel, Object)
 
 public:
 

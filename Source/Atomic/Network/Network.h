@@ -49,9 +49,9 @@ template <class T> unsigned MakeHash(kNet::MessageConnection* value)
 }
 
 /// %Network subsystem. Manages client-server communications using the UDP protocol.
-class ATOMIC_API Network : public Object, public kNet::IMessageHandler, public kNet::INetworkServerListener
+class URHO3D_API Network : public Object, public kNet::IMessageHandler, public kNet::INetworkServerListener
 {
-    ATOMIC_OBJECT(Network, Object);
+    URHO3D_OBJECT(Network, Object);
 
 public:
     /// Construct.
@@ -201,6 +201,6 @@ private:
 };
 
 /// Register Network library objects.
-void ATOMIC_API RegisterNetworkLibrary(Context* context);
+void URHO3D_API RegisterNetworkLibrary(Context* context);
 
 }

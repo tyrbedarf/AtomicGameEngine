@@ -39,9 +39,9 @@ struct PackageEntry
 };
 
 /// Stores files of a directory tree sequentially for convenient access.
-class ATOMIC_API PackageFile : public Object
+class URHO3D_API PackageFile : public Object
 {
-    ATOMIC_OBJECT(PackageFile, Object);
+    URHO3D_OBJECT(PackageFile, Object);
 
 public:
     /// Construct.

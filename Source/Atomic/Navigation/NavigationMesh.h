@@ -76,7 +76,7 @@ enum NavigationPathPointFlag
     NAVPATHFLAG_OFF_MESH = 0x04
 };
 
-struct ATOMIC_API NavigationPathPoint
+struct URHO3D_API NavigationPathPoint
 {
     /// World-space position of the path point.
     Vector3 position_;
@@ -87,9 +87,9 @@ struct ATOMIC_API NavigationPathPoint
 };
 
 /// Navigation mesh component. Collects the navigation geometry from child nodes with the Navigable component and responds to path queries.
-class ATOMIC_API NavigationMesh : public Component
+class URHO3D_API NavigationMesh : public Component
 {
-    ATOMIC_OBJECT(NavigationMesh, Component);
+    URHO3D_OBJECT(NavigationMesh, Component);
 
     friend class CrowdManager;
 
@@ -353,6 +353,6 @@ protected:
 };
 
 /// Register Navigation library objects.
-void ATOMIC_API RegisterNavigationLibrary(Context* context);
+void URHO3D_API RegisterNavigationLibrary(Context* context);
 
 }

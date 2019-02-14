@@ -31,7 +31,7 @@ namespace ToolCore
 
 class ImportCmd: public Command
 {
-    ATOMIC_OBJECT(ImportCmd, Command);
+    URHO3D_OBJECT(ImportCmd, Command);
 
 public:
 

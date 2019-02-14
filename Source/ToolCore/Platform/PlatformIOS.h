@@ -29,7 +29,7 @@ namespace ToolCore
 
 class PlatformIOS : public Platform
 {
-    ATOMIC_OBJECT(PlatformIOS, Platform);
+    URHO3D_OBJECT(PlatformIOS, Platform);
 
 public:
 

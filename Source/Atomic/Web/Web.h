@@ -35,12 +35,12 @@ class WebSocket;
 struct WebPrivate;
 
 /// %Web subsystem. Manages HTTP requests and WebSocket communications.
-class ATOMIC_API Web : public Object
+class URHO3D_API Web : public Object
 {
     friend class WebRequest;
     friend class WebSocket;
 
-    ATOMIC_OBJECT(Web, Object);
+    URHO3D_OBJECT(Web, Object);
 
 public:
     /// Construct.

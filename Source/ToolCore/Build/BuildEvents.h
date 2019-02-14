@@ -29,17 +29,17 @@ using namespace Urho3D;
 namespace ToolCore
 {
 
-ATOMIC_EVENT(E_BUILDCOMPLETE, BuildComplete)
+URHO3D_EVENT(E_BUILDCOMPLETE, BuildComplete)
 {
-    ATOMIC_PARAM(P_PLATFORMID, PlatformID); // unsigned (PLATFORMID)
-    ATOMIC_PARAM(P_BUILDFOLDER, BuildFolder); // String
-    ATOMIC_PARAM(P_MESSAGE, Message); // String
-    ATOMIC_PARAM(P_SUCCESS, Success); // Bool
+    URHO3D_PARAM(P_PLATFORMID, PlatformID); // unsigned (PLATFORMID)
+    URHO3D_PARAM(P_BUILDFOLDER, BuildFolder); // String
+    URHO3D_PARAM(P_MESSAGE, Message); // String
+    URHO3D_PARAM(P_SUCCESS, Success); // Bool
 }
 
-ATOMIC_EVENT(E_BUILDOUTPUT, BuildOutput)
+URHO3D_EVENT(E_BUILDOUTPUT, BuildOutput)
 {
-    ATOMIC_PARAM(P_TEXT, Text); // string
+    URHO3D_PARAM(P_TEXT, Text); // string
 }
 
 }

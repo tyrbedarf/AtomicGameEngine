@@ -35,7 +35,7 @@ typedef HashMap<String, HashMap<String, Variant>> GlobalPropertyMap;
 /// Browser host subsystem, responsible for initializing CEF
 class WebBrowserHost : public Object
 {
-    ATOMIC_OBJECT(WebBrowserHost, Object);
+    URHO3D_OBJECT(WebBrowserHost, Object);
 
 public:
     /// Construct.

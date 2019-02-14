@@ -35,7 +35,7 @@ class Project;
 
 class AssetDatabase : public Object
 {
-    ATOMIC_OBJECT(AssetDatabase, Object);
+    URHO3D_OBJECT(AssetDatabase, Object);
 
 public:
     /// Construct.

@@ -39,7 +39,7 @@ class SceneEditor3D;
 
 class SceneSelection: public Object
 {
-    ATOMIC_OBJECT(SceneSelection, Object);
+	URHO3D_OBJECT(SceneSelection, Object);
 
 public:
 

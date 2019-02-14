@@ -31,7 +31,7 @@ class Project;
 
 class BuildLinux : public BuildBase
 {
-    ATOMIC_OBJECT(BuildLinux, BuildBase);
+    URHO3D_OBJECT(BuildLinux, BuildBase);
 
 public:
 

@@ -39,7 +39,7 @@ namespace AtomicEditor
 
 class JSResourceEditor: public ResourceEditor
 {
-    ATOMIC_OBJECT(JSResourceEditor, ResourceEditor);
+	URHO3D_OBJECT(JSResourceEditor, ResourceEditor);
 
 public:
 

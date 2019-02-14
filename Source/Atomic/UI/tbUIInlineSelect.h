@@ -28,9 +28,9 @@ namespace Urho3D
 {
 
 
-class ATOMIC_API tbUIInlineSelect : public tbUIWidget
+class URHO3D_API tbUIInlineSelect : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIInlineSelect, tbUIWidget)
+    URHO3D_OBJECT(tbUIInlineSelect, tbUIWidget)
 
 public:
 

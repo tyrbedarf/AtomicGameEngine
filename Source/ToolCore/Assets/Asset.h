@@ -40,7 +40,7 @@ class Asset : public Object
     friend class AssetDatabase;
     friend class AssetImporter;
 
-    ATOMIC_OBJECT(Asset, Object);
+    URHO3D_OBJECT(Asset, Object);
 
 public:
     /// Construct.

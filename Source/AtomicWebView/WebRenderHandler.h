@@ -36,7 +36,7 @@ class WebClient;
 /// Base class for various WebRenderHandlers
 class WebRenderHandler : public Object
 {
-    ATOMIC_OBJECT(WebRenderHandler, Object);
+    URHO3D_OBJECT(WebRenderHandler, Object);
 
 public:
 

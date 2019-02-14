@@ -34,7 +34,7 @@ namespace ToolCore
 
     class NETAssemblyImporterResultHandler : public IPCResultHandler
     {
-        ATOMIC_OBJECT(NETAssemblyImporterResultHandler, IPCResultHandler)
+        URHO3D_OBJECT(NETAssemblyImporterResultHandler, IPCResultHandler)
 
     public:
         /// Construct.
@@ -54,7 +54,7 @@ namespace ToolCore
     {
         friend class NETAssemblyImporterResultHandler;
 
-        ATOMIC_OBJECT(NETAssemblyImporter, AssetImporter)
+        URHO3D_OBJECT(NETAssemblyImporter, AssetImporter)
 
     public:
         /// Construct.

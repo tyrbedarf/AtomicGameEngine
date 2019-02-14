@@ -31,7 +31,7 @@ class Project;
 
 class BuildIOS : public BuildBase
 {
-    ATOMIC_OBJECT(BuildIOS, BuildBase);
+    URHO3D_OBJECT(BuildIOS, BuildBase);
 
 public:
 

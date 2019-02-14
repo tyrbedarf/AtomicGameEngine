@@ -34,7 +34,7 @@ namespace ToolCore
 
 class BuildSystem : public Object
 {
-    ATOMIC_OBJECT(BuildSystem, Object);
+    URHO3D_OBJECT(BuildSystem, Object);
 
 public:
     /// Construct.

@@ -67,7 +67,7 @@ enum RenderTargetSizeMode
 };
 
 /// Rendertarget definition.
-struct ATOMIC_API RenderTargetInfo
+struct URHO3D_API RenderTargetInfo
 {
     /// Construct.
     RenderTargetInfo() :
@@ -113,7 +113,7 @@ struct ATOMIC_API RenderTargetInfo
 };
 
 /// Rendering path command.
-struct ATOMIC_API RenderPathCommand
+struct URHO3D_API RenderPathCommand
 {
     /// Construct.
     RenderPathCommand() :
@@ -215,7 +215,7 @@ struct ATOMIC_API RenderPathCommand
 };
 
 /// Rendering path definition. A sequence of commands (e.g. clear screen, draw objects with specific pass) that yields the scene rendering result.
-class ATOMIC_API RenderPath : public RefCounted
+class URHO3D_API RenderPath : public RefCounted
 {
     ATOMIC_REFCOUNTED(RenderPath)
 

@@ -27,9 +27,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API tbUITextField : public tbUIWidget
+class URHO3D_API tbUITextField : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUITextField, tbUIWidget)
+    URHO3D_OBJECT(tbUITextField, tbUIWidget)
 
 public:
 

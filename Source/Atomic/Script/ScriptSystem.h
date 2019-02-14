@@ -31,7 +31,7 @@ namespace Urho3D
 
 class ScriptSystem : public Object
 {
-    ATOMIC_OBJECT(ScriptSystem, Object);
+    URHO3D_OBJECT(ScriptSystem, Object);
 
 public:
 

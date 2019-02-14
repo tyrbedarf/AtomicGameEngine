@@ -63,7 +63,7 @@ class Metrics;
 // ATOMIC END
 
 /// Type info.
-class ATOMIC_API TypeInfo
+class URHO3D_API TypeInfo
 {
 public:
     /// Construct.
@@ -94,7 +94,7 @@ private:
     const TypeInfo* baseTypeInfo_;
 };
 
-#define ATOMIC_OBJECT(typeName, baseTypeName) \
+#define URHO3D_OBJECT(typeName, baseTypeName) \
     public: \
         typedef typeName ClassName; \
         typedef baseTypeName BaseClassName; \
@@ -111,7 +111,7 @@ private:
 
 
 /// Base class for objects with type identification, subsystem access and event sending/receiving capability.
-class ATOMIC_API Object : public RefCounted
+class URHO3D_API Object : public RefCounted
 {
     friend class Context;
 
@@ -251,7 +251,7 @@ private:
 template <class T> T* Object::GetSubsystem() const { return static_cast<T*>(GetSubsystem(T::GetTypeStatic())); }
 
 /// Base class for object factories.
-class ATOMIC_API ObjectFactory : public RefCounted
+class URHO3D_API ObjectFactory : public RefCounted
 {
     ATOMIC_REFCOUNTED(ObjectFactory)
 
@@ -311,7 +311,7 @@ public:
 };
 
 /// Internal helper class for invoking event handler functions.
-class ATOMIC_API EventHandler : public LinkedListNode
+class URHO3D_API EventHandler : public LinkedListNode
 {
 public:
     /// Construct with specified receiver and userdata.
@@ -425,7 +425,7 @@ private:
 #endif
 
 /// Register event names.
-struct ATOMIC_API EventNameRegistrar
+struct URHO3D_API EventNameRegistrar
 {
     /// Register an event name for hash reverse mapping.
     static StringHash RegisterEventName(const char* eventName);
@@ -436,9 +436,9 @@ struct ATOMIC_API EventNameRegistrar
 };
 
 /// Describe an event's hash ID and begin a namespace in which to define its parameters.
-#define ATOMIC_EVENT(eventID, eventName) static const Urho3D::StringHash eventID(Urho3D::EventNameRegistrar::RegisterEventName(#eventName)); namespace eventName
+#define URHO3D_EVENT(eventID, eventName) static const Urho3D::StringHash eventID(Urho3D::EventNameRegistrar::RegisterEventName(#eventName)); namespace eventName
 /// Describe an event's parameter hash ID. Should be used inside an event namespace.
-#define ATOMIC_PARAM(paramID, paramName) static const Urho3D::StringHash paramID(#paramName)
+#define URHO3D_PARAM(paramID, paramName) static const Urho3D::StringHash paramID(#paramName)
 /// Convenience macro to construct an EventHandler that points to a receiver object and its member function.
 #define ATOMIC_HANDLER(className, function) (new Urho3D::EventHandlerImpl<className>(this, &className::function))
 /// Convenience macro to construct an EventHandler that points to a receiver object and its member function, and also defines a userdata pointer.

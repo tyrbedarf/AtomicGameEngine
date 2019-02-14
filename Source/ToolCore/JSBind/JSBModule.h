@@ -48,7 +48,7 @@ class JSBModule : public Object
     friend class JSModuleWriter;
     friend class CSModuleWriter;
 
-    ATOMIC_OBJECT(JSBModule, Object)
+    URHO3D_OBJECT(JSBModule, Object)
 
 public:
 

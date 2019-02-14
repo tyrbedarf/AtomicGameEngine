@@ -29,7 +29,7 @@ namespace ToolCore
 
 class TMXImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(TMXImporter, AssetImporter);
+    URHO3D_OBJECT(TMXImporter, AssetImporter);
 
 public:
     /// Construct.

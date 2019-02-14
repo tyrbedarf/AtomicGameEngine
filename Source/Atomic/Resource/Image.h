@@ -88,9 +88,9 @@ struct CompressedLevel
 };
 
 /// %Image resource.
-class ATOMIC_API Image : public Resource
+class URHO3D_API Image : public Resource
 {
-    ATOMIC_OBJECT(Image, Resource);
+	URHO3D_OBJECT(Image, Resource);
 
 public:
     /// Construct empty.

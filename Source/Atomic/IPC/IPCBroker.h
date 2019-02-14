@@ -31,11 +31,11 @@ class IPCProcess;
 
 
 /// Server application held broker
-class ATOMIC_API IPCBroker : public IPCChannel
+class URHO3D_API IPCBroker : public IPCChannel
 {
     friend class IPC;
 
-    ATOMIC_OBJECT(IPCBroker, IPCChannel);
+    URHO3D_OBJECT(IPCBroker, IPCChannel);
 
 public:
     /// Construct.

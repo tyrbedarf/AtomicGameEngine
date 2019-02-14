@@ -28,7 +28,7 @@
 namespace Urho3D
 {
 
-class ATOMIC_API MetricsSnapshot : public RefCounted
+class URHO3D_API MetricsSnapshot : public RefCounted
 {
     friend class Metrics;
 
@@ -99,11 +99,11 @@ private:
 };
 
 /// Metrics subsystem
-class ATOMIC_API Metrics : public Object
+class URHO3D_API Metrics : public Object
 {
     friend class Application;
 
-    ATOMIC_OBJECT(Metrics, Object)
+    URHO3D_OBJECT(Metrics, Object)
 
 public:
 

@@ -39,7 +39,7 @@ class CacheCmd: public Command
     /// AtomicTool cache generate --project C:\Path\To\MyProject (regenerates the project cache)
     /// AtomicTool cache generate --clean --project C:\Path\To\MyProject (cleans and then regenerates the project cache)
 
-    ATOMIC_OBJECT(CacheCmd, Command)
+    URHO3D_OBJECT(CacheCmd, Command)
 
 public:
 

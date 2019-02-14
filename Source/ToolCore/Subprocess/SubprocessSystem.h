@@ -31,20 +31,20 @@ using namespace Urho3D;
 namespace ToolCore
 {
 
-ATOMIC_EVENT(E_SUBPROCESSOUTPUT, SubprocessOutput)
+URHO3D_EVENT(E_SUBPROCESSOUTPUT, SubprocessOutput)
 {
-    ATOMIC_PARAM(P_TEXT, Text);      // string
+    URHO3D_PARAM(P_TEXT, Text);      // string
 }
 
-ATOMIC_EVENT(E_SUBPROCESSCOMPLETE, SubprocessComplete)
+URHO3D_EVENT(E_SUBPROCESSCOMPLETE, SubprocessComplete)
 {
-    ATOMIC_PARAM(P_PROCESSKEY, ProcessKey); // unsigned
-    ATOMIC_PARAM(P_RETCODE, RetCode);      // int (return code of process)
+    URHO3D_PARAM(P_PROCESSKEY, ProcessKey); // unsigned
+    URHO3D_PARAM(P_RETCODE, RetCode);      // int (return code of process)
 }
 
 class SubprocessSystem : public Object
 {
-    ATOMIC_OBJECT(SubprocessSystem, Object);
+    URHO3D_OBJECT(SubprocessSystem, Object);
 
 public:
     /// Construct.

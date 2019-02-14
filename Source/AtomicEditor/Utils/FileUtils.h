@@ -31,7 +31,7 @@ namespace AtomicEditor
 
 class FileUtils : public Object
 {
-    ATOMIC_OBJECT(FileUtils, Object);
+    URHO3D_OBJECT(FileUtils, Object);
 
 public:
 

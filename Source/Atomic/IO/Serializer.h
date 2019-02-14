@@ -41,7 +41,7 @@ class Vector3;
 class Vector4;
 
 /// Abstract stream for writing.
-class ATOMIC_API Serializer
+class URHO3D_API Serializer
 {
 public:
     /// Destruct.

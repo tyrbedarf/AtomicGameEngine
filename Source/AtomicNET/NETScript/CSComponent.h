@@ -34,7 +34,7 @@ class CSComponent : public ScriptComponent
 {
     friend class CSComponentFactory;
 
-    ATOMIC_OBJECT(CSComponent, ScriptComponent)
+    URHO3D_OBJECT(CSComponent, ScriptComponent)
 
 public:
 

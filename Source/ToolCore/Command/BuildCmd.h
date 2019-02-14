@@ -31,7 +31,7 @@ namespace ToolCore
 
 class BuildCmd: public Command
 {
-    ATOMIC_OBJECT(BuildCmd, Command);
+    URHO3D_OBJECT(BuildCmd, Command);
 
 public:
 

@@ -28,7 +28,7 @@ namespace Urho3D
 {
 
 /// Rectangular area allocator.
-class ATOMIC_API AreaAllocator
+class URHO3D_API AreaAllocator
 {
 public:
     /// Default construct with empty size.

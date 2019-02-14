@@ -35,7 +35,7 @@ static const int PROJECTFILE_VERSION = 1;
 
 class ProjectFile : public Object
 {
-    ATOMIC_OBJECT(ProjectFile, Object);
+    URHO3D_OBJECT(ProjectFile, Object);
 
 public:
     /// Construct.

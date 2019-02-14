@@ -33,9 +33,9 @@ class Image;
 class XMLFile;
 
 /// 2D texture resource.
-class ATOMIC_API Texture2D : public Texture
+class URHO3D_API Texture2D : public Texture
 {
-    ATOMIC_OBJECT(Texture2D, Texture);
+    URHO3D_OBJECT(Texture2D, Texture);
 
 public:
     /// Construct.

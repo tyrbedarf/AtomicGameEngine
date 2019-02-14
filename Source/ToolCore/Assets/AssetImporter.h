@@ -38,7 +38,7 @@ class AssetImporter : public Object
 {
     friend class Asset;
 
-    ATOMIC_OBJECT(AssetImporter, Object);
+    URHO3D_OBJECT(AssetImporter, Object);
 
 public:
     /// Construct.

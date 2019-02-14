@@ -28,17 +28,17 @@ namespace Urho3D
 {
 
 /// MessageBox acknowlegement.
-ATOMIC_EVENT(E_MESSAGEACK, MessageACK)
+URHO3D_EVENT(E_MESSAGEACK, MessageACK)
 {
-    ATOMIC_PARAM(P_OK, Ok);                        // bool
+    URHO3D_PARAM(P_OK, Ok);                        // bool
 }
 
-ATOMIC_EVENT(E_CONSOLECLOSED, ConsoleClosed)
+URHO3D_EVENT(E_CONSOLECLOSED, ConsoleClosed)
 {
 
 }
 
-ATOMIC_EVENT(E_SYSTEMUIFRAME, SystemUiFrame)
+URHO3D_EVENT(E_SYSTEMUIFRAME, SystemUiFrame)
 {
 
 }

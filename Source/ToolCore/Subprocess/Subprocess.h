@@ -42,7 +42,7 @@ class Subprocess : public Object, public Thread
 {
     friend class SubprocessSystem;
 
-    ATOMIC_OBJECT(Subprocess, Object);
+    URHO3D_OBJECT(Subprocess, Object);
 
 public:
     /// Construct.

@@ -32,7 +32,7 @@ namespace Urho3D
 class JSDebugger : public Object
 {
 
-    ATOMIC_OBJECT(JSDebugger, Object)
+	URHO3D_OBJECT(JSDebugger, Object)
 
 public:
 

@@ -27,24 +27,24 @@
 
 namespace Urho3D
 {
-    ATOMIC_EVENT(E_IPCCMD, IPCCmd)
+    URHO3D_EVENT(E_IPCCMD, IPCCmd)
     {
-        ATOMIC_PARAM(P_COMMAND, Command); // string
-        ATOMIC_PARAM(P_ID, ID); // unsigned
+        URHO3D_PARAM(P_COMMAND, Command); // string
+        URHO3D_PARAM(P_ID, ID); // unsigned
     }
 
-    ATOMIC_EVENT(E_IPCCMDRESULT, IPCCmdResult)
+    URHO3D_EVENT(E_IPCCMDRESULT, IPCCmdResult)
     {
-        ATOMIC_PARAM(P_COMMAND, Command); // string
-        ATOMIC_PARAM(P_ID, ID); // unsigned
+        URHO3D_PARAM(P_COMMAND, Command); // string
+        URHO3D_PARAM(P_ID, ID); // unsigned
     }
 
     class IPCBroker;
 
     /// IPCResultHandler
-    class ATOMIC_API IPCResultHandler : public Object
+    class URHO3D_API IPCResultHandler : public Object
     {
-        ATOMIC_OBJECT(IPCResultHandler, Object)
+        URHO3D_OBJECT(IPCResultHandler, Object)
 
     public:
         /// Construct.
@@ -59,9 +59,9 @@ namespace Urho3D
     };
 
     /// IPCServer
-    class ATOMIC_API IPCServer : public Object
+    class URHO3D_API IPCServer : public Object
     {
-        ATOMIC_OBJECT(IPCServer, Object)
+        URHO3D_OBJECT(IPCServer, Object)
 
     public:
         /// Construct.

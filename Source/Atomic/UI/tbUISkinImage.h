@@ -27,9 +27,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API tbUISkinImage : public tbUIWidget
+class URHO3D_API tbUISkinImage : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUISkinImage, tbUIWidget)
+    URHO3D_OBJECT(tbUISkinImage, tbUIWidget)
 
 public:
 

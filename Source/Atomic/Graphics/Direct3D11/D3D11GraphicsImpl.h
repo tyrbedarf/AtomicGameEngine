@@ -43,7 +43,7 @@ typedef HashMap<unsigned long long, SharedPtr<VertexDeclaration> > VertexDeclara
 typedef HashMap<unsigned, SharedPtr<ConstantBuffer> > ConstantBufferMap;
 
 /// %Graphics implementation. Holds API-specific objects.
-class ATOMIC_API GraphicsImpl
+class URHO3D_API GraphicsImpl
 {
     friend class Graphics;
 

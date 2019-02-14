@@ -7,9 +7,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API PrefabComponent : public Component
+class URHO3D_API PrefabComponent : public Component
 {
-    ATOMIC_OBJECT(PrefabComponent, Component);
+    URHO3D_OBJECT(PrefabComponent, Component);
 
 public:
 

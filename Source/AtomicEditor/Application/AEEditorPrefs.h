@@ -31,7 +31,7 @@ namespace AtomicEditor
 
     class AEEditorPrefs : public Object
     {
-        ATOMIC_OBJECT(AEEditorPrefs, Object)
+        URHO3D_OBJECT(AEEditorPrefs, Object)
 
     public:
         /// Construct.

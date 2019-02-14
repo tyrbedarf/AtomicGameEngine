@@ -42,9 +42,9 @@ enum BodyType2D
 };
 
 /// 2D rigid body component.
-class ATOMIC_API RigidBody2D : public Component
+class URHO3D_API RigidBody2D : public Component
 {
-    ATOMIC_OBJECT(RigidBody2D, Component);
+    URHO3D_OBJECT(RigidBody2D, Component);
 
 public:
     /// Construct.

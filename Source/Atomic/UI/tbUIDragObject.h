@@ -28,10 +28,10 @@ namespace Urho3D
 {
 
 
-class ATOMIC_API tbUIDragObject : public Object
+class URHO3D_API tbUIDragObject : public Object
 {
 
-    ATOMIC_OBJECT(tbUIDragObject, Object);
+    URHO3D_OBJECT(tbUIDragObject, Object);
 
 public:
     /// Construct.

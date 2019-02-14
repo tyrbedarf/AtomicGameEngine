@@ -32,9 +32,9 @@ class TileMapLayer2D;
 class TmxFile2D;
 
 /// Tile map component.
-class ATOMIC_API TileMap2D : public Component
+class URHO3D_API TileMap2D : public Component
 {
-    ATOMIC_OBJECT(TileMap2D, Component);
+    URHO3D_OBJECT(TileMap2D, Component);
 
 public:
     /// Construct.

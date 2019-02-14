@@ -28,9 +28,9 @@ namespace Urho3D
 {
 
 /// 2D motor constraint component.
-class ATOMIC_API ConstraintMotor2D : public Constraint2D
+class URHO3D_API ConstraintMotor2D : public Constraint2D
 {
-    ATOMIC_OBJECT(ConstraintMotor2D, Constraint2D);
+    URHO3D_OBJECT(ConstraintMotor2D, Constraint2D);
 
 public:
     /// Construct.

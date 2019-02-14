@@ -28,7 +28,7 @@ namespace Urho3D
 {
 
 /// Low-resolution operating system timer.
-class ATOMIC_API Timer
+class URHO3D_API Timer
 {
 public:
     /// Construct. Get the starting clock value.
@@ -45,7 +45,7 @@ private:
 };
 
 /// High-resolution operating system timer used in profiling.
-class ATOMIC_API HiresTimer
+class URHO3D_API HiresTimer
 {
     friend class Time;
 
@@ -75,9 +75,9 @@ private:
 };
 
 /// %Time and frame counter subsystem.
-class ATOMIC_API Time : public Object
+class URHO3D_API Time : public Object
 {
-    ATOMIC_OBJECT(Time, Object);
+    URHO3D_OBJECT(Time, Object);
 
 public:
     /// Construct.

@@ -37,7 +37,7 @@ class BuildBase;
 
 class ResourcePackager : public Object
 {
-    ATOMIC_OBJECT(ResourcePackager, Object);
+    URHO3D_OBJECT(ResourcePackager, Object);
 
 public:
 

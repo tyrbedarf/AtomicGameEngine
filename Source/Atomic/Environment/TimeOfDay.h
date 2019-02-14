@@ -29,7 +29,7 @@ namespace Urho3D
 
 class TimeOfDay : public Component
 {
-    ATOMIC_OBJECT(TimeOfDay, Component);
+    URHO3D_OBJECT(TimeOfDay, Component);
 
     /// Construct.
     TimeOfDay(Context* context);

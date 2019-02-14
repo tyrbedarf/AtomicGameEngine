@@ -39,7 +39,7 @@ namespace Urho3D
 
     class PlayerApp : public AppBase
     {
-        ATOMIC_OBJECT(PlayerApp, AppBase)
+        URHO3D_OBJECT(PlayerApp, AppBase)
 
     public:
         /// Construct.

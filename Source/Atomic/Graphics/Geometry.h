@@ -35,9 +35,9 @@ class Graphics;
 class VertexBuffer;
 
 /// Defines one or more vertex buffers, an index buffer and a draw range.
-class ATOMIC_API Geometry : public Object
+class URHO3D_API Geometry : public Object
 {
-    ATOMIC_OBJECT(Geometry, Object);
+    URHO3D_OBJECT(Geometry, Object);
 
 public:
     /// Construct with one empty vertex buffer.

@@ -9,21 +9,21 @@
 #pragma warning(disable: 4275)
 
 #ifdef ATOMIC_STATIC_DEFINE
-#  define ATOMIC_API
-#  define ATOMIC_NO_EXPORT
+#  define URHO3D_API
+#  define URHO3D_API_NO_EXPORT
 #else
 #  ifndef ATOMIC_API
 #    ifdef ATOMIC_EXPORTS
         /* We are building this library */
-#      define ATOMIC_API __declspec(dllexport)
+#      define URHO3D_API __declspec(dllexport)
 #    else
         /* We are using this library */
-#      define ATOMIC_API __declspec(dllimport)
+#      define URHO3D_API __declspec(dllimport)
 #    endif
 #  endif
 
 #  ifndef ATOMIC_NO_EXPORT
-#    define ATOMIC_NO_EXPORT 
+#    define ATOMIC_NO_EXPORT
 #  endif
 #endif
 

@@ -38,9 +38,9 @@ enum DBAPI
 class DbConnection;
 
 /// %Database subsystem. Manage database connections.
-class ATOMIC_API Database : public Object
+class URHO3D_API Database : public Object
 {
-    ATOMIC_OBJECT(Database, Object);
+    URHO3D_OBJECT(Database, Object);
 
 public:
     /// Construct.

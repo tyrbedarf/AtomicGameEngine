@@ -29,7 +29,7 @@ namespace ToolCore
 
 class PEXImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(PEXImporter, AssetImporter);
+    URHO3D_OBJECT(PEXImporter, AssetImporter);
 
 public:
     /// Construct.

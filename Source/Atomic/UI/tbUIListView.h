@@ -31,9 +31,9 @@ namespace Urho3D
 class ListViewItemSource;
 class ListViewItem;
 
-class ATOMIC_API tbUIListView : public tbUIWidget
+class URHO3D_API tbUIListView : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIListView, tbUIWidget);
+    URHO3D_OBJECT(tbUIListView, tbUIWidget);
 
 public:
     /// Construct.

@@ -44,7 +44,7 @@ struct IPCMessageHeader
     unsigned messageSize_;
 };
 
-class ATOMIC_API IPCMessageEvent
+class URHO3D_API IPCMessageEvent
 {
 
 public:

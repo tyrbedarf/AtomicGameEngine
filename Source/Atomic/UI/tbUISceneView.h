@@ -39,7 +39,7 @@ namespace Urho3D
 class UISceneView;
 class tbUIRenderer;
 
-class ATOMIC_API tbSceneViewWidget : public tb::TBWidget
+class URHO3D_API tbSceneViewWidget : public tb::TBWidget
 {
     friend class UISceneView;
 
@@ -59,12 +59,12 @@ private:
 };
 
 
-class ATOMIC_API UISceneView : public tbUIWidget
+class URHO3D_API UISceneView : public tbUIWidget
 {
 
     friend class tbSceneViewWidget;
 
-    ATOMIC_OBJECT(UISceneView, tbUIWidget)
+    URHO3D_OBJECT(UISceneView, tbUIWidget)
 
 public:
 

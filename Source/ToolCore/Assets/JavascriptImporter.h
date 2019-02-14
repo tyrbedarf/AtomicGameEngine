@@ -29,7 +29,7 @@ namespace ToolCore
 
 class JavascriptImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(JavascriptImporter, AssetImporter);
+    URHO3D_OBJECT(JavascriptImporter, AssetImporter);
 
 public:
     /// Construct.

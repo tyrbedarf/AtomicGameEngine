@@ -38,7 +38,7 @@ namespace AtomicEditor
 
     class EditorNETService : public Object
     {
-        ATOMIC_OBJECT(EditorNETService, Object)
+        URHO3D_OBJECT(EditorNETService, Object)
 
     public:
 

@@ -27,9 +27,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API tbUISeparator : public tbUIWidget
+class URHO3D_API tbUISeparator : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUISeparator, tbUIWidget)
+    URHO3D_OBJECT(tbUISeparator, tbUIWidget)
 
 public:
 

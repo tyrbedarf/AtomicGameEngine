@@ -28,36 +28,36 @@ namespace Urho3D
 {
 
 /// Worker start
-ATOMIC_EVENT(E_IPCWORKERSTART, IPCWorkerStart)
+URHO3D_EVENT(E_IPCWORKERSTART, IPCWorkerStart)
 {
 
 }
 
 /// Worker exited
-ATOMIC_EVENT(E_IPCWORKEREXIT, IPCWorkerExit)
+URHO3D_EVENT(E_IPCWORKEREXIT, IPCWorkerExit)
 {
-    ATOMIC_PARAM(P_BROKER, Broker);   // Broker*
-    ATOMIC_PARAM(P_EXITCODE, ExitCode);   // int
+    URHO3D_PARAM(P_BROKER, Broker);   // Broker*
+    URHO3D_PARAM(P_EXITCODE, ExitCode);   // int
 }
 
 /// broker -> worker start
-ATOMIC_EVENT(E_IPCINITIALIZE, IPCInitialize)
+URHO3D_EVENT(E_IPCINITIALIZE, IPCInitialize)
 {
 
 }
 
 /// Worker Log
-ATOMIC_EVENT(E_IPCWORKERLOG, IPCWorkerLog)
+URHO3D_EVENT(E_IPCWORKERLOG, IPCWorkerLog)
 {
-    ATOMIC_PARAM(P_LEVEL, Level);      // int log level
-    ATOMIC_PARAM(P_MESSAGE, Message);  // string
+    URHO3D_PARAM(P_LEVEL, Level);      // int log level
+    URHO3D_PARAM(P_MESSAGE, Message);  // string
 }
 
 /// Worker Log
-ATOMIC_EVENT(E_IPCMESSAGE, IPCMessage)
+URHO3D_EVENT(E_IPCMESSAGE, IPCMessage)
 {
-    ATOMIC_PARAM(P_MESSAGE, Message);  // string
-    ATOMIC_PARAM(P_VALUE, Value);  // int
+    URHO3D_PARAM(P_MESSAGE, Message);  // string
+    URHO3D_PARAM(P_VALUE, Value);  // int
 }
 
 

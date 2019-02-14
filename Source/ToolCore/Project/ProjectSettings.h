@@ -62,7 +62,7 @@ namespace ToolCore
 
     class ProjectSettings : public Object
     {
-        ATOMIC_OBJECT(ProjectSettings, Object)
+        URHO3D_OBJECT(ProjectSettings, Object)
 
     public:
         /// Construct.

@@ -112,9 +112,9 @@ private:
     PODVector<char> buf_;
 };
 
-class ATOMIC_API IPCProcess : public Object
+class URHO3D_API IPCProcess : public Object
 {
-    ATOMIC_OBJECT(IPCProcess, Object)
+    URHO3D_OBJECT(IPCProcess, Object)
 
     public:
 

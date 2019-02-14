@@ -30,9 +30,9 @@ namespace Urho3D
 {
 
 /// A grid of buttons that keep their shape and size, with minimal programming.
-class ATOMIC_API tbUIButtonGrid : public tbUIWidget
+class URHO3D_API tbUIButtonGrid : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIButtonGrid, tbUIWidget)
+    URHO3D_OBJECT(tbUIButtonGrid, tbUIWidget)
 
 public:
 

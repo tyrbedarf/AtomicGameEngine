@@ -28,12 +28,12 @@ namespace Urho3D
 {
 
 /// Set the random seed. The default seed is 1.
-ATOMIC_API void SetRandomSeed(unsigned seed);
+URHO3D_API void SetRandomSeed(unsigned seed);
 /// Return the current random seed.
-ATOMIC_API unsigned GetRandomSeed();
+URHO3D_API unsigned GetRandomSeed();
 /// Return a random number between 0-32767. Should operate similarly to MSVC rand().
-ATOMIC_API int Rand();
+URHO3D_API int Rand();
 /// Return a standard normal distributed number.
-ATOMIC_API float RandStandardNormal();
+URHO3D_API float RandStandardNormal();
 
 }

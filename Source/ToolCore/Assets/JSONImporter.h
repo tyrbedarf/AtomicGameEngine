@@ -29,7 +29,7 @@ namespace ToolCore
 
 class JSONImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(JSONImporter, AssetImporter);
+    URHO3D_OBJECT(JSONImporter, AssetImporter);
 
 public:
     /// Construct.

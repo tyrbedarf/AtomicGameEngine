@@ -45,7 +45,7 @@ enum UI_SIZE_DEP {
     UI_SIZE_DEP_BOTH                    = 3 //  tb::SIZE_DEP_BOTH
 };
 
-class ATOMIC_API tbUIPreferredSize : public RefCounted
+class URHO3D_API tbUIPreferredSize : public RefCounted
 {
     friend class tbUIWidget;
 

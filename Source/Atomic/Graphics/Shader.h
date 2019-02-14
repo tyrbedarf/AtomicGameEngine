@@ -31,9 +31,9 @@ namespace Urho3D
 class ShaderVariation;
 
 /// %Shader resource consisting of several shader variations.
-class ATOMIC_API Shader : public Resource
+class URHO3D_API Shader : public Resource
 {
-    ATOMIC_OBJECT(Shader, Resource);
+    URHO3D_OBJECT(Shader, Resource);
 
 public:
     /// Construct.

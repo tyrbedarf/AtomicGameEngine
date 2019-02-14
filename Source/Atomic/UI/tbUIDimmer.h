@@ -27,9 +27,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API tbUIDimmer : public tbUIWidget
+class URHO3D_API tbUIDimmer : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIDimmer, tbUIWidget)
+    URHO3D_OBJECT(tbUIDimmer, tbUIWidget)
 
 public:
 

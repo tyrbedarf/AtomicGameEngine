@@ -59,9 +59,9 @@ private:
 // ATOMIC END
 
 /// Subsystem for file and directory operations and access control.
-class ATOMIC_API FileSystem : public Object
+class URHO3D_API FileSystem : public Object
 {
-    ATOMIC_OBJECT(FileSystem, Object);
+    URHO3D_OBJECT(FileSystem, Object);
 
 public:
     /// Construct.
@@ -157,40 +157,40 @@ private:
 };
 
 /// Split a full path to path, filename and extension. The extension will be converted to lowercase by default.
-ATOMIC_API void
+URHO3D_API void
     SplitPath(const String& fullPath, String& pathName, String& fileName, String& extension, bool lowercaseExtension = true);
 /// Return the path from a full path.
-ATOMIC_API String GetPath(const String& fullPath);
+URHO3D_API String GetPath(const String& fullPath);
 /// Return the filename from a full path.
-ATOMIC_API String GetFileName(const String& fullPath);
+URHO3D_API String GetFileName(const String& fullPath);
 /// Return the extension from a full path, converted to lowercase by default.
-ATOMIC_API String GetExtension(const String& fullPath, bool lowercaseExtension = true);
+URHO3D_API String GetExtension(const String& fullPath, bool lowercaseExtension = true);
 /// Return the filename and extension from a full path. The case of the extension is preserved by default, so that the file can be opened in case-sensitive operating systems.
-ATOMIC_API String GetFileNameAndExtension(const String& fullPath, bool lowercaseExtension = false);
+URHO3D_API String GetFileNameAndExtension(const String& fullPath, bool lowercaseExtension = false);
 /// Replace the extension of a file name with another.
-ATOMIC_API String ReplaceExtension(const String& fullPath, const String& newExtension);
+URHO3D_API String ReplaceExtension(const String& fullPath, const String& newExtension);
 /// Add a slash at the end of the path if missing and convert to internal format (use slashes.)
-ATOMIC_API String AddTrailingSlash(const String& pathName);
+URHO3D_API String AddTrailingSlash(const String& pathName);
 /// Remove the slash from the end of a path if exists and convert to internal format (use slashes.)
-ATOMIC_API String RemoveTrailingSlash(const String& pathName);
+URHO3D_API String RemoveTrailingSlash(const String& pathName);
 /// Return the parent path, or the path itself if not available.
-ATOMIC_API String GetParentPath(const String& pathName);
+URHO3D_API String GetParentPath(const String& pathName);
 /// Convert a path to internal format (use slashes.)
-ATOMIC_API String GetInternalPath(const String& pathName);
+URHO3D_API String GetInternalPath(const String& pathName);
 /// Convert a path to the format required by the operating system.
-ATOMIC_API String GetNativePath(const String& pathName);
+URHO3D_API String GetNativePath(const String& pathName);
 /// Convert a path to the format required by the operating system in wide characters.
-ATOMIC_API WString GetWideNativePath(const String& pathName);
+URHO3D_API WString GetWideNativePath(const String& pathName);
 /// Return whether a path is absolute.
-ATOMIC_API bool IsAbsolutePath(const String& pathName);
+URHO3D_API bool IsAbsolutePath(const String& pathName);
 
 // ATOMIC BEGIN
-ATOMIC_API bool IsAbsoluteParentPath(const String& absParentPath, const String& fullPath);
-ATOMIC_API String GetSanitizedPath(const String& path);
+URHO3D_API bool IsAbsoluteParentPath(const String& absParentPath, const String& fullPath);
+URHO3D_API String GetSanitizedPath(const String& path);
 
 /// Given two absolute directory paths, get the relative path from one to the other
 /// Returns false if either path isn't absolute, or if they are unrelated
-ATOMIC_API bool GetRelativePath(const String& fromPath, const String& toPath, String& output);
+URHO3D_API bool GetRelativePath(const String& fromPath, const String& toPath, String& output);
 // ATOMIC END
 
 }

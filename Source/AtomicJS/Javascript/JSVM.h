@@ -54,7 +54,7 @@ class JSVM : public Object
 
     friend class JSMetrics;
 
-    ATOMIC_OBJECT(JSVM, Object)
+	URHO3D_OBJECT(JSVM, Object)
 
 public:
     /// Construct.

@@ -41,7 +41,7 @@ class Project;
 
 class BuildBase : public Object
 {
-    ATOMIC_OBJECT(BuildBase, Object);
+    URHO3D_OBJECT(BuildBase, Object);
 
 friend class AndroidProjectGenerator;
 

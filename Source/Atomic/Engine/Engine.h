@@ -32,9 +32,9 @@ class Console;
 class DebugHud;
 
 /// Urho3D engine. Creates the other subsystems.
-class ATOMIC_API Engine : public Object
+class URHO3D_API Engine : public Object
 {
-    ATOMIC_OBJECT(Engine, Object);
+    URHO3D_OBJECT(Engine, Object);
 
 public:
     /// Construct.

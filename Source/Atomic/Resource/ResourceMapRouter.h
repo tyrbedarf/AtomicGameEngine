@@ -30,9 +30,9 @@ namespace Urho3D
 class JSONValue;
 
 // Resource router which maps resource requests to processed cache files, different files can be mapped based on type of request
-class ATOMIC_API ResourceMapRouter : public ResourceRouter
+class URHO3D_API ResourceMapRouter : public ResourceRouter
 {
-    ATOMIC_OBJECT(ResourceMapRouter, ResourceRouter)
+    URHO3D_OBJECT(ResourceMapRouter, ResourceRouter)
 
 public:
     /// Construct.

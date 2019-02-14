@@ -27,37 +27,37 @@
 namespace Urho3D
 {
 
-    ATOMIC_EVENT(E_IPCPLAYERPAUSERESUMEREQUEST, IPCPlayerPauseResumeRequest)
+    URHO3D_EVENT(E_IPCPLAYERPAUSERESUMEREQUEST, IPCPlayerPauseResumeRequest)
     {
 
     }
 
-    ATOMIC_EVENT(E_IPCPLAYERUPDATESPAUSEDRESUMED, IPCPlayerUpdatesPausedResumed)
+    URHO3D_EVENT(E_IPCPLAYERUPDATESPAUSEDRESUMED, IPCPlayerUpdatesPausedResumed)
     {
-        ATOMIC_PARAM(P_PAUSED, Paused);            // bool
+        URHO3D_PARAM(P_PAUSED, Paused);            // bool
     }
 
-    ATOMIC_EVENT(E_IPCPLAYERPAUSESTEPREQUEST, IPCPlayerPauseStepRequest)
-    {
-
-    }
-
-    ATOMIC_EVENT(E_IPCPLAYEREXITREQUEST, IPCPlayerExitRequest)
+    URHO3D_EVENT(E_IPCPLAYERPAUSESTEPREQUEST, IPCPlayerPauseStepRequest)
     {
 
     }
 
-    ATOMIC_EVENT(E_IPCPLAYERWINDOWCHANGED, IPCPlayerWindowChanged)
+    URHO3D_EVENT(E_IPCPLAYEREXITREQUEST, IPCPlayerExitRequest)
     {
-        ATOMIC_PARAM(P_POSX, PosX);  // int
-        ATOMIC_PARAM(P_POSY, PosY); // int
-        ATOMIC_PARAM(P_WIDTH, Width); // int
-        ATOMIC_PARAM(P_HEIGHT, Height); // int
-        ATOMIC_PARAM(P_MONITOR, Monitor); // int
-        ATOMIC_PARAM(P_MAXIMIZED, Maximized); // bool
+
     }
 
-    ATOMIC_EVENT(E_PLAYERQUIT, PlayerQuit)
+    URHO3D_EVENT(E_IPCPLAYERWINDOWCHANGED, IPCPlayerWindowChanged)
+    {
+        URHO3D_PARAM(P_POSX, PosX);  // int
+        URHO3D_PARAM(P_POSY, PosY); // int
+        URHO3D_PARAM(P_WIDTH, Width); // int
+        URHO3D_PARAM(P_HEIGHT, Height); // int
+        URHO3D_PARAM(P_MONITOR, Monitor); // int
+        URHO3D_PARAM(P_MAXIMIZED, Maximized); // bool
+    }
+
+    URHO3D_EVENT(E_PLAYERQUIT, PlayerQuit)
     {
 
     }

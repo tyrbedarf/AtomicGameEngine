@@ -29,7 +29,7 @@ namespace ToolCore
 
 class TypeScriptImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(TypeScriptImporter, AssetImporter);
+    URHO3D_OBJECT(TypeScriptImporter, AssetImporter);
 
 public:
     /// Construct.

@@ -34,7 +34,7 @@ namespace AtomicPlayer
 /// Player subsystem
 class Player : public Object
 {
-    ATOMIC_OBJECT(Player, Object);
+	URHO3D_OBJECT(Player, Object);
 
 public:
     /// Construct.

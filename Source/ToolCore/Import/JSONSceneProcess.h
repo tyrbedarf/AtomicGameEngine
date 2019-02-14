@@ -53,7 +53,7 @@ class JSONTimeOfDay;
 class JSONSceneProcess : public Object
 {
 
-    ATOMIC_OBJECT(JSONSceneProcess, Object);
+    URHO3D_OBJECT(JSONSceneProcess, Object);
 
 public:
 

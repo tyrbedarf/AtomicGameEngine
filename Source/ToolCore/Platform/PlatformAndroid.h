@@ -28,14 +28,14 @@
 namespace ToolCore
 {
 
-ATOMIC_EVENT(E_ANDROIDTARGETSREFRESHED, AndroidTargetsRefreshed)
+URHO3D_EVENT(E_ANDROIDTARGETSREFRESHED, AndroidTargetsRefreshed)
 {
 
 }
 
 class PlatformAndroid : public Platform
 {
-    ATOMIC_OBJECT(PlatformAndroid, Platform);
+    URHO3D_OBJECT(PlatformAndroid, Platform);
 
     struct AndroidTarget
     {

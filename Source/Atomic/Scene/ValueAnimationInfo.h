@@ -36,7 +36,7 @@ class Variant;
 struct VAnimEventFrame;
 
 /// Base class for a value animation instance, which includes animation runtime information and updates the target object's value automatically.
-class ATOMIC_API ValueAnimationInfo : public RefCounted
+class URHO3D_API ValueAnimationInfo : public RefCounted
 {
     ATOMIC_REFCOUNTED(ValueAnimationInfo)
 public:

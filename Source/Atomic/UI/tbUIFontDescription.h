@@ -27,9 +27,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API tbUIFontDescription : public Object
+class URHO3D_API tbUIFontDescription : public Object
 {
-    ATOMIC_OBJECT(tbUIFontDescription, Object)
+    URHO3D_OBJECT(tbUIFontDescription, Object)
 
 public:
 

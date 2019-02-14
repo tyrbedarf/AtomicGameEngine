@@ -102,9 +102,9 @@ struct Decal
 };
 
 /// %Decal renderer component.
-class ATOMIC_API DecalSet : public Drawable
+class URHO3D_API DecalSet : public Drawable
 {
-    ATOMIC_OBJECT(DecalSet, Drawable);
+    URHO3D_OBJECT(DecalSet, Drawable);
 
 public:
     /// Construct.

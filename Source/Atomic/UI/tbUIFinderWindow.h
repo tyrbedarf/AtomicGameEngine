@@ -33,7 +33,7 @@ class tbUIPromptWindow;
 
 class tbUIFinderWindow : public tbUIWindow
 {
-    ATOMIC_OBJECT(tbUIFinderWindow, tbUIWindow)
+    URHO3D_OBJECT(tbUIFinderWindow, tbUIWindow)
 
 public:
 

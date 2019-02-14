@@ -41,7 +41,7 @@ enum HttpRequestState
 };
 
 /// An HTTP connection with response data stream.
-class ATOMIC_API HttpRequest : public RefCounted, public Deserializer, public Thread
+class URHO3D_API HttpRequest : public RefCounted, public Deserializer, public Thread
 {
     ATOMIC_REFCOUNTED(HttpRequest)
 

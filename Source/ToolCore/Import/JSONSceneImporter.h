@@ -793,7 +793,7 @@ private:
 
 class Importer: public Object
 {
-    ATOMIC_OBJECT(Importer, Object);
+    URHO3D_OBJECT(Importer, Object);
 
 public:
 
@@ -806,7 +806,7 @@ private:
 
 class JSONSceneImporter: public Importer
 {
-    ATOMIC_OBJECT(JSONSceneImporter, Importer);
+    URHO3D_OBJECT(JSONSceneImporter, Importer);
 
 public:
 

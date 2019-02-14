@@ -33,7 +33,7 @@ namespace ToolCore
 
 class LicenseSystem : public Object
 {
-    ATOMIC_OBJECT(LicenseSystem, Object)
+    URHO3D_OBJECT(LicenseSystem, Object)
 
 public:
 

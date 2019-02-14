@@ -38,7 +38,7 @@ namespace Urho3D
     /// NET Assembly resource.
     class CSComponentAssembly : public ScriptComponentFile
     {
-        ATOMIC_OBJECT(CSComponentAssembly, ScriptComponentFile)
+        URHO3D_OBJECT(CSComponentAssembly, ScriptComponentFile)
 
     public:
 

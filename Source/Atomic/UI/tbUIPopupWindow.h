@@ -27,9 +27,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API tbUIPopupWindow: public tbUIWidget
+class URHO3D_API tbUIPopupWindow: public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIPopupWindow, tbUIWidget)
+    URHO3D_OBJECT(tbUIPopupWindow, tbUIWidget)
 
 public:
 

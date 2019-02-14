@@ -33,9 +33,9 @@ class RigidBody2D;
 class PhysicsWorld2D;
 
 /// 2D physics constraint component.
-class ATOMIC_API Constraint2D : public Component
+class URHO3D_API Constraint2D : public Component
 {
-    ATOMIC_OBJECT(Constraint2D, Component);
+    URHO3D_OBJECT(Constraint2D, Component);
 
 public:
     /// Construct.

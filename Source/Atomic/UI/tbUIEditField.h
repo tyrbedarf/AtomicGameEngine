@@ -39,9 +39,9 @@ enum UI_EDIT_TYPE {
     UI_EDIT_TYPE_NUMBER = 6 // tb::EDIT_TYPE_NUMBER
 };
 
-class ATOMIC_API tbUIEditField : public tbUIWidget
+class URHO3D_API tbUIEditField : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIEditField, tbUIWidget)
+    URHO3D_OBJECT(tbUIEditField, tbUIWidget)
 
 public:
 

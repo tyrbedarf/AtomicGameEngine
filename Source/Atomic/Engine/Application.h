@@ -32,9 +32,9 @@ namespace Urho3D
 class Engine;
 
 /// Base class for creating applications which initialize the Urho3D engine and run a main loop until exited.
-class ATOMIC_API Application : public Object
+class URHO3D_API Application : public Object
 {
-    ATOMIC_OBJECT(Application, Object);
+    URHO3D_OBJECT(Application, Object);
 
 public:
     /// Construct. Parse default engine parameters from the command line, and create the engine in an uninitialized state.

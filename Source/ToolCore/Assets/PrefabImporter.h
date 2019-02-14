@@ -34,7 +34,7 @@ namespace ToolCore
 
 class PrefabImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(PrefabImporter, AssetImporter);
+    URHO3D_OBJECT(PrefabImporter, AssetImporter);
 
 public:
     /// Construct.

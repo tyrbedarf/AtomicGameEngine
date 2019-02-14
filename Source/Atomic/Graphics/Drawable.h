@@ -78,7 +78,7 @@ struct FrameInfo
 };
 
 /// Source data for a 3D geometry draw call.
-struct ATOMIC_API SourceBatch
+struct URHO3D_API SourceBatch
 {
     /// Construct with defaults.
     SourceBatch();
@@ -107,9 +107,9 @@ struct ATOMIC_API SourceBatch
 };
 
 /// Base class for visible components.
-class ATOMIC_API Drawable : public Component
+class URHO3D_API Drawable : public Component
 {
-    ATOMIC_OBJECT(Drawable, Component);
+    URHO3D_OBJECT(Drawable, Component);
 
     friend class Octant;
     friend class Octree;
@@ -396,6 +396,6 @@ inline bool CompareDrawables(Drawable* lhs, Drawable* rhs)
     return lhs->GetSortValue() < rhs->GetSortValue();
 }
 
-ATOMIC_API bool WriteDrawablesToOBJ(PODVector<Drawable*> drawables, File* outputFile, bool asZUp, bool asRightHanded, bool writeLightmapUV = false);
+URHO3D_API bool WriteDrawablesToOBJ(PODVector<Drawable*> drawables, File* outputFile, bool asZUp, bool asRightHanded, bool writeLightmapUV = false);
 
 }

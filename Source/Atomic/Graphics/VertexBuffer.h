@@ -31,9 +31,9 @@ namespace Urho3D
 {
 
 /// Hardware vertex buffer.
-class ATOMIC_API VertexBuffer : public Object, public GPUObject
+class URHO3D_API VertexBuffer : public Object, public GPUObject
 {
-    ATOMIC_OBJECT(VertexBuffer, Object);
+    URHO3D_OBJECT(VertexBuffer, Object);
 
 public:
     /// Construct. Optionally force headless (no GPU-side buffer) operation.

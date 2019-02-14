@@ -50,7 +50,7 @@ typedef HashMap<String, PListValue> PListValueMap;
 typedef Vector<PListValue> PListValueVector;
 
 /// PList value.
-class ATOMIC_API PListValue
+class URHO3D_API PListValue
 {
 public:
     /// Construct.
@@ -137,9 +137,9 @@ private:
 };
 
 /// Property list (plist).
-class ATOMIC_API PListFile : public Resource
+class URHO3D_API PListFile : public Resource
 {
-    ATOMIC_OBJECT(PListFile, Resource);
+    URHO3D_OBJECT(PListFile, Resource);
 
 public:
     /// Construct.

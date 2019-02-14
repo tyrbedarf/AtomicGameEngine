@@ -39,9 +39,9 @@ static const unsigned DEBUGHUD_SHOW_PROFILER = 0x4;
 static const unsigned DEBUGHUD_SHOW_ALL = 0x7;
 
 /// Displays rendering stats and profiling information.
-class ATOMIC_API DebugHud : public Object
+class URHO3D_API DebugHud : public Object
 {
-    ATOMIC_OBJECT(DebugHud, Object)
+    URHO3D_OBJECT(DebugHud, Object)
 
 public:
     /// Construct.

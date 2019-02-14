@@ -28,9 +28,9 @@ namespace Urho3D
 {
 
 /// 2D pulley constraint component.
-class ATOMIC_API ConstraintPulley2D : public Constraint2D
+class URHO3D_API ConstraintPulley2D : public Constraint2D
 {
-    ATOMIC_OBJECT(ConstraintPulley2D, Constraint2D);
+    URHO3D_OBJECT(ConstraintPulley2D, Constraint2D);
 
 public:
     /// Construct.

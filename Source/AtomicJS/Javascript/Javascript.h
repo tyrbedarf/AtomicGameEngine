@@ -34,7 +34,7 @@ class JSVM;
 /// Javascript subsystem.
 class Javascript : public Object
 {
-    ATOMIC_OBJECT(Javascript, Object);
+	URHO3D_OBJECT(Javascript, Object);
 
 public:
     /// Construct.

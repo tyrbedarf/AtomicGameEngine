@@ -28,36 +28,36 @@ namespace Urho3D
 {
 
 /// WebRequest has completed
-ATOMIC_EVENT(E_WEBREQUESTCOMPLETE, WebRequestComplete)
+URHO3D_EVENT(E_WEBREQUESTCOMPLETE, WebRequestComplete)
 {
-    ATOMIC_PARAM(P_REQUEST, Request);    // WebRequest
-    ATOMIC_PARAM(P_ERROR, Error);        // String
-    ATOMIC_PARAM(P_DOWNLOAD, Download);  // Deserializer (BufferQueue)
-    ATOMIC_PARAM(P_UPLOAD, Upload);      // Serializer (BufferQueue)
+    URHO3D_PARAM(P_REQUEST, Request);    // WebRequest
+    URHO3D_PARAM(P_ERROR, Error);        // String
+    URHO3D_PARAM(P_DOWNLOAD, Download);  // Deserializer (BufferQueue)
+    URHO3D_PARAM(P_UPLOAD, Upload);      // Serializer (BufferQueue)
 }
 
 /// WebRequest progress event
-ATOMIC_EVENT(E_WEBREQUESTPROGRESS, WebRequestProgress)
+URHO3D_EVENT(E_WEBREQUESTPROGRESS, WebRequestProgress)
 {
-    ATOMIC_PARAM(P_REQUEST, Request);              // WebRequest
-    ATOMIC_PARAM(P_DOWNLOADTOTAL, DownloadTotal);  // int
-    ATOMIC_PARAM(P_DOWNLOADED, Downloaded);        // int
-    ATOMIC_PARAM(P_UPLOADTOTAL, UploadTotal);      // int
-    ATOMIC_PARAM(P_UPLOADED, Uploaded);            // int
+    URHO3D_PARAM(P_REQUEST, Request);              // WebRequest
+    URHO3D_PARAM(P_DOWNLOADTOTAL, DownloadTotal);  // int
+    URHO3D_PARAM(P_DOWNLOADED, Downloaded);        // int
+    URHO3D_PARAM(P_UPLOADTOTAL, UploadTotal);      // int
+    URHO3D_PARAM(P_UPLOADED, Uploaded);            // int
 }
 
-ATOMIC_EVENT(E_WEBREQUESTDOWNLOADCHUNK, WebRequestDownloadChunk)
+URHO3D_EVENT(E_WEBREQUESTDOWNLOADCHUNK, WebRequestDownloadChunk)
 {
-    ATOMIC_PARAM(P_REQUEST, Request);     // WebRequest
-    ATOMIC_PARAM(P_DOWNLOAD, Download);   // Deserializer (BufferQueue)
-    ATOMIC_PARAM(P_CHUNKSIZE, ChunkSize);  // unsigned
+    URHO3D_PARAM(P_REQUEST, Request);     // WebRequest
+    URHO3D_PARAM(P_DOWNLOAD, Download);   // Deserializer (BufferQueue)
+    URHO3D_PARAM(P_CHUNKSIZE, ChunkSize);  // unsigned
 }
 
-ATOMIC_EVENT(E_WEBREQUESTUPLOADCHUNK, WebRequestUploadChunk)
+URHO3D_EVENT(E_WEBREQUESTUPLOADCHUNK, WebRequestUploadChunk)
 {
-    ATOMIC_PARAM(P_REQUEST, Request);       // WebRequest
-    ATOMIC_PARAM(P_UPLOAD, Upload);         // Serializer (BufferQueue)
-    ATOMIC_PARAM(P_BYTESREMAINING, BytesRemaining);   // unsigned
+    URHO3D_PARAM(P_REQUEST, Request);       // WebRequest
+    URHO3D_PARAM(P_UPLOAD, Upload);         // Serializer (BufferQueue)
+    URHO3D_PARAM(P_BYTESREMAINING, BytesRemaining);   // unsigned
 }
 
 }

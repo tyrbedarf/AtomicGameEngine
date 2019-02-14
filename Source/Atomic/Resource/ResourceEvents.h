@@ -28,67 +28,67 @@ namespace Urho3D
 {
 
 /// Resource reloading started.
-ATOMIC_EVENT(E_RELOADSTARTED, ReloadStarted)
+URHO3D_EVENT(E_RELOADSTARTED, ReloadStarted)
 {
 }
 
 /// Resource reloading finished successfully.
-ATOMIC_EVENT(E_RELOADFINISHED, ReloadFinished)
+URHO3D_EVENT(E_RELOADFINISHED, ReloadFinished)
 {
 }
 
 /// Resource reloading failed.
-ATOMIC_EVENT(E_RELOADFAILED, ReloadFailed)
+URHO3D_EVENT(E_RELOADFAILED, ReloadFailed)
 {
 }
 
 /// Tracked file changed in the resource directories.
-ATOMIC_EVENT(E_FILECHANGED, FileChanged)
+URHO3D_EVENT(E_FILECHANGED, FileChanged)
 {
-    ATOMIC_PARAM(P_FILENAME, FileName);                    // String
-    ATOMIC_PARAM(P_RESOURCENAME, ResourceName);            // String
+    URHO3D_PARAM(P_FILENAME, FileName);                    // String
+    URHO3D_PARAM(P_RESOURCENAME, ResourceName);            // String
 }
 
 /// Resource loading failed.
-ATOMIC_EVENT(E_LOADFAILED, LoadFailed)
+URHO3D_EVENT(E_LOADFAILED, LoadFailed)
 {
-    ATOMIC_PARAM(P_RESOURCENAME, ResourceName);            // String
+    URHO3D_PARAM(P_RESOURCENAME, ResourceName);            // String
 }
 
 /// Resource not found.
-ATOMIC_EVENT(E_RESOURCENOTFOUND, ResourceNotFound)
+URHO3D_EVENT(E_RESOURCENOTFOUND, ResourceNotFound)
 {
-    ATOMIC_PARAM(P_RESOURCENAME, ResourceName);            // String
+    URHO3D_PARAM(P_RESOURCENAME, ResourceName);            // String
 }
 
 /// Unknown resource type.
-ATOMIC_EVENT(E_UNKNOWNRESOURCETYPE, UnknownResourceType)
+URHO3D_EVENT(E_UNKNOWNRESOURCETYPE, UnknownResourceType)
 {
-    ATOMIC_PARAM(P_RESOURCETYPE, ResourceType);            // StringHash
+    URHO3D_PARAM(P_RESOURCETYPE, ResourceType);            // StringHash
 }
 
 /// Resource background loading finished.
-ATOMIC_EVENT(E_RESOURCEBACKGROUNDLOADED, ResourceBackgroundLoaded)
+URHO3D_EVENT(E_RESOURCEBACKGROUNDLOADED, ResourceBackgroundLoaded)
 {
-    ATOMIC_PARAM(P_RESOURCENAME, ResourceName);            // String
-    ATOMIC_PARAM(P_SUCCESS, Success);                      // bool
-    ATOMIC_PARAM(P_RESOURCE, Resource);                    // Resource pointer
+    URHO3D_PARAM(P_RESOURCENAME, ResourceName);            // String
+    URHO3D_PARAM(P_SUCCESS, Success);                      // bool
+    URHO3D_PARAM(P_RESOURCE, Resource);                    // Resource pointer
 }
 
 /// Language changed.
-ATOMIC_EVENT(E_CHANGELANGUAGE, ChangeLanguage)
+URHO3D_EVENT(E_CHANGELANGUAGE, ChangeLanguage)
 {
 }
 
 // ATOMIC BEGIN
 
 /// Resource was renamed
-ATOMIC_EVENT(E_RENAMERESOURCENOTIFICATION, RenameResourceNotification)
+URHO3D_EVENT(E_RENAMERESOURCENOTIFICATION, RenameResourceNotification)
 {
-    ATOMIC_PARAM(P_RESOURCEPATH, Path);                    // String
-    ATOMIC_PARAM(P_NEWRESOURCEPATH, NewPath);              // String
-    ATOMIC_PARAM(P_NEWNAME, NewName);                      // String
-    ATOMIC_PARAM(P_RESOURCE, Asset);                       // Resource pointer
+    URHO3D_PARAM(P_RESOURCEPATH, Path);                    // String
+    URHO3D_PARAM(P_NEWRESOURCEPATH, NewPath);              // String
+    URHO3D_PARAM(P_NEWNAME, NewName);                      // String
+    URHO3D_PARAM(P_RESOURCE, Asset);                       // Resource pointer
 }
 
 // ATOMIC END

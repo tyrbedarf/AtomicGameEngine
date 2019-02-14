@@ -33,7 +33,7 @@ class Command;
 
 class CommandParser : public Object
 {
-    ATOMIC_OBJECT(CommandParser, Object);
+    URHO3D_OBJECT(CommandParser, Object);
 
 public:
 

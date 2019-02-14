@@ -34,9 +34,9 @@ class XMLElement;
 class JSONValue;
 
 /// Object animation class, an object animation include one or more attribute animations and theirs wrap mode and speed for an Animatable object.
-class ATOMIC_API ObjectAnimation : public Resource
+class URHO3D_API ObjectAnimation : public Resource
 {
-    ATOMIC_OBJECT(ObjectAnimation, Resource);
+    URHO3D_OBJECT(ObjectAnimation, Resource);
 
 public:
     /// Construct.

@@ -41,7 +41,7 @@ class JSBPackage : public Object
     friend class JSPackageWriter;
     friend class CSPackageWriter;
 
-    ATOMIC_OBJECT(JSBPackage, Object)
+    URHO3D_OBJECT(JSBPackage, Object)
 
 public:
 

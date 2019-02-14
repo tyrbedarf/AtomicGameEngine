@@ -47,9 +47,9 @@ struct StaticModelGeometryData
 };
 
 /// Static model component.
-class ATOMIC_API StaticModel : public Drawable
+class URHO3D_API StaticModel : public Drawable
 {
-    ATOMIC_OBJECT(StaticModel, Drawable);
+    URHO3D_OBJECT(StaticModel, Drawable);
 
 public:
     /// Construct.

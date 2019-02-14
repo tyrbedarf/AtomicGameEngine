@@ -28,7 +28,7 @@ namespace Urho3D
 {
 
 /// %Condition on which a thread can wait.
-class ATOMIC_API Condition
+class URHO3D_API Condition
 {
 public:
     /// Construct.

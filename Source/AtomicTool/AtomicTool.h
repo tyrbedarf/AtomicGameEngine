@@ -35,7 +35,7 @@ namespace AtomicTool
 
 class AtomicTool : public Application
 {
-    ATOMIC_OBJECT(AtomicTool, Application)
+    URHO3D_OBJECT(AtomicTool, Application)
 
 public:
 

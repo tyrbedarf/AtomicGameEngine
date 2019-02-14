@@ -51,7 +51,7 @@ struct AnimationKeyFrame
 };
 
 /// Skeletal animation track, stores keyframes of a single bone.
-struct ATOMIC_API AnimationTrack
+struct URHO3D_API AnimationTrack
 {
     /// Construct.
     AnimationTrack() :
@@ -107,9 +107,9 @@ static const unsigned char CHANNEL_ROTATION = 0x2;
 static const unsigned char CHANNEL_SCALE = 0x4;
 
 /// Skeletal animation resource.
-class ATOMIC_API Animation : public ResourceWithMetadata
+class URHO3D_API Animation : public ResourceWithMetadata
 {
-    ATOMIC_OBJECT(Animation, ResourceWithMetadata);
+    URHO3D_OBJECT(Animation, ResourceWithMetadata);
 
 public:
     /// Construct.

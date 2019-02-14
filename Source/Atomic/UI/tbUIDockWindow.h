@@ -30,9 +30,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API tbUIDockWindow : public tbUIWindow
+class URHO3D_API tbUIDockWindow : public tbUIWindow
 {
-    ATOMIC_OBJECT(tbUIDockWindow, tbUIWindow)
+    URHO3D_OBJECT(tbUIDockWindow, tbUIWindow)
 
     public:
     /// UIDockWindow is the host for UI content which has been transferred from the main window.

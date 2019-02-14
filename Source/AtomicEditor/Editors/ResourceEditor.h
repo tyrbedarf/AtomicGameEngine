@@ -37,7 +37,7 @@ class EditorTabLayout;
 
 class ResourceEditor: public Object
 {
-    ATOMIC_OBJECT(ResourceEditor, Object);
+    URHO3D_OBJECT(ResourceEditor, Object);
 
 public:
 

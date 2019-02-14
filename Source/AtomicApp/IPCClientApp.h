@@ -32,7 +32,7 @@ namespace Urho3D
     class IPCClientApp : public AppBase
     {
 
-        ATOMIC_OBJECT(IPCClientApp, AppBase)
+        URHO3D_OBJECT(IPCClientApp, AppBase)
 
     public:
         /// Construct.

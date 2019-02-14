@@ -41,9 +41,9 @@ static const unsigned VO_DISABLE_SHADOWS = 0x2;
 static const unsigned VO_DISABLE_OCCLUSION = 0x4;
 
 /// %Camera component.
-class ATOMIC_API Camera : public Component
+class URHO3D_API Camera : public Component
 {
-    ATOMIC_OBJECT(Camera, Component);
+    URHO3D_OBJECT(Camera, Component);
 
 public:
     /// Construct.

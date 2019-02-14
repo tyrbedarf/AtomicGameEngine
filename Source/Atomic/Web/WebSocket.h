@@ -70,11 +70,11 @@ enum WebSocketMessageType
 struct WebSocketInternalState;
 
 /// A WebSocket connection.
-class ATOMIC_API WebSocket : public Object
+class URHO3D_API WebSocket : public Object
 {
     friend class Web;
 
-    ATOMIC_OBJECT(WebSocket, Object)
+    URHO3D_OBJECT(WebSocket, Object)
 
 public:
     /// Construct with parameters.

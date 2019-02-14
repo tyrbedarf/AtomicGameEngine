@@ -31,7 +31,7 @@ class Project;
 
 class BuildWindows : public BuildBase
 {
-    ATOMIC_OBJECT(BuildWindows, BuildBase);
+    URHO3D_OBJECT(BuildWindows, BuildBase);
 
 public:
 

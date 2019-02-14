@@ -28,75 +28,75 @@ namespace Urho3D
 {
 
 /// WebView load state change
-ATOMIC_EVENT(E_WEBVIEWLOADSTATECHANGE, WebViewLoadStateChange)
+URHO3D_EVENT(E_WEBVIEWLOADSTATECHANGE, WebViewLoadStateChange)
 {
-    ATOMIC_PARAM(P_CLIENT, Client);   // WebClient*
-    ATOMIC_PARAM(P_LOADING, Loading);   // Boolean
-    ATOMIC_PARAM(P_CANGOBACK, CanGoBack);   // Boolean
-    ATOMIC_PARAM(P_CANGOFORWARD, CanGoForward);   // Boolean
+    URHO3D_PARAM(P_CLIENT, Client);   // WebClient*
+    URHO3D_PARAM(P_LOADING, Loading);   // Boolean
+    URHO3D_PARAM(P_CANGOBACK, CanGoBack);   // Boolean
+    URHO3D_PARAM(P_CANGOFORWARD, CanGoForward);   // Boolean
 }
 
 /// WebView load start
-ATOMIC_EVENT(E_WEBVIEWLOADSTART, WebViewLoadStart)
+URHO3D_EVENT(E_WEBVIEWLOADSTART, WebViewLoadStart)
 {
-    ATOMIC_PARAM(P_CLIENT, Client);   // WebClient*
-    ATOMIC_PARAM(P_URL, Url);   // String
+    URHO3D_PARAM(P_CLIENT, Client);   // WebClient*
+    URHO3D_PARAM(P_URL, Url);   // String
 }
 
 /// WebView load end
-ATOMIC_EVENT(E_WEBVIEWLOADEND, WebViewLoadEnd)
+URHO3D_EVENT(E_WEBVIEWLOADEND, WebViewLoadEnd)
 {
-    ATOMIC_PARAM(P_CLIENT, Client);   // WebClient*
-    ATOMIC_PARAM(P_URL, Url);   // String
+    URHO3D_PARAM(P_CLIENT, Client);   // WebClient*
+    URHO3D_PARAM(P_URL, Url);   // String
 }
 
 /// WebView address change
-ATOMIC_EVENT(E_WEBVIEWADDRESSCHANGE, WebViewAddressChange)
+URHO3D_EVENT(E_WEBVIEWADDRESSCHANGE, WebViewAddressChange)
 {
-    ATOMIC_PARAM(P_CLIENT, Client);   // WebClient*
-    ATOMIC_PARAM(P_URL, Url);   // String
+    URHO3D_PARAM(P_CLIENT, Client);   // WebClient*
+    URHO3D_PARAM(P_URL, Url);   // String
 }
 
 /// WebView title change
-ATOMIC_EVENT(E_WEBVIEWTITLECHANGE, WebViewTitleChange)
+URHO3D_EVENT(E_WEBVIEWTITLECHANGE, WebViewTitleChange)
 {
-    ATOMIC_PARAM(P_CLIENT, Client);   // WebClient*
-    ATOMIC_PARAM(P_TITLE, Title);   // String
+    URHO3D_PARAM(P_CLIENT, Client);   // WebClient*
+    URHO3D_PARAM(P_TITLE, Title);   // String
 }
 
 /// WebView title change
-ATOMIC_EVENT(E_WEBVIEWJSEVALRESULT, WebViewJSEvalResult)
+URHO3D_EVENT(E_WEBVIEWJSEVALRESULT, WebViewJSEvalResult)
 {
-    ATOMIC_PARAM(P_CLIENT, Client);   // WebClient*
-    ATOMIC_PARAM(P_EVALID, EvalID);   // unsigned
-    ATOMIC_PARAM(P_RESULT, Result);   // boolean (true: success, false: error)
-    ATOMIC_PARAM(P_VALUE, Value);   // String (sucess: eval's value, error: exception message)
+    URHO3D_PARAM(P_CLIENT, Client);   // WebClient*
+    URHO3D_PARAM(P_EVALID, EvalID);   // unsigned
+    URHO3D_PARAM(P_RESULT, Result);   // boolean (true: success, false: error)
+    URHO3D_PARAM(P_VALUE, Value);   // String (sucess: eval's value, error: exception message)
 }
 
 /// WebView popup request
-ATOMIC_EVENT(E_WEBVIEWPOPUPREQUEST, WebViewPopupRequest)
+URHO3D_EVENT(E_WEBVIEWPOPUPREQUEST, WebViewPopupRequest)
 {
-    ATOMIC_PARAM(P_CLIENT, Client);   // WebClient*
-    ATOMIC_PARAM(P_URL, Url);   // String
+    URHO3D_PARAM(P_CLIENT, Client);   // WebClient*
+    URHO3D_PARAM(P_URL, Url);   // String
 }
 
 /// WebView load state change
-ATOMIC_EVENT(E_WEBVIEWGLOBALPROPERTIESCHANGED, WebViewGlobalPropertiesChanged)
+URHO3D_EVENT(E_WEBVIEWGLOBALPROPERTIESCHANGED, WebViewGlobalPropertiesChanged)
 {
 }
 
 /// WebView title change
-ATOMIC_EVENT(E_WEBMESSAGE, WebMessage)
+URHO3D_EVENT(E_WEBMESSAGE, WebMessage)
 {
-    ATOMIC_PARAM(P_HANDLER, Handler);          // WebMessageHandler*
-    ATOMIC_PARAM(P_QUERYID, QueryID);          // Double (Int64 CEF Side)
-    ATOMIC_PARAM(P_REQUEST, Request);          // String
-    ATOMIC_PARAM(P_PERSISTENT, Persistent);    // Bool
+    URHO3D_PARAM(P_HANDLER, Handler);          // WebMessageHandler*
+    URHO3D_PARAM(P_QUERYID, QueryID);          // Double (Int64 CEF Side)
+    URHO3D_PARAM(P_REQUEST, Request);          // String
+    URHO3D_PARAM(P_PERSISTENT, Persistent);    // Bool
 
-    ATOMIC_PARAM(P_CEFBROWSER, Browser);       // CefBrowser*
-    ATOMIC_PARAM(P_CEFFRAME, Frame);           // CefFrame*
+    URHO3D_PARAM(P_CEFBROWSER, Browser);       // CefBrowser*
+    URHO3D_PARAM(P_CEFFRAME, Frame);           // CefFrame*
 
-    ATOMIC_PARAM(P_DEFERRED, Deferred);        // Bool Return Value
+    URHO3D_PARAM(P_DEFERRED, Deferred);        // Bool Return Value
 }
 
 

@@ -29,9 +29,9 @@ namespace Urho3D
 {
 
 /// %Console window with log history and command line prompt.
-class ATOMIC_API Console : public Object
+class URHO3D_API Console : public Object
 {
-    ATOMIC_OBJECT(Console, Object);
+    URHO3D_OBJECT(Console, Object);
 
 public:
     /// Construct.

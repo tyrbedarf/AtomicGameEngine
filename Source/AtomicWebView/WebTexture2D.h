@@ -38,7 +38,7 @@ class  WebTexture2D : public WebRenderHandler
 {
     friend class WebTexture2DPrivate;
 
-    ATOMIC_OBJECT(WebTexture2D, WebRenderHandler)
+    URHO3D_OBJECT(WebTexture2D, WebRenderHandler)
 
 public:
 

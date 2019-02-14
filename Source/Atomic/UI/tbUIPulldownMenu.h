@@ -28,9 +28,9 @@
 namespace Urho3D
 {
 
-class ATOMIC_API tbUIPulldownMenu : public tbUIButton
+class URHO3D_API tbUIPulldownMenu : public tbUIButton
 {
-    ATOMIC_OBJECT(tbUIPulldownMenu, tbUIButton)
+    URHO3D_OBJECT(tbUIPulldownMenu, tbUIButton)
 
 public:
 

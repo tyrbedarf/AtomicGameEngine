@@ -13,7 +13,7 @@ namespace Urho3D
 
 class LMStaticModel: public StaticModel
 {
-    ATOMIC_OBJECT(LMStaticModel, StaticModel);
+    URHO3D_OBJECT(LMStaticModel, StaticModel);
 
 public:
     /// Construct.

@@ -28,9 +28,9 @@ namespace Urho3D
 {
 
 
-class ATOMIC_API tbUIRadioButton : public tbUIWidget
+class URHO3D_API tbUIRadioButton : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIRadioButton, tbUIWidget)
+    URHO3D_OBJECT(tbUIRadioButton, tbUIWidget)
 
 public:
 

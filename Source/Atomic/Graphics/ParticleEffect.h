@@ -100,9 +100,9 @@ class XMLFile;
 class XMLElement;
 
 /// %Particle effect definition.
-class ATOMIC_API ParticleEffect : public Resource
+class URHO3D_API ParticleEffect : public Resource
 {
-    ATOMIC_OBJECT(ParticleEffect, Resource);
+    URHO3D_OBJECT(ParticleEffect, Resource);
 
 public:
     /// Construct.

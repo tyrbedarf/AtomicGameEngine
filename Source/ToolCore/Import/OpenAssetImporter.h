@@ -36,7 +36,7 @@ namespace ToolCore
 
 class OpenAssetImporter : public Object
 {
-    ATOMIC_OBJECT(OpenAssetImporter, Object);
+    URHO3D_OBJECT(OpenAssetImporter, Object);
 
 public:
 

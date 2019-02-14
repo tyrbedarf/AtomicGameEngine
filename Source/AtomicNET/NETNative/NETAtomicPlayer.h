@@ -30,7 +30,7 @@ namespace Urho3D
 
     class NETAtomicPlayer : public PlayerApp
     {
-        ATOMIC_OBJECT(NETAtomicPlayer, PlayerApp)
+        URHO3D_OBJECT(NETAtomicPlayer, PlayerApp)
 
     public:
 

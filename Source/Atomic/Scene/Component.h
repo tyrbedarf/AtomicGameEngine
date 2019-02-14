@@ -42,9 +42,9 @@ enum AutoRemoveMode
 };
 
 /// Base class for components. Components can be created to scene nodes.
-class ATOMIC_API Component : public Animatable
+class URHO3D_API Component : public Animatable
 {
-    ATOMIC_OBJECT(Component, Animatable);
+	URHO3D_OBJECT(Component, Animatable);
 
     friend class Node;
     friend class Scene;

@@ -169,11 +169,11 @@ class tbUIFontDescription;
 class tbUISelectItemSource;
 
 /// Wraps a TurboBadger widget in our Object model
-class ATOMIC_API tbUIWidget : public Object, public tb::TBWidgetDelegate
+class URHO3D_API tbUIWidget : public Object, public tb::TBWidgetDelegate
 {
     friend class tbUI;
 
-    ATOMIC_OBJECT(tbUIWidget, Object)
+    URHO3D_OBJECT(tbUIWidget, Object)
 
     public:
 

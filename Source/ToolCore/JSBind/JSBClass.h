@@ -117,7 +117,7 @@ class JSBClass : public Object
     friend class JSClassWriter;
     friend class CSClassWriter;
 
-    ATOMIC_OBJECT(JSBClass, Object)
+    URHO3D_OBJECT(JSBClass, Object)
 
 public:
 

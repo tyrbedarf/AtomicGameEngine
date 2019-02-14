@@ -40,7 +40,7 @@ class UIWebView : public tbUIWidget
 {
     friend class WebViewWidget;
 
-    ATOMIC_OBJECT(UIWebView, tbUIWidget)
+    URHO3D_OBJECT(UIWebView, tbUIWidget)
 
 public:
 

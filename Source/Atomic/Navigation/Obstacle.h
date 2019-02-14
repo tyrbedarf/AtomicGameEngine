@@ -31,9 +31,9 @@ namespace Urho3D
 class DynamicNavigationMesh;
 
 /// Obstacle for dynamic navigation mesh.
-class ATOMIC_API Obstacle : public Component
+class URHO3D_API Obstacle : public Component
 {
-    ATOMIC_OBJECT(Obstacle, Component)
+    URHO3D_OBJECT(Obstacle, Component)
 
     friend class DynamicNavigationMesh;
 

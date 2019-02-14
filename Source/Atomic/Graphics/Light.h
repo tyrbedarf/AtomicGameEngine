@@ -51,7 +51,7 @@ static const unsigned MAX_CASCADE_SPLITS = 1;
 #endif
 
 /// Depth bias parameters. Used both by lights (for shadow mapping) and materials.
-struct ATOMIC_API BiasParameters
+struct URHO3D_API BiasParameters
 {
     /// Construct undefined.
     BiasParameters()
@@ -78,7 +78,7 @@ struct ATOMIC_API BiasParameters
 };
 
 /// Cascaded shadow map parameters.
-struct ATOMIC_API CascadeParameters
+struct URHO3D_API CascadeParameters
 {
     /// Construct undefined.
     CascadeParameters()
@@ -118,7 +118,7 @@ struct ATOMIC_API CascadeParameters
 };
 
 /// Shadow map focusing parameters.
-struct ATOMIC_API FocusParameters
+struct URHO3D_API FocusParameters
 {
     /// Construct undefined.
     FocusParameters()
@@ -151,9 +151,9 @@ struct ATOMIC_API FocusParameters
 };
 
 /// %Light component.
-class ATOMIC_API Light : public Drawable
+class URHO3D_API Light : public Drawable
 {
-    ATOMIC_OBJECT(Light, Drawable);
+    URHO3D_OBJECT(Light, Drawable);
 
 public:
     /// Construct.

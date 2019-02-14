@@ -31,9 +31,9 @@ namespace Urho3D
 {
 
 /// 3D texture resource.
-class ATOMIC_API Texture3D : public Texture
+class URHO3D_API Texture3D : public Texture
 {
-    ATOMIC_OBJECT(Texture3D, Texture);
+    URHO3D_OBJECT(Texture3D, Texture);
 
 public:
     /// Construct.

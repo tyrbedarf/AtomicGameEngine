@@ -37,11 +37,11 @@ class tbUIWidget;
 class tbUIView;
 class tbUIPopupWindow;
 
-class ATOMIC_API tbUI : public Object, private tb::TBWidgetListener
+class URHO3D_API tbUI : public Object, private tb::TBWidgetListener
 {
     friend class tbUIView;
 
-    ATOMIC_OBJECT(tbUI, Object)
+    URHO3D_OBJECT(tbUI, Object)
 
 public:
 

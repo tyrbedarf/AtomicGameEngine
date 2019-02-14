@@ -30,7 +30,7 @@ namespace Urho3D
 
     class NETIPCPlayerApp : public IPCPlayerApp
     {
-        ATOMIC_OBJECT(NETIPCPlayerApp,IPCPlayerApp)
+        URHO3D_OBJECT(NETIPCPlayerApp,IPCPlayerApp)
 
     public:
 

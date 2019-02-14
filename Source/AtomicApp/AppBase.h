@@ -31,7 +31,7 @@ namespace Urho3D
 
     class AppBase : public Application
     {
-        ATOMIC_OBJECT(AppBase, Application)
+        URHO3D_OBJECT(AppBase, Application)
 
     public:
         /// Construct.

@@ -31,7 +31,7 @@ namespace ToolCore
 
 class ToolPrefs : public Object
 {
-    ATOMIC_OBJECT(ToolPrefs, Object)
+	URHO3D_OBJECT(ToolPrefs, Object)
 
 public:
 

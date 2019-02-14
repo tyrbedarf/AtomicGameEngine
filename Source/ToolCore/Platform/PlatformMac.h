@@ -29,7 +29,7 @@ namespace ToolCore
 
 class PlatformMac : public Platform
 {
-    ATOMIC_OBJECT(PlatformMac, Platform);
+    URHO3D_OBJECT(PlatformMac, Platform);
 
 public:
 

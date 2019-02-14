@@ -29,7 +29,7 @@ namespace ToolCore
 
 class AudioImporter : public AssetImporter
 {
-    ATOMIC_OBJECT(AudioImporter, AssetImporter);
+    URHO3D_OBJECT(AudioImporter, AssetImporter);
 
 public:
     /// Construct.

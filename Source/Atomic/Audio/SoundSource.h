@@ -36,9 +36,9 @@ class SoundStream;
 static const int STREAM_BUFFER_LENGTH = 100;
 
 /// %Sound source component with stereo position. A sound source needs to be created to a node to be considered "enabled" and be able to play, however that node does not need to belong to a scene.
-class ATOMIC_API SoundSource : public Component
+class URHO3D_API SoundSource : public Component
 {
-    ATOMIC_OBJECT(SoundSource, Component);
+    URHO3D_OBJECT(SoundSource, Component);
 
 public:
     /// Construct.

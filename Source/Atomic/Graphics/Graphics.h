@@ -78,9 +78,9 @@ struct ScratchBuffer
 };
 
 /// %Graphics subsystem. Manages the application window, rendering state and GPU resources.
-class ATOMIC_API Graphics : public Object
+class URHO3D_API Graphics : public Object
 {
-    ATOMIC_OBJECT(Graphics, Object);
+    URHO3D_OBJECT(Graphics, Object);
 
 public:
     /// Construct.
@@ -820,6 +820,6 @@ private:
 };
 
 /// Register Graphics library objects.
-void ATOMIC_API RegisterGraphicsLibrary(Context* context);
+void URHO3D_API RegisterGraphicsLibrary(Context* context);
 
 }

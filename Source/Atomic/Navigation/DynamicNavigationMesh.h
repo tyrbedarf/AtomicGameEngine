@@ -38,9 +38,9 @@ namespace Urho3D
 class OffMeshConnection;
 class Obstacle;
 
-class ATOMIC_API DynamicNavigationMesh : public NavigationMesh
+class URHO3D_API DynamicNavigationMesh : public NavigationMesh
 {
-    ATOMIC_OBJECT(DynamicNavigationMesh, NavigationMesh)
+    URHO3D_OBJECT(DynamicNavigationMesh, NavigationMesh)
 
     friend class Obstacle;
     friend struct MeshProcess;

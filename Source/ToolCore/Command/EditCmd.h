@@ -31,7 +31,7 @@ namespace ToolCore
 
 class EditCmd: public Command
 {
-    ATOMIC_OBJECT(EditCmd, Command);
+    URHO3D_OBJECT(EditCmd, Command);
 
 public:
 

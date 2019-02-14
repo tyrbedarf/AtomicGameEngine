@@ -43,9 +43,9 @@ enum UI_SCROLL_MODE {
 };
 
 
-class ATOMIC_API tbUIScrollContainer : public tbUIWidget
+class URHO3D_API tbUIScrollContainer : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIScrollContainer, tbUIWidget)
+    URHO3D_OBJECT(tbUIScrollContainer, tbUIWidget)
 
 public:
 

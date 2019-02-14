@@ -30,9 +30,9 @@ namespace Urho3D
 {
 
 
-class ATOMIC_API tbUIButton : public tbUIWidget
+class URHO3D_API tbUIButton : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIButton, tbUIWidget)
+    URHO3D_OBJECT(tbUIButton, tbUIWidget)
 
 public:
 

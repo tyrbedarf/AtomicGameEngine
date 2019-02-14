@@ -36,7 +36,7 @@ class Project;
 
 class ToolSystem : public Object
 {
-    ATOMIC_OBJECT(ToolSystem, Object);
+    URHO3D_OBJECT(ToolSystem, Object);
 
 public:
 

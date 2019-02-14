@@ -32,7 +32,7 @@ namespace Urho3D
     class NETScriptObject : public Object
     {
 
-        ATOMIC_OBJECT(NETScriptObject, Object)
+        URHO3D_OBJECT(NETScriptObject, Object)
 
     public:
         /// Construct.

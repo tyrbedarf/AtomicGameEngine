@@ -27,6 +27,6 @@
 namespace Urho3D
 {
 
-void ATOMIC_API RegisterEnvironmentLibrary(Context* context);
+void URHO3D_API RegisterEnvironmentLibrary(Context* context);
 
 }

@@ -27,13 +27,13 @@
 namespace Urho3D
 {
 
-ATOMIC_EVENT(E_IPCJSERROR, IPCJSError)
-{
-    ATOMIC_PARAM(P_ERRORNAME, ErrorName); // string
-    ATOMIC_PARAM(P_ERRORMESSAGE, ErrorMessage); // string
-    ATOMIC_PARAM(P_ERRORFILENAME, ErrorFileName); // string
-    ATOMIC_PARAM(P_ERRORLINENUMBER, ErrorLineNumber); // int
-    ATOMIC_PARAM(P_ERRORSTACK, ErrorStack); // string
-}
+	URHO3D_EVENT(E_IPCJSERROR, IPCJSError)
+	{
+		URHO3D_PARAM(P_ERRORNAME, ErrorName); // string
+		URHO3D_PARAM(P_ERRORMESSAGE, ErrorMessage); // string
+		URHO3D_PARAM(P_ERRORFILENAME, ErrorFileName); // string
+		URHO3D_PARAM(P_ERRORLINENUMBER, ErrorLineNumber); // int
+		URHO3D_PARAM(P_ERRORSTACK, ErrorStack); // string
+	}
 
 }

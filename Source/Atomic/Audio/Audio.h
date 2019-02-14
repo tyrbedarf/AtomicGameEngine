@@ -37,9 +37,9 @@ class SoundListener;
 class SoundSource;
 
 /// %Audio subsystem.
-class ATOMIC_API Audio : public Object
+class URHO3D_API Audio : public Object
 {
-    ATOMIC_OBJECT(Audio, Object);
+    URHO3D_OBJECT(Audio, Object);
 
 public:
     /// Construct.
@@ -158,6 +158,6 @@ private:
 };
 
 /// Register Audio library objects.
-void ATOMIC_API RegisterAudioLibrary(Context* context);
+void URHO3D_API RegisterAudioLibrary(Context* context);
 
 }

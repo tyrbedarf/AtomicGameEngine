@@ -44,9 +44,9 @@ enum Text3DFontType
 };
 
 /// %Font resource.
-class ATOMIC_API Text3DFont : public Resource
+class URHO3D_API Text3DFont : public Resource
 {
-    ATOMIC_OBJECT(Text3DFont, Resource)
+    URHO3D_OBJECT(Text3DFont, Resource)
 
 public:
     /// Construct.

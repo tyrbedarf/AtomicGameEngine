@@ -50,7 +50,7 @@ enum Orientation2D
 };
 
 /// Tile map information.
-struct ATOMIC_API TileMapInfo2D
+struct URHO3D_API TileMapInfo2D
 {
     /// Orientation.
     Orientation2D orientation_;
@@ -106,7 +106,7 @@ enum TileMapObjectType2D
 };
 
 /// Property set.
-class ATOMIC_API PropertySet2D : public RefCounted
+class URHO3D_API PropertySet2D : public RefCounted
 {
     ATOMIC_REFCOUNTED(PropertySet2D)
 public:
@@ -126,7 +126,7 @@ protected:
 };
 
 /// Tile define.
-class ATOMIC_API Tile2D : public RefCounted
+class URHO3D_API Tile2D : public RefCounted
 {
     ATOMIC_REFCOUNTED(Tile2D)
 
@@ -168,7 +168,7 @@ private:
 };
 
 /// Tile map object.
-class ATOMIC_API TileMapObject2D : public RefCounted
+class URHO3D_API TileMapObject2D : public RefCounted
 {
     ATOMIC_REFCOUNTED(TileMapObject2D)
 

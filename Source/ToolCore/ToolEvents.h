@@ -29,13 +29,13 @@ using namespace Urho3D;
 namespace ToolCore
 {
 
-ATOMIC_EVENT(E_PLATFORMCHANGED, PlatformChanged)
+URHO3D_EVENT(E_PLATFORMCHANGED, PlatformChanged)
 {
-    ATOMIC_PARAM(P_PLATFORM, Platform);    // Platform Ptr
+    URHO3D_PARAM(P_PLATFORM, Platform);    // Platform Ptr
 }
 
 // called at 2Hz for non-time critical updates
-ATOMIC_EVENT(E_TOOLUPDATE, ToolUpdate)
+URHO3D_EVENT(E_TOOLUPDATE, ToolUpdate)
 {
 }
 

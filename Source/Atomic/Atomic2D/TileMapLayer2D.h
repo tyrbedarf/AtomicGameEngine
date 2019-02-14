@@ -41,9 +41,9 @@ class TmxObjectGroup2D;
 class TmxTileLayer2D;
 
 /// Tile map component.
-class ATOMIC_API TileMapLayer2D : public Component
+class URHO3D_API TileMapLayer2D : public Component
 {
-    ATOMIC_OBJECT(TileMapLayer2D, Component);
+    URHO3D_OBJECT(TileMapLayer2D, Component);
 
 public:
     /// Construct.

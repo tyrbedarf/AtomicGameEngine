@@ -28,28 +28,28 @@ namespace Urho3D
 {
 
     /// Reference to CSAssembly made
-    ATOMIC_EVENT(E_CSCOMPONENTASSEMBLYREFERENCE, CSComponentAssemblyReference)
+    URHO3D_EVENT(E_CSCOMPONENTASSEMBLYREFERENCE, CSComponentAssemblyReference)
     {
-        ATOMIC_PARAM(P_ASSEMBLYPATH, AssemblyPath); // String
+        URHO3D_PARAM(P_ASSEMBLYPATH, AssemblyPath); // String
     }
 
-    ATOMIC_EVENT(E_CSCOMPONENTLOAD, CSComponentLoad)
+    URHO3D_EVENT(E_CSCOMPONENTLOAD, CSComponentLoad)
     {
-        ATOMIC_PARAM(P_CLASSNAME, ClassName); // String
-        ATOMIC_PARAM(P_NATIVEINSTANCE, NativeInstance); // CSComponent as void*
-        ATOMIC_PARAM(P_FIELDVALUES, FieldValues);  // VariantMap as void*
+        URHO3D_PARAM(P_CLASSNAME, ClassName); // String
+        URHO3D_PARAM(P_NATIVEINSTANCE, NativeInstance); // CSComponent as void*
+        URHO3D_PARAM(P_FIELDVALUES, FieldValues);  // VariantMap as void*
     }
 
-    ATOMIC_EVENT(E_CSCOMPONENTASSEMBLYCHANGED, CSComponentAssemblyChanged)
+    URHO3D_EVENT(E_CSCOMPONENTASSEMBLYCHANGED, CSComponentAssemblyChanged)
     {
-        ATOMIC_PARAM(P_RESOURCE, Resource); // Resource
-        ATOMIC_PARAM(P_ASSEMBLYPATH, AssemblyPath); // String
+        URHO3D_PARAM(P_RESOURCE, Resource); // Resource
+        URHO3D_PARAM(P_ASSEMBLYPATH, AssemblyPath); // String
     }
 
-    ATOMIC_EVENT(E_CSCOMPONENTCLASSCHANGED, CSComponentClassChanged)
+    URHO3D_EVENT(E_CSCOMPONENTCLASSCHANGED, CSComponentClassChanged)
     {
-        ATOMIC_PARAM(P_CSCOMPONENT, Component); // CSComponent*
-        ATOMIC_PARAM(P_CLASSNAME, Classname); // String
+        URHO3D_PARAM(P_CSCOMPONENT, Component); // CSComponent*
+        URHO3D_PARAM(P_CLASSNAME, Classname); // String
     }
 
 }

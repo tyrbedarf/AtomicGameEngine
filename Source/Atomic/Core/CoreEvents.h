@@ -28,46 +28,46 @@ namespace Urho3D
 {
 
 /// Frame begin event.
-ATOMIC_EVENT(E_BEGINFRAME, BeginFrame)
+URHO3D_EVENT(E_BEGINFRAME, BeginFrame)
 {
-    ATOMIC_PARAM(P_FRAMENUMBER, FrameNumber);      // unsigned
-    ATOMIC_PARAM(P_TIMESTEP, TimeStep);            // float
+    URHO3D_PARAM(P_FRAMENUMBER, FrameNumber);      // unsigned
+    URHO3D_PARAM(P_TIMESTEP, TimeStep);            // float
 }
 
 /// Application-wide logic update event.
-ATOMIC_EVENT(E_UPDATE, Update)
+URHO3D_EVENT(E_UPDATE, Update)
 {
-    ATOMIC_PARAM(P_TIMESTEP, TimeStep);            // float
+    URHO3D_PARAM(P_TIMESTEP, TimeStep);            // float
 }
 
 /// Application-wide logic post-update event.
-ATOMIC_EVENT(E_POSTUPDATE, PostUpdate)
+URHO3D_EVENT(E_POSTUPDATE, PostUpdate)
 {
-    ATOMIC_PARAM(P_TIMESTEP, TimeStep);            // float
+    URHO3D_PARAM(P_TIMESTEP, TimeStep);            // float
 }
 
 /// Render update event.
-ATOMIC_EVENT(E_RENDERUPDATE, RenderUpdate)
+URHO3D_EVENT(E_RENDERUPDATE, RenderUpdate)
 {
-    ATOMIC_PARAM(P_TIMESTEP, TimeStep);            // float
+    URHO3D_PARAM(P_TIMESTEP, TimeStep);            // float
 }
 
 /// Post-render update event.
-ATOMIC_EVENT(E_POSTRENDERUPDATE, PostRenderUpdate)
+URHO3D_EVENT(E_POSTRENDERUPDATE, PostRenderUpdate)
 {
-    ATOMIC_PARAM(P_TIMESTEP, TimeStep);            // float
+    URHO3D_PARAM(P_TIMESTEP, TimeStep);            // float
 }
 
 /// Frame end event.
-ATOMIC_EVENT(E_ENDFRAME, EndFrame)
+URHO3D_EVENT(E_ENDFRAME, EndFrame)
 {
 }
 
 // ATOMIC BEGIN
 /// Updating paused or resumed event.
-ATOMIC_EVENT(E_UPDATESPAUSEDRESUMED, UpdatesPaused)
+URHO3D_EVENT(E_UPDATESPAUSEDRESUMED, UpdatesPaused)
 {
-    ATOMIC_PARAM(P_PAUSED, Paused);            // bool
+    URHO3D_PARAM(P_PAUSED, Paused);            // bool
 }
 // ATOMIC END
 

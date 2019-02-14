@@ -38,9 +38,9 @@ class XMLFile;
 class View;
 
 /// %Viewport definition either for a render surface or the backbuffer.
-class ATOMIC_API Viewport : public Object
+class URHO3D_API Viewport : public Object
 {
-    ATOMIC_OBJECT(Viewport, Object);
+    URHO3D_OBJECT(Viewport, Object);
 
 public:
     /// Construct with defaults.

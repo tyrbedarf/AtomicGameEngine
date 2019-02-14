@@ -28,9 +28,9 @@ namespace Urho3D
 {
 
 
-class ATOMIC_API tbUIClickLabel : public tbUIWidget
+class URHO3D_API tbUIClickLabel : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIClickLabel, tbUIWidget)
+    URHO3D_OBJECT(tbUIClickLabel, tbUIWidget)
 
 public:
 

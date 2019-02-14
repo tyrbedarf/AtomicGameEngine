@@ -40,7 +40,7 @@ namespace Urho3D
 class SystemUI
         : public Urho3D::Object
 {
-ATOMIC_OBJECT(SystemUI, Urho3D::Object);
+URHO3D_OBJECT(SystemUI, Urho3D::Object);
 public:
     SystemUI(Urho3D::Context* context);
     ~SystemUI();

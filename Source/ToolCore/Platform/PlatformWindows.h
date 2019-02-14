@@ -29,7 +29,7 @@ namespace ToolCore
 
 class PlatformWindows : public Platform
 {
-    ATOMIC_OBJECT(PlatformWindows, Platform);
+    URHO3D_OBJECT(PlatformWindows, Platform);
 
 public:
 

@@ -50,7 +50,7 @@ struct VertexDeclarationElement
 };
 
 /// Vertex declaration.
-class ATOMIC_API VertexDeclaration : public RefCounted
+class URHO3D_API VertexDeclaration : public RefCounted
 {
     ATOMIC_REFCOUNTED(VertexDeclaration)
 

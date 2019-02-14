@@ -31,9 +31,9 @@ namespace Urho3D
 
 class tbUISelectItemSource;
 
-class ATOMIC_API tbUIMenuWindow : public tbUIWidget
+class URHO3D_API tbUIMenuWindow : public tbUIWidget
 {
-    ATOMIC_OBJECT(tbUIMenuWindow, tbUIWidget)
+    URHO3D_OBJECT(tbUIMenuWindow, tbUIWidget)
 
 public:
 

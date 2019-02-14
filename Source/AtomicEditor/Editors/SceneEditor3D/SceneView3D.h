@@ -46,7 +46,7 @@ class SceneEditor3D;
 
 class SceneView3D: public UISceneView
 {
-    ATOMIC_OBJECT(SceneView3D, UISceneView);
+    URHO3D_OBJECT(SceneView3D, UISceneView);
 
 public:
 

@@ -32,7 +32,7 @@ namespace Urho3D
 
 class tbUIPromptWindow : public tbUIWindow
 {
-    ATOMIC_OBJECT(tbUIPromptWindow, tbUIWindow)
+    URHO3D_OBJECT(tbUIPromptWindow, tbUIWindow)
 
 public:
 

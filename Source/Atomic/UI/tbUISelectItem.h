@@ -33,9 +33,9 @@ namespace Urho3D
 
 class tbUISelectItemSource;
 
-class ATOMIC_API tbUISelectItem : public Object
+class URHO3D_API tbUISelectItem : public Object
 {
-    ATOMIC_OBJECT(tbUISelectItem, Object)
+    URHO3D_OBJECT(tbUISelectItem, Object)
 
 public:
 
@@ -64,9 +64,9 @@ protected:
 
 };
 
-class ATOMIC_API tbUISelectItemSource : public Object
+class URHO3D_API tbUISelectItemSource : public Object
 {
-    ATOMIC_OBJECT(tbUISelectItemSource, Object)
+    URHO3D_OBJECT(tbUISelectItemSource, Object)
 
 public:
 

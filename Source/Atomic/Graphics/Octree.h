@@ -36,7 +36,7 @@ static const int NUM_OCTANTS = 8;
 static const unsigned ROOT_INDEX = M_MAX_UNSIGNED;
 
 /// %Octree octant
-class ATOMIC_API Octant
+class URHO3D_API Octant
 {
 public:
     /// Construct.
@@ -157,11 +157,11 @@ protected:
 };
 
 /// %Octree component. Should be added only to the root scene node
-class ATOMIC_API Octree : public Component, public Octant
+class URHO3D_API Octree : public Component, public Octant
 {
     friend void RaycastDrawablesWork(const WorkItem* item, unsigned threadIndex);
 
-    ATOMIC_OBJECT(Octree, Component);
+    URHO3D_OBJECT(Octree, Component);
 
 public:
     /// Construct.

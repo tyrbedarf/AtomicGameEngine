@@ -33,9 +33,9 @@ class Animation;
 class AnimationState;
 
 /// Animated model component.
-class ATOMIC_API AnimatedModel : public StaticModel
+class URHO3D_API AnimatedModel : public StaticModel
 {
-    ATOMIC_OBJECT(AnimatedModel, StaticModel);
+    URHO3D_OBJECT(AnimatedModel, StaticModel);
 
     friend class AnimationState;
 

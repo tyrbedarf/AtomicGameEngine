@@ -30,7 +30,7 @@ namespace AtomicEditor
 {
     class AEPlayerApplication : public IPCPlayerApp
     {
-        ATOMIC_OBJECT(AEPlayerApplication, IPCPlayerApp)
+        URHO3D_OBJECT(AEPlayerApplication, IPCPlayerApp)
 
     public:
         /// Construct.

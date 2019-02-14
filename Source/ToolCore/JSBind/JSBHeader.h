@@ -44,7 +44,7 @@ class JSBModule;
 class JSBHeader : public Object
 {
 
-    ATOMIC_OBJECT(JSBHeader, Object)
+    URHO3D_OBJECT(JSBHeader, Object)
 
 public:
 

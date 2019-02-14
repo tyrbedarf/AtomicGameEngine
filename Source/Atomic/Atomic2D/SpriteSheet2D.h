@@ -34,9 +34,9 @@ class XMLFile;
 class JSONFile;
 
 /// Sprite sheet.
-class ATOMIC_API SpriteSheet2D : public Resource
+class URHO3D_API SpriteSheet2D : public Resource
 {
-    ATOMIC_OBJECT(SpriteSheet2D, Resource);
+    URHO3D_OBJECT(SpriteSheet2D, Resource);
 
 public:
     /// Construct.

@@ -36,9 +36,9 @@ namespace Urho3D
 {
 
 /// Named pipe for interprocess communication.
-class ATOMIC_API NamedPipe : public Object, public AbstractFile
+class URHO3D_API NamedPipe : public Object, public AbstractFile
 {
-    ATOMIC_OBJECT(NamedPipe, Object);
+    URHO3D_OBJECT(NamedPipe, Object);
 
 public:
     /// Construct.

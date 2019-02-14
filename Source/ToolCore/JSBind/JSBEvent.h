@@ -39,7 +39,7 @@ namespace ToolCore
     class JSBEvent : public Object
     {
 
-        ATOMIC_OBJECT(JSBEvent, Object)
+        URHO3D_OBJECT(JSBEvent, Object)
 
     public:
 

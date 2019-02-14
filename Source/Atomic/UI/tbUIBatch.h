@@ -38,7 +38,7 @@ class Texture;
 static const unsigned UI_VERTEX_SIZE = 6;
 
 /// %UI rendering draw call.
-class ATOMIC_API tbUIBatch
+class URHO3D_API tbUIBatch
 {
 public:
     /// Construct with defaults.

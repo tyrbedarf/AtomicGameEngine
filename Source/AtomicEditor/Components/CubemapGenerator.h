@@ -45,7 +45,7 @@ namespace AtomicEditor
 
 class CubemapGenerator : public EditorComponent
 {
-    ATOMIC_OBJECT(CubemapGenerator, EditorComponent);
+    URHO3D_OBJECT(CubemapGenerator, EditorComponent);
 
 public:
     /// Construct.

@@ -55,11 +55,11 @@ enum WebRequestState
 struct WebRequestInternalState;
 
 /// An HTTP(S) connection with response data stream that uses curl internally
-class ATOMIC_API WebRequest : public Object
+class URHO3D_API WebRequest : public Object
 {
     friend class Web;
 
-    ATOMIC_OBJECT(WebRequest, Object)
+    URHO3D_OBJECT(WebRequest, Object)
 
 public:
     /// Construct with parameters.

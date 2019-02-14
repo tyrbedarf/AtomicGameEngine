@@ -31,9 +31,9 @@ namespace Urho3D
 {
 
 /// %Database connection.
-class ATOMIC_API DbConnection : public Object
+class URHO3D_API DbConnection : public Object
 {
-    ATOMIC_OBJECT(DbConnection, Object);
+    URHO3D_OBJECT(DbConnection, Object);
 
 public:
     /// Construct.

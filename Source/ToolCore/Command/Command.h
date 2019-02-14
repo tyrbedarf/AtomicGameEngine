@@ -29,20 +29,20 @@ using namespace Urho3D;
 namespace ToolCore
 {
 
-ATOMIC_EVENT(E_COMMANDERROR, CommandError)
+URHO3D_EVENT(E_COMMANDERROR, CommandError)
 {
-    ATOMIC_PARAM(P_MESSAGE, Message);      // string
+    URHO3D_PARAM(P_MESSAGE, Message);      // string
 }
 
 
-ATOMIC_EVENT(E_COMMANDFINISHED, CommandFinished)
+URHO3D_EVENT(E_COMMANDFINISHED, CommandFinished)
 {
 
 }
 
 class Command : public Object
 {
-    ATOMIC_OBJECT(Command, Object)
+    URHO3D_OBJECT(Command, Object)
 
 public:
 

@@ -33,9 +33,9 @@ class StaticModel;
 class Material;
 
 // UI Component which can be attached to a scene node with a StaticModel
-class ATOMIC_API tbUIComponent : public Component
+class URHO3D_API tbUIComponent : public Component
 {
-    ATOMIC_OBJECT(tbUIComponent, Component)
+    URHO3D_OBJECT(tbUIComponent, Component)
 
 public:
 

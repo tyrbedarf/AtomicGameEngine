@@ -31,7 +31,7 @@ class Image;
 class Serializer;
 
 /// Bitmap font face description.
-class ATOMIC_API Text3DBitmap : public Text3DFontFace
+class URHO3D_API Text3DBitmap : public Text3DFontFace
 {
     ATOMIC_REFCOUNTED(Text3DBitmap)
 

@@ -31,7 +31,7 @@ namespace ToolCore
 
 class ProjectCmd: public Command
 {
-    ATOMIC_OBJECT(ProjectCmd, Command)
+    URHO3D_OBJECT(ProjectCmd, Command)
 
 public:
 

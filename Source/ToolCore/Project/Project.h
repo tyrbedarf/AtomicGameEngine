@@ -38,7 +38,7 @@ class Project : public Object
 {
     friend class ProjectFile;
 
-    ATOMIC_OBJECT(Project, Object);
+    URHO3D_OBJECT(Project, Object);
 
 public:
     /// Construct.

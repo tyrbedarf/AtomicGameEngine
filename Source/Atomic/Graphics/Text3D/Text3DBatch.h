@@ -38,7 +38,7 @@ class Text3DText;
 static const unsigned TEXT3D_VERTEX_SIZE = 6;
 
 /// Text rendering draw call.
-class ATOMIC_API Text3DBatch
+class URHO3D_API Text3DBatch
 {
 public:
     /// Construct with defaults.
