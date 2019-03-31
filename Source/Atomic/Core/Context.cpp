@@ -51,7 +51,7 @@ static int ikInitCounter = 0;
 // Reroute all messages from the ik library to the Atomic log
 static void HandleIKLog(const char* msg)
 {
-    ATOMIC_LOGINFOF("[IK] %s", msg);
+    URHO3D_LOGINFOF("[IK] %s", msg);
 }
 #endif
 
@@ -205,7 +205,7 @@ void Context::RegisterAttribute(StringHash objectType, const AttributeInfo& attr
     // None or pointer types can not be supported
     if (attr.type_ == VAR_NONE || attr.type_ == VAR_VOIDPTR || attr.type_ == VAR_PTR)
     {
-        ATOMIC_LOGWARNING("Attempt to register unsupported attribute type " + Variant::GetTypeName(attr.type_) + " to class " +
+        URHO3D_LOGWARNING("Attempt to register unsupported attribute type " + Variant::GetTypeName(attr.type_) + " to class " +
             GetTypeName(objectType));
         return;
     }
@@ -250,10 +250,10 @@ bool Context::RequireSDL(unsigned int sdlFlags)
     // Need to call SDL_Init() at least once before SDL_InitSubsystem()
     if (sdlInitCounter == 1)
     {
-        ATOMIC_LOGDEBUG("Initialising SDL");
+        URHO3D_LOGDEBUG("Initialising SDL");
         if (SDL_Init(0) != 0)
         {
-            ATOMIC_LOGERRORF("Failed to initialise SDL: %s", SDL_GetError());
+            URHO3D_LOGERRORF("Failed to initialise SDL: %s", SDL_GetError());
             return false;
         }
     }
@@ -263,7 +263,7 @@ bool Context::RequireSDL(unsigned int sdlFlags)
     {
         if (SDL_InitSubSystem(remainingFlags) != 0)
         {
-            ATOMIC_LOGERRORF("Failed to initialise SDL subsystem: %s", SDL_GetError());
+            URHO3D_LOGERRORF("Failed to initialise SDL subsystem: %s", SDL_GetError());
             return false;
         }
     }
@@ -277,13 +277,13 @@ void Context::ReleaseSDL()
 
     if (sdlInitCounter == 0)
     {
-        ATOMIC_LOGDEBUG("Quitting SDL");
+        URHO3D_LOGDEBUG("Quitting SDL");
         SDL_QuitSubSystem(SDL_INIT_EVERYTHING);
         SDL_Quit();
     }
 
     if (sdlInitCounter < 0)
-        ATOMIC_LOGERROR("Too many calls to Context::ReleaseSDL()!");
+        URHO3D_LOGERROR("Too many calls to Context::ReleaseSDL()!");
 }
 
 #ifdef ATOMIC_IK
@@ -325,7 +325,7 @@ void Context::CopyBaseAttributes(StringHash baseType, StringHash derivedType)
     // Prevent endless loop if mistakenly copying attributes from same class as derived
     if (baseType == derivedType)
     {
-        ATOMIC_LOGWARNING("Attempt to copy base attributes to itself for class " + GetTypeName(baseType));
+        URHO3D_LOGWARNING("Attempt to copy base attributes to itself for class " + GetTypeName(baseType));
         return;
     }
 

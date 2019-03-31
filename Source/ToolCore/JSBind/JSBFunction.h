@@ -278,7 +278,7 @@ public:
             sig += ToString(" (Skipped: %s)", skipText.CString());
         }
 
-        ATOMIC_LOGINFOF("      %s", sig.CString());
+        URHO3D_LOGINFOF("      %s", sig.CString());
 
     }
 

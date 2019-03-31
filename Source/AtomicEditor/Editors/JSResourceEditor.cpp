@@ -156,7 +156,7 @@ void JSResourceEditor::HandleWebMessage(StringHash eventType, VariantMap& eventD
                     file.Write((void*) code.CString(), code.Length());
                     file.Close();
             } else {
-                ATOMIC_LOGWARNING("Ignoring attempt to write file: " + fn);
+                URHO3D_LOGWARNING("Ignoring attempt to write file: " + fn);
             }
         }
     }

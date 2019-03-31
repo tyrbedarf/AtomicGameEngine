@@ -72,7 +72,7 @@ bool Texture3D::BeginLoad(Deserializer& source)
     // If device is lost, retry later
     if (graphics_->IsDeviceLost())
     {
-        ATOMIC_LOGWARNING("Texture load while device is lost");
+        URHO3D_LOGWARNING("Texture load while device is lost");
         dataPending_ = true;
         return true;
     }
@@ -135,7 +135,7 @@ bool Texture3D::BeginLoad(Deserializer& source)
         return true;
     }
 
-    ATOMIC_LOGERROR("Texture3D XML data for " + GetName() + " did not contain either volume or colorlut element");
+    URHO3D_LOGERROR("Texture3D XML data for " + GetName() + " did not contain either volume or colorlut element");
     return false;
 }
 
@@ -162,12 +162,12 @@ bool Texture3D::SetSize(int width, int height, int depth, unsigned format, Textu
 {
     if (width <= 0 || height <= 0 || depth <= 0)
     {
-        ATOMIC_LOGERROR("Zero or negative 3D texture dimensions");
+        URHO3D_LOGERROR("Zero or negative 3D texture dimensions");
         return false;
     }
     if (usage >= TEXTURE_RENDERTARGET)
     {
-        ATOMIC_LOGERROR("Rendertarget or depth-stencil usage not supported for 3D textures");
+        URHO3D_LOGERROR("Rendertarget or depth-stencil usage not supported for 3D textures");
         return false;
     }
 

@@ -106,7 +106,7 @@ void PlatformAndroid::RefreshAndroidTargets()
 
     if (!fileSystem->DirExists(androidSDKPath))
     {
-        ATOMIC_LOGERRORF("The Android SDK path %s does not exist", androidSDKPath.CString());
+        URHO3D_LOGERRORF("The Android SDK path %s does not exist", androidSDKPath.CString());
         return;
     }
 

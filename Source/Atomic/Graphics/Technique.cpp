@@ -354,7 +354,7 @@ bool Technique::BeginLoad(Deserializer& source)
                 newPass->SetAlphaToCoverage(passElem.GetBool("alphatocoverage"));
         }
         else
-            ATOMIC_LOGERROR("Missing pass name");
+            URHO3D_LOGERROR("Missing pass name");
 
         passElem = passElem.GetNext("pass");
     }

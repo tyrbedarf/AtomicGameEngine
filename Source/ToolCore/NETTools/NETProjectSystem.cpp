@@ -180,14 +180,14 @@ namespace ToolCore
 
         if (eventData[P_SUCCESS].GetBool())
         {
-            ATOMIC_LOGINFOF("NETBuild Success for project");
+            URHO3D_LOGINFOF("NETBuild Success for project");
         }
         else
         {
             const String& errorText = eventData[P_ERRORTEXT].GetString();
 
-            ATOMIC_LOGERRORF("\n%s\n", errorText.CString());
-            ATOMIC_LOGERRORF("NETBuild Error for project");
+            URHO3D_LOGERRORF("\n%s\n", errorText.CString());
+            URHO3D_LOGERRORF("NETBuild Error for project");
         }
 
     }
@@ -200,7 +200,7 @@ namespace ToolCore
         {
             if (!GenerateSolution())
             {
-                ATOMIC_LOGERRORF("NETProjectSystem::BuildAtomicProject - solutionPath does not exist: %s", solutionPath_.CString());
+                URHO3D_LOGERRORF("NETProjectSystem::BuildAtomicProject - solutionPath does not exist: %s", solutionPath_.CString());
                 return nullptr;
             }
         }
@@ -243,7 +243,7 @@ namespace ToolCore
         if (buildBase->GetBuildFailed())
         {
             const StringVector& errors = buildBase->GetBuildErrors();
-            ATOMIC_LOGERRORF("NETProjectSystem::GenerateSolution - Unable to Build Resources.pak: %s", errors.Size() ? errors[0].CString() : "Unknown Error");
+            URHO3D_LOGERRORF("NETProjectSystem::GenerateSolution - Unable to Build Resources.pak: %s", errors.Size() ? errors[0].CString() : "Unknown Error");
             return false;
         }
 
@@ -258,7 +258,7 @@ namespace ToolCore
 
         if (!project)
         {
-            ATOMIC_LOGERRORF("NETProjectSystem::GenerateSolution - No Project Loaded");
+            URHO3D_LOGERRORF("NETProjectSystem::GenerateSolution - No Project Loaded");
             return false;
         }
 
@@ -280,13 +280,13 @@ namespace ToolCore
 
         if (!gen->LoadAtomicProject(project->GetProjectPath()))
         {
-            ATOMIC_LOGERRORF("NETProjectSystem::GenerateSolution - Unable to Load Project");
+            URHO3D_LOGERRORF("NETProjectSystem::GenerateSolution - Unable to Load Project");
             return false;
         }
 
         if (!gen->Generate())
         {
-            ATOMIC_LOGERRORF("NETProjectSystem::GenerateSolution - Unable to Generate Project");
+            URHO3D_LOGERRORF("NETProjectSystem::GenerateSolution - Unable to Generate Project");
             return false;
         }
 
@@ -442,7 +442,7 @@ namespace ToolCore
 
         if (!project || !projectAssemblyPath_.Length())
         {
-            ATOMIC_LOGERROR("NETProjectSystem::CheckProjectAssembly() - Called with no project loaded or an empty project assembly path");
+            URHO3D_LOGERROR("NETProjectSystem::CheckProjectAssembly() - Called with no project loaded or an empty project assembly path");
             projectAssemblyDirty_ = false;
             return;
         }
@@ -617,13 +617,13 @@ namespace ToolCore
 
             if (!fileSystem->CreateDirsRecursive(dstPath))
             {
-                ATOMIC_LOGERRORF("NETProjectGen::CopyAtomicAssemblies - Unable to create folder: %s", dstPath.CString());
+                URHO3D_LOGERRORF("NETProjectGen::CopyAtomicAssemblies - Unable to create folder: %s", dstPath.CString());
                 continue;
             }
 
             if (!fileSystem->Copy(srcFile, dstFile))
             {
-                ATOMIC_LOGERRORF("NETProjectGen::CopyAtomicAssemblies - Unable to copy file from: %s to %s", srcFile.CString(), dstPath.CString());
+                URHO3D_LOGERRORF("NETProjectGen::CopyAtomicAssemblies - Unable to copy file from: %s to %s", srcFile.CString(), dstPath.CString());
                 continue;
             }
 

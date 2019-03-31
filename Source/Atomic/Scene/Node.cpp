@@ -925,7 +925,7 @@ Component* Node::CreateComponentInternal(StringHash type, CreateMode mode, unsig
     SharedPtr<Component> newComponent = DynamicCast<Component>(context_->CreateObject(type, source));
     if (!newComponent)
     {
-        ATOMIC_LOGERROR("Could not create unknown component type " + type.ToString());
+        URHO3D_LOGERROR("Could not create unknown component type " + type.ToString());
         return 0;
     }
 
@@ -953,7 +953,7 @@ Component* Node::CloneComponent(Component* component, unsigned id)
 {
     if (!component)
     {
-        ATOMIC_LOGERROR("Null source component given for CloneComponent");
+        URHO3D_LOGERROR("Null source component given for CloneComponent");
         return 0;
     }
 
@@ -964,14 +964,14 @@ Component* Node::CloneComponent(Component* component, CreateMode mode, unsigned 
 {
     if (!component)
     {
-        ATOMIC_LOGERROR("Null source component given for CloneComponent");
+        URHO3D_LOGERROR("Null source component given for CloneComponent");
         return 0;
     }
 
     Component* cloneComponent = SafeCreateComponent(component->GetTypeName(), component->GetType(), mode, 0);
     if (!cloneComponent)
     {
-        ATOMIC_LOGERROR("Could not clone component " + component->GetTypeName());
+        URHO3D_LOGERROR("Could not clone component " + component->GetTypeName());
         return 0;
     }
 
@@ -1112,7 +1112,7 @@ Node* Node::Clone(CreateMode mode)
     // The scene itself can not be cloned
     if (this == scene_ || !parent_)
     {
-        ATOMIC_LOGERROR("Can not clone node without a parent");
+        URHO3D_LOGERROR("Can not clone node without a parent");
         return 0;
     }
 
@@ -1501,7 +1501,7 @@ void Node::SetNetParentAttr(const PODVector<unsigned char>& value)
     Node* baseNode = scene->GetNode(baseNodeID);
     if (!baseNode)
     {
-        ATOMIC_LOGWARNING("Failed to find parent node " + String(baseNodeID));
+        URHO3D_LOGWARNING("Failed to find parent node " + String(baseNodeID));
         return;
     }
 
@@ -1514,7 +1514,7 @@ void Node::SetNetParentAttr(const PODVector<unsigned char>& value)
         StringHash nameHash = buf.ReadStringHash();
         Node* parentNode = baseNode->GetChild(nameHash, true);
         if (!parentNode)
-            ATOMIC_LOGWARNING("Failed to find parent node with name hash " + nameHash.ToString());
+            URHO3D_LOGWARNING("Failed to find parent node with name hash " + nameHash.ToString());
         else
             parentNode->AddChild(this);
     }
@@ -1842,7 +1842,7 @@ void Node::AddComponent(Component* component, unsigned id, CreateMode mode)
     components_.Push(SharedPtr<Component>(component));
 
     if (component->GetNode())
-        ATOMIC_LOGWARNING("Component " + component->GetTypeName() + " already belongs to a node!");
+        URHO3D_LOGWARNING("Component " + component->GetTypeName() + " already belongs to a node!");
 
     component->SetNode(this);
 
@@ -1956,7 +1956,7 @@ Animatable* Node::FindAttributeAnimationTarget(const String& name, String& outNa
 
             if (!node)
             {
-                ATOMIC_LOGERROR("Could not find node by name " + name);
+                URHO3D_LOGERROR("Could not find node by name " + name);
                 return 0;
             }
         }
@@ -1969,7 +1969,7 @@ Animatable* Node::FindAttributeAnimationTarget(const String& name, String& outNa
 
         if (i != names.Size() - 2 || names[i].Front() != '@')
         {
-            ATOMIC_LOGERROR("Invalid name " + name);
+            URHO3D_LOGERROR("Invalid name " + name);
             return 0;
         }
 
@@ -1980,7 +1980,7 @@ Animatable* Node::FindAttributeAnimationTarget(const String& name, String& outNa
             Component* component = node->GetComponent(StringHash(componentNames.Front()));
             if (!component)
             {
-                ATOMIC_LOGERROR("Could not find component by name " + name);
+                URHO3D_LOGERROR("Could not find component by name " + name);
                 return 0;
             }
 
@@ -1994,7 +1994,7 @@ Animatable* Node::FindAttributeAnimationTarget(const String& name, String& outNa
             node->GetComponents(components, StringHash(componentNames.Front()));
             if (index >= components.Size())
             {
-                ATOMIC_LOGERROR("Could not find component by name " + name);
+                URHO3D_LOGERROR("Could not find component by name " + name);
                 return 0;
             }
 
@@ -2009,7 +2009,7 @@ void Node::SetEnabled(bool enable, bool recursive, bool storeSelf)
     // The enabled state of the whole scene can not be changed. SetUpdateEnabled() is used instead to start/stop updates.
     if (GetType() == Scene::GetTypeStatic())
     {
-        ATOMIC_LOGERROR("Can not change enabled state of the Scene");
+        URHO3D_LOGERROR("Can not change enabled state of the Scene");
         return;
     }
 
@@ -2086,7 +2086,7 @@ Component* Node::SafeCreateComponent(const String& typeName, StringHash type, Cr
         return CreateComponentInternal(type, mode, id, source);
     else
     {
-        ATOMIC_LOGWARNING("Component type " + type.ToString() + " not known, creating UnknownComponent as placeholder");
+        URHO3D_LOGWARNING("Component type " + type.ToString() + " not known, creating UnknownComponent as placeholder");
         // Else create as UnknownComponent
         SharedPtr<UnknownComponent> newComponent(new UnknownComponent(context_));
         if (typeName.Empty() || typeName.StartsWith("Unknown", false))

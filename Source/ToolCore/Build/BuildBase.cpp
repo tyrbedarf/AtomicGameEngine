@@ -76,7 +76,7 @@ bool BuildBase::BuildClean(const String& path)
 {
     if (buildFailed_)
     {
-        ATOMIC_LOGERRORF("BuildBase::BuildClean - Attempt to clean directory of failed build, %s", path.CString());
+        URHO3D_LOGERRORF("BuildBase::BuildClean - Attempt to clean directory of failed build, %s", path.CString());
         return false;
     }
 
@@ -110,7 +110,7 @@ bool BuildBase::BuildClean(const String& path)
         }
         else
         {
-            ATOMIC_LOGWARNINGF("BuildBase::BuildClean - temp build folder exists, removing: %s", newPath.CString());
+            URHO3D_LOGWARNINGF("BuildBase::BuildClean - temp build folder exists, removing: %s", newPath.CString());
             fileSystem->RemoveDir(newPath, true);
         }
 
@@ -137,7 +137,7 @@ bool BuildBase::BuildCreateDirectory(const String& path)
 {
     if (buildFailed_)
     {
-        ATOMIC_LOGERRORF("BuildBase::BuildCreateDirectory - Attempt to create directory of failed build, %s", path.CString());
+        URHO3D_LOGERRORF("BuildBase::BuildCreateDirectory - Attempt to create directory of failed build, %s", path.CString());
         return false;
     }
 
@@ -162,7 +162,7 @@ bool BuildBase::BuildCopyFile(const String& srcFileName, const String& destFileN
 {
     if (buildFailed_)
     {
-        ATOMIC_LOGERRORF("BuildBase::BuildCopyFile - Attempt to copy file of failed build, %s", srcFileName.CString());
+        URHO3D_LOGERRORF("BuildBase::BuildCopyFile - Attempt to copy file of failed build, %s", srcFileName.CString());
         return false;
     }
 
@@ -183,7 +183,7 @@ bool BuildBase::BuildCopyDir(const String& srcDir, const String& destDir)
 {
     if (buildFailed_)
     {
-        ATOMIC_LOGERRORF("BuildBase::BuildCopyDir - Attempt to copy directory of failed build, %s", srcDir.CString());
+        URHO3D_LOGERRORF("BuildBase::BuildCopyDir - Attempt to copy directory of failed build, %s", srcDir.CString());
         return false;
     }
 
@@ -209,7 +209,7 @@ bool BuildBase::BuildRemoveDirectory(const String& path)
 {
     if (buildFailed_)
     {
-        ATOMIC_LOGERRORF("BuildBase::BuildRemoveDirectory - Attempt to remove directory of failed build, %s", path.CString());
+        URHO3D_LOGERRORF("BuildBase::BuildRemoveDirectory - Attempt to remove directory of failed build, %s", path.CString());
         return false;
     }
 
@@ -241,7 +241,7 @@ void BuildBase::BuildLog(const String& message, bool sendEvent)
     buildLog_.Push(message);
 
     if (autoLog_)
-        ATOMIC_LOGINFO(message);
+        URHO3D_LOGINFO(message);
 
     if (sendEvent)
     {
@@ -258,7 +258,7 @@ void BuildBase::BuildWarn(const String& warning, bool sendEvent)
     buildWarnings_.Push(warning);
 
     if (autoLog_)
-        ATOMIC_LOGWARNING(warning);
+        URHO3D_LOGWARNING(warning);
 
     if (sendEvent)
     {
@@ -275,7 +275,7 @@ void BuildBase::BuildError(const String& error, bool sendEvent)
     buildErrors_.Push(error);
 
     if (autoLog_)
-        ATOMIC_LOGERROR(error);
+        URHO3D_LOGERROR(error);
 
     if (sendEvent)
     {
@@ -290,7 +290,7 @@ void BuildBase::FailBuild(const String& message)
 {
     if (buildFailed_)
     {
-        ATOMIC_LOGERRORF("BuildBase::FailBuild - Attempt to fail already failed build: %s", message.CString());
+        URHO3D_LOGERRORF("BuildBase::FailBuild - Attempt to fail already failed build: %s", message.CString());
         return;
     }
 
@@ -348,7 +348,7 @@ void BuildBase::BuildDefaultResourceEntries()
 
             if (verbose_)
             {
-                ATOMIC_LOGINFO(ToString("Default Resource Added: %s%s", resourceDir.CString(), filename.CString()));
+                URHO3D_LOGINFO(ToString("Default Resource Added: %s%s", resourceDir.CString(), filename.CString()));
             }
         }
     }
@@ -468,7 +468,7 @@ void BuildBase::BuildAllProjectResourceEntries()
             {
                 if (autoLog_)
                 {
-                    ATOMIC_LOGINFO(ToString("Project Resource not included because compressed version exists: %s%s", projectResourceDir.CString(), fileNamesInProject[i].CString()));
+                    URHO3D_LOGINFO(ToString("Project Resource not included because compressed version exists: %s%s", projectResourceDir.CString(), fileNamesInProject[i].CString()));
                 }
             }
             else
@@ -477,7 +477,7 @@ void BuildBase::BuildAllProjectResourceEntries()
 
                 if (verbose_)
                 {
-                    ATOMIC_LOGINFO(ToString("Project Resource Added: %s%s", projectResourceDir.CString(), fileNamesInProject[i].CString()));
+                    URHO3D_LOGINFO(ToString("Project Resource Added: %s%s", projectResourceDir.CString(), fileNamesInProject[i].CString()));
                 }
             }
         }
@@ -509,7 +509,7 @@ void BuildBase::BuildFilteredProjectResourceEntries()
         itr++;
         if (itr == resourceTags.End())
         {
-            ATOMIC_LOGERRORF("BuildBase::BuildFilteredProjectResourceEntries - Asset build-tag \"%s\" not defined in ./Settings/AssetBuildConfig.json", assetBuildTag_.CString());
+            URHO3D_LOGERRORF("BuildBase::BuildFilteredProjectResourceEntries - Asset build-tag \"%s\" not defined in ./Settings/AssetBuildConfig.json", assetBuildTag_.CString());
         }
     }
 

@@ -376,7 +376,7 @@ void Octree::Update(const FrameInfo& frame)
 {
     if (!Thread::IsMainThread())
     {
-        ATOMIC_LOGERROR("Octree::Update() can not be called from worker threads");
+        URHO3D_LOGERROR("Octree::Update() can not be called from worker threads");
         return;
     }
 
@@ -475,7 +475,7 @@ void Octree::Update(const FrameInfo& frame)
             octant = drawable->GetOctant();
             if (octant != this && octant->GetCullingBox().IsInside(box) != INSIDE)
             {
-                ATOMIC_LOGERROR("Drawable is not fully inside its octant's culling bounds: drawable box " + box.ToString() +
+                URHO3D_LOGERROR("Drawable is not fully inside its octant's culling bounds: drawable box " + box.ToString() +
                          " octant box " + octant->GetCullingBox().ToString());
             }
 #endif

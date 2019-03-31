@@ -1434,7 +1434,7 @@ bool Terrain::SetHeightMapInternal(Image* image, bool recreateNow)
 {
     if (image && image->IsCompressed())
     {
-        ATOMIC_LOGERROR("Can not use a compressed image as a terrain heightmap");
+        URHO3D_LOGERROR("Can not use a compressed image as a terrain heightmap");
         return false;
     }
 

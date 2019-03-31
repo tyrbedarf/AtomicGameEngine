@@ -252,7 +252,7 @@ void StaticModel::SetModel(Model* model)
     // If script erroneously calls StaticModel::SetModel on an AnimatedModel, warn and redirect
     if (GetType() == AnimatedModel::GetTypeStatic())
     {
-        ATOMIC_LOGWARNING("StaticModel::SetModel() called on AnimatedModel. Redirecting to AnimatedModel::SetModel()");
+        URHO3D_LOGWARNING("StaticModel::SetModel() called on AnimatedModel. Redirecting to AnimatedModel::SetModel()");
         AnimatedModel* animatedModel = static_cast<AnimatedModel*>(this);
         animatedModel->SetModel(model);
         return;
@@ -261,7 +261,7 @@ void StaticModel::SetModel(Model* model)
 
     if (!node_)
     {
-        ATOMIC_LOGERROR("Can not set model while model component is not attached to a scene node");
+        URHO3D_LOGERROR("Can not set model while model component is not attached to a scene node");
         return;
     }
 
@@ -317,7 +317,7 @@ bool StaticModel::SetMaterial(unsigned index, Material* material)
 {
     if (index >= batches_.Size())
     {
-        ATOMIC_LOGERROR("Material index out of bounds");
+        URHO3D_LOGERROR("Material index out of bounds");
         return false;
     }
 

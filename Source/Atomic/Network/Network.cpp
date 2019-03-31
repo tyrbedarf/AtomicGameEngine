@@ -143,7 +143,7 @@ void Network::HandleMessage(kNet::MessageConnection* source, kNet::packet_id_t p
         connection->SendEvent(E_NETWORKMESSAGE, eventData);
     }
     else
-        ATOMIC_LOGWARNING("Discarding message from unknown MessageConnection " + ToString((void*)source));
+        URHO3D_LOGWARNING("Discarding message from unknown MessageConnection " + ToString((void*)source));
 }
 
 u32 Network::ComputeContentID(kNet::message_id_t msgId, const char* data, size_t numBytes)
@@ -176,7 +176,7 @@ void Network::NewConnectionEstablished(kNet::MessageConnection* connection)
     SharedPtr<Connection> newConnection(new Connection(context_, true, kNet::SharedPtr<kNet::MessageConnection>(connection)));
     newConnection->ConfigureNetworkSimulator(simulatedLatency_, simulatedPacketLoss_);
     clientConnections_[connection] = newConnection;
-    ATOMIC_LOGINFO("Client " + newConnection->ToString() + " connected");
+    URHO3D_LOGINFO("Client " + newConnection->ToString() + " connected");
 
     using namespace ClientConnected;
 
@@ -194,7 +194,7 @@ void Network::ClientDisconnected(kNet::MessageConnection* connection)
     if (i != clientConnections_.End())
     {
         Connection* connection = i->second_;
-        ATOMIC_LOGINFO("Client " + connection->ToString() + " disconnected");
+        URHO3D_LOGINFO("Client " + connection->ToString() + " disconnected");
 
         using namespace ClientDisconnected;
 
@@ -226,12 +226,12 @@ bool Network::Connect(const String& address, unsigned short port, kNet::SocketTr
         serverConnection_->SetConnectPending(true);
         serverConnection_->ConfigureNetworkSimulator(simulatedLatency_, simulatedPacketLoss_);
 
-        ATOMIC_LOGINFO("Connecting to server " + serverConnection_->ToString());
+        URHO3D_LOGINFO("Connecting to server " + serverConnection_->ToString());
         return true;
     }
     else
     {
-        ATOMIC_LOGERROR("Failed to connect to server " + address + ":" + String(port));
+        URHO3D_LOGERROR("Failed to connect to server " + address + ":" + String(port));
         SendEvent(E_CONNECTFAILED);
         return false;
     }
@@ -259,12 +259,12 @@ bool Network::StartServer(unsigned short port, kNet::SocketTransportLayer transp
 
     if (network_->StartServer(port, transport, this, true) != 0)
     {
-        ATOMIC_LOGINFOF("Started %s server on port %i", (transport == kNet::SocketOverTCP ? "TCP" : "UDP"), port);
+        URHO3D_LOGINFOF("Started %s server on port %i", (transport == kNet::SocketOverTCP ? "TCP" : "UDP"), port);
         return true;
     }
     else
     {
-        ATOMIC_LOGERRORF("Failed to start %s server on port %i", (transport == kNet::SocketOverTCP ? "TCP" : "UDP"), port);
+        URHO3D_LOGERRORF("Failed to start %s server on port %i", (transport == kNet::SocketOverTCP ? "TCP" : "UDP"), port);
         return false;
     }
 }
@@ -278,7 +278,7 @@ void Network::StopServer()
 
     clientConnections_.Clear();
     network_->StopServer();
-    ATOMIC_LOGINFO("Stopped server");
+    URHO3D_LOGINFO("Stopped server");
 }
 
 void Network::BroadcastMessage(int msgID, bool reliable, bool inOrder, const VectorBuffer& msg, unsigned contentID)
@@ -292,7 +292,7 @@ void Network::BroadcastMessage(int msgID, bool reliable, bool inOrder, const uns
     // Make sure not to use kNet internal message ID's
     if (msgID <= 0x4 || msgID >= 0x3ffffffe)
     {
-        ATOMIC_LOGERROR("Can not send message with reserved ID");
+        URHO3D_LOGERROR("Can not send message with reserved ID");
         return;
     }
 
@@ -300,7 +300,7 @@ void Network::BroadcastMessage(int msgID, bool reliable, bool inOrder, const uns
     if (server)
         server->BroadcastMessage((unsigned long)msgID, reliable, inOrder, 0, contentID, (const char*)data, numBytes);
     else
-        ATOMIC_LOGERROR("Server not running, can not broadcast messages");
+        URHO3D_LOGERROR("Server not running, can not broadcast messages");
 }
 
 void Network::BroadcastRemoteEvent(StringHash eventType, bool inOrder, const VariantMap& eventData)
@@ -324,12 +324,12 @@ void Network::BroadcastRemoteEvent(Node* node, StringHash eventType, bool inOrde
 {
     if (!node)
     {
-        ATOMIC_LOGERROR("Null sender node for remote node event");
+        URHO3D_LOGERROR("Null sender node for remote node event");
         return;
     }
     if (node->GetID() >= FIRST_LOCAL_ID)
     {
-        ATOMIC_LOGERROR("Sender node has a local ID, can not send remote node event");
+        URHO3D_LOGERROR("Sender node has a local ID, can not send remote node event");
         return;
     }
 
@@ -365,7 +365,7 @@ void Network::RegisterRemoteEvent(StringHash eventType)
 {
     if (blacklistedRemoteEvents_.Find(eventType) != blacklistedRemoteEvents_.End())
     {
-        ATOMIC_LOGERROR("Attempted to register blacklisted remote event type " + String(eventType));
+        URHO3D_LOGERROR("Attempted to register blacklisted remote event type " + String(eventType));
         return;
     }
 
@@ -391,12 +391,12 @@ void Network::SendPackageToClients(Scene* scene, PackageFile* package)
 {
     if (!scene)
     {
-        ATOMIC_LOGERROR("Null scene specified for SendPackageToClients");
+        URHO3D_LOGERROR("Null scene specified for SendPackageToClients");
         return;
     }
     if (!package)
     {
-        ATOMIC_LOGERROR("Null package specified for SendPackageToClients");
+        URHO3D_LOGERROR("Null package specified for SendPackageToClients");
         return;
     }
 
@@ -565,7 +565,7 @@ void Network::OnServerConnected()
 {
     serverConnection_->SetConnectPending(false);
 
-    ATOMIC_LOGINFO("Connected to server");
+    URHO3D_LOGINFO("Connected to server");
 
     // Send the identity map now
     VectorBuffer msg;
@@ -583,12 +583,12 @@ void Network::OnServerDisconnected()
 
     if (!failedConnect)
     {
-        ATOMIC_LOGINFO("Disconnected from server");
+        URHO3D_LOGINFO("Disconnected from server");
         SendEvent(E_SERVERDISCONNECTED);
     }
     else
     {
-        ATOMIC_LOGERROR("Failed to connect to server");
+        URHO3D_LOGERROR("Failed to connect to server");
         SendEvent(E_CONNECTFAILED);
     }
 }
@@ -629,12 +629,12 @@ bool Network::ConnectWithExistingSocket(kNet::Socket* existingSocket, Scene* sce
         serverConnection_->SetConnectPending(true);
         serverConnection_->ConfigureNetworkSimulator(simulatedLatency_, simulatedPacketLoss_);
 
-        ATOMIC_LOGINFO("Connecting to server " + serverConnection_->ToString());
+        URHO3D_LOGINFO("Connecting to server " + serverConnection_->ToString());
         return true;
     }
     else
     {
-        ATOMIC_LOGERROR("Failed to connect to server ");
+        URHO3D_LOGERROR("Failed to connect to server ");
         SendEvent(E_CONNECTFAILED);
         return false;
     }

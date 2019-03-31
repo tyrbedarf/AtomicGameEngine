@@ -287,7 +287,7 @@ void JSBClass::MergeInterface(JSBClass* interface)
 {
     if (!interface->IsInterface())
     {
-        ATOMIC_LOGERRORF("JSBClass::MergeInterface - attempting to merge non-interface class %s", interface->GetName().CString());
+        URHO3D_LOGERRORF("JSBClass::MergeInterface - attempting to merge non-interface class %s", interface->GetName().CString());
         return;
     }
 
@@ -502,22 +502,22 @@ void JSBClass::Dump()
 {
     if (name_ != nativeName_)
     {
-        ATOMIC_LOGINFOF("Class: %s (%s)", name_.CString(), nativeName_.CString());
+        URHO3D_LOGINFOF("Class: %s (%s)", name_.CString(), nativeName_.CString());
     }
     else
     {
-        ATOMIC_LOGINFOF("Class: %s", name_.CString());
+        URHO3D_LOGINFOF("Class: %s", name_.CString());
     }
 
-    ATOMIC_LOGINFOF("   IsObject: %s", IsObject() ? "true" : "false");
+    URHO3D_LOGINFOF("   IsObject: %s", IsObject() ? "true" : "false");
 
     if (baseClasses_.Size())
     {
-        ATOMIC_LOGINFOF("   Bases:");
+        URHO3D_LOGINFOF("   Bases:");
         for (unsigned i = 0; i < baseClasses_.Size(); i++)
         {
 
-            ATOMIC_LOGINFOF("      %s", baseClasses_.At(i)->GetName().CString());
+            URHO3D_LOGINFOF("      %s", baseClasses_.At(i)->GetName().CString());
         }
     }
 

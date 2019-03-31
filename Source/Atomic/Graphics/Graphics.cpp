@@ -77,7 +77,7 @@ void Graphics::SetExternalWindow(void* window)
     if (!window_)
         externalWindow_ = window;
     else
-        ATOMIC_LOGERROR("Window already opened, can not set external window");
+        URHO3D_LOGERROR("Window already opened, can not set external window");
 }
 
 void Graphics::SetWindowTitle(const String& windowTitle)
@@ -316,7 +316,7 @@ void* Graphics::ReserveScratchBuffer(unsigned size)
             i->size_ = size;
             i->reserved_ = true;
 
-            ATOMIC_LOGDEBUG("Resized scratch buffer to size " + String(size));
+            URHO3D_LOGDEBUG("Resized scratch buffer to size " + String(size));
 
             return i->data_.Get();
         }
@@ -330,7 +330,7 @@ void* Graphics::ReserveScratchBuffer(unsigned size)
     scratchBuffers_.Push(newBuffer);
     return newBuffer.data_.Get();
 
-    ATOMIC_LOGDEBUG("Allocated scratch buffer with size " + String(size));
+    URHO3D_LOGDEBUG("Allocated scratch buffer with size " + String(size));
 }
 
 void Graphics::FreeScratchBuffer(void* buffer)
@@ -347,7 +347,7 @@ void Graphics::FreeScratchBuffer(void* buffer)
         }
     }
 
-    ATOMIC_LOGWARNING("Reserved scratch buffer " + ToStringHex((unsigned)(size_t)buffer) + " not found");
+    URHO3D_LOGWARNING("Reserved scratch buffer " + ToStringHex((unsigned)(size_t)buffer) + " not found");
 }
 
 void Graphics::CleanupScratchBuffers()
@@ -359,7 +359,7 @@ void Graphics::CleanupScratchBuffers()
             i->data_ = maxScratchBufferRequest_ > 0 ? new unsigned char[maxScratchBufferRequest_] : 0;
             i->size_ = maxScratchBufferRequest_;
 
-            ATOMIC_LOGDEBUG("Resized scratch buffer to size " + String(maxScratchBufferRequest_));
+            URHO3D_LOGDEBUG("Resized scratch buffer to size " + String(maxScratchBufferRequest_));
         }
     }
 

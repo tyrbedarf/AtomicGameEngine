@@ -50,7 +50,7 @@ namespace AtomicEditor
         // It could be better to split this all out to a native, scriptable
         // preferences object
 
-        ATOMIC_LOGINFOF("Creating default Atomic Editor preferences: %s", path.CString());
+        URHO3D_LOGINFOF("Creating default Atomic Editor preferences: %s", path.CString());
 
         SharedPtr<JSONFile> jsonFile(new JSONFile(context_));
 
@@ -200,7 +200,7 @@ namespace AtomicEditor
 
         if (!file->IsOpen())
         {
-            ATOMIC_LOGERRORF("Unable to open Atomic Editor preferences for writing: %s", path.CString());
+            URHO3D_LOGERRORF("Unable to open Atomic Editor preferences for writing: %s", path.CString());
             return false;
         }
 

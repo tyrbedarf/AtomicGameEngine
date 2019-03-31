@@ -105,25 +105,25 @@ bool Texture2D::SetData(unsigned level, int x, int y, int width, int height, con
 
     if (!object_.name_ || !graphics_)
     {
-        ATOMIC_LOGERROR("No texture created, can not set data");
+        URHO3D_LOGERROR("No texture created, can not set data");
         return false;
     }
 
     if (!data)
     {
-        ATOMIC_LOGERROR("Null source for setting data");
+        URHO3D_LOGERROR("Null source for setting data");
         return false;
     }
 
     if (level >= levels_)
     {
-        ATOMIC_LOGERROR("Illegal mip level for setting data");
+        URHO3D_LOGERROR("Illegal mip level for setting data");
         return false;
     }
 
     if (graphics_->IsDeviceLost())
     {
-        ATOMIC_LOGWARNING("Texture data assignment while device is lost");
+        URHO3D_LOGWARNING("Texture data assignment while device is lost");
         dataPending_ = true;
         return true;
     }
@@ -138,7 +138,7 @@ bool Texture2D::SetData(unsigned level, int x, int y, int width, int height, con
     int levelHeight = GetLevelHeight(level);
     if (x < 0 || x + width > levelWidth || y < 0 || y + height > levelHeight || width <= 0 || height <= 0)
     {
-        ATOMIC_LOGERROR("Illegal dimensions for setting data");
+        URHO3D_LOGERROR("Illegal dimensions for setting data");
         return false;
     }
 
@@ -170,7 +170,7 @@ bool Texture2D::SetData(Image* image, bool useAlpha)
 {
     if (!image)
     {
-        ATOMIC_LOGERROR("Null image, can not set data");
+        URHO3D_LOGERROR("Null image, can not set data");
         return false;
     }
 
@@ -304,32 +304,32 @@ bool Texture2D::GetData(unsigned level, void* dest) const
 {
     if (!object_.name_ || !graphics_)
     {
-        ATOMIC_LOGERROR("No texture created, can not get data");
+        URHO3D_LOGERROR("No texture created, can not get data");
         return false;
     }
 
 #ifndef GL_ES_VERSION_2_0
     if (!dest)
     {
-        ATOMIC_LOGERROR("Null destination for getting data");
+        URHO3D_LOGERROR("Null destination for getting data");
         return false;
     }
 
     if (level >= levels_)
     {
-        ATOMIC_LOGERROR("Illegal mip level for getting data");
+        URHO3D_LOGERROR("Illegal mip level for getting data");
         return false;
     }
 
     if (graphics_->IsDeviceLost())
     {
-        ATOMIC_LOGWARNING("Getting texture data while device is lost");
+        URHO3D_LOGWARNING("Getting texture data while device is lost");
         return false;
     }
 
     if (multiSample_ > 1 && !autoResolve_)
     {
-        ATOMIC_LOGERROR("Can not get data from multisampled texture without autoresolve");
+        URHO3D_LOGERROR("Can not get data from multisampled texture without autoresolve");
         return false;
     }
 
@@ -370,7 +370,7 @@ bool Texture2D::Create()
 
     if (graphics_->IsDeviceLost())
     {
-        ATOMIC_LOGWARNING("Texture creation while device is lost");
+        URHO3D_LOGWARNING("Texture creation while device is lost");
         return true;
     }
 
@@ -419,7 +419,7 @@ bool Texture2D::Create()
 #ifndef GL_ES_VERSION_2_0
                 if (!Graphics::GetGL3Support() && !GLEW_ARB_texture_multisample)
                 {
-                    ATOMIC_LOGERROR("Multisampled texture extension not available");
+                    URHO3D_LOGERROR("Multisampled texture extension not available");
                     return false;
                 }
 
@@ -450,7 +450,7 @@ bool Texture2D::Create()
         glTexImage2D(target_, 0, format, width_, height_, 0, externalFormat, dataType, 0);
         if (glGetError())
         {
-            ATOMIC_LOGERROR("Failed to create texture");
+            URHO3D_LOGERROR("Failed to create texture");
             success = false;
         }
     }

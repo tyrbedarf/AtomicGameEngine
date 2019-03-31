@@ -129,7 +129,7 @@ public:
         {
             if (!object->Refs())
             {
-                ATOMIC_LOGWARNING("JSVM::AddObject, native or C# instantiated object added with 0 refs");
+                URHO3D_LOGWARNING("JSVM::AddObject, native or C# instantiated object added with 0 refs");
             }
             else
             {
@@ -338,11 +338,11 @@ inline bool js_push_class_object_instance(duk_context* ctx, const RefCounted *in
     {
         if (instance->IsObject())
         {
-            ATOMIC_LOGERRORF("Unable to push class object instance due to missing ClassID: %s", ((Object*)instance)->GetTypeName().CString());
+			URHO3D_LOGERRORF("Unable to push class object instance due to missing ClassID: %s", ((Object*)instance)->GetTypeName().CString());
         }
         else
         {
-            ATOMIC_LOGERROR("Unable to push RefCounted instance due to missing ClassID");
+			URHO3D_LOGERROR("Unable to push RefCounted instance due to missing ClassID");
         }
 
         duk_set_top(ctx, top);

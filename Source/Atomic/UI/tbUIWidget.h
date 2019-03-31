@@ -27,6 +27,9 @@
 #include <ThirdParty/TurboBadger/tb_font_renderer.h>
 
 #include "../Core/Object.h"
+#include "../Scene/Serializable.h"
+#include "../Core/Context.h"
+#include "../IO/Log.h"
 
 #include "tbUIPreferredSize.h"
 #include "tbUIDragObject.h"
@@ -167,6 +170,110 @@ class tbUIView;
 class tbUILayoutParams;
 class tbUIFontDescription;
 class tbUISelectItemSource;
+
+/**
+* Wrap a serializable and handle updates to its attributes automatically.
+*
+*/
+class URHO3D_API tbValueHandler : public Object
+{
+	URHO3D_OBJECT(tbValueHandler, Object)
+
+private:
+	WeakPtr<Serializable> mObject;
+	WeakPtr<AttributeAccessor> mAccessor;
+	VariantType mValueType;
+	bool mIsSetUp;
+
+public:
+	tbValueHandler(
+		Context* context,
+		Serializable* ser,
+		const String& attribute) :
+		Object(context),
+		mIsSetUp(false)
+	{
+		mObject = WeakPtr<Serializable>(ser);
+
+		auto attrs = context_->GetAttributes(mObject->GetTypeName());
+		if (!attrs)
+		{
+			URHO3D_LOGERROR(
+				"Could not find attribute. Did you register the type with the context?");
+			return;
+		}
+
+		for (int i = 0; i < attrs->Size(); i++)
+		{
+			auto attr = attrs->At(i);
+			if (attr.name_ == attribute)
+			{
+				mIsSetUp = true;
+				mAccessor = WeakPtr<AttributeAccessor>(attr.accessor_);
+				mValueType = attr.type_;
+				break;
+			}
+		}
+
+		if (!mIsSetUp)
+		{
+			URHO3D_LOGERROR(
+				"Could not find attribute named " + attribute +
+				". Did you register the type with the context?");
+			return;
+		}
+	}
+
+	VariantType GetVariantType() const { return mValueType; }
+
+	void Set(String value)
+	{
+		if (mValueType != VariantType::VAR_STRING)
+		{
+			return;
+		}
+
+		/*URHO3D_LOGDEBUG("Update: " + value);*/
+
+		mAccessor->Set(mObject, Variant(value));
+	}
+
+	void Set(int value)
+	{
+		if (mValueType != VariantType::VAR_INT)
+		{
+			return;
+		}
+
+		/*URHO3D_LOGDEBUG("Update: " + String(value));*/
+
+		mAccessor->Set(mObject, Variant(value));
+	}
+
+	void Set(float value)
+	{
+		if (mValueType != VariantType::VAR_FLOAT)
+		{
+			return;
+		}
+
+		/*URHO3D_LOGDEBUG("Update: " + String(value));*/
+
+		mAccessor->Set(mObject, Variant(value));
+	}
+
+	void Set(double value)
+	{
+		if (mValueType != VariantType::VAR_DOUBLE)
+		{
+			return;
+		}
+
+		/*URHO3D_LOGDEBUG("Update: " + String(value));*/
+
+		mAccessor->Set(mObject, Variant(value));
+	}
+};
 
 /// Wraps a TurboBadger widget in our Object model
 class URHO3D_API tbUIWidget : public Object, public tb::TBWidgetDelegate
@@ -343,6 +450,10 @@ class URHO3D_API tbUIWidget : public Object, public tb::TBWidgetDelegate
     void SetAutoOpacity(float autoOpacity);
     float GetAutoOpacity();
 
+	/// Add a serializable to handle assignment to its values automatically.
+	void SetSerializable(Serializable* ser, const String& attribute);
+	void SetSerializable(const String& widget_id, Serializable* ser, const String& attribute);
+
 protected:
 
     void ConvertEvent(tbUIWidget* handler, tbUIWidget* target, const tb::TBWidgetEvent &ev, VariantMap& data);
@@ -353,11 +464,13 @@ protected:
     virtual void OnDelete();
     virtual void OnResized(int old_w, int old_h);
 
+	void UpdateData();
+
     String id_;
     tb::TBWidget* widget_;
 
     SharedPtr<tbUIPreferredSize> preferredSize_;
-
+	SharedPtr<tbValueHandler> value_;
     SharedPtr<tbUIDragObject> dragObject_;
 
     bool multiTouch_;

@@ -138,7 +138,7 @@ void MasterServerClient::SendMessageToMasterServer(const String& msg)
     }
     else
     {
-        ATOMIC_LOGERROR("No master server connection. Cannot send message");
+        URHO3D_LOGERROR("No master server connection. Cannot send message");
     }
 }
 
@@ -165,7 +165,7 @@ void MasterServerClient::CheckForNatPunchThroughRequests(float dt)
                  i != clientIdToPunchThroughSocketMap_.End();)
             {
                 Network* network = GetSubsystem<Network>();
-                ATOMIC_LOGINFO("Sending packet to client");
+                URHO3D_LOGINFO("Sending packet to client");
                 kNet::Socket* s = i->second_;
 
                 if (network->IsEndPointConnected(s->RemoteEndPoint()))
@@ -194,7 +194,7 @@ void MasterServerClient::CheckForNatPunchThroughRequests(float dt)
 
         if (!network->GetServerConnection() || !network->GetServerConnection()->IsConnected())
         {
-            ATOMIC_LOGINFO("Sending packet to server");
+            URHO3D_LOGINFO("Sending packet to server");
             clientToServerSocket_->Send("K",1);
         }
 
@@ -222,7 +222,7 @@ void MasterServerClient::CheckForMessageFromMaster()
                     sscanf(masterMessageLengthStr.CString(), "%u" , &bytesRemainingInMasterServerMessage_);
                     readingMasterMessageLength = false;
 
-                    ATOMIC_LOGINFO("Message is " + String(bytesRemainingInMasterServerMessage_) + " long");
+                    URHO3D_LOGINFO("Message is " + String(bytesRemainingInMasterServerMessage_) + " long");
                 }
                 else {
                     masterMessageLengthStr += c;
@@ -353,7 +353,7 @@ void MasterServerClient::SetConnectToMasterState(ConnectToMasterState state)
 
     if (state == MASTER_CONNECTION_FAILED)
     {
-        ATOMIC_LOGERROR("Could not connect to master server");
+        URHO3D_LOGERROR("Could not connect to master server");
         SendEvent(E_MASTERCONNECTIONFAILED);
     }
 
@@ -389,7 +389,7 @@ void MasterServerClient::SetConnectToGameServerState(ClientConnectToGameServerSt
 
         connectToGameServerSecondsRemaining_ = 5.0f;
 
-        ATOMIC_LOGINFO("Connecting to Game Server on Internal IP: " +
+        URHO3D_LOGINFO("Connecting to Game Server on Internal IP: " +
                         remoteGameServerInfo_.internalAddress + ":" +
                         String(remoteGameServerInfo_.internalPort));
     }
@@ -425,7 +425,7 @@ void MasterServerClient::SetConnectToGameServerState(ClientConnectToGameServerSt
 
         connectToGameServerSecondsRemaining_ = 5.0f;
 
-        ATOMIC_LOGINFO("Connecting to Game Server on External IP: " +
+        URHO3D_LOGINFO("Connecting to Game Server on External IP: " +
                 remoteGameServerInfo_.externalAddress + ":" +
                 String(remoteGameServerInfo_.externalPort));
 
@@ -455,11 +455,11 @@ void MasterServerClient::ConnectToGameServerUpdate(float dt)
     {
         if (clientConnectToGameServerState_ == GAME_CONNECTING_INTERNAL_IP)
         {
-            ATOMIC_LOGINFO("Successfully connected using internal IP");
+            URHO3D_LOGINFO("Successfully connected using internal IP");
         }
         else if (clientConnectToGameServerState_ == GAME_CONNECTING_EXTERNAL_IP)
         {
-            ATOMIC_LOGINFO("Successfully connected using external IP");
+            URHO3D_LOGINFO("Successfully connected using external IP");
         }
 
         SetConnectToGameServerState(GAME_CONNECTED);
@@ -470,7 +470,7 @@ void MasterServerClient::ConnectToGameServerUpdate(float dt)
     {
         if (clientConnectToGameServerState_ == GAME_CONNECTING_INTERNAL_IP)
         {
-            ATOMIC_LOGINFO("Unable to connect via internal IP, trying external IP");
+            URHO3D_LOGINFO("Unable to connect via internal IP, trying external IP");
             SetConnectToGameServerState(GAME_CONNECTING_EXTERNAL_IP);
         }
         else
@@ -485,12 +485,12 @@ void MasterServerClient::ConnectToGameServerUpdate(float dt)
 
 void MasterServerClient::HandleMasterServerMessage(const String &msg)
 {
-    ATOMIC_LOGINFO("Got master server message: " + msg);
+    URHO3D_LOGINFO("Got master server message: " + msg);
 
     rapidjson::Document document;
     if (document.Parse<0>(msg.CString()).HasParseError())
     {
-        ATOMIC_LOGERROR("Could not parse JSON data from string");
+        URHO3D_LOGERROR("Could not parse JSON data from string");
         return;
     }
 
@@ -506,7 +506,7 @@ void MasterServerClient::HandleMasterServerMessage(const String &msg)
 
         // Now connect with UDP
         SetConnectToMasterState(MASTER_CONNECTING_UDP);
-        ATOMIC_LOGINFO("TCP Connected");
+        URHO3D_LOGINFO("TCP Connected");
     }
     else if (cmd == "connectUDPSuccess")
     {
@@ -518,14 +518,14 @@ void MasterServerClient::HandleMasterServerMessage(const String &msg)
             RegisterServerWithMaster(masterServerInfo_.serverName);
         }
 
-        ATOMIC_LOGINFO("UDP Connected");
+        URHO3D_LOGINFO("UDP Connected");
     }
     else if (cmd == "sendPacketToClient")
     {
         String clientIP = document["clientIP"].GetString();
         int clientPort = document["clientPort"].GetInt();
 
-        ATOMIC_LOGINFO("Got request to send packet to client at "+clientIP+":"+String(clientPort));
+        URHO3D_LOGINFO("Got request to send packet to client at "+clientIP+":"+String(clientPort));
 
         kNet::EndPoint clientEndPoint;
 
@@ -571,7 +571,7 @@ bool MasterServerClient::StartServerAndRegisterWithMaster(unsigned short serverP
 
     if (!network)
     {
-        ATOMIC_LOGERROR("MasterServerClient::StartServerAndRegisterWithMaster - Unable to get Network subsystem");
+        URHO3D_LOGERROR("MasterServerClient::StartServerAndRegisterWithMaster - Unable to get Network subsystem");
         return false;
     }
 
@@ -580,7 +580,7 @@ bool MasterServerClient::StartServerAndRegisterWithMaster(unsigned short serverP
 
     if (!rc)
     {
-        ATOMIC_LOGERROR("MasterServerClient::StartServerAndRegisterWithMaster - Unable to start server");
+        URHO3D_LOGERROR("MasterServerClient::StartServerAndRegisterWithMaster - Unable to start server");
         return false;
     }
 

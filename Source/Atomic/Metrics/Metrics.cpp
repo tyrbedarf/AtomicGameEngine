@@ -296,7 +296,7 @@ void Metrics::Capture(MetricsSnapshot* snapshot)
 {
     if (!enabled_)
     {
-        ATOMIC_LOGERROR("Metrics::Capture - Metrics subsystem is not enabled");
+        URHO3D_LOGERROR("Metrics::Capture - Metrics subsystem is not enabled");
         return;
     }
 
@@ -316,14 +316,14 @@ bool Metrics::Enable()
 
     if (everEnabled_)
     {
-        ATOMIC_LOGERROR("Metrics::Enable - Metrics subsystem is not designed to be restarted");
+        URHO3D_LOGERROR("Metrics::Enable - Metrics subsystem is not designed to be restarted");
         return false;
     }
 
     enabled_ = everEnabled_ = true;
 
-    ATOMIC_LOGINFO("Metrics subsystem enabled, performance will be degraded and there may be stutter while instrumenting");
-    ATOMIC_LOGINFO("IMPORTANT: Do not ship applications with performance metrics enabled");
+    URHO3D_LOGINFO("Metrics subsystem enabled, performance will be degraded and there may be stutter while instrumenting");
+    URHO3D_LOGINFO("IMPORTANT: Do not ship applications with performance metrics enabled");
 
     RefCounted::AddRefCountedCreatedFunction(Metrics::OnRefCountedCreated);
     RefCounted::AddRefCountedDeletedFunction(Metrics::OnRefCountedDeleted);
@@ -428,7 +428,7 @@ void Metrics::OnRefCountedCreated(RefCounted* refCounted)
 {
     if (!metrics_)
     {
-        ATOMIC_LOGERROR("Metrics::OnRefCountedCreated - null instance");
+        URHO3D_LOGERROR("Metrics::OnRefCountedCreated - null instance");
         return;
     }
 
@@ -439,7 +439,7 @@ void Metrics::OnRefCountedDeleted(RefCounted* refCounted)
 {
     if (!metrics_)
     {
-        ATOMIC_LOGERROR("Metrics::OnRefCountedDeleted - null instance");
+        URHO3D_LOGERROR("Metrics::OnRefCountedDeleted - null instance");
         return;
     }
 

@@ -474,7 +474,7 @@ bool Graphics::SetMode(int width, int height, bool fullscreen, bool borderless, 
                 }
                 else
                 {
-                    ATOMIC_LOGERRORF("Could not create window, root cause: '%s'", SDL_GetError());
+                    URHO3D_LOGERRORF("Could not create window, root cause: '%s'", SDL_GetError());
                     return false;
                 }
             }
@@ -539,7 +539,7 @@ bool Graphics::SetMode(int width, int height, bool fullscreen, bool borderless, 
         msg.Append(" resizable");
     if (multiSample > 1)
         msg.AppendWithFormat(" multisample %d", multiSample);
-    ATOMIC_LOGINFO(msg);
+    URHO3D_LOGINFO(msg);
 #endif
 
     using namespace ScreenMode;
@@ -591,7 +591,7 @@ void Graphics::SetForceGL2(bool enable)
 {
     if (IsInitialized())
     {
-        ATOMIC_LOGERROR("OpenGL 2 can only be forced before setting the initial screen mode");
+        URHO3D_LOGERROR("OpenGL 2 can only be forced before setting the initial screen mode");
         return;
     }
 
@@ -616,7 +616,7 @@ bool Graphics::TakeScreenShot(Image* destImage_)
 
     if (IsDeviceLost())
     {
-        ATOMIC_LOGERROR("Can not take screenshot while device is lost");
+        URHO3D_LOGERROR("Can not take screenshot while device is lost");
         return false;
     }
 
@@ -1029,7 +1029,7 @@ bool Graphics::SetVertexBuffers(const PODVector<VertexBuffer*>& buffers, unsigne
 {
     if (buffers.Size() > MAX_VERTEX_STREAMS)
     {
-        ATOMIC_LOGERROR("Too many vertex buffers");
+        URHO3D_LOGERROR("Too many vertex buffers");
         return false;
     }
 
@@ -1082,10 +1082,10 @@ void Graphics::SetShaders(ShaderVariation* vs, ShaderVariation* ps)
 
             bool success = vs->Create();
             if (success)
-                ATOMIC_LOGDEBUG("Compiled vertex shader " + vs->GetFullName());
+                URHO3D_LOGDEBUG("Compiled vertex shader " + vs->GetFullName());
             else
             {
-                ATOMIC_LOGERROR("Failed to compile vertex shader " + vs->GetFullName() + ":\n" + vs->GetCompilerOutput());
+                URHO3D_LOGERROR("Failed to compile vertex shader " + vs->GetFullName() + ":\n" + vs->GetCompilerOutput());
                 vs = 0;
             }
         }
@@ -1101,10 +1101,10 @@ void Graphics::SetShaders(ShaderVariation* vs, ShaderVariation* ps)
 
             bool success = ps->Create();
             if (success)
-                ATOMIC_LOGDEBUG("Compiled pixel shader " + ps->GetFullName());
+                URHO3D_LOGDEBUG("Compiled pixel shader " + ps->GetFullName());
             else
             {
-                ATOMIC_LOGERROR("Failed to compile pixel shader " + ps->GetFullName() + ":\n" + ps->GetCompilerOutput());
+                URHO3D_LOGERROR("Failed to compile pixel shader " + ps->GetFullName() + ":\n" + ps->GetCompilerOutput());
                 ps = 0;
             }
         }
@@ -1149,14 +1149,14 @@ void Graphics::SetShaders(ShaderVariation* vs, ShaderVariation* ps)
             SharedPtr<ShaderProgram> newProgram(new ShaderProgram(this, vs, ps));
             if (newProgram->Link())
             {
-                ATOMIC_LOGDEBUG("Linked vertex shader " + vs->GetFullName() + " and pixel shader " + ps->GetFullName());
+                URHO3D_LOGDEBUG("Linked vertex shader " + vs->GetFullName() + " and pixel shader " + ps->GetFullName());
                 // Note: Link() calls glUseProgram() to set the texture sampler uniforms,
                 // so it is not necessary to call it again
                 impl_->shaderProgram_ = newProgram;
             }
             else
             {
-                ATOMIC_LOGERROR("Failed to link vertex shader " + vs->GetFullName() + " and pixel shader " + ps->GetFullName() + ":\n" +
+                URHO3D_LOGERROR("Failed to link vertex shader " + vs->GetFullName() + " and pixel shader " + ps->GetFullName() + ":\n" +
                          newProgram->GetLinkerOutput());
                 glUseProgram(0);
                 impl_->shaderProgram_ = 0;
@@ -2281,7 +2281,7 @@ void Graphics::OnWindowResized()
     CleanupFramebuffers();
     ResetRenderTargets();
 
-    ATOMIC_LOGDEBUGF("Window was resized to %dx%d", width_, height_);
+    URHO3D_LOGDEBUGF("Window was resized to %dx%d", width_, height_);
 
     using namespace ScreenMode;
 
@@ -2309,7 +2309,7 @@ void Graphics::OnWindowMoved()
     position_.x_ = newX;
     position_.y_ = newY;
 
-    ATOMIC_LOGDEBUGF("Window was moved to %d,%d", position_.x_, position_.y_);
+    URHO3D_LOGDEBUGF("Window was moved to %d,%d", position_.x_, position_.y_);
 
     using namespace WindowPos;
 
@@ -2440,7 +2440,7 @@ void Graphics::Release(bool clearGPUObjects, bool closeWindow)
     {
         // Do not log this message if we are exiting
         if (!clearGPUObjects)
-            ATOMIC_LOGINFO("OpenGL context lost");
+            URHO3D_LOGINFO("OpenGL context lost");
 
         SDL_GL_DeleteContext(impl_->context_);
         impl_->context_ = 0;
@@ -2530,7 +2530,7 @@ void Graphics::Restore()
 
         if (!impl_->context_)
         {
-            ATOMIC_LOGERRORF("Could not create OpenGL context, root cause '%s'", SDL_GetError());
+            URHO3D_LOGERRORF("Could not create OpenGL context, root cause '%s'", SDL_GetError());
             return;
         }
 
@@ -2542,7 +2542,7 @@ void Graphics::Restore()
         GLenum err = glewInit();
         if (GLEW_OK != err)
         {
-            ATOMIC_LOGERRORF("Could not initialize OpenGL extensions, root cause: '%s'", glewGetErrorString(err));
+            URHO3D_LOGERRORF("Could not initialize OpenGL extensions, root cause: '%s'", glewGetErrorString(err));
             return;
         }
 
@@ -2560,7 +2560,7 @@ void Graphics::Restore()
         {
             if (!GLEW_EXT_framebuffer_object || !GLEW_EXT_packed_depth_stencil)
             {
-                ATOMIC_LOGERROR("EXT_framebuffer_object and EXT_packed_depth_stencil OpenGL extensions are required");
+                URHO3D_LOGERROR("EXT_framebuffer_object and EXT_packed_depth_stencil OpenGL extensions are required");
                 return;
             }
 
@@ -2569,7 +2569,7 @@ void Graphics::Restore()
         }
         else
         {
-            ATOMIC_LOGERROR("OpenGL 2.0 is required");
+            URHO3D_LOGERROR("OpenGL 2.0 is required");
             return;
         }
 

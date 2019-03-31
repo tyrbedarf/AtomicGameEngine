@@ -107,7 +107,7 @@ bool ResourceCache::AddResourceDir(const String& pathName, unsigned priority)
     FileSystem* fileSystem = GetSubsystem<FileSystem>();
     if (!fileSystem || !fileSystem->DirExists(pathName))
     {
-        ATOMIC_LOGERROR("Could not open directory " + pathName);
+        URHO3D_LOGERROR("Could not open directory " + pathName);
         return false;
     }
 
@@ -134,7 +134,7 @@ bool ResourceCache::AddResourceDir(const String& pathName, unsigned priority)
         fileWatchers_.Push(watcher);
     }
 
-    ATOMIC_LOGINFO("Added resource path " + fixedPath);
+    URHO3D_LOGINFO("Added resource path " + fixedPath);
     return true;
 }
 
@@ -145,7 +145,7 @@ bool ResourceCache::AddPackageFile(PackageFile* package, unsigned priority)
     // Do not add packages that failed to load
     if (!package || !package->GetNumFiles())
     {
-        ATOMIC_LOGERRORF("Could not add package file %s due to load failure", package->GetName().CString());
+        URHO3D_LOGERRORF("Could not add package file %s due to load failure", package->GetName().CString());
         return false;
     }
 
@@ -154,7 +154,7 @@ bool ResourceCache::AddPackageFile(PackageFile* package, unsigned priority)
     else
         packages_.Push(SharedPtr<PackageFile>(package));
 
-    ATOMIC_LOGINFO("Added resource package " + package->GetName());
+    URHO3D_LOGINFO("Added resource package " + package->GetName());
     return true;
 }
 
@@ -168,14 +168,14 @@ bool ResourceCache::AddManualResource(Resource* resource)
 {
     if (!resource)
     {
-        ATOMIC_LOGERROR("Null manual resource");
+        URHO3D_LOGERROR("Null manual resource");
         return false;
     }
 
     const String& name = resource->GetName();
     if (name.Empty())
     {
-        ATOMIC_LOGERROR("Manual resource with empty name, can not add");
+        URHO3D_LOGERROR("Manual resource with empty name, can not add");
         return false;
     }
 
@@ -205,7 +205,7 @@ void ResourceCache::RemoveResourceDir(const String& pathName)
                     break;
                 }
             }
-            ATOMIC_LOGINFO("Removed resource path " + fixedPath);
+            URHO3D_LOGINFO("Removed resource path " + fixedPath);
             return;
         }
     }
@@ -221,7 +221,7 @@ void ResourceCache::RemovePackageFile(PackageFile* package, bool releaseResource
         {
             if (releaseResources)
                 ReleasePackageResources(*i, forceRelease);
-            ATOMIC_LOGINFO("Removed resource package " + (*i)->GetName());
+            URHO3D_LOGINFO("Removed resource package " + (*i)->GetName());
             packages_.Erase(i);
             return;
         }
@@ -241,7 +241,7 @@ void ResourceCache::RemovePackageFile(const String& fileName, bool releaseResour
         {
             if (releaseResources)
                 ReleasePackageResources(*i, forceRelease);
-            ATOMIC_LOGINFO("Removed resource package " + (*i)->GetName());
+            URHO3D_LOGINFO("Removed resource package " + (*i)->GetName());
             packages_.Erase(i);
             return;
         }
@@ -431,7 +431,7 @@ void ResourceCache::ReloadResourceWithDependencies(const String& fileName)
     const SharedPtr<Resource>& resource = FindResource(fileNameHash);
     if (resource)
     {
-        ATOMIC_LOGDEBUG("Reloading changed resource " + fileName);
+        URHO3D_LOGDEBUG("Reloading changed resource " + fileName);
         ReloadResource(resource);
     }
     // Always perform dependency resource check for resource loaded from XML file as it could be used in inheritance
@@ -455,7 +455,7 @@ void ResourceCache::ReloadResourceWithDependencies(const String& fileName)
 
             for (unsigned k = 0; k < dependents.Size(); ++k)
             {
-                ATOMIC_LOGDEBUG("Reloading resource " + dependents[k]->GetName() + " depending on " + fileName);
+                URHO3D_LOGDEBUG("Reloading resource " + dependents[k]->GetName() + " depending on " + fileName);
                 ReloadResource(dependents[k]);
             }
         }
@@ -552,9 +552,9 @@ SharedPtr<File> ResourceCache::GetFile(const String& nameIn, bool sendEventOnFai
     if (sendEventOnFailure)
     {
         if (resourceRouters_.Size() && name.Empty() && !nameIn.Empty())
-            ATOMIC_LOGERROR("Resource request " + nameIn + " was blocked");
+            URHO3D_LOGERROR("Resource request " + nameIn + " was blocked");
         else
-            ATOMIC_LOGERROR("Could not find resource " + name);
+            URHO3D_LOGERROR("Could not find resource " + name);
 
         if (Thread::IsMainThread())
         {
@@ -576,7 +576,7 @@ Resource* ResourceCache::GetExistingResource(StringHash type, const String& name
 
     if (!Thread::IsMainThread())
     {
-        ATOMIC_LOGERROR("Attempted to get resource " + name + " from outside the main thread");
+        URHO3D_LOGERROR("Attempted to get resource " + name + " from outside the main thread");
         return 0;
     }
 
@@ -596,7 +596,7 @@ Resource* ResourceCache::GetResource(StringHash type, const String& nameIn, bool
 
     if (!Thread::IsMainThread())
     {
-        ATOMIC_LOGERROR("Attempted to get resource " + name + " from outside the main thread");
+        URHO3D_LOGERROR("Attempted to get resource " + name + " from outside the main thread");
         return 0;
     }
 
@@ -620,7 +620,7 @@ Resource* ResourceCache::GetResource(StringHash type, const String& nameIn, bool
     resource = DynamicCast<Resource>(context_->CreateObject(type));
     if (!resource)
     {
-        ATOMIC_LOGERROR("Could not load unknown resource type " + String(type));
+        URHO3D_LOGERROR("Could not load unknown resource type " + String(type));
 
         if (sendEventOnFailure)
         {
@@ -641,7 +641,7 @@ Resource* ResourceCache::GetResource(StringHash type, const String& nameIn, bool
         return 0;   // Error is already logged
     // ATOMIC END
 
-    ATOMIC_LOGDEBUG("Loading resource " + name);
+    URHO3D_LOGDEBUG("Loading resource " + name);
     resource->SetName(name);
 
     if (!resource->Load(*(file.Get())))
@@ -701,7 +701,7 @@ SharedPtr<Resource> ResourceCache::GetTempResource(StringHash type, const String
     resource = DynamicCast<Resource>(context_->CreateObject(type));
     if (!resource)
     {
-        ATOMIC_LOGERROR("Could not load unknown resource type " + String(type));
+        URHO3D_LOGERROR("Could not load unknown resource type " + String(type));
 
         if (sendEventOnFailure)
         {
@@ -729,7 +729,7 @@ SharedPtr<Resource> ResourceCache::GetTempResource(StringHash type, const String
         String ddsName = "DDS/" + name + ".dds";
         file = GetFile(ddsName, false);
         if (file)
-            ATOMIC_LOGDEBUG("Loaded cached DDS " + name + ".dds");
+            URHO3D_LOGDEBUG("Loaded cached DDS " + name + ".dds");
     }
     if (!file)
         file = GetFile(name, sendEventOnFailure);
@@ -743,7 +743,7 @@ SharedPtr<Resource> ResourceCache::GetTempResource(StringHash type, const String
     if (!file)
         return SharedPtr<Resource>();  // Error is already logged
 
-    ATOMIC_LOGDEBUG("Loading temporary resource " + name);
+    URHO3D_LOGDEBUG("Loading temporary resource " + name);
     resource->SetName(file->GetName());
 
     if (!resource->Load(*(file.Get())))
@@ -1118,7 +1118,7 @@ void ResourceCache::UpdateResourceGroup(StringHash type)
         if (i->second_.memoryBudget_ && i->second_.memoryUse_ > i->second_.memoryBudget_ &&
             oldestResource != i->second_.resources_.End())
         {
-            ATOMIC_LOGDEBUG("Resource group " + oldestResource->second_->GetTypeName() + " over memory budget, releasing resource " +
+            URHO3D_LOGDEBUG("Resource group " + oldestResource->second_->GetTypeName() + " over memory budget, releasing resource " +
                      oldestResource->second_->GetName());
             i->second_.resources_.Erase(oldestResource);
         }

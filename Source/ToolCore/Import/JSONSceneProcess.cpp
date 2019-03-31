@@ -585,7 +585,7 @@ bool JSONSceneProcess::ProcessComponent(Node* node, const JSONMeshCollider* jmes
 
     if (!model || !model->GetModel())
     {
-        ATOMIC_LOGWARNING("Missing model for MeshCollier");
+        URHO3D_LOGWARNING("Missing model for MeshCollier");
         return true;
     }
 

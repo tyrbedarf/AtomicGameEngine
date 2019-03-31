@@ -107,7 +107,7 @@ SceneView3D ::SceneView3D(Context* context, SceneEditor3D *sceneEditor) :
 
     if (octree_.Null())
     {
-        ATOMIC_LOGWARNING("Scene without an octree loaded");
+        URHO3D_LOGWARNING("Scene without an octree loaded");
         octree_ = scene_->CreateComponent<Octree>();
     }
 

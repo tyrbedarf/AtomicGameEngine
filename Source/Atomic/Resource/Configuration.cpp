@@ -95,7 +95,7 @@ namespace Urho3D
 
         if (!file->Open(filename))
         {
-            ATOMIC_LOGERRORF("Configuration::LoadFromFile - Unable to open config file %s", filename.CString());
+            URHO3D_LOGERRORF("Configuration::LoadFromFile - Unable to open config file %s", filename.CString());
             return false;
         }
 
@@ -108,7 +108,7 @@ namespace Urho3D
     void Configuration::ApplyConfig(VariantMap& settings, bool overwrite)
     {
         if (!isLoaded_) {
-            ATOMIC_LOGERRORF("Configuration::ApplyConfig - Applying a config that has not yet been populated");
+            URHO3D_LOGERRORF("Configuration::ApplyConfig - Applying a config that has not yet been populated");
             return;
         }
 
@@ -140,7 +140,7 @@ namespace Urho3D
 
         if (!JSONFile::ParseJSON(json, jroot))
         {
-            ATOMIC_LOGERRORF("Configuration::LoadFromJSON - Unable to parse config file JSON: %s", filename_.CString());
+            URHO3D_LOGERRORF("Configuration::LoadFromJSON - Unable to parse config file JSON: %s", filename_.CString());
             return false;
         }
 

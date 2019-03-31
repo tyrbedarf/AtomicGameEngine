@@ -66,7 +66,7 @@ bool Texture2D::BeginLoad(Deserializer& source)
     // If device is lost, retry later
     if (graphics_->IsDeviceLost())
     {
-        ATOMIC_LOGWARNING("Texture load while device is lost");
+        URHO3D_LOGWARNING("Texture load while device is lost");
         dataPending_ = true;
         return true;
     }
@@ -113,7 +113,7 @@ bool Texture2D::SetSize(int width, int height, unsigned format, TextureUsage usa
 {
     if (width <= 0 || height <= 0)
     {
-        ATOMIC_LOGERROR("Zero or negative texture dimensions");
+        URHO3D_LOGERROR("Zero or negative texture dimensions");
         return false;
     }
 
@@ -122,7 +122,7 @@ bool Texture2D::SetSize(int width, int height, unsigned format, TextureUsage usa
         autoResolve = false;
     else if (multiSample > 1 && usage < TEXTURE_RENDERTARGET)
     {
-        ATOMIC_LOGERROR("Multisampling is only supported for rendertarget or depth-stencil textures");
+        URHO3D_LOGERROR("Multisampling is only supported for rendertarget or depth-stencil textures");
         return false;
     }
 
@@ -164,7 +164,7 @@ SharedPtr<Image> Texture2D::GetImage() const
 {
     if (format_ != Graphics::GetRGBAFormat() && format_ != Graphics::GetRGBFormat())
     {
-        ATOMIC_LOGERROR("Unsupported texture format, can not convert to Image");
+        URHO3D_LOGERROR("Unsupported texture format, can not convert to Image");
         return SharedPtr<Image>();
     }
 

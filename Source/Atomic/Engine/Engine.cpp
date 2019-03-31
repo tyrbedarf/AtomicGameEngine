@@ -285,7 +285,7 @@ bool Engine::Initialize(const VariantMap& parameters)
     {
         GetSubsystem<WorkQueue>()->CreateThreads(numThreads);
 
-        ATOMIC_LOGINFOF("Created %u worker thread%s", numThreads, numThreads > 1 ? "s" : "");
+        URHO3D_LOGINFOF("Created %u worker thread%s", numThreads, numThreads > 1 ? "s" : "");
     }
 #endif
 
@@ -406,7 +406,7 @@ bool Engine::Initialize(const VariantMap& parameters)
 
     frameTimer_.Reset();
 
-    ATOMIC_LOGINFO("Initialized engine");
+    URHO3D_LOGINFO("Initialized engine");
     initialized_ = true;
     return true;
 }
@@ -468,7 +468,7 @@ bool Engine::InitializeResourceCache(const VariantMap& parameters, bool removeOl
             // ATOMIC: Only fail when CoreData can't be opened and not headless
             if (j == resourcePrefixPaths.Size() && !headless_)
             {
-                ATOMIC_LOGERRORF(
+                URHO3D_LOGERRORF(
                     "Failed to add resource path '%s', check the documentation on how to set the 'resource prefix path'",
                     resourcePaths[i].CString());
                 return false;
@@ -501,7 +501,7 @@ bool Engine::InitializeResourceCache(const VariantMap& parameters, bool removeOl
         // ATOMIC: Only fail when CoreData can't be opened and not headless
         if (j == resourcePrefixPaths.Size() && !headless_)
         {
-            ATOMIC_LOGERRORF(
+            URHO3D_LOGERRORF(
                 "Failed to add resource package '%s', check the documentation on how to set the 'resource prefix path'",
                 resourcePackages[i].CString());
             return false;
@@ -561,7 +561,7 @@ bool Engine::InitializeResourceCache(const VariantMap& parameters, bool removeOl
         // The cleaner approach is to not enable the autoload by default, i.e. do not use 'Autoload' as default value for 'AutoloadPaths' engine parameter
         // However, doing so will break the existing applications that rely on this
         if (!autoLoadPathExist && (autoLoadPaths.Size() > 1 || autoLoadPaths[0] != "Autoload"))
-            ATOMIC_LOGDEBUGF(
+            URHO3D_LOGDEBUGF(
                 "Skipped autoload path '%s' as it does not exist, check the documentation on how to set the 'resource prefix path'",
                 autoLoadPaths[i].CString());
     }
@@ -708,19 +708,19 @@ void Engine::DumpResources(bool dumpFileName)
     const HashMap<StringHash, ResourceGroup>& resourceGroups = cache->GetAllResources();
     if (dumpFileName)
     {
-        ATOMIC_LOGRAW("Used resources:\n");
+        URHO3D_LOGRAW("Used resources:\n");
         for (HashMap<StringHash, ResourceGroup>::ConstIterator i = resourceGroups.Begin(); i != resourceGroups.End(); ++i)
         {
             const HashMap<StringHash, SharedPtr<Resource> >& resources = i->second_.resources_;
             if (dumpFileName)
             {
                 for (HashMap<StringHash, SharedPtr<Resource> >::ConstIterator j = resources.Begin(); j != resources.End(); ++j)
-                    ATOMIC_LOGRAW(j->second_->GetName() + "\n");
+                    URHO3D_LOGRAW(j->second_->GetName() + "\n");
             }
         }
     }
     else
-        ATOMIC_LOGRAW(cache->PrintMemoryUsage() + "\n");
+        URHO3D_LOGRAW(cache->PrintMemoryUsage() + "\n");
 #endif
 }
 
@@ -747,9 +747,9 @@ void Engine::DumpMemory()
         if (block->nBlockUse > 0)
         {
             if (block->szFileName)
-                ATOMIC_LOGRAW("Block " + String((int)block->lRequest) + ": " + String(block->nDataSize) + " bytes, file " + String(block->szFileName) + " line " + String(block->nLine) + "\n");
+                URHO3D_LOGRAW("Block " + String((int)block->lRequest) + ": " + String(block->nDataSize) + " bytes, file " + String(block->szFileName) + " line " + String(block->nLine) + "\n");
             else
-                ATOMIC_LOGRAW("Block " + String((int)block->lRequest) + ": " + String(block->nDataSize) + " bytes\n");
+                URHO3D_LOGRAW("Block " + String((int)block->lRequest) + ": " + String(block->nDataSize) + " bytes\n");
 
             total += block->nDataSize;
             ++blocks;
@@ -757,7 +757,7 @@ void Engine::DumpMemory()
         block = block->pBlockHeaderPrev;
     }
 
-    ATOMIC_LOGRAW("Total allocated memory " + String(total) + " bytes in " + String(blocks) + " blocks\n\n");
+    URHO3D_LOGRAW("Total allocated memory " + String(total) + " bytes in " + String(blocks) + " blocks\n\n");
 #else
     ATOMIC_LOGRAW("DumpMemory() supported on MSVC debug mode only\n\n");
 #endif

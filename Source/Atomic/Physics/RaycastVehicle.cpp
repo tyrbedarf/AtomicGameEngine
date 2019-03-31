@@ -231,7 +231,7 @@ void RaycastVehicle::ApplyAttributes()
         Node* wheelNode = GetScene()->GetNode(node_id);
         if (!wheelNode)
         {
-            ATOMIC_LOGERROR("RaycastVehicle: Incorrect node id = " + String(node_id) + " index: " + String(index));
+            URHO3D_LOGERROR("RaycastVehicle: Incorrect node id = " + String(node_id) + " index: " + String(index));
             continue;
         }
         btRaycastVehicle* vehicle = vehicleData_->Get();
@@ -264,9 +264,9 @@ void RaycastVehicle::ApplyAttributes()
         wheel.m_skidInfo = skidInfo;
         wheelIndex++;
     }
-    ATOMIC_LOGDEBUG("maxSideSlipSpeed_ value: " + String(maxSideSlipSpeed_));
-    ATOMIC_LOGDEBUG("loaded items: " + String(index));
-    ATOMIC_LOGDEBUG("loaded wheels: " + String(GetNumWheels()));
+    URHO3D_LOGDEBUG("maxSideSlipSpeed_ value: " + String(maxSideSlipSpeed_));
+    URHO3D_LOGDEBUG("loaded items: " + String(index));
+    URHO3D_LOGDEBUG("loaded wheels: " + String(GetNumWheels()));
 }
 
 void RaycastVehicle::Init()
@@ -696,7 +696,7 @@ VariantVector RaycastVehicle::GetWheelDataAttr() const
     {
         Node* wNode = GetWheelNode(i);
         int node_id = wNode->GetID();
-        ATOMIC_LOGDEBUG("RaycastVehicle: Saving node id = " + String(node_id));
+        URHO3D_LOGDEBUG("RaycastVehicle: Saving node id = " + String(node_id));
         ret.Push(node_id);
         ret.Push(GetWheelDirection(i));
         ret.Push(GetWheelAxle(i));
@@ -720,8 +720,8 @@ VariantVector RaycastVehicle::GetWheelDataAttr() const
         ret.Push(GetBrake(i));
         ret.Push(GetWheelSkidInfo(i));
     }
-    ATOMIC_LOGDEBUG("RaycastVehicle: saved items: " + String(ret.Size()));
-    ATOMIC_LOGDEBUG("maxSideSlipSpeed_ value save: " + String(maxSideSlipSpeed_));
+    URHO3D_LOGDEBUG("RaycastVehicle: saved items: " + String(ret.Size()));
+    URHO3D_LOGDEBUG("maxSideSlipSpeed_ value save: " + String(maxSideSlipSpeed_));
     return ret;
 }
 
@@ -729,12 +729,12 @@ void RaycastVehicle::SetWheelDataAttr(const VariantVector& value)
 {
     if (!vehicleData_)
     {
-        ATOMIC_LOGERROR("RaycastVehicle: vehicleData doesn't exist");
+        URHO3D_LOGERROR("RaycastVehicle: vehicleData doesn't exist");
         return;
     }
     if (value.Size() < 2)
     {
-        ATOMIC_LOGERROR("RaycastVehicle: Incorrect vehicleData");
+        URHO3D_LOGERROR("RaycastVehicle: Incorrect vehicleData");
         return;
     }
 

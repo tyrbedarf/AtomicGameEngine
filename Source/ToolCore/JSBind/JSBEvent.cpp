@@ -127,7 +127,7 @@ bool JSBEvent::ScanModuleEvents(JSBModule* module)
 
                 if (parts.Size() != 2)
                 {
-                    ATOMIC_LOGWARNINGF("Unable to parse native event splitting '(' : %s : %s", header->GetFilePath().CString(), line.CString());
+                    URHO3D_LOGWARNINGF("Unable to parse native event splitting '(' : %s : %s", header->GetFilePath().CString(), line.CString());
                     continue;
                 }
 
@@ -135,7 +135,7 @@ bool JSBEvent::ScanModuleEvents(JSBModule* module)
 
                 if (parts.Size() != 2)
                 {
-                    ATOMIC_LOGWARNINGF("Unable to parse native even splitting ',' : %s : %s", header->GetFilePath().CString(), line.CString());
+                    URHO3D_LOGWARNINGF("Unable to parse native even splitting ',' : %s : %s", header->GetFilePath().CString(), line.CString());
                     continue;
                 }
 
@@ -158,7 +158,7 @@ bool JSBEvent::ScanModuleEvents(JSBModule* module)
             {
                 if (curEvent.Null())
                 {
-                    ATOMIC_LOGWARNINGF("WARNING: Event param outside of current event: %s", line.CString());
+                    URHO3D_LOGWARNINGF("WARNING: Event param outside of current event: %s", line.CString());
                     continue;
                 }
 
@@ -170,7 +170,7 @@ bool JSBEvent::ScanModuleEvents(JSBModule* module)
 
                 if (parts.Size() != 2)
                 {
-                    ATOMIC_LOGWARNINGF("Unable to parse native event param splitting ';' : %s : %s", header->GetFilePath().CString(), line.CString());
+                    URHO3D_LOGWARNINGF("Unable to parse native event param splitting ';' : %s : %s", header->GetFilePath().CString(), line.CString());
                     continue;
                 }
 
@@ -214,7 +214,7 @@ bool JSBEvent::ScanModuleEvents(JSBModule* module)
 
                 if (!typeInfo.Length())
                 {
-                    ATOMIC_LOGWARNINGF("Could not get type info for event param : %s : (%s) file: %s",
+                    URHO3D_LOGWARNINGF("Could not get type info for event param : %s : (%s) file: %s",
                         curEvent->GetEventID().CString(), line.CString(), header->GetFilePath().CString());
                     continue;
                 }
@@ -224,7 +224,7 @@ bool JSBEvent::ScanModuleEvents(JSBModule* module)
 
                 if (parts.Size() != 2)
                 {
-                    ATOMIC_LOGWARNINGF("Unable to parse native event param splitting ',' : %s : %s", header->GetFilePath().CString(), line.CString());
+                    URHO3D_LOGWARNINGF("Unable to parse native event param splitting ',' : %s : %s", header->GetFilePath().CString(), line.CString());
                     continue;
                 }
 

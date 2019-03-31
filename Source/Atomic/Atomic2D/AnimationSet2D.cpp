@@ -139,7 +139,7 @@ bool AnimationSet2D::BeginLoad(Deserializer& source)
     if (extension == ".scml")
         return BeginLoadSpriter(source);
 
-    ATOMIC_LOGERROR("Unsupport animation set file: " + source.GetName());
+    URHO3D_LOGERROR("Unsupport animation set file: " + source.GetName());
 
     return false;
 }
@@ -288,7 +288,7 @@ bool AnimationSet2D::BeginLoadSpriter(Deserializer& source)
     unsigned dataSize = source.GetSize();
     if (!dataSize && !source.GetName().Empty())
     {
-        ATOMIC_LOGERROR("Zero sized XML data in " + source.GetName());
+        URHO3D_LOGERROR("Zero sized XML data in " + source.GetName());
         return false;
     }
 
@@ -299,7 +299,7 @@ bool AnimationSet2D::BeginLoadSpriter(Deserializer& source)
     spriterData_ = new Spriter::SpriterData();
     if (!spriterData_->Load(buffer.Get(), dataSize))
     {
-        ATOMIC_LOGERROR("Could not spriter data from " + source.GetName());
+        URHO3D_LOGERROR("Could not spriter data from " + source.GetName());
         return false;
     }
 
@@ -369,7 +369,7 @@ bool AnimationSet2D::EndLoadSpriter()
                 SharedPtr<Sprite2D> sprite(spriteSheet_->GetSprite(GetFileName(file->name_)));
                 if (!sprite)
                 {
-                    ATOMIC_LOGERROR("Could not load sprite " + file->name_);
+                    URHO3D_LOGERROR("Could not load sprite " + file->name_);
                     return false;
                 }
 
@@ -412,17 +412,17 @@ bool AnimationSet2D::EndLoadSpriter()
                 SharedPtr<Image> image(cache->GetResource<Image>(imagePath));
                 if (!image)
                 {
-                    ATOMIC_LOGERROR("Could not load image");
+                    URHO3D_LOGERROR("Could not load image");
                     return false;
                 }
                 if (image->IsCompressed())
                 {
-                    ATOMIC_LOGERROR("Compressed image is not support");
+                    URHO3D_LOGERROR("Compressed image is not support");
                     return false;
                 }
                 if (image->GetComponents() != 4)
                 {
-                    ATOMIC_LOGERROR("Only support image with 4 components");
+                    URHO3D_LOGERROR("Only support image with 4 components");
                     return false;
                 }
 
@@ -447,7 +447,7 @@ bool AnimationSet2D::EndLoadSpriter()
                 Image* image = info.image_;
                 if (!allocator.Allocate(image->GetWidth() + 1, image->GetHeight() + 1, info.x, info.y))
                 {
-                    ATOMIC_LOGERROR("Could not allocate area");
+                    URHO3D_LOGERROR("Could not allocate area");
                     return false;
                 }
             }

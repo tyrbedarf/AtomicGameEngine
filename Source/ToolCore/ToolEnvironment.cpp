@@ -202,21 +202,21 @@ String ToolEnvironment::GetIOSDeployBinary()
 
 void ToolEnvironment::Dump()
 {
-    ATOMIC_LOGINFOF("Root Source Dir: %s", rootSourceDir_.CString());
-    ATOMIC_LOGINFOF("Root Build Dir: %s", rootBuildDir_.CString());
+    URHO3D_LOGINFOF("Root Source Dir: %s", rootSourceDir_.CString());
+    URHO3D_LOGINFOF("Root Build Dir: %s", rootBuildDir_.CString());
 
-    ATOMIC_LOGINFOF("Core Resource Dir: %s", resourceCoreDataDir_.CString());
-    ATOMIC_LOGINFOF("Player Resource Dir: %s", resourcePlayerDataDir_.CString());
-    ATOMIC_LOGINFOF("Editor Resource Dir: %s", resourceEditorDataDir_.CString());
+    URHO3D_LOGINFOF("Core Resource Dir: %s", resourceCoreDataDir_.CString());
+    URHO3D_LOGINFOF("Player Resource Dir: %s", resourcePlayerDataDir_.CString());
+    URHO3D_LOGINFOF("Editor Resource Dir: %s", resourceEditorDataDir_.CString());
 
-    ATOMIC_LOGINFOF("Editor Binary: %s", editorBinary_.CString());
-    ATOMIC_LOGINFOF("Player Binary: %s", playerBinary_.CString());
-    ATOMIC_LOGINFOF("Tool Binary: %s", toolBinary_.CString());
+    URHO3D_LOGINFOF("Editor Binary: %s", editorBinary_.CString());
+    URHO3D_LOGINFOF("Player Binary: %s", playerBinary_.CString());
+    URHO3D_LOGINFOF("Tool Binary: %s", toolBinary_.CString());
 
 
-    ATOMIC_LOGINFOF("Tool Data Dir: %s", toolDataDir_.CString());
+    URHO3D_LOGINFOF("Tool Data Dir: %s", toolDataDir_.CString());
 
-    ATOMIC_LOGINFOF("Deployment Data Dir: %s", deploymentDataDir_.CString());
+    URHO3D_LOGINFOF("Deployment Data Dir: %s", deploymentDataDir_.CString());
 
 }
 

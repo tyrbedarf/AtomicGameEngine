@@ -78,7 +78,7 @@ bool FileWatcher::StartWatching(const String& pathName, bool watchSubDirs)
 {
     if (!fileSystem_)
     {
-        ATOMIC_LOGERROR("No FileSystem, can not start watching");
+        URHO3D_LOGERROR("No FileSystem, can not start watching");
         return false;
     }
 
@@ -103,7 +103,7 @@ bool FileWatcher::StartWatching(const String& pathName, bool watchSubDirs)
     }
     else
     {
-        ATOMIC_LOGDEBUGF("FileWatcher::StartWatching - Ignoring non-writable path %s", nativePath.CString());
+        URHO3D_LOGDEBUGF("FileWatcher::StartWatching - Ignoring non-writable path %s", nativePath.CString());
         return false;
     }
 
@@ -124,12 +124,12 @@ bool FileWatcher::StartWatching(const String& pathName, bool watchSubDirs)
         watchSubDirs_ = watchSubDirs;
         Run();
 
-        ATOMIC_LOGDEBUG("Started watching path " + pathName);
+        URHO3D_LOGDEBUG("Started watching path " + pathName);
         return true;
     }
     else
     {
-        ATOMIC_LOGERROR("Failed to start watching path " + pathName);
+        URHO3D_LOGERROR("Failed to start watching path " + pathName);
         return false;
     }
 #elif defined(__linux__)
@@ -244,7 +244,7 @@ void FileWatcher::StopWatching()
         Stop();
 #endif
 
-        ATOMIC_LOGDEBUG("Stopped watching path " + path_);
+        URHO3D_LOGDEBUG("Stopped watching path " + path_);
         path_.Clear();
     }
 }

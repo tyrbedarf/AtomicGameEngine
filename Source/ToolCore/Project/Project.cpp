@@ -50,7 +50,7 @@ Project::Project(Context* context) :
 
     projectSettings_ = new ProjectSettings(context_);
     userPrefs_ = new ProjectUserPrefs(context_);
-    buildSettings_ = new ProjectBuildSettings(context_);    
+    buildSettings_ = new ProjectBuildSettings(context_);
 }
 
 Project::~Project()
@@ -157,7 +157,7 @@ bool Project::Load(const String& fullpath)
 
                 }
 
-                ATOMIC_LOGERRORF("Project::Load - Multiple .atomic files found in project, selecting newest: %s", result.CString());
+                URHO3D_LOGERRORF("Project::Load - Multiple .atomic files found in project, selecting newest: %s", result.CString());
 
             }
 

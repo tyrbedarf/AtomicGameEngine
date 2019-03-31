@@ -687,7 +687,7 @@ void AnimationController::SetNetAnimationsAttr(const PODVector<unsigned char>& v
             state = AddAnimationState(newAnimation);
             if (!state)
             {
-                ATOMIC_LOGERROR("Animation update applying aborted due to unknown animation");
+                URHO3D_LOGERROR("Animation update applying aborted due to unknown animation");
                 return;
             }
         }

@@ -56,21 +56,21 @@ bool Text3DBitmap::Load(const unsigned char* fontData, unsigned fontDataSize, fl
     MemoryBuffer memoryBuffer(fontData, fontDataSize);
     if (!xmlReader->Load(memoryBuffer))
     {
-        ATOMIC_LOGERROR("Could not load XML file");
+        URHO3D_LOGERROR("Could not load XML file");
         return false;
     }
 
     XMLElement root = xmlReader->GetRoot("font");
     if (root.IsNull())
     {
-        ATOMIC_LOGERROR("Could not find Font element");
+        URHO3D_LOGERROR("Could not find Font element");
         return false;
     }
 
     XMLElement pagesElem = root.GetChild("pages");
     if (pagesElem.IsNull())
     {
-        ATOMIC_LOGERROR("Could not find Pages element");
+        URHO3D_LOGERROR("Could not find Pages element");
         return false;
     }
 
@@ -92,7 +92,7 @@ bool Text3DBitmap::Load(const unsigned char* fontData, unsigned fontDataSize, fl
     {
         if (pageElem.IsNull())
         {
-            ATOMIC_LOGERROR("Could not find Page element for page: " + String(i));
+            URHO3D_LOGERROR("Could not find Page element for page: " + String(i));
             return 0;
         }
 
@@ -104,7 +104,7 @@ bool Text3DBitmap::Load(const unsigned char* fontData, unsigned fontDataSize, fl
         SharedPtr<Image> fontImage(new Image(context));
         if (!fontFile || !fontImage->Load(*fontFile))
         {
-            ATOMIC_LOGERROR("Failed to load font image file");
+            URHO3D_LOGERROR("Failed to load font image file");
             return 0;
         }
         SharedPtr<Texture2D> texture = LoadFaceTexture(fontImage);
@@ -160,7 +160,7 @@ bool Text3DBitmap::Load(const unsigned char* fontData, unsigned fontDataSize, fl
         }
     }
 
-    ATOMIC_LOGDEBUGF("Bitmap font face %s has %d glyphs", GetFileName(font_->GetName()).CString(), count);
+    URHO3D_LOGDEBUGF("Bitmap font face %s has %d glyphs", GetFileName(font_->GetName()).CString(), count);
 
     font_->SetMemoryUse(font_->GetMemoryUse() + totalTextureSize);
     return true;
@@ -361,7 +361,7 @@ SharedPtr<Image> Text3DBitmap::SaveFaceTexture(Texture2D* texture)
     image->SetSize(texture->GetWidth(), texture->GetHeight(), ConvertFormatToNumComponents(texture->GetFormat()));
     if (!texture->GetData(0, image->GetData()))
     {
-        ATOMIC_LOGERROR("Could not save texture to image resource");
+        URHO3D_LOGERROR("Could not save texture to image resource");
         return SharedPtr<Image>();
     }
     return image;

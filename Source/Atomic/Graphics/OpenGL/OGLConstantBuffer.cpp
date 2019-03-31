@@ -60,7 +60,7 @@ bool ConstantBuffer::SetSize(unsigned size)
 {
     if (!size)
     {
-        ATOMIC_LOGERROR("Can not create zero-sized constant buffer");
+        URHO3D_LOGERROR("Can not create zero-sized constant buffer");
         return false;
     }
 

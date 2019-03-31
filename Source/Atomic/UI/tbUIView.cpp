@@ -180,7 +180,7 @@ bool tbUIView::SetSize(int width, int height)
     if (width < UIVIEW_MIN_TEXTURE_SIZE || width > UIVIEW_MAX_TEXTURE_SIZE ||
         height < UIVIEW_MIN_TEXTURE_SIZE || height > UIVIEW_MAX_TEXTURE_SIZE)
     {
-        ATOMIC_LOGERROR("UIView::SetSize() - Attempting to set invalid size, failed");
+		URHO3D_LOGERROR("UIView::SetSize() - Attempting to set invalid size, failed");
         return false;
     }
 

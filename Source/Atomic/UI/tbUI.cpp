@@ -198,7 +198,7 @@ void tbUI::SetBlockChangedEvents(bool blocked)
 
         if (changedEventsBlocked_ < 0)
         {
-            ATOMIC_LOGERROR("UI::BlockChangedEvents - mismatched block calls, setting to 0");
+			URHO3D_LOGERROR("UI::BlockChangedEvents - mismatched block calls, setting to 0");
             changedEventsBlocked_ = 0;
         }
     }
@@ -412,7 +412,7 @@ void tbUI::TBFileReader(const char* filename, void** data, unsigned* length)
     SharedPtr<File> file = cache->GetFile(filename);
     if (!file || !file->IsOpen())
     {
-        ATOMIC_LOGERRORF("UI::TBFileReader: Unable to load file: %s", filename);
+        URHO3D_LOGERRORF("UI::TBFileReader: Unable to load file: %s", filename);
         return;
     }
 

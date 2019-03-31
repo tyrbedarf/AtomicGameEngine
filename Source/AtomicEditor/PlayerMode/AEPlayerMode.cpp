@@ -126,7 +126,7 @@ void PlayerMode::ProcessArguments() {
 
             else if (argument.StartsWith("--ipc-server=") || argument.StartsWith("--ipc-client="))
             {
-                ATOMIC_LOGINFOF("Starting IPCWorker %s", argument.CString());
+                URHO3D_LOGINFOF("Starting IPCWorker %s", argument.CString());
 
                 Vector<String> ipc = argument.Split(argument.CString(), '=');
 
@@ -194,7 +194,7 @@ void PlayerMode::HandleJSError(StringHash eventType, VariantMap& eventData)
 
         ipc_->SendEventToBroker(E_IPCJSERROR, ipcErrorData);
 
-        ATOMIC_LOGERROR("SENDING E_IPCJSERROR");
+        URHO3D_LOGERROR("SENDING E_IPCJSERROR");
 
     }
 

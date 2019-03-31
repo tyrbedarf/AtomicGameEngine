@@ -199,7 +199,7 @@ void SceneSelection::Copy()
         if (!node->GetParent())
         {
             clipBoardNodes_.Clear();
-            ATOMIC_LOGERROR("SceneSelection::Copy - unable to copy node to clipboard (no parent)");
+            URHO3D_LOGERROR("SceneSelection::Copy - unable to copy node to clipboard (no parent)");
             return;
         }
 
@@ -341,7 +341,7 @@ void SceneSelection::HandleSceneEditPrefabSave(StringHash eventType, VariantMap&
     PrefabComponent* prefab = node->GetComponent<PrefabComponent>();
     if (!prefab)
     {
-        ATOMIC_LOGERRORF("Prefab Save: Unable to get prefab component for node: %s", node->GetName().CString());
+        URHO3D_LOGERRORF("Prefab Save: Unable to get prefab component for node: %s", node->GetName().CString());
         return;
     }
 
@@ -357,7 +357,7 @@ void SceneSelection::HandleSceneEditPrefabRevert(StringHash eventType, VariantMa
     PrefabComponent* prefab = node->GetComponent<PrefabComponent>();
     if (!prefab)
     {
-        ATOMIC_LOGERRORF("Prefab Revert: Unable to get prefab component for node: %s", node->GetName().CString());
+        URHO3D_LOGERRORF("Prefab Revert: Unable to get prefab component for node: %s", node->GetName().CString());
         return;
     }
 
@@ -373,7 +373,7 @@ void SceneSelection::HandleSceneEditPrefabBreak(StringHash eventType, VariantMap
     PrefabComponent* prefab = node->GetComponent<PrefabComponent>();
     if (!prefab)
     {
-        ATOMIC_LOGERRORF("Prefab Break: Unable to get prefab component for node: %s", node->GetName().CString());
+        URHO3D_LOGERRORF("Prefab Break: Unable to get prefab component for node: %s", node->GetName().CString());
         return;
     }
 
@@ -405,7 +405,7 @@ void SceneSelection::HandleSceneEditPrefabCopy(StringHash eventType, VariantMap 
     PrefabComponent* prefab = node->GetComponent<PrefabComponent>();
     if (!prefab)
     {
-        ATOMIC_LOGERRORF("Prefab Copy: Unable to get prefab component for node: %s", node->GetName().CString());
+        URHO3D_LOGERRORF("Prefab Copy: Unable to get prefab component for node: %s", node->GetName().CString());
         return;
     }
 
@@ -421,7 +421,7 @@ void SceneSelection::HandleSceneEditPrefabPaste(StringHash eventType, VariantMap
     PrefabComponent* prefab = node->GetComponent<PrefabComponent>();
     if (!prefab)
     {
-        ATOMIC_LOGERRORF("Prefab Paste: Unable to get prefab component for node: %s", node->GetName().CString());
+        URHO3D_LOGERRORF("Prefab Paste: Unable to get prefab component for node: %s", node->GetName().CString());
         return;
     }
 
@@ -437,7 +437,7 @@ void SceneSelection::HandleSceneEditComponentCopy(StringHash eventType, VariantM
 
     if (!component)
     {
-        ATOMIC_LOGERRORF("Component Copy: Unable to copy component from node: %s", component->GetAttribute("type").ToString().CString());
+        URHO3D_LOGERRORF("Component Copy: Unable to copy component from node: %s", component->GetAttribute("type").ToString().CString());
         return;
     }
 
@@ -462,19 +462,19 @@ void SceneSelection::HandleSceneEditComponentPaste(StringHash eventType, Variant
 
     if (!component)
     {
-        ATOMIC_LOGERRORF("Component Paste: Unable to paste component to node: %s", component->GetAttribute("type").ToString().CString());
+        URHO3D_LOGERRORF("Component Paste: Unable to paste component to node: %s", component->GetAttribute("type").ToString().CString());
         return;
     }
 
     if (!hasCopied_)
     {
-        ATOMIC_LOGERROR("Component Paste: Unable to paste, no information has been copied.");
+        URHO3D_LOGERROR("Component Paste: Unable to paste, no information has been copied.");
         return;
     }
 
     if (copiedComponent_->GetType() != component->GetType())
     {
-        ATOMIC_LOGERROR("Component Paste: Unable to paste, component type differ.");
+        URHO3D_LOGERROR("Component Paste: Unable to paste, component type differ.");
         return;
     }
 

@@ -67,7 +67,7 @@ bool CubemapGenerator::Render()
 
     if(!InitRender())
     {
-        ATOMIC_LOGERRORF("Unable to init render");
+        URHO3D_LOGERRORF("Unable to init render");
         return false;
     }
 
@@ -98,7 +98,7 @@ bool CubemapGenerator::InitPaths()
     {
         if (!fileSystem->CreateDirs(pathName,  "Cubemaps/" + fileName + "/"))
         {
-            ATOMIC_LOGERRORF("CubemapGenerator::InitRender - Unable to create path: %s", outputPathAbsolute_.CString());
+            URHO3D_LOGERRORF("CubemapGenerator::InitRender - Unable to create path: %s", outputPathAbsolute_.CString());
             return false;
         }
     }
@@ -122,7 +122,7 @@ bool CubemapGenerator::InitRender()
 
     if (sceneEditor_.Null())
     {
-        ATOMIC_LOGERROR("CubemapGenerator::InitRender - unable to get scene editor");
+        URHO3D_LOGERROR("CubemapGenerator::InitRender - unable to get scene editor");
         return false;
     }
 

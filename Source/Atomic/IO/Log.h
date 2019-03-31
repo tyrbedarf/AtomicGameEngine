@@ -137,16 +137,16 @@ private:
 };
 
 #ifdef ATOMIC_LOGGING
-#define ATOMIC_LOGDEBUG(message) Urho3D::Log::Write(Urho3D::LOG_DEBUG, message)
-#define ATOMIC_LOGINFO(message) Urho3D::Log::Write(Urho3D::LOG_INFO, message)
-#define ATOMIC_LOGWARNING(message) Urho3D::Log::Write(Urho3D::LOG_WARNING, message)
-#define ATOMIC_LOGERROR(message) Urho3D::Log::Write(Urho3D::LOG_ERROR, message)
-#define ATOMIC_LOGRAW(message) Urho3D::Log::WriteRaw(message)
-#define ATOMIC_LOGDEBUGF(format, ...) Urho3D::Log::Write(Urho3D::LOG_DEBUG, Urho3D::ToString(format, ##__VA_ARGS__))
-#define ATOMIC_LOGINFOF(format, ...) Urho3D::Log::Write(Urho3D::LOG_INFO, Urho3D::ToString(format, ##__VA_ARGS__))
-#define ATOMIC_LOGWARNINGF(format, ...) Urho3D::Log::Write(Urho3D::LOG_WARNING, Urho3D::ToString(format, ##__VA_ARGS__))
-#define ATOMIC_LOGERRORF(format, ...) Urho3D::Log::Write(Urho3D::LOG_ERROR, Urho3D::ToString(format, ##__VA_ARGS__))
-#define ATOMIC_LOGRAWF(format, ...) Urho3D::Log::WriteRaw(Urho3D::ToString(format, ##__VA_ARGS__))
+#define URHO3D_LOGDEBUG(message) Urho3D::Log::Write(Urho3D::LOG_DEBUG, message)
+#define URHO3D_LOGINFO(message) Urho3D::Log::Write(Urho3D::LOG_INFO, message)
+#define URHO3D_LOGWARNING(message) Urho3D::Log::Write(Urho3D::LOG_WARNING, message)
+#define URHO3D_LOGERROR(message) Urho3D::Log::Write(Urho3D::LOG_ERROR, message)
+#define URHO3D_LOGRAW(message) Urho3D::Log::WriteRaw(message)
+#define URHO3D_LOGDEBUGF(format, ...) Urho3D::Log::Write(Urho3D::LOG_DEBUG, Urho3D::ToString(format, ##__VA_ARGS__))
+#define URHO3D_LOGINFOF(format, ...) Urho3D::Log::Write(Urho3D::LOG_INFO, Urho3D::ToString(format, ##__VA_ARGS__))
+#define URHO3D_LOGWARNINGF(format, ...) Urho3D::Log::Write(Urho3D::LOG_WARNING, Urho3D::ToString(format, ##__VA_ARGS__))
+#define URHO3D_LOGERRORF(format, ...) Urho3D::Log::Write(Urho3D::LOG_ERROR, Urho3D::ToString(format, ##__VA_ARGS__))
+#define URHO3D_LOGRAWF(format, ...) Urho3D::Log::WriteRaw(Urho3D::ToString(format, ##__VA_ARGS__))
 #else
 #define ATOMIC_LOGDEBUG(message) ((void)0)
 #define ATOMIC_LOGINFO(message) ((void)0)

@@ -31,7 +31,7 @@
 
 namespace AtomicEditor
 {
-    
+
     EditorNETService::EditorNETService(Context* context) : Object(context)
     {
 
@@ -56,7 +56,7 @@ namespace AtomicEditor
         if (!netService_->Start())
         {
             netService_ = nullptr;
-            ATOMIC_LOGERRORF("Unable to start AtomicNETService");
+            URHO3D_LOGERRORF("Unable to start AtomicNETService");
             return false;
         }
 

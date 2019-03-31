@@ -103,12 +103,12 @@ bool NamedPipe::Open(const String& pipeName, bool isServer)
 
         if (handle_ == INVALID_HANDLE_VALUE)
         {
-            ATOMIC_LOGERROR("Failed to create named pipe " + pipeName);
+            URHO3D_LOGERROR("Failed to create named pipe " + pipeName);
             return false;
         }
         else
         {
-            ATOMIC_LOGDEBUG("Created named pipe " + pipeName);
+            URHO3D_LOGDEBUG("Created named pipe " + pipeName);
             pipeName_ = pipeName;
             isServer_ = true;
             return true;
@@ -128,12 +128,12 @@ bool NamedPipe::Open(const String& pipeName, bool isServer)
 
         if (handle_ == INVALID_HANDLE_VALUE)
         {
-            ATOMIC_LOGERROR("Failed to connect to named pipe " + pipeName);
+            URHO3D_LOGERROR("Failed to connect to named pipe " + pipeName);
             return false;
         }
         else
         {
-            ATOMIC_LOGDEBUG("Connected to named pipe " + pipeName);
+            URHO3D_LOGDEBUG("Connected to named pipe " + pipeName);
             pipeName_ = pipeName;
             return true;
         }
@@ -180,7 +180,7 @@ void NamedPipe::Close()
         handle_ = INVALID_HANDLE_VALUE;
         pipeName_.Clear();
 
-        ATOMIC_LOGDEBUG("Closed named pipe " + pipeName_);
+        URHO3D_LOGDEBUG("Closed named pipe " + pipeName_);
     }
 }
 

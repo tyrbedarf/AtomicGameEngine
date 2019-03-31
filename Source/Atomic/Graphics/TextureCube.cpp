@@ -95,7 +95,7 @@ bool TextureCube::BeginLoad(Deserializer& source)
     // If device is lost, retry later
     if (graphics_->IsDeviceLost())
     {
-        ATOMIC_LOGWARNING("Texture load while device is lost");
+        URHO3D_LOGWARNING("Texture load while device is lost");
         dataPending_ = true;
         return true;
     }
@@ -262,19 +262,19 @@ bool TextureCube::SetSize(int size, unsigned format, TextureUsage usage, int mul
 {
     if (size <= 0)
     {
-        ATOMIC_LOGERROR("Zero or negative cube texture size");
+        URHO3D_LOGERROR("Zero or negative cube texture size");
         return false;
     }
     if (usage == TEXTURE_DEPTHSTENCIL)
     {
-        ATOMIC_LOGERROR("Depth-stencil usage not supported for cube textures");
+        URHO3D_LOGERROR("Depth-stencil usage not supported for cube textures");
         return false;
     }
 
     multiSample = Clamp(multiSample, 1, 16);
     if (multiSample > 1 && usage < TEXTURE_RENDERTARGET)
     {
-        ATOMIC_LOGERROR("Multisampling is only supported for rendertarget cube textures");
+        URHO3D_LOGERROR("Multisampling is only supported for rendertarget cube textures");
         return false;
     }
 
@@ -320,7 +320,7 @@ SharedPtr<Image> TextureCube::GetImage(CubeMapFace face) const
 {
     if (format_ != Graphics::GetRGBAFormat() && format_ != Graphics::GetRGBFormat())
     {
-        ATOMIC_LOGERROR("Unsupported texture format, can not convert to Image");
+        URHO3D_LOGERROR("Unsupported texture format, can not convert to Image");
         return SharedPtr<Image>();
     }
 

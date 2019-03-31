@@ -672,7 +672,7 @@ public:
                 {
                     if (!i)
                     {
-                        ATOMIC_LOGINFOF("Warning: %s first baseclass %s not in bindings", name.CString(), baseclassname.CString());
+                        URHO3D_LOGINFOF("Warning: %s first baseclass %s not in bindings", name.CString(), baseclassname.CString());
                     }
                 }
             }

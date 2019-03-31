@@ -189,7 +189,7 @@ void AssetDatabase::PruneOrphanedDotAssetFiles()
 
     if (project_.Null())
     {
-        ATOMIC_LOGDEBUG("AssetDatabase::PruneOrphanedDotAssetFiles - called without project loaded");
+        URHO3D_LOGDEBUG("AssetDatabase::PruneOrphanedDotAssetFiles - called without project loaded");
         return;
     }
 
@@ -210,7 +210,7 @@ void AssetDatabase::PruneOrphanedDotAssetFiles()
         if (!fs->FileExists(assetFilename) && !fs->DirExists(assetFilename))
         {
 
-            ATOMIC_LOGINFOF("Removing orphaned asset file: %s", dotAssetFilename.CString());
+            URHO3D_LOGINFOF("Removing orphaned asset file: %s", dotAssetFilename.CString());
             fs->Delete(dotAssetFilename);
         }
 
@@ -366,7 +366,7 @@ void AssetDatabase::UpdateAssetCacheMap()
     SharedPtr<File> file(new File(context_, cachepath, FILE_WRITE));
     if (!file->IsOpen())
     {
-        ATOMIC_LOGERRORF("Unable to update ResourceCacheMap: %s", cachepath.CString());
+        URHO3D_LOGERRORF("Unable to update ResourceCacheMap: %s", cachepath.CString());
         return;
     }
 
@@ -722,13 +722,13 @@ bool AssetDatabase::CleanCache()
 
     if (fileSystem->DirExists(cachePath))
     {
-        ATOMIC_LOGINFOF("Cleaning cache directory %s", cachePath.CString());
+        URHO3D_LOGINFOF("Cleaning cache directory %s", cachePath.CString());
 
         fileSystem->RemoveDir(cachePath, true);
 
         if (fileSystem->DirExists(cachePath))
         {
-            ATOMIC_LOGERRORF("Unable to remove cache directory %s", cachePath.CString());
+            URHO3D_LOGERRORF("Unable to remove cache directory %s", cachePath.CString());
             return false;
         }
     }
@@ -737,7 +737,7 @@ bool AssetDatabase::CleanCache()
 
     if (!fileSystem->DirExists(cachePath))
     {
-        ATOMIC_LOGERRORF("Unable to create cache directory %s", cachePath.CString());
+        URHO3D_LOGERRORF("Unable to create cache directory %s", cachePath.CString());
         return false;
     }
 
@@ -747,7 +747,7 @@ bool AssetDatabase::CleanCache()
 
 bool AssetDatabase::GenerateCache(bool clean)
 {
-    ATOMIC_LOGINFO("Generating cache... hold on");
+    URHO3D_LOGINFO("Generating cache... hold on");
 
     if (clean)
     {
@@ -766,7 +766,7 @@ bool AssetDatabase::GenerateCache(bool clean)
 
     ReimportAllAssets();
 
-    ATOMIC_LOGINFO("Cache generated");
+    URHO3D_LOGINFO("Cache generated");
 
     return true;
 

@@ -47,7 +47,6 @@ tbUIWidget::tbUIWidget(Context* context, bool createWidget) : Object(context),
         widget_->SetDelegate(this);
         GetSubsystem<tbUI>()->WrapWidget(this, widget_);
     }
-
 }
 
 tbUIWidget::~tbUIWidget()
@@ -61,7 +60,6 @@ void tbUIWidget::SetIsFocusable(bool value)
         return;
 
     widget_->SetIsFocusable(value);
-
 }
 
 bool tbUIWidget::Load(const String& filename)
@@ -108,18 +106,68 @@ void tbUIWidget::SetWidget(tb::TBWidget* widget)
     widget_->SetDelegate(this);
 }
 
-/*
-enum SPECIAL_KEY
+void tbUIWidget::UpdateData()
 {
-    TB_KEY_UNDEFINED = 0,
-    TB_KEY_UP, TB_KEY_DOWN, TB_KEY_LEFT, TB_KEY_RIGHT,
-    TB_KEY_PAGE_UP, TB_KEY_PAGE_DOWN, TB_KEY_HOME, TB_KEY_END,
-    TB_KEY_TAB, TB_KEY_BACKSPACE, TB_KEY_INSERT, TB_KEY_DELETE,
-    TB_KEY_ENTER, TB_KEY_ESC,
-    TB_KEY_F1, TB_KEY_F2, TB_KEY_F3, TB_KEY_F4, TB_KEY_F5, TB_KEY_F6,
-    TB_KEY_F7, TB_KEY_F8, TB_KEY_F9, TB_KEY_F10, TB_KEY_F11, TB_KEY_F12
-};
-*/
+	if (!value_ || !widget_)
+	{
+		return;
+	}
+
+	switch (value_->GetVariantType())
+	{
+	case VariantType::VAR_INT:
+	{
+		value_->Set(widget_->GetValue());
+		break;
+	}
+	case VariantType::VAR_FLOAT:
+	{
+		value_->Set((float)widget_->GetValueDouble());
+		break;
+	}
+	case VariantType::VAR_DOUBLE:
+	{
+		value_->Set(widget_->GetValueDouble());
+		break;
+	}
+	case VariantType::VAR_STRING:
+	{
+		value_->Set(widget_->GetText().CStr());
+		break;
+	}
+	case  VariantType::VAR_BOOL:
+	{
+		value_->Set(widget_->GetValue() > 0);
+		break;
+	}
+	default:
+		URHO3D_LOGWARNING("Unkown variant type. Could not update serializable from widget.");
+		break;
+	}
+}
+
+void tbUIWidget::SetSerializable(Serializable* ser, const String& attribute)
+{
+	if (!ser)
+	{
+		URHO3D_LOGWARNING("Could not set serializable. The reference was NULL.");
+		return;
+	}
+
+	value_ = SharedPtr<tbValueHandler>(new tbValueHandler(context_, ser, attribute));
+}
+
+void tbUIWidget::SetSerializable(const String& widget_id, Serializable* ser, const String& attribute)
+{
+	auto widget = FindWidget(widget_id);
+	if (!widget)
+	{
+		URHO3D_LOGWARNING("Could not set serializable. Could not find the widget: " + widget_id);
+		return;
+	}
+
+	widget->SetSerializable(ser, attribute);
+}
 
 
 void tbUIWidget::ConvertEvent(tbUIWidget *handler, tbUIWidget* target, const tb::TBWidgetEvent &ev, VariantMap& data)
@@ -1080,7 +1128,6 @@ void tbUIWidget::OnFocusChanged(bool focused)
     eventData[P_WIDGET] = this;
     eventData[P_FOCUSED] = focused;
     SendEvent(E_WIDGETFOCUSCHANGED, eventData);
-
 }
 
 bool tbUIWidget::OnEvent(const tb::TBWidgetEvent &ev)
@@ -1099,7 +1146,6 @@ bool tbUIWidget::OnEvent(const tb::TBWidgetEvent &ev)
                 return true;
 
         }
-
     }
     else if (ev.type == EVENT_TYPE_RIGHT_POINTER_UP)
     {
@@ -1113,7 +1159,6 @@ bool tbUIWidget::OnEvent(const tb::TBWidgetEvent &ev)
                 return true;
 
         }
-
     }
     else if (ev.type == EVENT_TYPE_POINTER_DOWN)
     {
@@ -1163,15 +1208,12 @@ bool tbUIWidget::OnEvent(const tb::TBWidgetEvent &ev)
         {
             // popup menu
 
-            if (JSGetHeapPtr())
-            {
-                VariantMap eventData;
-                eventData[PopupMenuSelect::P_BUTTON] = this;
-                String id;
-                ui->GetTBIDString(ev.ref_id, id);
-                eventData[PopupMenuSelect::P_REFID] = id;
-                SendEvent(E_POPUPMENUSELECT, eventData);
-            }
+			VariantMap eventData;
+			eventData[PopupMenuSelect::P_BUTTON] = this;
+			String id;
+			ui->GetTBIDString(ev.ref_id, id);
+			eventData[PopupMenuSelect::P_REFID] = id;
+			SendEvent(E_POPUPMENUSELECT, eventData);
 
             return true;
         }

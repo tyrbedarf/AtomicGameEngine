@@ -220,7 +220,7 @@ WebBrowserHost::WebBrowserHost(Context* context) : Object (context)
     // before initializing graphics subsystem
     if (!CefInitialize(args, settings, d_->app_, nullptr))
     {
-        ATOMIC_LOGERROR("CefInitialize - Error");
+        URHO3D_LOGERROR("CefInitialize - Error");
     }
 
 #ifdef ATOMIC_PLATFORM_LINUX

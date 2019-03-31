@@ -181,7 +181,7 @@ bool ShaderProgram::Link()
 
         if (semantic == MAX_VERTEX_ELEMENT_SEMANTICS)
         {
-            ATOMIC_LOGWARNING("Found vertex attribute " + name + " with no known semantic in shader program " +
+            URHO3D_LOGWARNING("Found vertex attribute " + name + " with no known semantic in shader program " +
                 vertexShader_->GetFullName() + " " + pixelShader_->GetFullName());
             continue;
         }
@@ -225,7 +225,7 @@ bool ShaderProgram::Link()
 
             if (group >= MAX_SHADER_PARAMETER_GROUPS)
             {
-                ATOMIC_LOGWARNING("Skipping unrecognized uniform block " + name + " in shader program " + vertexShader_->GetFullName() +
+                URHO3D_LOGWARNING("Skipping unrecognized uniform block " + name + " in shader program " + vertexShader_->GetFullName() +
                            " " + pixelShader_->GetFullName());
                 continue;
             }

@@ -151,7 +151,7 @@ bool File::Open(PackageFile* package, const String& fileName)
     bool success = OpenInternal(package->GetName(), FILE_READ, true);
     if (!success)
     {
-        ATOMIC_LOGERROR("Could not open package file " + fileName);
+        URHO3D_LOGERROR("Could not open package file " + fileName);
         return false;
     }
 
@@ -176,7 +176,7 @@ unsigned File::Read(void* dest, unsigned size)
 
     if (mode_ == FILE_WRITE)
     {
-        ATOMIC_LOGERROR("File not opened for reading");
+        URHO3D_LOGERROR("File not opened for reading");
         return 0;
     }
 
@@ -272,7 +272,7 @@ unsigned File::Read(void* dest, unsigned size)
     {
         // Return to the position where the read began
         SeekInternal(position_ + offset_);
-        ATOMIC_LOGERROR("Error while reading from file " + GetName());
+        URHO3D_LOGERROR("Error while reading from file " + GetName());
         return 0;
     }
 
@@ -311,7 +311,7 @@ unsigned File::Seek(unsigned position)
                 Read(skipBuffer, Min(position - position_, SKIP_BUFFER_SIZE));
         }
         else
-            ATOMIC_LOGERROR("Seeking backward in a compressed file is not supported");
+            URHO3D_LOGERROR("Seeking backward in a compressed file is not supported");
 
         return position_;
     }
@@ -333,7 +333,7 @@ unsigned File::Write(const void* data, unsigned size)
 
     if (mode_ == FILE_READ)
     {
-        ATOMIC_LOGERROR("File not opened for writing");
+        URHO3D_LOGERROR("File not opened for writing");
         return 0;
     }
 
@@ -351,7 +351,7 @@ unsigned File::Write(const void* data, unsigned size)
     {
         // Return to the position where the write began
         fseek((FILE*)handle_, position_ + offset_, SEEK_SET);
-        ATOMIC_LOGERROR("Error while writing to file " + GetName());
+        URHO3D_LOGERROR("Error while writing to file " + GetName());
         return 0;
     }
 
@@ -447,13 +447,13 @@ bool File::OpenInternal(const String& fileName, FileMode mode, bool fromPackage)
     FileSystem* fileSystem = GetSubsystem<FileSystem>();
     if (fileSystem && !fileSystem->CheckAccess(GetPath(fileName)))
     {
-        ATOMIC_LOGERRORF("Access denied to %s", fileName.CString());
+        URHO3D_LOGERRORF("Access denied to %s", fileName.CString());
         return false;
     }
 
     if (fileName.Empty())
     {
-        ATOMIC_LOGERROR("Could not open file with empty name");
+        URHO3D_LOGERROR("Could not open file with empty name");
         return false;
     }
 
@@ -506,7 +506,7 @@ bool File::OpenInternal(const String& fileName, FileMode mode, bool fromPackage)
 
     if (!handle_)
     {
-        ATOMIC_LOGERRORF("Could not open file %s", fileName.CString());
+        URHO3D_LOGERRORF("Could not open file %s", fileName.CString());
         return false;
     }
 
@@ -517,7 +517,7 @@ bool File::OpenInternal(const String& fileName, FileMode mode, bool fromPackage)
         fseek((FILE*)handle_, 0, SEEK_SET);
         if (size > M_MAX_UNSIGNED)
         {
-            ATOMIC_LOGERRORF("Could not open file %s which is larger than 4GB", fileName.CString());
+            URHO3D_LOGERRORF("Could not open file %s which is larger than 4GB", fileName.CString());
             Close();
             size_ = 0;
             return false;

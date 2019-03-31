@@ -989,7 +989,7 @@ bool JSONSceneImporter::Import(const String& path)
 
     if (document_->Parse<0>(json.CString()).HasParseError())
     {
-        ATOMIC_LOGERRORF("Could not parse JSON data from %s", path.CString());
+        URHO3D_LOGERRORF("Could not parse JSON data from %s", path.CString());
         return false;
     }
     const Value::ConstMemberIterator name = document_->FindMember("name");

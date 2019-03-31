@@ -351,7 +351,7 @@ void RibbonTrail::SetTailColumn(unsigned tailColumn)
 {
     if (tailColumn > MAX_TAIL_COLUMN)
     {
-        ATOMIC_LOGWARNING("Max ribbon trail tail column is " + String(MAX_TAIL_COLUMN));
+        URHO3D_LOGWARNING("Max ribbon trail tail column is " + String(MAX_TAIL_COLUMN));
         tailColumn_ = MAX_TAIL_COLUMN;
     }
     else if (tailColumn < 1)
@@ -841,7 +841,7 @@ void RibbonTrail::SetTrailType(TrailType type)
 
     if (type == TT_BONE && (node_->GetParent() == 0 || node_->GetParent() == node_->GetScene()))
     {
-        ATOMIC_LOGWARNING("No parent node found, revert back to Face Camera type");
+        URHO3D_LOGWARNING("No parent node found, revert back to Face Camera type");
         return;
     }
 

@@ -390,7 +390,7 @@ void JSONValue::SetVariant(const Variant& variant, Context* context)
 {
     if (!IsNull())
     {
-        ATOMIC_LOGWARNING("JsonValue is not null");
+        URHO3D_LOGWARNING("JsonValue is not null");
     }
 
     (*this)["type"] = variant.GetTypeName();
@@ -407,7 +407,7 @@ void JSONValue::SetVariantValue(const Variant& variant, Context* context)
 {
     if (!IsNull())
     {
-        ATOMIC_LOGWARNING("JsonValue is not null");
+        URHO3D_LOGWARNING("JsonValue is not null");
     }
 
     switch (variant.GetType())
@@ -444,7 +444,7 @@ void JSONValue::SetVariantValue(const Variant& variant, Context* context)
         {
             if (!context)
             {
-                ATOMIC_LOGERROR("Context must not be null for ResourceRef");
+                URHO3D_LOGERROR("Context must not be null for ResourceRef");
                 return;
             }
 
@@ -457,7 +457,7 @@ void JSONValue::SetVariantValue(const Variant& variant, Context* context)
         {
             if (!context)
             {
-                ATOMIC_LOGERROR("Context must not be null for ResourceRefList");
+                URHO3D_LOGERROR("Context must not be null for ResourceRefList");
                 return;
             }
 
@@ -575,7 +575,7 @@ VariantMap JSONValue::GetVariantMap() const
     VariantMap variantMap;
     if (!IsObject())
     {
-        ATOMIC_LOGERROR("JSONValue is not a object");
+        URHO3D_LOGERROR("JSONValue is not a object");
         return variantMap;
     }
 
@@ -607,7 +607,7 @@ VariantVector JSONValue::GetVariantVector() const
     VariantVector variantVector;
     if (!IsArray())
     {
-        ATOMIC_LOGERROR("JSONValue is not a array");
+        URHO3D_LOGERROR("JSONValue is not a array");
         return variantVector;
     }
 

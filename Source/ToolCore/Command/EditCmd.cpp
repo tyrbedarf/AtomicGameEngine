@@ -89,7 +89,7 @@ bool EditCmd::LaunchEditorProcess(const String& command, const Vector<String>& a
 
 void EditCmd::Run()
 {
-    ATOMIC_LOGINFOF("Editing project");
+    URHO3D_LOGINFOF("Editing project");
 
     ToolSystem* tsystem = GetSubsystem<ToolSystem>();
     ToolEnvironment* env = GetSubsystem<ToolCore::ToolEnvironment>();

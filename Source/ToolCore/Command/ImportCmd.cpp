@@ -88,7 +88,7 @@ void ImportCmd::Run()
             return;
         }
 
-        ATOMIC_LOGRAWF("Importing JSON: %s", assetFilename_.CString());
+        URHO3D_LOGRAWF("Importing JSON: %s", assetFilename_.CString());
 
         SharedPtr<JSONSceneImporter> jimporter;
         jimporter = new JSONSceneImporter(context_);

@@ -89,14 +89,14 @@ namespace ToolCore
     {
         if (curBuild_.Null())
         {
-            ATOMIC_LOGERRORF("NETBuildSystem::HandleSubprocessOutput - output received without current build");
+            URHO3D_LOGERRORF("NETBuildSystem::HandleSubprocessOutput - output received without current build");
             return;
         }
 
         const String& text = eventData[SubprocessOutput::P_TEXT].GetString();
 
         if (verbose_)
-            ATOMIC_LOGINFOF(text.CString());
+            URHO3D_LOGINFOF(text.CString());
 
         curBuild_->output_ += text;
 
@@ -109,7 +109,7 @@ namespace ToolCore
 
         if (curBuild_.Null())
         {
-            ATOMIC_LOGERROR("NETBuildSystem::HandleCompileProcessComplete - called with no current build");
+            URHO3D_LOGERROR("NETBuildSystem::HandleCompileProcessComplete - called with no current build");
             return;
         }
         curBuild_->status_ = NETBUILD_COMPLETE;
@@ -126,7 +126,7 @@ namespace ToolCore
 
         if (verbose_)
         {
-            ATOMIC_LOGINFOF("AtomicNET Build Command: %s", curBuild_->allArgs_.CString());
+            URHO3D_LOGINFOF("AtomicNET Build Command: %s", curBuild_->allArgs_.CString());
         }
 
         if (!code)
@@ -156,7 +156,7 @@ namespace ToolCore
     {
         if (curBuild_.Null())
         {
-            ATOMIC_LOGERRORF("NETBuildSystem::CurrentBuildError - Error %s with no current build", errorText.CString());
+            URHO3D_LOGERRORF("NETBuildSystem::CurrentBuildError - Error %s with no current build", errorText.CString());
             return;
         }
 
@@ -270,13 +270,13 @@ namespace ToolCore
 
                 if (platform == "windows" || platform == "macosx" || platform == "linux")
                 {
-                    ATOMIC_LOGINFOF("Platform \"%s\" mapped to \"desktop\"", platform.CString());
+                    URHO3D_LOGINFOF("Platform \"%s\" mapped to \"desktop\"", platform.CString());
                     platform = "desktop";
                 }
 
                 if (processedPlatforms.Contains(platform))
                 {
-                    ATOMIC_LOGWARNINGF("Platform \"%s\" is duplicated, skipping", platform.CString());
+                    URHO3D_LOGWARNINGF("Platform \"%s\" is duplicated, skipping", platform.CString());
                     continue;
                 }
 
@@ -295,7 +295,7 @@ namespace ToolCore
                 }
                 else
                 {
-                    ATOMIC_LOGERRORF("Unknown platform: %s, skipping", platform.CString());
+                    URHO3D_LOGERRORF("Unknown platform: %s, skipping", platform.CString());
                     continue;
                 }
 
@@ -440,7 +440,7 @@ namespace ToolCore
             SubprocessSystem* subs = GetSubsystem<SubprocessSystem>();
             Subprocess* subprocess = nullptr;
 
-            ATOMIC_LOGINFOF("%s : %s", cmd.CString(), curBuild_->allArgs_.CString());
+            URHO3D_LOGINFOF("%s : %s", cmd.CString(), curBuild_->allArgs_.CString());
 
             try
             {
@@ -527,7 +527,7 @@ namespace ToolCore
 
         }
 
-        ATOMIC_LOGINFOF("Received build for project %s", project->GetProjectFilePath().CString());
+        URHO3D_LOGINFOF("Received build for project %s", project->GetProjectFilePath().CString());
 
         return build;
 
@@ -542,7 +542,7 @@ namespace ToolCore
 
         if (!project)
         {
-            ATOMIC_LOGERROR("NETBuildSystem::HandleBuildAtomicProject - null project");
+            URHO3D_LOGERROR("NETBuildSystem::HandleBuildAtomicProject - null project");
             return;
         }
 
@@ -557,7 +557,7 @@ namespace ToolCore
 
         if (!fileSystem->FileExists(solutionPath))
         {
-            ATOMIC_LOGERRORF("NETBuildSystem::Build - Solution does not exist (%s)", solutionPath.CString());
+            URHO3D_LOGERRORF("NETBuildSystem::Build - Solution does not exist (%s)", solutionPath.CString());
             return 0;
         }
 

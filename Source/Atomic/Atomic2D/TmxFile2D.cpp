@@ -110,14 +110,14 @@ bool TmxTileLayer2D::Load(const XMLElement& element, const TileMapInfo2D& info)
     XMLElement dataElem = element.GetChild("data");
     if (!dataElem)
     {
-        ATOMIC_LOGERROR("Could not find data in layer");
+        URHO3D_LOGERROR("Could not find data in layer");
         return false;
     }
 
     LayerEncoding encoding;
     if (dataElem.HasAttribute("compression"))
     {
-        ATOMIC_LOGERROR("Compression not supported now");
+        URHO3D_LOGERROR("Compression not supported now");
         return false;
     }
 
@@ -132,7 +132,7 @@ bool TmxTileLayer2D::Load(const XMLElement& element, const TileMapInfo2D& info)
             encoding = Base64;
         else
         {
-            ATOMIC_LOGERROR("Invalid encoding: " + encodingAttribute);
+            URHO3D_LOGERROR("Invalid encoding: " + encodingAttribute);
             return false;
         }
     }
@@ -387,7 +387,7 @@ bool TmxImageLayer2D::Load(const XMLElement& element, const TileMapInfo2D& info)
     SharedPtr<Texture2D> texture(cache->GetResource<Texture2D>(textureFilePath));
     if (!texture)
     {
-        ATOMIC_LOGERROR("Could not load texture " + textureFilePath);
+        URHO3D_LOGERROR("Could not load texture " + textureFilePath);
         return false;
     }
 
@@ -438,7 +438,7 @@ bool TmxFile2D::BeginLoad(Deserializer& source)
     loadXMLFile_ = new XMLFile(context_);
     if (!loadXMLFile_->Load(source))
     {
-        ATOMIC_LOGERROR("Load XML failed " + source.GetName());
+        URHO3D_LOGERROR("Load XML failed " + source.GetName());
         loadXMLFile_.Reset();
         return false;
     }
@@ -446,7 +446,7 @@ bool TmxFile2D::BeginLoad(Deserializer& source)
     XMLElement rootElem = loadXMLFile_->GetRoot("map");
     if (!rootElem)
     {
-        ATOMIC_LOGERROR("Invalid tmx file " + source.GetName());
+        URHO3D_LOGERROR("Invalid tmx file " + source.GetName());
         loadXMLFile_.Reset();
         return false;
     }
@@ -470,7 +470,7 @@ bool TmxFile2D::BeginLoad(Deserializer& source)
                 // of a series of individual images which are not supported
                 if (!tsxXMLFile->GetRoot("tileset").GetChild("image"))
                 {
-                    ATOMIC_LOGERROR("Load TSX File failed: " + source + ". tsx files with individual images are not supported.");
+                    URHO3D_LOGERROR("Load TSX File failed: " + source + ". tsx files with individual images are not supported.");
                     return false;
                 }
                 // ATOMIC END
@@ -509,7 +509,7 @@ bool TmxFile2D::EndLoad()
     if (version != "1.0" && version != "1.0.0")
     // ATOMIC END
     {
-        ATOMIC_LOGERROR("Invalid version");
+        URHO3D_LOGERROR("Invalid version");
         return false;
     }
 
@@ -524,7 +524,7 @@ bool TmxFile2D::EndLoad()
         info_.orientation_ = O_HEXAGONAL;
     else
     {
-        ATOMIC_LOGERROR("Unsupported orientation type " + orientation);
+        URHO3D_LOGERROR("Unsupported orientation type " + orientation);
         return false;
     }
 
@@ -652,7 +652,7 @@ SharedPtr<XMLFile> TmxFile2D::LoadTSXFile(const String& source)
     SharedPtr<XMLFile> tsxXMLFile(new XMLFile(context_));
     if (!tsxFile || !tsxXMLFile->Load(*tsxFile))
     {
-        ATOMIC_LOGERROR("Load TSX file failed " + tsxFilePath);
+        URHO3D_LOGERROR("Load TSX file failed " + tsxFilePath);
         return SharedPtr<XMLFile>();
     }
 
@@ -688,7 +688,7 @@ bool TmxFile2D::LoadTileSet(const XMLElement& element)
             // of a series of individual images which are not supported
             if (!tsxXMLFile->GetRoot("tileset").GetChild("image"))
             {
-                ATOMIC_LOGERROR("Load TSX File failed: " + source + ". tsx files with individual images are not supported.");
+                URHO3D_LOGERROR("Load TSX File failed: " + source + ". tsx files with individual images are not supported.");
                 return false;
             }
             // ATOMIC END
@@ -722,7 +722,7 @@ bool TmxFile2D::LoadTileSet(const XMLElement& element)
             SharedPtr<Texture2D> texture(cache->GetResource<Texture2D>(textureFilePath));
             if (!texture)
             {
-                ATOMIC_LOGERROR("Could not load texture " + textureFilePath);
+                URHO3D_LOGERROR("Could not load texture " + textureFilePath);
                 return false;
             }
 
@@ -774,7 +774,7 @@ bool TmxFile2D::LoadTileSet(const XMLElement& element)
                 SharedPtr<Image> image(cache->GetResource<Image>(textureFilePath));
                 if (!image)
                 {
-                    ATOMIC_LOGERROR("Could not load image " + textureFilePath);
+                    URHO3D_LOGERROR("Could not load image " + textureFilePath);
                     return false;
                 }
                 tileWidth = imageWidth = imageElem.GetInt("width");
@@ -827,7 +827,7 @@ bool TmxFile2D::LoadTileSet(const XMLElement& element)
             TmxObjectGroup2D* objectGroup = new TmxObjectGroup2D(this);
             if (!objectGroup->Load(groupElem, info_, true))
             {
-                ATOMIC_LOGERROR("Could not load objectgroup");
+                URHO3D_LOGERROR("Could not load objectgroup");
                 objectGroup->ReleaseRef();
             }
             else
@@ -855,7 +855,7 @@ bool TmxFile2D::LoadTileSet(const XMLElement& element)
             TileImageInfo& info = tileImageInfos[i];
             if (!allocator.Allocate(info.imageWidth + 1, info.imageHeight + 1, info.x, info.y))
             {
-                ATOMIC_LOGERROR("Could not allocate area");
+                URHO3D_LOGERROR("Could not allocate area");
                 return false;
             }
         }

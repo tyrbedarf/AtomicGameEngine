@@ -121,7 +121,7 @@ void CSClassWriter::WriteManagedProperties(String& sourceOut)
             if (prop->getter_ && !prop->getter_->Skip())
             {
                 getStatic = prop->getter_->IsStatic();
-                fType = getType = prop->getter_->GetReturnType();                
+                fType = getType = prop->getter_->GetReturnType();
             }
 
             if (prop->setter_ && !prop->setter_->Skip())
@@ -139,7 +139,7 @@ void CSClassWriter::WriteManagedProperties(String& sourceOut)
                 }
                 else if (getStatic != setStatic)
                 {
-                    ATOMIC_LOGWARNINGF("CSClassWriter::WriteManagedProperties : mismatched static qualifier on property %s:%s",
+                    URHO3D_LOGWARNINGF("CSClassWriter::WriteManagedProperties : mismatched static qualifier on property %s:%s",
                                        klass_->GetName().CString(), prop->name_.CString());
 
                     continue;
@@ -267,7 +267,7 @@ void CSClassWriter::GenerateManagedSource(String& sourceOut)
         if (baseClass)
         {
             baseStrings.Push(baseClass->GetName());
-        }               
+        }
 
         for (unsigned i = 0; i < nativeInterfaces.Size(); i++)
         {
@@ -346,7 +346,7 @@ void CSClassWriter::GenerateManagedSource(String& sourceOut)
     // Make sure we have at least a IntPtr version
     if (!klass_->IsInterface() && !CSFunctionWriter::GetWroteConstructor() && klass_->GetName() != "RefCounted")
     {
-        ATOMIC_LOGINFOF("WARNING: %s class didn't write a constructor, filling in generated native constructor", klass_->GetName().CString());
+        URHO3D_LOGINFOF("WARNING: %s class didn't write a constructor, filling in generated native constructor", klass_->GetName().CString());
 
         line = ToString("public %s (IntPtr native) : base (native)\n", klass_->GetName().CString());
         source += IndentLine(line);

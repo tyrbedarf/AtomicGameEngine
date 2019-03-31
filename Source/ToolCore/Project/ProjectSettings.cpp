@@ -61,7 +61,7 @@ namespace ToolCore
     {
         if (!ValidPlatform(platform))
         {
-            ATOMIC_LOGERRORF("ProjectPlatformSettings::AddSupportedPlatform - Attempting to add invalid platform: %s", platform.CString());
+            URHO3D_LOGERRORF("ProjectPlatformSettings::AddSupportedPlatform - Attempting to add invalid platform: %s", platform.CString());
             return;
         }
 
@@ -94,7 +94,7 @@ namespace ToolCore
 
         if (!fileSystem->FileExists(path))
         {
-            ATOMIC_LOGERRORF("No platform settings specified, using default: %s", path.CString());
+            URHO3D_LOGERRORF("No platform settings specified, using default: %s", path.CString());
             SetDefault();
             return true;
         }
@@ -102,7 +102,7 @@ namespace ToolCore
         SharedPtr<File> file(new File(context_, path));
         if (!file->IsOpen())
         {
-            ATOMIC_LOGERRORF("Unable to open platform settings: %s", path.CString());
+            URHO3D_LOGERRORF("Unable to open platform settings: %s", path.CString());
             return false;
         }
 
@@ -112,14 +112,14 @@ namespace ToolCore
 
         if (!result)
         {
-            ATOMIC_LOGERRORF("Unable to load platform settings: %s", path.CString());
+            URHO3D_LOGERRORF("Unable to load platform settings: %s", path.CString());
             return false;
         }
 
         JSONValue& root = jsonFile->GetRoot();
         if (!root.IsObject())
         {
-            ATOMIC_LOGERRORF("No root object in platform settings: %s", path.CString());
+            URHO3D_LOGERRORF("No root object in platform settings: %s", path.CString());
             return false;
         }
 
@@ -129,7 +129,7 @@ namespace ToolCore
 
         if (!platforms.Size())
         {
-            ATOMIC_LOGERRORF("No platforms array defined in platform settings: %s, using default", path.CString());
+            URHO3D_LOGERRORF("No platforms array defined in platform settings: %s, using default", path.CString());
             SetDefault();
         }
         else
@@ -140,7 +140,7 @@ namespace ToolCore
 
                 if (!ValidPlatform(platform))
                 {
-                    ATOMIC_LOGERRORF("Unknown platform %s in platform settings: %s, skipping", platform.CString(), path.CString());
+                    URHO3D_LOGERRORF("Unknown platform %s in platform settings: %s, skipping", platform.CString(), path.CString());
                     continue;
                 }
 
@@ -150,7 +150,7 @@ namespace ToolCore
 
         if (!platforms_.Size())
         {
-            ATOMIC_LOGERRORF("No valid platforms defined in platform settings: %s, using default", path.CString());
+            URHO3D_LOGERRORF("No valid platforms defined in platform settings: %s, using default", path.CString());
             SetDefault();
         }
 

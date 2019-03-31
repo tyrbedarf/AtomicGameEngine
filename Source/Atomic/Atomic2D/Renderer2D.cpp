@@ -202,7 +202,7 @@ void Renderer2D::UpdateGeometry(const FrameInfo& frame)
         }
         else
         {
-            ATOMIC_LOGERROR("Failed to lock index buffer");
+            URHO3D_LOGERROR("Failed to lock index buffer");
             return;
         }
     }
@@ -234,7 +234,7 @@ void Renderer2D::UpdateGeometry(const FrameInfo& frame)
                 vertexBuffer->Unlock();
             }
             else
-                ATOMIC_LOGERROR("Failed to lock vertex buffer");
+                URHO3D_LOGERROR("Failed to lock vertex buffer");
         }
 
         viewBatchInfo.vertexBufferUpdateFrameNumber_ = frame_.frameNumber_;

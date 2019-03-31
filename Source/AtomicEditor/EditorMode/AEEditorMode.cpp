@@ -101,7 +101,7 @@ void EditorMode::HandleIPCWorkerExit(StringHash eventType, VariantMap& eventData
     }
     else
     {
-        ATOMIC_LOGERROR("EditorMode::HandleIPCWorkerExit - Unknown Broker");
+        URHO3D_LOGERROR("EditorMode::HandleIPCWorkerExit - Unknown Broker");
     }
 }
 
@@ -136,7 +136,7 @@ void EditorMode::HandleNETBuildResult(StringHash eventType, VariantMap& eventDat
 
         if (!netProjectSystem->GetSolutionAvailable() || netProjectSystem->GetProjectAssemblyDirty())
         {
-            ATOMIC_LOGERROR("EditorMode::HandleNETBuildResult() - NETBuild was successful, however project still reported as dirty or missing");
+            URHO3D_LOGERROR("EditorMode::HandleNETBuildResult() - NETBuild was successful, however project still reported as dirty or missing");
         }
 
         PlayProjectInternal(additionalArgs_, debug_);
@@ -161,7 +161,7 @@ bool EditorMode::PlayProject(String addArgs, bool debug)
 
         if (!build)
         {
-            ATOMIC_LOGERROR("EditorMode::PlayProject() - Unable to instantiate C# build");
+            URHO3D_LOGERROR("EditorMode::PlayProject() - Unable to instantiate C# build");
             return false;
         }
 
@@ -218,7 +218,7 @@ bool EditorMode::PlayProjectInternal(const String &addArgs, bool debug)
 
         if (!fileSystem->FileExists(playerBinary))
         {
-            ATOMIC_LOGERRORF("Managed player: %s does not exist", playerBinary.CString());
+            URHO3D_LOGERRORF("Managed player: %s does not exist", playerBinary.CString());
         }
 
     }
@@ -300,7 +300,7 @@ bool EditorMode::PlayProjectInternal(const String &addArgs, bool debug)
 
     String dump;
     dump.Join(vargs, " ");
-    ATOMIC_LOGINFOF("Launching Broker %s %s", playerBinary.CString(), dump.CString());
+    URHO3D_LOGINFOF("Launching Broker %s %s", playerBinary.CString(), dump.CString());
 
     IPC* ipc = GetSubsystem<IPC>();
     playerBroker_ = ipc->SpawnWorker(playerBinary, vargs);

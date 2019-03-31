@@ -60,7 +60,7 @@ bool JSBind::GenerateCSharpBindings()
     if (!package_->GenerateBindings(JSBPackage::CSHARP))
         return true;
 
-    ATOMIC_LOGINFOF("Generating C# Bindings");
+    URHO3D_LOGINFOF("Generating C# Bindings");
 
     String modulesFolder = "Artifacts/Build/Source/Generated/CSharp/Packages/";
     modulesFolder += package_->GetName() + "/";
@@ -98,7 +98,7 @@ bool JSBind::GenerateJavaScriptBindings()
     if (!package_->GenerateBindings(JSBPackage::JAVASCRIPT))
         return true;
 
-    ATOMIC_LOGINFOF("Generating JS Bindings");
+    URHO3D_LOGINFOF("Generating JS Bindings");
 
     String modulesFolder = "Artifacts/Build/Source/Generated/Javascript/Packages/";
     modulesFolder += package_->GetName() + "/";

@@ -37,7 +37,7 @@ namespace Urho3D
 
             if (!cache)
             {
-                ATOMIC_LOGERROR("ResourceMapRouter::ResourceMapRouter - ResourceCache subsystem not found");
+                URHO3D_LOGERROR("ResourceMapRouter::ResourceMapRouter - ResourceCache subsystem not found");
                 return;
             }
 
@@ -53,12 +53,12 @@ namespace Urho3D
                 }
                 else
                 {
-                    ATOMIC_LOGERROR("ResourceMapRouter::ResourceMapRouter - Unable to load resource map json");
+                    URHO3D_LOGERROR("ResourceMapRouter::ResourceMapRouter - Unable to load resource map json");
                 }
             }
             else
             {
-                ATOMIC_LOGERROR("ResourceMapRouter::ResourceMapRouter - Unable to parse resource map json");
+                URHO3D_LOGERROR("ResourceMapRouter::ResourceMapRouter - Unable to parse resource map json");
             }
 
         }

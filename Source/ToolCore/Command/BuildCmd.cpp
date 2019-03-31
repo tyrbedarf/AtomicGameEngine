@@ -112,7 +112,7 @@ void BuildCmd::HandleBuildComplete(StringHash eventType, VariantMap& eventData)
 
 void BuildCmd::Run()
 {
-    ATOMIC_LOGINFOF("Building project for: %s", buildPlatform_.CString());
+    URHO3D_LOGINFOF("Building project for: %s", buildPlatform_.CString());
 
     ToolSystem* tsystem = GetSubsystem<ToolSystem>();
     Project* project = tsystem->GetProject();

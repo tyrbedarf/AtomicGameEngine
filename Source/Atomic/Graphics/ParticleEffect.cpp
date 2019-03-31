@@ -104,7 +104,7 @@ bool ParticleEffect::BeginLoad(Deserializer& source)
     XMLFile file(context_);
     if (!file.Load(source))
     {
-        ATOMIC_LOGERROR("Load particle effect file failed");
+        URHO3D_LOGERROR("Load particle effect file failed");
         return false;
     }
 
@@ -167,7 +167,7 @@ bool ParticleEffect::Load(const XMLElement& source)
 
     if (source.IsNull())
     {
-        ATOMIC_LOGERROR("Can not load particle effect from null XML element");
+        URHO3D_LOGERROR("Can not load particle effect from null XML element");
         return false;
     }
 
@@ -329,7 +329,7 @@ bool ParticleEffect::Save(XMLElement& dest) const
 {
     if (dest.IsNull())
     {
-        ATOMIC_LOGERROR("Can not save particle effect to null XML element");
+        URHO3D_LOGERROR("Can not save particle effect to null XML element");
         return false;
     }
 

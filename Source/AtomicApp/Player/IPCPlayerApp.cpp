@@ -135,7 +135,7 @@ namespace Urho3D
                         value.CString(), value.CString(), value.CString(), value.CString());
 #endif
 
-                    ATOMIC_LOGINFOF("Adding ResourcePaths: %s", resourcePaths.CString());
+                    URHO3D_LOGINFOF("Adding ResourcePaths: %s", resourcePaths.CString());
 
                     engineParameters_["ResourcePaths"] = resourcePaths;
 
@@ -178,7 +178,7 @@ namespace Urho3D
             }
             else if (subprocess_)
             {
-                ATOMIC_LOGERROR("IPCPlayerApp::Start() - Unable to initialize IPC Worker");
+                URHO3D_LOGERROR("IPCPlayerApp::Start() - Unable to initialize IPC Worker");
             }
         }
 
@@ -198,7 +198,7 @@ namespace Urho3D
 
         if (debugPlayer_)
         {
-            ATOMIC_LOGDEBUG("Starting JSDebugger Subsystem");
+            URHO3D_LOGDEBUG("Starting JSDebugger Subsystem");
             context_->RegisterSubsystem(new JSDebugger(context_));
             context_->GetSubsystem<JSDebugger>()->Reconnect();
         }
@@ -262,7 +262,7 @@ namespace Urho3D
 
             ipc_->SendEventToBroker(E_IPCJSERROR, ipcErrorData);
 
-            ATOMIC_LOGERROR("SENDING E_IPCJSERROR");
+            URHO3D_LOGERROR("SENDING E_IPCJSERROR");
 
         }
 

@@ -491,7 +491,7 @@ VariantVector CrowdManager::GetQueryFilterTypesAttr() const
 unsigned short CrowdManager::GetIncludeFlags(unsigned queryFilterType) const
 {
     if (queryFilterType >= numQueryFilterTypes_)
-        ATOMIC_LOGWARNINGF("Query filter type %d is not configured yet, returning the default include flags initialized by dtCrowd",
+        URHO3D_LOGWARNINGF("Query filter type %d is not configured yet, returning the default include flags initialized by dtCrowd",
             queryFilterType);
     const dtQueryFilter* filter = GetDetourQueryFilter(queryFilterType);
     return (unsigned short)(filter ? filter->getIncludeFlags() : 0xffff);
@@ -500,7 +500,7 @@ unsigned short CrowdManager::GetIncludeFlags(unsigned queryFilterType) const
 unsigned short CrowdManager::GetExcludeFlags(unsigned queryFilterType) const
 {
     if (queryFilterType >= numQueryFilterTypes_)
-        ATOMIC_LOGWARNINGF("Query filter type %d is not configured yet, returning the default exclude flags initialized by dtCrowd",
+        URHO3D_LOGWARNINGF("Query filter type %d is not configured yet, returning the default exclude flags initialized by dtCrowd",
             queryFilterType);
     const dtQueryFilter* filter = GetDetourQueryFilter(queryFilterType);
     return (unsigned short)(filter ? filter->getExcludeFlags() : 0);
@@ -509,7 +509,7 @@ unsigned short CrowdManager::GetExcludeFlags(unsigned queryFilterType) const
 float CrowdManager::GetAreaCost(unsigned queryFilterType, unsigned areaID) const
 {
     if (queryFilterType >= numQueryFilterTypes_ || areaID >= numAreas_[queryFilterType])
-        ATOMIC_LOGWARNINGF(
+        URHO3D_LOGWARNINGF(
             "Query filter type %d and/or area id %d are not configured yet, returning the default area cost initialized by dtCrowd",
             queryFilterType, areaID);
     const dtQueryFilter* filter = GetDetourQueryFilter(queryFilterType);
@@ -594,7 +594,7 @@ bool CrowdManager::CreateCrowd()
         maxAgentRadius_ = navigationMesh_->GetAgentRadius();
     if (!crowd_->init(maxAgents_, maxAgentRadius_, navigationMesh_->navMesh_, CrowdAgentUpdateCallback))
     {
-        ATOMIC_LOGERROR("Could not initialize DetourCrowd");
+        URHO3D_LOGERROR("Could not initialize DetourCrowd");
         return false;
     }
 
@@ -611,7 +611,7 @@ bool CrowdManager::CreateCrowd()
             // Keep adding until the crowd cannot take it anymore
             if (agents[i]->AddAgentToCrowd(true) == -1)
             {
-                ATOMIC_LOGWARNINGF("CrowdManager: %d crowd agents orphaned", agents.Size() - i);
+                URHO3D_LOGWARNINGF("CrowdManager: %d crowd agents orphaned", agents.Size() - i);
                 break;
             }
         }
@@ -653,7 +653,7 @@ void CrowdManager::OnSceneSet(Scene* scene)
     {
         if (scene != node_)
         {
-            ATOMIC_LOGERROR("CrowdManager is a scene component and should only be attached to the scene node");
+            URHO3D_LOGERROR("CrowdManager is a scene component and should only be attached to the scene node");
             return;
         }
 

@@ -118,7 +118,7 @@ const VariantMap& ScriptComponent::GetFieldValuesAttr() const
             }
             else if (!StringHash::GetSignificantString(nameHash, fieldName))
             {
-                ATOMIC_LOGWARNING("ScriptComponent::GetFieldValuesAttr - unable to retrieve field name");
+                URHO3D_LOGWARNING("ScriptComponent::GetFieldValuesAttr - unable to retrieve field name");
                 skip = true;
             }
             else if (!(fieldInfo = componentFile->GetFields(classname)[fieldName]) || !fieldInfo->isEnum_)
@@ -199,7 +199,7 @@ void ScriptComponent::SetFieldValuesAttr(const VariantMap& value)
             }
             else if (!StringHash::GetSignificantString(nameHash, fieldName))
             {
-                ATOMIC_LOGWARNING("ScriptComponent::SetFieldValuesAttr - unable to retrieve field name");
+                URHO3D_LOGWARNING("ScriptComponent::SetFieldValuesAttr - unable to retrieve field name");
                 skip = true;
             }
             else if (!(fieldInfo = componentFile->GetFields(classname)[fieldName]) || !fieldInfo->isEnum_)

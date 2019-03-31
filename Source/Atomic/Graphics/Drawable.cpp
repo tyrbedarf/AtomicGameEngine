@@ -116,7 +116,7 @@ Drawable::Drawable(Context* context, unsigned char drawableFlags) :
 // ATOMIC BEGIN
     if (drawableFlags == DRAWABLE_UNDEFINED || drawableFlags > DRAWABLE_ANY)
     {
-        ATOMIC_LOGERROR("Drawable with undefined drawableFlags");
+        URHO3D_LOGERROR("Drawable with undefined drawableFlags");
     }
 // ATOMIC END
 }
@@ -425,7 +425,7 @@ void Drawable::AddToOctree()
         if (octree)
             octree->InsertDrawable(this);
         else
-            ATOMIC_LOGERROR("No Octree component in scene, drawable will not render");
+            URHO3D_LOGERROR("No Octree component in scene, drawable will not render");
     }
     else
     {
@@ -482,7 +482,7 @@ bool WriteDrawablesToOBJ(PODVector<Drawable*> drawables, File* outputFile, bool 
                 continue;
             if (geo->GetPrimitiveType() != TRIANGLE_LIST)
             {
-                ATOMIC_LOGERRORF("%s (%u) %s (%u) Geometry %u contains an unsupported geometry type %u", node->GetName().Length() > 0 ? node->GetName().CString() : "Node", node->GetID(), drawable->GetTypeName().CString(), drawable->GetID(), geoIndex, (unsigned)geo->GetPrimitiveType());
+                URHO3D_LOGERRORF("%s (%u) %s (%u) Geometry %u contains an unsupported geometry type %u", node->GetName().Length() > 0 ? node->GetName().CString() : "Node", node->GetID(), drawable->GetTypeName().CString(), drawable->GetID(), geoIndex, (unsigned)geo->GetPrimitiveType());
                 continue;
             }
 
@@ -500,7 +500,7 @@ bool WriteDrawablesToOBJ(PODVector<Drawable*> drawables, File* outputFile, bool 
             bool hasPosition = VertexBuffer::HasElement(*elements, TYPE_VECTOR3, SEM_POSITION);
             if (!hasPosition)
             {
-                ATOMIC_LOGERRORF("%s (%u) %s (%u) Geometry %u contains does not have Vector3 type positions in vertex data", node->GetName().Length() > 0 ? node->GetName().CString() : "Node", node->GetID(), drawable->GetTypeName().CString(), drawable->GetID(), geoIndex);
+                URHO3D_LOGERRORF("%s (%u) %s (%u) Geometry %u contains does not have Vector3 type positions in vertex data", node->GetName().Length() > 0 ? node->GetName().CString() : "Node", node->GetID(), drawable->GetTypeName().CString(), drawable->GetID(), geoIndex);
                 continue;
             }
 

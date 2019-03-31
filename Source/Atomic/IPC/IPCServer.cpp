@@ -104,14 +104,14 @@ namespace Urho3D
 
         if (!clientExecutable_.Length() || !fileSystem->FileExists(clientExecutable_))
         {
-            ATOMIC_LOGERRORF("IPCServer::Start - Client Executable does not exist: %s", clientExecutable_.CString());
+            URHO3D_LOGERRORF("IPCServer::Start - Client Executable does not exist: %s", clientExecutable_.CString());
             return false;
         }
 
         String dump;
         dump.Join(args, " ");
 
-        ATOMIC_LOGDEBUGF("Launching Broker %s %s", clientExecutable_.CString(), dump.CString());
+        URHO3D_LOGDEBUGF("Launching Broker %s %s", clientExecutable_.CString(), dump.CString());
 
         IPC* ipc = GetSubsystem<IPC>();
         serverBroker_ = ipc->SpawnWorker(clientExecutable_, args);
@@ -124,7 +124,7 @@ namespace Urho3D
         }
         else
         {
-            ATOMIC_LOGERRORF("Error Spawning Broker %s %s", clientExecutable_.CString(), dump.CString());
+            URHO3D_LOGERRORF("Error Spawning Broker %s %s", clientExecutable_.CString(), dump.CString());
         }
 
         return serverBroker_.NotNull();
@@ -157,7 +157,7 @@ namespace Urho3D
 
                 if (cmd.handler_.Expired())
                 {
-                    ATOMIC_LOGERROR("IPCServer::HandleIPCNETCmdResult - IPCNETResult for expired client");
+                    URHO3D_LOGERROR("IPCServer::HandleIPCNETCmdResult - IPCNETResult for expired client");
                     break;
                 }
 
@@ -172,7 +172,7 @@ namespace Urho3D
 
         if (!found)
         {
-            ATOMIC_LOGERRORF("IPCServer::HandleIPCNETCmdResult - IPCNETResult command %u not found in process queue", id);
+            URHO3D_LOGERRORF("IPCServer::HandleIPCNETCmdResult - IPCNETResult command %u not found in process queue", id);
         }
 
     }
@@ -205,7 +205,7 @@ namespace Urho3D
 
         if (!serverBroker_)
         {
-            ATOMIC_LOGERRORF("IPCServer::HandleUpdate - null player broker for command: %s", cmdString.CString());
+            URHO3D_LOGERRORF("IPCServer::HandleUpdate - null player broker for command: %s", cmdString.CString());
             return;
         }
 

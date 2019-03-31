@@ -83,7 +83,7 @@ void BindCmd::Run()
 
     context_->RegisterSubsystem(jsbind);
 
-    ATOMIC_LOGINFOF("Loading Package");
+    URHO3D_LOGINFOF("Loading Package");
     jsbind->LoadPackage(sourceRootFolder_, packageFolder_);
 
     jsbind->GenerateJavaScriptBindings();

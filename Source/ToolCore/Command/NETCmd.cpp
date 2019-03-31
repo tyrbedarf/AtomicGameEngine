@@ -158,14 +158,14 @@ void NETCmd::HandleNETBuildResult(StringHash eventType, VariantMap& eventData)
 
     if (eventData[P_SUCCESS].GetBool())
     {
-        ATOMIC_LOGINFOF("NETBuild Success for solution: %s", solutionPath_.CString());
+        URHO3D_LOGINFOF("NETBuild Success for solution: %s", solutionPath_.CString());
         Finished();
     }
     else
     {
         const String& errorText = eventData[P_ERRORTEXT].GetString();
 
-        ATOMIC_LOGERRORF("\n%s\n", errorText.CString());
+        URHO3D_LOGERRORF("\n%s\n", errorText.CString());
         Error(ToString("NETBuild Error for solution: %s", solutionPath_.CString()));
         Finished();
     }

@@ -392,7 +392,7 @@ void WebTexture2D::SetSize(int width, int height)
 
     if (!texture_->SetSize(width, height, format, textureUsage))
     {
-        ATOMIC_LOGERRORF("Unable to set WebTexture2D size to %i x %i", width, height);
+        URHO3D_LOGERRORF("Unable to set WebTexture2D size to %i x %i", width, height);
         return;
     }
 

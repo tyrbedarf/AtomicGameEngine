@@ -108,7 +108,7 @@ bool Audio::SetMode(int bufferLengthMSec, int mixRate, bool stereo, bool interpo
     deviceID_ = SDL_OpenAudioDevice(0, SDL_FALSE, &desired, &obtained, SDL_AUDIO_ALLOW_ANY_CHANGE);
     if (!deviceID_)
     {
-        ATOMIC_LOGERROR("Could not initialize audio output");
+        URHO3D_LOGERROR("Could not initialize audio output");
         return false;
     }
 
@@ -123,7 +123,7 @@ bool Audio::SetMode(int bufferLengthMSec, int mixRate, bool stereo, bool interpo
 #else
     if (obtained.format != AUDIO_S16SYS && obtained.format != AUDIO_S16LSB && obtained.format != AUDIO_S16MSB)
     {
-        ATOMIC_LOGERROR("Could not initialize audio output, 16-bit buffer format not supported");
+        URHO3D_LOGERROR("Could not initialize audio output, 16-bit buffer format not supported");
         SDL_CloseAudioDevice(deviceID_);
         deviceID_ = 0;
         return false;
@@ -138,7 +138,7 @@ bool Audio::SetMode(int bufferLengthMSec, int mixRate, bool stereo, bool interpo
     interpolation_ = interpolation;
     clipBuffer_ = new int[stereo ? fragmentSize_ << 1 : fragmentSize_];
 
-    ATOMIC_LOGINFO("Set audio mode " + String(mixRate_) + " Hz " + (stereo_ ? "stereo" : "mono") + " " +
+    URHO3D_LOGINFO("Set audio mode " + String(mixRate_) + " Hz " + (stereo_ ? "stereo" : "mono") + " " +
             (interpolation_ ? "interpolated" : ""));
 
     return Play();
@@ -159,7 +159,7 @@ bool Audio::Play()
 
     if (!deviceID_)
     {
-        ATOMIC_LOGERROR("No audio mode set, can not start playback");
+        URHO3D_LOGERROR("No audio mode set, can not start playback");
         return false;
     }
 

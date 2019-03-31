@@ -66,7 +66,7 @@ namespace ToolCore
 
         String netServiceFilename = tenv->GetAtomicNETRootDir() + config + "/AtomicNETService/AtomicNETService.exe";
 
-#ifdef ATOMIC_PLATFORM_WINDOWS        
+#ifdef ATOMIC_PLATFORM_WINDOWS
 
         execPath = netServiceFilename;
 
@@ -84,7 +84,7 @@ namespace ToolCore
         FileSystem* fileSystem = GetSubsystem<FileSystem>();
         if (!fileSystem->FileExists(execPath))
         {
-            ATOMIC_LOGERRORF("AtomicNETService binary not found: %s", execPath.CString());
+            URHO3D_LOGERRORF("AtomicNETService binary not found: %s", execPath.CString());
             return false;
         }
 

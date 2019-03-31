@@ -238,7 +238,7 @@ namespace Urho3D
         String errorString = ToString("%s - %s - Line: %i",
             errFilename.CString(), errMessage.CString(), errLineNumber);
 
-        ATOMIC_LOGERROR(errorString);
+        URHO3D_LOGERROR(errorString);
 
     }
 

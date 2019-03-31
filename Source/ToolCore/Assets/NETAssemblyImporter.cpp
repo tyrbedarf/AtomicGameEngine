@@ -70,7 +70,7 @@ namespace ToolCore
 
             if (!assemblyJSON_.IsObject())
             {
-                ATOMIC_LOGERRORF("NETAssemblyImporter::HandleResult - Unable to parse assembly json for %s", asset_->GetPath().CString());
+                URHO3D_LOGERRORF("NETAssemblyImporter::HandleResult - Unable to parse assembly json for %s", asset_->GetPath().CString());
             }
             else
             {
@@ -82,17 +82,17 @@ namespace ToolCore
 
                 if (!assemblyJSON_.IsObject())
                 {
-                    ATOMIC_LOGERRORF("NETAssemblyImporter::HandleResult - Unable to parse assembly json for %s", asset_->GetPath().CString());
+                    URHO3D_LOGERRORF("NETAssemblyImporter::HandleResult - Unable to parse assembly json for %s", asset_->GetPath().CString());
                 }
 
                 using namespace CSComponentAssemblyChanged;
                 VariantMap assemblyChangedEventData;
                 assemblyChangedEventData[P_RESOURCE] = asset_->GetResource();
-                assemblyChangedEventData[P_ASSEMBLYPATH] = asset_->GetPath();        
+                assemblyChangedEventData[P_ASSEMBLYPATH] = asset_->GetPath();
                 SendEvent(E_CSCOMPONENTASSEMBLYCHANGED, assemblyChangedEventData);
-                    
+
             }
-            
+
         }
 
     }
@@ -112,7 +112,7 @@ namespace ToolCore
 
         if (!assemblyFile)
         {
-            ATOMIC_LOGERRORF("NETAssemblyImporter::Import - invalid cached assembly json importing %s", asset_->GetPath().CString());
+            URHO3D_LOGERRORF("NETAssemblyImporter::Import - invalid cached assembly json importing %s", asset_->GetPath().CString());
             return false;
         }
 
@@ -132,13 +132,13 @@ namespace ToolCore
                 if (!SaveAssemblyCacheFile())
                     return false;
 
-                ATOMIC_LOGINFOF("NETAssemblyImporter::Import - AtomicNETService process unavailable, using cached assembly JSON for %s", asset_->GetPath().CString());
+                URHO3D_LOGINFOF("NETAssemblyImporter::Import - AtomicNETService process unavailable, using cached assembly JSON for %s", asset_->GetPath().CString());
 
                 return true;
             }
             else
             {
-                ATOMIC_LOGERRORF("NETAssemblyImporter::Import - Unable to get AtomicNETService subsystem and no cached assembly json importing %s", asset_->GetPath().CString());
+                URHO3D_LOGERRORF("NETAssemblyImporter::Import - Unable to get AtomicNETService subsystem and no cached assembly json importing %s", asset_->GetPath().CString());
                 return false;
             }
         }

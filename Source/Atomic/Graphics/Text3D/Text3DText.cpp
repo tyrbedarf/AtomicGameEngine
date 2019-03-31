@@ -351,7 +351,7 @@ bool Text3DText::SetFont(Text3DFont* font, float size)
 {
     if (!font)
     {
-        ATOMIC_LOGERROR("Null font for Text");
+        URHO3D_LOGERROR("Null font for Text");
         return false;
     }
 

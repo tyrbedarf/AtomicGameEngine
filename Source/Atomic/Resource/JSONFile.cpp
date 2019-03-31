@@ -118,7 +118,7 @@ bool JSONFile::BeginLoad(Deserializer& source)
     unsigned dataSize = source.GetSize();
     if (!dataSize && !source.GetName().Empty())
     {
-        ATOMIC_LOGERROR("Zero sized JSON data in " + source.GetName());
+        URHO3D_LOGERROR("Zero sized JSON data in " + source.GetName());
         return false;
     }
 
@@ -130,7 +130,7 @@ bool JSONFile::BeginLoad(Deserializer& source)
     rapidjson::Document document;
     if (document.Parse<kParseCommentsFlag | kParseTrailingCommasFlag>(buffer).HasParseError())
     {
-        ATOMIC_LOGERROR("Could not parse JSON data from " + source.GetName());
+        URHO3D_LOGERROR("Could not parse JSON data from " + source.GetName());
         return false;
     }
 
@@ -250,7 +250,7 @@ bool JSONFile::ParseJSON(const String& json, JSONValue& value, bool reportError)
     if (document.Parse<0>(json.CString()).HasParseError())
     {
         if (reportError)
-            ATOMIC_LOGERRORF("Could not parse JSON data from string with error: %s", document.GetParseError());
+            URHO3D_LOGERRORF("Could not parse JSON data from string with error: %s", document.GetParseError());
 
         return false;
     }

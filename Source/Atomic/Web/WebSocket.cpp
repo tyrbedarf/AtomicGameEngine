@@ -71,18 +71,18 @@ struct WebSocketInternalState
     WebSocketInternalState(WebSocket *es_)
         : es(es_)
     {
-        ATOMIC_LOGDEBUG("Create WebSocketInternalState");
+        URHO3D_LOGDEBUG("Create WebSocketInternalState");
     }
 
     ~WebSocketInternalState()
     {
-        ATOMIC_LOGDEBUG("Destroy WebSocketInternalState");
+        URHO3D_LOGDEBUG("Destroy WebSocketInternalState");
     }
 
     void OnOpen(websocketpp::connection_hdl hdl)
     {
         state = WS_OPEN;
-        ATOMIC_LOGDEBUG("WebSocket CONNECTED to: " + url);
+        URHO3D_LOGDEBUG("WebSocket CONNECTED to: " + url);
         if (es)
         {
             es->SendEvent("open");
@@ -92,7 +92,7 @@ struct WebSocketInternalState
     void OnClose(websocketpp::connection_hdl hdl)
     {
         state = WS_CLOSED;
-        ATOMIC_LOGDEBUG("WebSocket DISCONNECTED from: " + url);
+        URHO3D_LOGDEBUG("WebSocket DISCONNECTED from: " + url);
         if (es)
         {
             es->SendEvent("close");
@@ -102,7 +102,7 @@ struct WebSocketInternalState
     void OnFail(websocketpp::connection_hdl hdl)
     {
         state = WS_FAIL_TO_CONNECT;
-        ATOMIC_LOGDEBUG("WebSocket FAILED to connect to: " + url);
+        URHO3D_LOGDEBUG("WebSocket FAILED to connect to: " + url);
         if (es)
         {
             es->SendEvent("fail_to_connect");
@@ -133,7 +133,7 @@ struct WebSocketInternalState
         {
             state = WS_INVALID;
             error = ec.message().c_str();
-            ATOMIC_LOGDEBUG("WebSocket error: " + error);
+            URHO3D_LOGDEBUG("WebSocket error: " + error);
             if (es)
             {
                 es->SendEvent("invalid");
@@ -160,14 +160,14 @@ WebSocket::WebSocket(Context* context, const String& url) :
 
 void WebSocket::setup(asio::io_service *service)
 {
-    ATOMIC_LOGDEBUG("Create WebSocket");
+    URHO3D_LOGDEBUG("Create WebSocket");
     websocketpp::lib::error_code ec;
     is_->c.init_asio(service, ec);
     if (ec)
     {
         is_->state = WS_INVALID;
         is_->error = ec.message().c_str();
-        ATOMIC_LOGDEBUG("WebSocket error: " + is_->error);
+        URHO3D_LOGDEBUG("WebSocket error: " + is_->error);
         SendEvent("invalid");
         return;
     }
@@ -176,14 +176,14 @@ void WebSocket::setup(asio::io_service *service)
     is_->c.set_fail_handler(bind(&WebSocketInternalState::OnFail, is_, ::_1));
     is_->c.set_message_handler(bind(&WebSocketInternalState::OnMessage, is_, ::_1, ::_2));
 
-    ATOMIC_LOGDEBUG("WebSocket request to URL " + is_->url);
+    URHO3D_LOGDEBUG("WebSocket request to URL " + is_->url);
 
     is_->MakeConnection();
 }
 
 WebSocket::~WebSocket()
 {
-    ATOMIC_LOGDEBUG("Destroy WebSocket");
+    URHO3D_LOGDEBUG("Destroy WebSocket");
     std::error_code ec;
     is_->es = nullptr;
     is_->con->terminate(ec);
@@ -224,14 +224,14 @@ void  WebSocket::Close()
 {
     is_->state = WS_CLOSING;
     websocketpp::lib::error_code ec;
-    ATOMIC_LOGDEBUG("WebSocket atempting to close URL " + is_->url);
+    URHO3D_LOGDEBUG("WebSocket atempting to close URL " + is_->url);
     is_->con->terminate(ec);
 }
 
 void WebSocket::OpenAgain()
 {
     is_->state = WS_CONNECTING;
-    ATOMIC_LOGDEBUG("WebSocket request (again) to URL " + is_->url);
+    URHO3D_LOGDEBUG("WebSocket request (again) to URL " + is_->url);
     is_->MakeConnection();
 }
 

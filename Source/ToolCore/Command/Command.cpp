@@ -64,12 +64,12 @@ bool Command::LoadProject()
         fileSystem->ScanDir(projectFiles, projectPath_, "*.atomic", SCAN_FILES, false);
         if (!projectFiles.Size())
         {
-            ATOMIC_LOGERRORF("No .atomic project file in %s", projectPath_.CString());
+            URHO3D_LOGERRORF("No .atomic project file in %s", projectPath_.CString());
             return false;
         }
         else if (projectFiles.Size() > 1)
         {
-            ATOMIC_LOGERRORF("Multiple .atomic project files found in %s", projectPath_.CString());
+            URHO3D_LOGERRORF("Multiple .atomic project files found in %s", projectPath_.CString());
             return false;
         }
         projectFile = projectPath_ + "/" + projectFiles[0];
@@ -79,7 +79,7 @@ bool Command::LoadProject()
 
     if (!tsystem->LoadProject(projectFile))
     {
-        ATOMIC_LOGERRORF("Failed to load project: %s", projectFile.CString());
+        URHO3D_LOGERRORF("Failed to load project: %s", projectFile.CString());
         return false;
     }
 

@@ -147,7 +147,7 @@ void AtomicTool::HandleLicenseActivationError(StringHash eventType, VariantMap& 
 
 void AtomicTool::HandleLicenseActivationSuccess(StringHash eventType, VariantMap& eventData)
 {
-    ATOMIC_LOGRAW("\nActivation successful, thank you!\n\n");
+    URHO3D_LOGRAW("\nActivation successful, thank you!\n\n");
     GetSubsystem<Engine>()->Exit();
 }
 
@@ -170,7 +170,7 @@ void AtomicTool::HandleLicenseDeactivationError(StringHash eventType, VariantMap
 
 void AtomicTool::HandleLicenseDeactivationSuccess(StringHash eventType, VariantMap& eventData)
 {
-    ATOMIC_LOGRAW("\nDeactivation successful\n\n");
+    URHO3D_LOGRAW("\nDeactivation successful\n\n");
     GetSubsystem<Engine>()->Exit();
 }
 

@@ -124,7 +124,7 @@ int DoSystemCommand(const String& commandLine, bool redirectToLog, Context* cont
     while (!feof(file))
     {
         if (fgets(buffer, sizeof(buffer), file))
-            ATOMIC_LOGRAW(String(buffer));
+            URHO3D_LOGRAW(String(buffer));
     }
     int exitCode = pclose(file);
 
@@ -314,13 +314,13 @@ bool FileSystem::SetCurrentDir(const String& pathName)
 {
     if (!CheckAccess(pathName))
     {
-        ATOMIC_LOGERROR("Access denied to " + pathName);
+        URHO3D_LOGERROR("Access denied to " + pathName);
         return false;
     }
 #ifdef _WIN32
     if (SetCurrentDirectoryW(GetWideNativePath(pathName).CString()) == FALSE)
     {
-        ATOMIC_LOGERROR("Failed to change directory to " + pathName);
+        URHO3D_LOGERROR("Failed to change directory to " + pathName);
         return false;
     }
 #else
@@ -338,7 +338,7 @@ bool FileSystem::CreateDir(const String& pathName)
 {
     if (!CheckAccess(pathName))
     {
-        ATOMIC_LOGERROR("Access denied to " + pathName);
+        URHO3D_LOGERROR("Access denied to " + pathName);
         return false;
     }
 
@@ -358,9 +358,9 @@ bool FileSystem::CreateDir(const String& pathName)
 #endif
 
     if (success)
-        ATOMIC_LOGDEBUG("Created directory " + pathName);
+        URHO3D_LOGDEBUG("Created directory " + pathName);
     else
-        ATOMIC_LOGERROR("Failed to create directory " + pathName);
+        URHO3D_LOGERROR("Failed to create directory " + pathName);
 
     return success;
 }
@@ -383,7 +383,7 @@ int FileSystem::SystemCommand(const String& commandLine, bool redirectStdOutToLo
         return DoSystemCommand(commandLine, redirectStdOutToLog, context_);
     else
     {
-        ATOMIC_LOGERROR("Executing an external command is not allowed");
+        URHO3D_LOGERROR("Executing an external command is not allowed");
         return -1;
     }
 }
@@ -394,7 +394,7 @@ int FileSystem::SystemRun(const String& fileName, const Vector<String>& argument
         return DoSystemRun(fileName, arguments);
     else
     {
-        ATOMIC_LOGERROR("Executing an external command is not allowed");
+        URHO3D_LOGERROR("Executing an external command is not allowed");
         return -1;
     }
 }
@@ -411,7 +411,7 @@ unsigned FileSystem::SystemCommandAsync(const String& commandLine)
     }
     else
     {
-        ATOMIC_LOGERROR("Executing an external command is not allowed");
+        URHO3D_LOGERROR("Executing an external command is not allowed");
         return M_MAX_UNSIGNED;
     }
 #else
@@ -432,7 +432,7 @@ unsigned FileSystem::SystemRunAsync(const String& fileName, const Vector<String>
     }
     else
     {
-        ATOMIC_LOGERROR("Executing an external command is not allowed");
+        URHO3D_LOGERROR("Executing an external command is not allowed");
         return M_MAX_UNSIGNED;
     }
 #else
@@ -451,7 +451,7 @@ bool FileSystem::SystemOpen(const String& fileName, const String& mode)
         {
             if (!FileExists(fileName) && !DirExists(fileName))
             {
-                ATOMIC_LOGERROR("File or directory " + fileName + " not found");
+                URHO3D_LOGERROR("File or directory " + fileName + " not found");
                 return false;
             }
         }
@@ -472,12 +472,12 @@ bool FileSystem::SystemOpen(const String& fileName, const String& mode)
             arguments) == 0;
 #endif
         if (!success)
-            ATOMIC_LOGERROR("Failed to open " + fileName + " externally");
+            URHO3D_LOGERROR("Failed to open " + fileName + " externally");
         return success;
     }
     else
     {
-        ATOMIC_LOGERROR("Opening a file externally is not allowed");
+        URHO3D_LOGERROR("Opening a file externally is not allowed");
         return false;
     }
 }
@@ -486,12 +486,12 @@ bool FileSystem::Copy(const String& srcFileName, const String& destFileName)
 {
     if (!CheckAccess(GetPath(srcFileName)))
     {
-        ATOMIC_LOGERROR("Access denied to " + srcFileName);
+        URHO3D_LOGERROR("Access denied to " + srcFileName);
         return false;
     }
     if (!CheckAccess(GetPath(destFileName)))
     {
-        ATOMIC_LOGERROR("Access denied to " + destFileName);
+        URHO3D_LOGERROR("Access denied to " + destFileName);
         return false;
     }
 
@@ -514,12 +514,12 @@ bool FileSystem::Rename(const String& srcFileName, const String& destFileName)
 {
     if (!CheckAccess(GetPath(srcFileName)))
     {
-        ATOMIC_LOGERROR("Access denied to " + srcFileName);
+        URHO3D_LOGERROR("Access denied to " + srcFileName);
         return false;
     }
     if (!CheckAccess(GetPath(destFileName)))
     {
-        ATOMIC_LOGERROR("Access denied to " + destFileName);
+        URHO3D_LOGERROR("Access denied to " + destFileName);
         return false;
     }
 
@@ -534,7 +534,7 @@ bool FileSystem::Delete(const String& fileName)
 {
     if (!CheckAccess(GetPath(fileName)))
     {
-        ATOMIC_LOGERROR("Access denied to " + fileName);
+        URHO3D_LOGERROR("Access denied to " + fileName);
         return false;
     }
 
@@ -765,7 +765,7 @@ String FileSystem::GetAppPreferencesDir(const String& org, const String& app) co
     }
     else
 #endif
-        ATOMIC_LOGWARNING("Could not get application preferences directory");
+        URHO3D_LOGWARNING("Could not get application preferences directory");
 
     return dir;
 }

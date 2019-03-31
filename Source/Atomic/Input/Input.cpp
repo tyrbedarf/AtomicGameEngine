@@ -337,7 +337,7 @@ bool JoystickState::StartRumble()
         haptic_ = SDL_HapticOpen(joystickID_);
         if (haptic_ == NULL)
         {
-            ATOMIC_LOGERRORF( "Unable to access haptic device[%d] %s", joystickID_, hname ? hname : "Unknown" );
+            URHO3D_LOGERRORF( "Unable to access haptic device[%d] %s", joystickID_, hname ? hname : "Unknown" );
             canRumble_ = false;
             return false;
         }
@@ -346,7 +346,7 @@ bool JoystickState::StartRumble()
 
         if ( SDL_HapticRumbleSupported(haptic_) == SDL_FALSE)
         {
-            ATOMIC_LOGERRORF( "The device `%s` does not support haptic operations", hname ? hname : "Unknown");
+            URHO3D_LOGERRORF( "The device `%s` does not support haptic operations", hname ? hname : "Unknown");
             SDL_HapticClose(haptic_);
             haptic_ = NULL;
             canRumble_ = false;
@@ -357,7 +357,7 @@ bool JoystickState::StartRumble()
 
         if ( SDL_HapticRumbleInit(haptic_) != 0)
         {
-            ATOMIC_LOGERRORF( "Failed to initialize rumble: %s", SDL_GetError());
+            URHO3D_LOGERRORF( "Failed to initialize rumble: %s", SDL_GetError());
             canRumble_ = false;
             return false;
         }
@@ -400,7 +400,7 @@ void JoystickState::DoRumble( float strength, unsigned int len)
     {
         float stren1 = Clamp (strength, 0.0f, 1.0f );
         if (SDL_HapticRumblePlay(haptic_, stren1, len ) != 0 )
-            ATOMIC_LOGINFOF( "Failed to play rumble: %s\n", SDL_GetError() );
+            URHO3D_LOGINFOF( "Failed to play rumble: %s\n", SDL_GetError() );
     }
  }
 // ATOMIC END
@@ -1226,7 +1226,7 @@ bool Input::RemoveScreenJoystick(SDL_JoystickID id)
 {
     if (!joysticks_.Contains(id))
     {
-        ATOMIC_LOGERRORF("Failed to remove non-existing screen joystick ID #%d", id);
+        URHO3D_LOGERRORF("Failed to remove non-existing screen joystick ID #%d", id);
         return false;
     }
     // ATOMIC BEGIN
@@ -1301,7 +1301,7 @@ bool Input::RecordGesture()
     // If have no touch devices, fail
     if (!SDL_GetNumTouchDevices())
     {
-        ATOMIC_LOGERROR("Can not record gesture: no touch devices");
+		URHO3D_LOGERROR("Can not record gesture: no touch devices");
         return false;
     }
 
@@ -1325,7 +1325,7 @@ unsigned Input::LoadGestures(Deserializer& source)
     // If have no touch devices, fail
     if (!SDL_GetNumTouchDevices())
     {
-        ATOMIC_LOGERROR("Can not load gestures: no touch devices");
+		URHO3D_LOGERROR("Can not load gestures: no touch devices");
         return 0;
     }
 
@@ -1355,7 +1355,7 @@ SDL_JoystickID Input::OpenJoystick(unsigned index)
     SDL_Joystick* joystick = SDL_JoystickOpen(index);
     if (!joystick)
     {
-        ATOMIC_LOGERRORF("Cannot open joystick #%d", index);
+        URHO3D_LOGERRORF("Cannot open joystick #%d", index);
         return -1;
     }
 
@@ -1650,7 +1650,7 @@ void Input::Initialize()
     SubscribeToEvent(E_ENDFRAME, ATOMIC_HANDLER(Input, HandleEndFrame));
 #endif
 
-    ATOMIC_LOGINFO("Initialized input");
+    URHO3D_LOGINFO("Initialized input");
 }
 
 void Input::ResetJoysticks()

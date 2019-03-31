@@ -334,7 +334,7 @@ bool NavigationMesh::Allocate(const BoundingBox& boundingBox, unsigned maxTiles)
         return false;
 
     if (!node_->GetWorldScale().Equals(Vector3::ONE))
-        ATOMIC_LOGWARNING("Navigation mesh root node has scaling. Agent parameters may not work as intended");
+        URHO3D_LOGWARNING("Navigation mesh root node has scaling. Agent parameters may not work as intended");
 
     boundingBox_ = boundingBox.Transformed(node_->GetWorldTransform().Inverse());
     maxTiles = NextPowerOfTwo(maxTiles);
@@ -360,18 +360,18 @@ bool NavigationMesh::Allocate(const BoundingBox& boundingBox, unsigned maxTiles)
     navMesh_ = dtAllocNavMesh();
     if (!navMesh_)
     {
-        ATOMIC_LOGERROR("Could not allocate navigation mesh");
+        URHO3D_LOGERROR("Could not allocate navigation mesh");
         return false;
     }
 
     if (dtStatusFailed(navMesh_->init(&params)))
     {
-        ATOMIC_LOGERROR("Could not initialize navigation mesh");
+		URHO3D_LOGERROR("Could not initialize navigation mesh");
         ReleaseNavigationMesh();
         return false;
     }
 
-    ATOMIC_LOGDEBUG("Allocated empty navigation mesh with max " + String(maxTiles) + " tiles");
+    URHO3D_LOGDEBUG("Allocated empty navigation mesh with max " + String(maxTiles) + " tiles");
 
     // Send a notification event to concerned parties that we've been fully rebuilt
     {
@@ -395,7 +395,7 @@ bool NavigationMesh::Build()
         return false;
 
     if (!node_->GetWorldScale().Equals(Vector3::ONE))
-        ATOMIC_LOGWARNING("Navigation mesh root node has scaling. Agent parameters may not work as intended");
+        URHO3D_LOGWARNING("Navigation mesh root node has scaling. Agent parameters may not work as intended");
 
     Vector<NavigationGeometryInfo> geometryList;
     CollectGeometries(geometryList);
@@ -436,13 +436,13 @@ bool NavigationMesh::Build()
         navMesh_ = dtAllocNavMesh();
         if (!navMesh_)
         {
-            ATOMIC_LOGERROR("Could not allocate navigation mesh");
+            URHO3D_LOGERROR("Could not allocate navigation mesh");
             return false;
         }
 
         if (dtStatusFailed(navMesh_->init(&params)))
         {
-            ATOMIC_LOGERROR("Could not initialize navigation mesh");
+            URHO3D_LOGERROR("Could not initialize navigation mesh");
             ReleaseNavigationMesh();
             return false;
         }
@@ -450,7 +450,7 @@ bool NavigationMesh::Build()
         // Build each tile
         unsigned numTiles = BuildTiles(geometryList, IntVector2::ZERO, GetNumTiles() - IntVector2::ONE);
 
-        ATOMIC_LOGDEBUG("Built navigation mesh with " + String(numTiles) + " tiles");
+        URHO3D_LOGDEBUG("Built navigation mesh with " + String(numTiles) + " tiles");
 
         // Send a notification event to concerned parties that we've been fully rebuilt
         {
@@ -474,12 +474,12 @@ bool NavigationMesh::Build(const BoundingBox& boundingBox)
 
     if (!navMesh_)
     {
-        ATOMIC_LOGERROR("Navigation mesh must first be built fully before it can be partially rebuilt");
+        URHO3D_LOGERROR("Navigation mesh must first be built fully before it can be partially rebuilt");
         return false;
     }
 
     if (!node_->GetWorldScale().Equals(Vector3::ONE))
-        ATOMIC_LOGWARNING("Navigation mesh root node has scaling. Agent parameters may not work as intended");
+        URHO3D_LOGWARNING("Navigation mesh root node has scaling. Agent parameters may not work as intended");
 
     BoundingBox localSpaceBox = boundingBox.Transformed(node_->GetWorldTransform().Inverse());
 
@@ -495,7 +495,7 @@ bool NavigationMesh::Build(const BoundingBox& boundingBox)
 
     unsigned numTiles = BuildTiles(geometryList, IntVector2(sx, sz), IntVector2(ex, ez));
 
-    ATOMIC_LOGDEBUG("Rebuilt " + String(numTiles) + " tiles of the navigation mesh");
+    URHO3D_LOGDEBUG("Rebuilt " + String(numTiles) + " tiles of the navigation mesh");
     return true;
 }
 
@@ -508,19 +508,19 @@ bool NavigationMesh::Build(const IntVector2& from, const IntVector2& to)
 
     if (!navMesh_)
     {
-        ATOMIC_LOGERROR("Navigation mesh must first be built fully before it can be partially rebuilt");
+        URHO3D_LOGERROR("Navigation mesh must first be built fully before it can be partially rebuilt");
         return false;
     }
 
     if (!node_->GetWorldScale().Equals(Vector3::ONE))
-        ATOMIC_LOGWARNING("Navigation mesh root node has scaling. Agent parameters may not work as intended");
+        URHO3D_LOGWARNING("Navigation mesh root node has scaling. Agent parameters may not work as intended");
 
     Vector<NavigationGeometryInfo> geometryList;
     CollectGeometries(geometryList);
 
     unsigned numTiles = BuildTiles(geometryList, from, to);
 
-    ATOMIC_LOGDEBUG("Rebuilt " + String(numTiles) + " tiles of the navigation mesh");
+    URHO3D_LOGDEBUG("Rebuilt " + String(numTiles) + " tiles of the navigation mesh");
     return true;
 }
 
@@ -902,13 +902,13 @@ void NavigationMesh::SetNavigationDataAttr(const PODVector<unsigned char>& value
     navMesh_ = dtAllocNavMesh();
     if (!navMesh_)
     {
-        ATOMIC_LOGERROR("Could not allocate navigation mesh");
+        URHO3D_LOGERROR("Could not allocate navigation mesh");
         return;
     }
 
     if (dtStatusFailed(navMesh_->init(&params)))
     {
-        ATOMIC_LOGERROR("Could not initialize navigation mesh");
+        URHO3D_LOGERROR("Could not initialize navigation mesh");
         ReleaseNavigationMesh();
         return;
     }
@@ -923,7 +923,7 @@ void NavigationMesh::SetNavigationDataAttr(const PODVector<unsigned char>& value
             return;
     }
 
-    ATOMIC_LOGDEBUG("Created navigation mesh with " + String(numTiles) + " tiles from serialized data");
+    URHO3D_LOGDEBUG("Created navigation mesh with " + String(numTiles) + " tiles from serialized data");
     // \todo Shall we send E_NAVIGATION_MESH_REBUILT here?
 }
 
@@ -1277,14 +1277,14 @@ bool NavigationMesh::ReadTile(Deserializer& source, bool silent)
     unsigned char* navData = (unsigned char*)dtAlloc(navDataSize, DT_ALLOC_PERM);
     if (!navData)
     {
-        ATOMIC_LOGERROR("Could not allocate data for navigation mesh tile");
+        URHO3D_LOGERROR("Could not allocate data for navigation mesh tile");
         return false;
     }
 
     source.Read(navData, navDataSize);
     if (dtStatusFailed(navMesh_->addTile(navData, navDataSize, DT_TILE_FREE_DATA, 0, 0)))
     {
-        ATOMIC_LOGERROR("Failed to add navigation mesh tile");
+        URHO3D_LOGERROR("Failed to add navigation mesh tile");
         dtFree(navData);
         return false;
     }
@@ -1349,14 +1349,14 @@ bool NavigationMesh::BuildTile(Vector<NavigationGeometryInfo>& geometryList, int
     build.heightField_ = rcAllocHeightfield();
     if (!build.heightField_)
     {
-        ATOMIC_LOGERROR("Could not allocate heightfield");
+        URHO3D_LOGERROR("Could not allocate heightfield");
         return false;
     }
 
     if (!rcCreateHeightfield(build.ctx_, *build.heightField_, cfg.width, cfg.height, cfg.bmin, cfg.bmax, cfg.cs,
         cfg.ch))
     {
-        ATOMIC_LOGERROR("Could not create heightfield");
+        URHO3D_LOGERROR("Could not create heightfield");
         return false;
     }
 
@@ -1376,18 +1376,18 @@ bool NavigationMesh::BuildTile(Vector<NavigationGeometryInfo>& geometryList, int
     build.compactHeightField_ = rcAllocCompactHeightfield();
     if (!build.compactHeightField_)
     {
-        ATOMIC_LOGERROR("Could not allocate create compact heightfield");
+        URHO3D_LOGERROR("Could not allocate create compact heightfield");
         return false;
     }
     if (!rcBuildCompactHeightfield(build.ctx_, cfg.walkableHeight, cfg.walkableClimb, *build.heightField_,
         *build.compactHeightField_))
     {
-        ATOMIC_LOGERROR("Could not build compact heightfield");
+        URHO3D_LOGERROR("Could not build compact heightfield");
         return false;
     }
     if (!rcErodeWalkableArea(build.ctx_, cfg.walkableRadius, *build.compactHeightField_))
     {
-        ATOMIC_LOGERROR("Could not erode compact heightfield");
+        URHO3D_LOGERROR("Could not erode compact heightfield");
         return false;
     }
 
@@ -1400,13 +1400,13 @@ bool NavigationMesh::BuildTile(Vector<NavigationGeometryInfo>& geometryList, int
     {
         if (!rcBuildDistanceField(build.ctx_, *build.compactHeightField_))
         {
-            ATOMIC_LOGERROR("Could not build distance field");
+            URHO3D_LOGERROR("Could not build distance field");
             return false;
         }
         if (!rcBuildRegions(build.ctx_, *build.compactHeightField_, cfg.borderSize, cfg.minRegionArea,
             cfg.mergeRegionArea))
         {
-            ATOMIC_LOGERROR("Could not build regions");
+            URHO3D_LOGERROR("Could not build regions");
             return false;
         }
     }
@@ -1414,7 +1414,7 @@ bool NavigationMesh::BuildTile(Vector<NavigationGeometryInfo>& geometryList, int
     {
         if (!rcBuildRegionsMonotone(build.ctx_, *build.compactHeightField_, cfg.borderSize, cfg.minRegionArea, cfg.mergeRegionArea))
         {
-            ATOMIC_LOGERROR("Could not build monotone regions");
+            URHO3D_LOGERROR("Could not build monotone regions");
             return false;
         }
     }
@@ -1422,38 +1422,38 @@ bool NavigationMesh::BuildTile(Vector<NavigationGeometryInfo>& geometryList, int
     build.contourSet_ = rcAllocContourSet();
     if (!build.contourSet_)
     {
-        ATOMIC_LOGERROR("Could not allocate contour set");
+        URHO3D_LOGERROR("Could not allocate contour set");
         return false;
     }
     if (!rcBuildContours(build.ctx_, *build.compactHeightField_, cfg.maxSimplificationError, cfg.maxEdgeLen,
         *build.contourSet_))
     {
-        ATOMIC_LOGERROR("Could not create contours");
+        URHO3D_LOGERROR("Could not create contours");
         return false;
     }
 
     build.polyMesh_ = rcAllocPolyMesh();
     if (!build.polyMesh_)
     {
-        ATOMIC_LOGERROR("Could not allocate poly mesh");
+        URHO3D_LOGERROR("Could not allocate poly mesh");
         return false;
     }
     if (!rcBuildPolyMesh(build.ctx_, *build.contourSet_, cfg.maxVertsPerPoly, *build.polyMesh_))
     {
-        ATOMIC_LOGERROR("Could not triangulate contours");
+        URHO3D_LOGERROR("Could not triangulate contours");
         return false;
     }
 
     build.polyMeshDetail_ = rcAllocPolyMeshDetail();
     if (!build.polyMeshDetail_)
     {
-        ATOMIC_LOGERROR("Could not allocate detail mesh");
+        URHO3D_LOGERROR("Could not allocate detail mesh");
         return false;
     }
     if (!rcBuildPolyMeshDetail(build.ctx_, *build.polyMesh_, *build.compactHeightField_, cfg.detailSampleDist,
         cfg.detailSampleMaxError, *build.polyMeshDetail_))
     {
-        ATOMIC_LOGERROR("Could not build detail mesh");
+        URHO3D_LOGERROR("Could not build detail mesh");
         return false;
     }
 
@@ -1506,13 +1506,13 @@ bool NavigationMesh::BuildTile(Vector<NavigationGeometryInfo>& geometryList, int
 
     if (!dtCreateNavMeshData(&params, &navData, &navDataSize))
     {
-        ATOMIC_LOGERROR("Could not build navigation mesh tile data");
+        URHO3D_LOGERROR("Could not build navigation mesh tile data");
         return false;
     }
 
     if (dtStatusFailed(navMesh_->addTile(navData, navDataSize, DT_TILE_FREE_DATA, 0, 0)))
     {
-        ATOMIC_LOGERROR("Failed to add navigation mesh tile");
+        URHO3D_LOGERROR("Failed to add navigation mesh tile");
         dtFree(navData);
         return false;
     }
@@ -1556,13 +1556,13 @@ bool NavigationMesh::InitializeQuery()
     navMeshQuery_ = dtAllocNavMeshQuery();
     if (!navMeshQuery_)
     {
-        ATOMIC_LOGERROR("Could not create navigation mesh query");
+        URHO3D_LOGERROR("Could not create navigation mesh query");
         return false;
     }
 
     if (dtStatusFailed(navMeshQuery_->init(navMesh_, MAX_POLYS)))
     {
-        ATOMIC_LOGERROR("Could not init navigation mesh query");
+        URHO3D_LOGERROR("Could not init navigation mesh query");
         return false;
     }
 

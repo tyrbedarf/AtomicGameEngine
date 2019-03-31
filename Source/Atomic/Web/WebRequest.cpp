@@ -417,7 +417,7 @@ void WebRequest::Send()
         curl_easy_setopt(is_->curl, CURLOPT_HTTPHEADER, is_->headers);
         if (CURLM_OK != curl_multi_add_handle(is_->curlm, is_->curl))
         {
-            ATOMIC_LOGERROR("WebRequest::Send() - ERROR SENDING REQUEST!");
+            URHO3D_LOGERROR("WebRequest::Send() - ERROR SENDING REQUEST!");
         }
         is_->isAddedToMulti = true;
     }

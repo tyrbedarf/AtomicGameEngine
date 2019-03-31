@@ -132,7 +132,7 @@ void CustomGeometry::ProcessRayQuery(const RayOctreeQuery& query, PODVector<RayQ
         break;
 
     case RAY_TRIANGLE_UV:
-        ATOMIC_LOGWARNING("RAY_TRIANGLE_UV query level is not supported for CustomGeometry component");
+        URHO3D_LOGWARNING("RAY_TRIANGLE_UV query level is not supported for CustomGeometry component");
         break;
     }
 }
@@ -242,7 +242,7 @@ void CustomGeometry::BeginGeometry(unsigned index, PrimitiveType type)
 {
     if (index > geometries_.Size())
     {
-        ATOMIC_LOGERROR("Geometry index out of bounds");
+        URHO3D_LOGERROR("Geometry index out of bounds");
         return;
     }
 
@@ -305,7 +305,7 @@ void CustomGeometry::DefineGeometry(unsigned index, PrimitiveType type, unsigned
 {
     if (index > geometries_.Size())
     {
-        ATOMIC_LOGERROR("Geometry index out of bounds");
+        URHO3D_LOGERROR("Geometry index out of bounds");
         return;
     }
 
@@ -397,7 +397,7 @@ void CustomGeometry::Commit()
             vertexBuffer_->Unlock();
         }
         else
-            ATOMIC_LOGERROR("Failed to lock custom geometry vertex buffer");
+            URHO3D_LOGERROR("Failed to lock custom geometry vertex buffer");
     }
     else
     {
@@ -423,7 +423,7 @@ bool CustomGeometry::SetMaterial(unsigned index, Material* material)
 {
     if (index >= batches_.Size())
     {
-        ATOMIC_LOGERROR("Material index out of bounds");
+        URHO3D_LOGERROR("Material index out of bounds");
         return false;
     }
 

@@ -216,7 +216,7 @@ void AnimatedSprite2D::OnSceneSet(Scene* scene)
     if (scene)
     {
         if (scene == node_)
-            ATOMIC_LOGWARNING(GetTypeName() + " should not be created to the root scene node");
+            URHO3D_LOGWARNING(GetTypeName() + " should not be created to the root scene node");
         if (IsEnabledEffective())
             SubscribeToEvent(scene, E_SCENEPOSTUPDATE, URHO3D_HANDLER(AnimatedSprite2D, HandleScenePostUpdate));
     }
@@ -413,13 +413,13 @@ void AnimatedSprite2D::SetSpriterAnimation()
 
     if (!spriterInstance_->SetEntity(entity_.CString()))
     {
-        ATOMIC_LOGERROR("Set entity failed");
+        URHO3D_LOGERROR("Set entity failed");
         return;
     }
 
     if (!spriterInstance_->SetAnimation(animationName_.CString(), (Spriter::LoopMode)loopMode_))
     {
-        ATOMIC_LOGERROR("Set animation failed");
+        URHO3D_LOGERROR("Set animation failed");
         return;
     }
 

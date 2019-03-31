@@ -206,7 +206,7 @@ bool JSBPackage::ContainsConstantAllPackages(const String& constantName)
 
 bool JSBPackage::Load(const String& packageFolder)
 {
-    ATOMIC_LOGINFOF("Loading Package: %s", packageFolder.CString());
+    URHO3D_LOGINFOF("Loading Package: %s", packageFolder.CString());
 
     JSBind* jsbind = GetSubsystem<JSBind>();
 
@@ -214,7 +214,7 @@ bool JSBPackage::Load(const String& packageFolder)
 
     if (!jsonFile->IsOpen())
     {
-        ATOMIC_LOGERRORF("Unable to open package json: %s", (packageFolder + "Package.json").CString());
+        URHO3D_LOGERRORF("Unable to open package json: %s", (packageFolder + "Package.json").CString());
         return false;
     }
 
@@ -222,7 +222,7 @@ bool JSBPackage::Load(const String& packageFolder)
 
     if (!packageJSON->BeginLoad(*jsonFile))
     {
-        ATOMIC_LOGERRORF("Unable to parse package json: %s", (packageFolder + "Package.json").CString());
+        URHO3D_LOGERRORF("Unable to parse package json: %s", (packageFolder + "Package.json").CString());
         return false;
     }
 
@@ -241,7 +241,7 @@ bool JSBPackage::Load(const String& packageFolder)
 
             if (!depPackage->Load(jsbind->GetSourceRootFolder() + dpackageFolder))
             {
-                ATOMIC_LOGERRORF("Unable to load package dependency: %s", dpackageFolder.CString());
+                URHO3D_LOGERRORF("Unable to load package dependency: %s", dpackageFolder.CString());
                 return false;
             }
 
@@ -312,7 +312,7 @@ bool JSBPackage::Load(const String& packageFolder)
 
         if (!module->Load(packageFolder + moduleName + ".json"))
         {
-            ATOMIC_LOGERRORF("Unable to load module json: %s", (packageFolder + moduleName + ".json").CString());
+            URHO3D_LOGERRORF("Unable to load module json: %s", (packageFolder + moduleName + ".json").CString());
             return false;
         }
 
@@ -380,7 +380,7 @@ String JSBPackage::GetPlatformDefineGuard() const
             defines.Push("defined(ATOMIC_PLATFORM_WEB)");
         else
         {
-            ATOMIC_LOGERRORF("Unknown package platform: %s", platform.CString());
+            URHO3D_LOGERRORF("Unknown package platform: %s", platform.CString());
         }
     }
 

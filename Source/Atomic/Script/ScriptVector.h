@@ -112,7 +112,7 @@ public:
 
                 if (item.Null() || item->GetClassID() != ScriptVariant::GetClassIDStatic())
                 {
-                    ATOMIC_LOGERROR("ScriptVector::AdaptFromVector(VariantVector) - item == null or item class != ScriptVariant");
+					URHO3D_LOGERROR("ScriptVector::AdaptFromVector(VariantVector) - item == null or item class != ScriptVariant");
                     return false;
                 }
 

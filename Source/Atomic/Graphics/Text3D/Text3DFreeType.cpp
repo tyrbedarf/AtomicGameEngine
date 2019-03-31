@@ -60,7 +60,7 @@ public:
     {
         FT_Error error = FT_Init_FreeType(&library_);
         if (error)
-            ATOMIC_LOGERROR("Could not initialize FreeType library");
+            URHO3D_LOGERROR("Could not initialize FreeType library");
     }
 
     /// Destruct.
@@ -123,34 +123,34 @@ bool Text3DFreeType::Load(const unsigned char* fontData, unsigned fontDataSize, 
 
     if (pointSize <= 0)
     {
-        ATOMIC_LOGERROR("Zero or negative point size");
+        URHO3D_LOGERROR("Zero or negative point size");
         return false;
     }
 
     if (!fontDataSize)
     {
-        ATOMIC_LOGERROR("Could not create font face from zero size data");
+        URHO3D_LOGERROR("Could not create font face from zero size data");
         return false;
     }
 
     error = FT_New_Memory_Face(library, fontData, fontDataSize, 0, &face);
     if (error)
     {
-        ATOMIC_LOGERROR("Could not create font face");
+        URHO3D_LOGERROR("Could not create font face");
         return false;
     }
     error = FT_Set_Char_Size(face, 0, pointSize * 64, oversampling_ * TEXT3D_FONT_DPI, TEXT3D_FONT_DPI);
     if (error)
     {
         FT_Done_Face(face);
-        ATOMIC_LOGERROR("Could not set font point size " + String(pointSize));
+        URHO3D_LOGERROR("Could not set font point size " + String(pointSize));
         return false;
     }
 
     face_ = face;
 
     unsigned numGlyphs = (unsigned)face->num_glyphs;
-    ATOMIC_LOGDEBUGF("Font face %s (%fpt) has %d glyphs", GetFileName(font_->GetName()).CString(), pointSize, numGlyphs);
+    URHO3D_LOGDEBUGF("Font face %s (%fpt) has %d glyphs", GetFileName(font_->GetName()).CString(), pointSize, numGlyphs);
 
     PODVector<unsigned> charCodes(numGlyphs + 1, 0);
 
@@ -240,7 +240,7 @@ bool Text3DFreeType::Load(const unsigned char* fontData, unsigned fontDataSize, 
         FT_Error error = FT_Load_Sfnt_Table(face, tagKern, 0, 0, &kerningTableSize);
         if (error)
         {
-            ATOMIC_LOGERROR("Could not get kerning table length");
+            URHO3D_LOGERROR("Could not get kerning table length");
             return false;
         }
 
@@ -248,7 +248,7 @@ bool Text3DFreeType::Load(const unsigned char* fontData, unsigned fontDataSize, 
         error = FT_Load_Sfnt_Table(face, tagKern, 0, kerningTable, &kerningTableSize);
         if (error)
         {
-            ATOMIC_LOGERROR("Could not load kerning table");
+            URHO3D_LOGERROR("Could not load kerning table");
             return false;
         }
 
@@ -299,7 +299,7 @@ bool Text3DFreeType::Load(const unsigned char* fontData, unsigned fontDataSize, 
             }
         }
         else
-            ATOMIC_LOGWARNING("Can not read kerning information: not version 0");
+            URHO3D_LOGWARNING("Can not read kerning information: not version 0");
     }
 
     if (!hasMutableGlyph_)
@@ -426,7 +426,7 @@ bool Text3DFreeType::LoadCharGlyph(unsigned charCode, Image* image)
     if (error)
     {
         const char* family = face->family_name ? face->family_name : "NULL";
-        ATOMIC_LOGERRORF("FT_Load_Char failed (family: %s, char code: %u)", family, charCode);
+        URHO3D_LOGERRORF("FT_Load_Char failed (family: %s, char code: %u)", family, charCode);
         fontGlyph.texWidth_ = 0;
         fontGlyph.texHeight_ = 0;
         fontGlyph.width_ = 0;
@@ -548,7 +548,7 @@ bool Text3DFreeType::LoadCharGlyph(unsigned charCode, Image* image)
 
 void Text3DFreeType::ReleaseFontFaces()
 {
-    ATOMIC_LOGDEBUG("Reloading font faces");
+    URHO3D_LOGDEBUG("Reloading font faces");
 
     PODVector<Text3DFont*> fonts;
     font_->GetSubsystem<ResourceCache>()->GetResources<Text3DFont>(fonts);

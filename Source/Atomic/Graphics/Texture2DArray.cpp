@@ -77,7 +77,7 @@ bool Texture2DArray::BeginLoad(Deserializer& source)
     // If device is lost, retry later
     if (graphics_->IsDeviceLost())
     {
-        ATOMIC_LOGWARNING("Texture load while device is lost");
+        URHO3D_LOGWARNING("Texture load while device is lost");
         dataPending_ = true;
         return true;
     }
@@ -157,12 +157,12 @@ bool Texture2DArray::SetSize(unsigned layers, int width, int height, unsigned fo
 {
     if (width <= 0 || height <= 0)
     {
-        ATOMIC_LOGERROR("Zero or negative texture array size");
+        URHO3D_LOGERROR("Zero or negative texture array size");
         return false;
     }
     if (usage == TEXTURE_DEPTHSTENCIL)
     {
-        ATOMIC_LOGERROR("Depth-stencil usage not supported for texture arrays");
+        URHO3D_LOGERROR("Depth-stencil usage not supported for texture arrays");
         return false;
     }
 

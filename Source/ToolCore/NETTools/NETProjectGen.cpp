@@ -122,7 +122,7 @@ namespace ToolCore
 
         if (!fileSystem->DirExists(path))
         {
-            ATOMIC_LOGERRORF("Unable to create dir: %s", path.CString());
+            URHO3D_LOGERRORF("Unable to create dir: %s", path.CString());
             return false;
         }
 
@@ -178,7 +178,7 @@ namespace ToolCore
 
                 compile.CreateChild("Link").SetValue(link);
 
-                // For shared projects, ensure that the folder for the link exists, otherwise VS complains 
+                // For shared projects, ensure that the folder for the link exists, otherwise VS complains
                 // with little red x's and Resharper (potentially other tools) have issues
                 if (outputType_ == "Shared")
                 {
@@ -187,7 +187,7 @@ namespace ToolCore
                     SplitPath(link, pathName, fileName, extension);
 
                     if (extension == ".cs")
-                    {                        
+                    {
                         if (!fs->Exists(projectPath_ + pathName))
                         {
                             fs->CreateDirs(projectPath_, pathName);
@@ -283,7 +283,7 @@ namespace ToolCore
                     if (GetRelativePath(projectPath_, GetParentPath(projectGen_->GetSolution()->GetOutputPath()), relativeAssemblyPath))
                     {
                         xref = igroup.CreateChild("Reference");
-                        xref.SetAttribute("Include", ref);                        
+                        xref.SetAttribute("Include", ref);
 
                         // Specify the assembly path, which is the same based on native build
                         String assemblyPath = relativeAssemblyPath + ToString("%s/%s/%s.dll", config.CString(), platform.CString(), ref.CString());
@@ -299,7 +299,7 @@ namespace ToolCore
                     }
                     else
                     {
-                        ATOMIC_LOGERRORF("NETCSProject::CreateReferencesItemGroup - Unable to get relative path from %s to solution", projectPath_.CString());
+                        URHO3D_LOGERRORF("NETCSProject::CreateReferencesItemGroup - Unable to get relative path from %s to solution", projectPath_.CString());
                     }
 
                 }
@@ -315,7 +315,7 @@ namespace ToolCore
 
                 if (!xmlFile.FromString(ref))
                 {
-                    ATOMIC_LOGERROR("NETCSProject::CreateReferencesItemGroup - Unable to parse reference XML");
+                    URHO3D_LOGERROR("NETCSProject::CreateReferencesItemGroup - Unable to parse reference XML");
                 }
 
 
@@ -377,7 +377,7 @@ namespace ToolCore
             XMLFile xmlFile(context_);
             if (!xmlFile.FromString(packages_[i]))
             {
-                ATOMIC_LOGERROR("NETCSProject::CreatePackagesItemGroup - Unable to parse package xml");
+                URHO3D_LOGERROR("NETCSProject::CreatePackagesItemGroup - Unable to parse package xml");
             }
 
             xref = packageRoot.CreateChild("package");
@@ -428,7 +428,7 @@ namespace ToolCore
             {
                 if (!GetRelativeProjectPath(outputPath, projectPath_, outputPath))
                 {
-                    ATOMIC_LOGERRORF("NETCSProject::CreateReleasePropertyGroup - unable to get relative output path");
+                    URHO3D_LOGERRORF("NETCSProject::CreateReleasePropertyGroup - unable to get relative output path");
                 }
             }
         }
@@ -476,7 +476,7 @@ namespace ToolCore
         pgroup.CreateChild("ConsolePause").SetValue("false");
         pgroup.CreateChild("AllowUnsafeBlocks").SetValue("true");
 
-        // 1591 - Don't warn on missing documentation 
+        // 1591 - Don't warn on missing documentation
         // 1570 - malformed xml, remove once (https://github.com/AtomicGameEngine/AtomicGameEngine/issues/1161) resolved
         pgroup.CreateChild("NoWarn").SetValue("1591;1570");
 
@@ -579,7 +579,7 @@ namespace ToolCore
         pgroup.CreateChild("ConsolePause").SetValue("false");
         pgroup.CreateChild("AllowUnsafeBlocks").SetValue("true");
 
-        // 1591 - Don't warn on missing documentation 
+        // 1591 - Don't warn on missing documentation
         // 1570 - malformed xml, remove once (https://github.com/AtomicGameEngine/AtomicGameEngine/issues/1161) resolved
         pgroup.CreateChild("NoWarn").SetValue("1591;1570");
 
@@ -705,7 +705,7 @@ namespace ToolCore
         }
         else
         {
-            const String& projectPath = projectGen_->GetAtomicProjectPath();            
+            const String& projectPath = projectGen_->GetAtomicProjectPath();
             if (!playerApplication_ || !projectPath.Length())
                 return;
 
@@ -834,7 +834,7 @@ namespace ToolCore
             }
             else
             {
-                ATOMIC_LOGERROR("Unabled to get relative path for Strings.xml");
+                URHO3D_LOGERROR("Unabled to get relative path for Strings.xml");
             }
 
             if (GetRelativeProjectPath("$ATOMIC_PROJECT_ROOT$/Project/AtomicNET/Platforms/Android/Resources/drawable/icon.png", projectPath_, relativePath))
@@ -847,7 +847,7 @@ namespace ToolCore
             }
             else
             {
-                ATOMIC_LOGERROR("Unabled to get relative path for Icon.png");
+                URHO3D_LOGERROR("Unabled to get relative path for Icon.png");
             }
 
         }
@@ -934,7 +934,7 @@ namespace ToolCore
 #ifdef ATOMIC_PLATFORM_WINDOWS
 #ifndef ATOMIC_DEBUG
 
-        if (oType.ToLower() == "exe") 
+        if (oType.ToLower() == "exe")
         {
             // use windows subsystem for release builds
             // TODO: make this an option in the json?
@@ -1026,18 +1026,18 @@ namespace ToolCore
                         {
                             if (!fileSystem->Copy(manifestSourceFile, manifestDest + "AndroidManifest.xml"))
                             {
-                                ATOMIC_LOGERRORF("Unable to copy AndroidManifest from %s to %s", manifestSourceFile.CString(), manifestDest.CString());
+                                URHO3D_LOGERRORF("Unable to copy AndroidManifest from %s to %s", manifestSourceFile.CString(), manifestDest.CString());
                             }
                         }
                         else
                         {
-                            ATOMIC_LOGERRORF("Unable to create folder %s for AndroidManifest.xml", manifestDest.CString());
+                            URHO3D_LOGERRORF("Unable to create folder %s for AndroidManifest.xml", manifestDest.CString());
                         }
 
                     }
                     else
                     {
-                        ATOMIC_LOGERRORF("No AndroidManifest.xml, project will not deploy (%s)", manifestSourceFile.CString());
+                        URHO3D_LOGERRORF("No AndroidManifest.xml, project will not deploy (%s)", manifestSourceFile.CString());
                     }
 
                     String relativePath;
@@ -1048,7 +1048,7 @@ namespace ToolCore
                     }
                     else
                     {
-                        ATOMIC_LOGERROR("Unabled to get relative path for AndroidResgenFile");
+                        URHO3D_LOGERROR("Unabled to get relative path for AndroidResgenFile");
                     }
 
                     pgroup.CreateChild("GenerateSerializationAssemblies").SetValue("Off");
@@ -1241,7 +1241,7 @@ namespace ToolCore
 
             if (!sharedProject)
             {
-                ATOMIC_LOGERRORF("Unable to get shared project %s", sharedReferences_[i].CString());
+                URHO3D_LOGERRORF("Unable to get shared project %s", sharedReferences_[i].CString());
                 continue;
             }
 
@@ -1367,7 +1367,7 @@ namespace ToolCore
 
         if (!projectGuid_.Length())
         {
-            ATOMIC_LOGINFOF("GUID not provided for project %s, generating one", name_.CString());
+            URHO3D_LOGINFOF("GUID not provided for project %s, generating one", name_.CString());
             projectGuid_ = projectGen_->GenerateUUID();
         }
 
@@ -1414,7 +1414,7 @@ namespace ToolCore
 
             if (packages_.Find(package) != packages_.End())
             {
-                ATOMIC_LOGERRORF("Duplicate package found %s", package.CString());
+                URHO3D_LOGERRORF("Duplicate package found %s", package.CString());
                 continue;
             }
 
@@ -1605,7 +1605,7 @@ namespace ToolCore
 
         source += "    GlobalSection(SolutionConfigurationPlatforms) = preSolution\n";
         source += "        Debug|Any CPU = Debug|Any CPU\n";
-        source += "        Release|Any CPU = Release|Any CPU\n";        
+        source += "        Release|Any CPU = Release|Any CPU\n";
         source += "        Debug|iPhone = Debug|iPhone\n";
         source += "        Release|iPhone = Release|iPhone\n";
         source += "    EndGlobalSection\n";
@@ -1628,7 +1628,7 @@ namespace ToolCore
             source += ToString("        {%s}.Release|%s.Build.0 = Release|%s\n", p->GetProjectGUID().CString(), cpu.CString(), cpu.CString());
 
             if (cpu != "iPhone" && (p->SupportsPlatform("ios", false)))
-            {                               
+            {
                 source += ToString("        {%s}.Debug|iPhone.ActiveCfg = Debug|Any CPU\n", p->GetProjectGUID().CString());
                 source += ToString("        {%s}.Debug|iPhone.Build.0 = Debug|Any CPU\n", p->GetProjectGUID().CString());
                 source += ToString("        {%s}.Release|iPhone.ActiveCfg = Release|Any CPU\n", p->GetProjectGUID().CString());
@@ -1854,7 +1854,7 @@ namespace ToolCore
     }
 \
     bool NETProjectGen::LoadAtomicProject(const String& atomicProjectPath)
-    {        
+    {
         ToolEnvironment* tenv = GetSubsystem<ToolEnvironment>();
         ToolSystem* tsystem = GetSubsystem<ToolSystem>();
 
@@ -1974,7 +1974,7 @@ namespace ToolCore
     {
         if (solution_.Null())
         {
-            ATOMIC_LOGERROR("NETProjectGen::GetRequiresNuGet() - called without a solution loaded");
+            URHO3D_LOGERROR("NETProjectGen::GetRequiresNuGet() - called without a solution loaded");
             return false;
         }
 

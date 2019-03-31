@@ -327,7 +327,7 @@ public:
         String _source;
         ConvertCEFString(source, _source);
 
-        ATOMIC_LOGINFOF("WebViewJS: %s (%s:%i)", _message.CString(), _source.CString(), line);
+        URHO3D_LOGINFOF("WebViewJS: %s (%s:%i)", _message.CString(), _source.CString(), line);
 
         return false;
     }
@@ -336,13 +336,13 @@ public:
     {
         if (browser_.get())
         {
-            ATOMIC_LOGERROR("WebClient::CreateBrowser - Browser already created");
+            URHO3D_LOGERROR("WebClient::CreateBrowser - Browser already created");
             return false;
         }
 
         if (webClient_->renderHandler_.Null())
         {
-            ATOMIC_LOGERROR("WebClient::CreateBrowser - No render handler specified");
+            URHO3D_LOGERROR("WebClient::CreateBrowser - No render handler specified");
             return false;
         }
 
@@ -780,13 +780,13 @@ void WebClient::AddMessageHandler(WebMessageHandler* handler, bool first)
 
     if (handler->GetWebClient())
     {
-        ATOMIC_LOGWARNING("WebClient::AddMessageHandler - message handler already added to another client");
+        URHO3D_LOGWARNING("WebClient::AddMessageHandler - message handler already added to another client");
         return;
     }
 
     if (messageHandlers_.Contains(_handler))
     {
-        ATOMIC_LOGWARNING("WebClient::AddMessageHandler - message handler already added to this client");
+        URHO3D_LOGWARNING("WebClient::AddMessageHandler - message handler already added to this client");
         return;
     }
 
@@ -805,7 +805,7 @@ void WebClient::RemoveMessageHandler(WebMessageHandler* handler)
 
     if (itr == messageHandlers_.End())
     {
-        ATOMIC_LOGWARNING("WebClient::RemoveMessageHandler - message handler not found");
+        URHO3D_LOGWARNING("WebClient::RemoveMessageHandler - message handler not found");
         return;
     }
 
@@ -977,7 +977,7 @@ void WebClient::UpdateGlobalProperties()
     // Send the process message to the render process.
     if (!d_->browser_->SendProcessMessage(PID_RENDERER, msg))
     {
-        ATOMIC_LOGERROR("WebClient::UpdateGlobalProperties - Failed to send message");
+        URHO3D_LOGERROR("WebClient::UpdateGlobalProperties - Failed to send message");
     }
 
 }

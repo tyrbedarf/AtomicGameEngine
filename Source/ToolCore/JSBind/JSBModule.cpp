@@ -242,10 +242,10 @@ void JSBModule::ProcessExcludes(const JSONValue& excludes, BindingLanguage langu
             }
 
             JSBFunctionSignature* fe = new JSBFunctionSignature(functionNames[k], values);
-            
+
             if (language != BINDINGLANGUAGE_ANY)
                 fe->associatedBindings_.Push(language);
-            
+
             klass->AddFunctionExclude(fe);
 
         }
@@ -503,7 +503,7 @@ JSBEvent* JSBModule::GetEvent(const String& eventID, const String& eventName)
 }
 
 const Vector<SharedPtr<JSBEvent>>& JSBModule::GetEvents()
-{    
+{
     return events_;
 }
 
@@ -553,7 +553,7 @@ String JSBModule::GetClassDefineGuard(const String& name, const String& language
             {
                 defines.Push("!defined(ATOMIC_PLATFORM_WINDOWS)");
             }
-            
+
         }
         else if (platform == "macosx")
         {
@@ -614,7 +614,7 @@ String JSBModule::GetClassDefineGuard(const String& name, const String& language
         }
         else
         {
-            ATOMIC_LOGERRORF("Unknown package platform: %s", platform.CString());
+            URHO3D_LOGERRORF("Unknown package platform: %s", platform.CString());
         }
     }
 
@@ -658,24 +658,24 @@ String JSBModule::GetModuleDefineGuard() const
                     defines.Push("!defined(ATOMIC_PLATFORM_WEB)");
                 else
                 {
-                    ATOMIC_LOGERRORF("Unknown package platform: %s", platform.CString());
+                    URHO3D_LOGERRORF("Unknown package platform: %s", platform.CString());
                 }
 
                 break;
             }
 
         }
-    
+
         itr++;
     }
-    
+
     if (!defines.Size())
         return String::EMPTY;
 
     String defineString = "#if " + String::Joined(defines, " && ");
 
     return defineString;
-    
+
 }
 
 bool JSBModule::ContainsConstant(const String& constantName)
@@ -703,8 +703,8 @@ void JSBModule::RegisterConstant(const String& constantName, const String& value
 }
 
 bool JSBModule::Load(const String& jsonFilename)
-{    
-    ATOMIC_LOGINFOF("Loading Module: %s", jsonFilename.CString());
+{
+    URHO3D_LOGINFOF("Loading Module: %s", jsonFilename.CString());
 
     JSBind* jsbind = GetSubsystem<JSBind>();
 
@@ -712,7 +712,7 @@ bool JSBModule::Load(const String& jsonFilename)
 
     if (!jsonFile->IsOpen())
     {
-        ATOMIC_LOGERRORF("Unable to open module json: %s", jsonFilename.CString());
+        URHO3D_LOGERRORF("Unable to open module json: %s", jsonFilename.CString());
         return false;
     }
 
@@ -720,7 +720,7 @@ bool JSBModule::Load(const String& jsonFilename)
 
     if (!moduleJSON_->BeginLoad(*jsonFile))
     {
-        ATOMIC_LOGERRORF("Unable to parse module json: %s", jsonFilename.CString());
+        URHO3D_LOGERRORF("Unable to parse module json: %s", jsonFilename.CString());
         return false;
     }
 

@@ -73,7 +73,7 @@ void ModelImporter::SetDefaults()
 bool ModelImporter::ImportModel()
 {
 
-    ATOMIC_LOGDEBUGF("Importing Model: %s", asset_->GetPath().CString());
+    URHO3D_LOGDEBUGF("Importing Model: %s", asset_->GetPath().CString());
 
     SharedPtr<OpenAssetImporter> importer(new OpenAssetImporter(context_));
 
@@ -145,7 +145,7 @@ bool ModelImporter::ImportAnimation(const String& filename, const String& name, 
             if (animation)
                 controller->AddAnimationResource(animation);
 
-            ATOMIC_LOGINFOF("Import Info: %s : %s", info.name_.CString(), fileName.CString());
+            URHO3D_LOGINFOF("Import Info: %s : %s", info.name_.CString(), fileName.CString());
         }
 
         return true;

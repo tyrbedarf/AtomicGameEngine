@@ -162,7 +162,7 @@ namespace Urho3D
 
                     if (varType == VAR_NONE)
                     {
-                        ATOMIC_LOGERRORF("Component Class %s contains unmappable type %s in field %s",
+                        URHO3D_LOGERRORF("Component Class %s contains unmappable type %s in field %s",
                             className.CString(), typeName.CString(), fieldName.CString());
 
                         continue;
@@ -267,13 +267,13 @@ namespace Urho3D
 
         if (!JSONFile::ParseJSON(text, root, false))
         {
-            ATOMIC_LOGERRORF("Failed to load assembly json for %s ", fullAssemblyPath_.CString());
+            URHO3D_LOGERRORF("Failed to load assembly json for %s ", fullAssemblyPath_.CString());
             return false;
         }
 
         if (!ParseAssemblyJSON(root))
         {
-            ATOMIC_LOGERRORF("Failed to parse assembly json for %s ", fullAssemblyPath_.CString());
+            URHO3D_LOGERRORF("Failed to parse assembly json for %s ", fullAssemblyPath_.CString());
             return false;
         }
 
@@ -340,7 +340,7 @@ namespace Urho3D
 
     bool CSComponentAssembly::PreloadClassAssemblies()
     {
-        ATOMIC_LOGINFO("Preloading Class Assemblies");
+        URHO3D_LOGINFO("Preloading Class Assemblies");
 
         Context* context = ScriptSystem::GetContext();
 
@@ -351,7 +351,7 @@ namespace Urho3D
 
         if (!resourceMap)
         {
-            ATOMIC_LOGERROR("CSComponentAssembly::PreloadClassAssemblies - ResourceMapRouter subsystem unavailable");
+            URHO3D_LOGERROR("CSComponentAssembly::PreloadClassAssemblies - ResourceMapRouter subsystem unavailable");
             return false;
         }
 
@@ -359,7 +359,7 @@ namespace Urho3D
 
         if (!cache)
         {
-            ATOMIC_LOGERROR("CSComponentAssembly::PreloadClassAssemblies - ResourceCache subsystem unavailable");
+            URHO3D_LOGERROR("CSComponentAssembly::PreloadClassAssemblies - ResourceCache subsystem unavailable");
             return false;
         }
 
@@ -374,7 +374,7 @@ namespace Urho3D
         {
             if (!cache->GetResource<CSComponentAssembly>(itr->second_, false))
             {
-                ATOMIC_LOGERRORF("CSComponentAssembly::PreloadClassAssemblies - Error getting resource %s", itr->second_.CString());
+                URHO3D_LOGERRORF("CSComponentAssembly::PreloadClassAssemblies - Error getting resource %s", itr->second_.CString());
                 return false;
             }
 

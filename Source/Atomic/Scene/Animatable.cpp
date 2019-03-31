@@ -153,7 +153,7 @@ bool Animatable::LoadJSON(const JSONValue& source, bool setInstanceDefault)
 
     if (!attributeAnimationValue.IsObject())
     {
-        ATOMIC_LOGWARNING("'attributeanimation' value is present in JSON data, but is not a JSON object; skipping it");
+        URHO3D_LOGWARNING("'attributeanimation' value is present in JSON data, but is not a JSON object; skipping it");
         return true;
     }
 
@@ -346,7 +346,7 @@ void Animatable::SetAttributeAnimation(const String& name, ValueAnimation* attri
             const Vector<AttributeInfo>* attributes = GetAttributes();
             if (!attributes)
             {
-                ATOMIC_LOGERROR(GetTypeName() + " has no attributes");
+                URHO3D_LOGERROR(GetTypeName() + " has no attributes");
                 return;
             }
 
@@ -362,14 +362,14 @@ void Animatable::SetAttributeAnimation(const String& name, ValueAnimation* attri
 
         if (!attributeInfo)
         {
-            ATOMIC_LOGERROR("Invalid name: " + name);
+            URHO3D_LOGERROR("Invalid name: " + name);
             return;
         }
 
         // Check value type is same with attribute type
         if (attributeAnimation->GetValueType() != attributeInfo->type_)
         {
-            ATOMIC_LOGERROR("Invalid value type");
+            URHO3D_LOGERROR("Invalid value type");
             return;
         }
 

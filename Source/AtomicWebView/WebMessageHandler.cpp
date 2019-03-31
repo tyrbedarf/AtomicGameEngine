@@ -45,7 +45,7 @@ public:
     {
         if (!currentCallback_)
         {
-            ATOMIC_LOGERROR("WebMessageHandlerPrivate::Success - Called with no current callback");
+            URHO3D_LOGERROR("WebMessageHandlerPrivate::Success - Called with no current callback");
             return;
         }
 
@@ -58,7 +58,7 @@ public:
     {
         if (!currentCallback_)
         {
-            ATOMIC_LOGERROR("WebMessageHandlerPrivate::Failure - Called with no current callback");
+            URHO3D_LOGERROR("WebMessageHandlerPrivate::Failure - Called with no current callback");
             return;
         }
 
@@ -105,7 +105,7 @@ public:
             if (!queryHandled_)
             {
                 currentCallback_ = nullptr;
-                ATOMIC_LOGERROR("WebMessageHandlerPrivate::OnQuery - WebQuery was not handled");
+                URHO3D_LOGERROR("WebMessageHandlerPrivate::OnQuery - WebQuery was not handled");
                 return false;
             }
         }
@@ -139,7 +139,7 @@ public:
 
         if (itr == deferredWebMessages_.End())
         {
-            ATOMIC_LOGERRORF("WebMessageHandlerPrivate::HandleDeferredResponse - unable to find queryid: %d", queryID);
+            URHO3D_LOGERRORF("WebMessageHandlerPrivate::HandleDeferredResponse - unable to find queryid: %d", queryID);
             return;
         }
 

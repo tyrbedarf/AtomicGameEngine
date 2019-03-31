@@ -83,7 +83,7 @@ namespace Urho3D
 
             if (!fileSystem->FileExists(clientBinary))
             {
-                ATOMIC_LOGERRORF("Managed client: %s does not exist", clientBinary.CString());
+                URHO3D_LOGERRORF("Managed client: %s does not exist", clientBinary.CString());
                 return false;
             }
 
@@ -119,7 +119,7 @@ namespace Urho3D
 
         String dump;
         dump.Join(vargs, " ");
-        ATOMIC_LOGINFOF("Launching Broker %s %s", clientBinary.CString(), dump.CString());
+        URHO3D_LOGINFOF("Launching Broker %s %s", clientBinary.CString(), dump.CString());
 
         IPC* ipc = GetSubsystem<IPC>();
         clientBroker_ = ipc->SpawnWorker(clientBinary, vargs);
@@ -155,7 +155,7 @@ namespace Urho3D
         }
         else
         {
-            ATOMIC_LOGERROR("IPCServerApp::HandleIPCWorkerExit - Unknown Broker");
+            URHO3D_LOGERROR("IPCServerApp::HandleIPCWorkerExit - Unknown Broker");
         }
     }
 

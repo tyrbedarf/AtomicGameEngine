@@ -128,7 +128,7 @@ void WorkQueue::AddWorkItem(SharedPtr<WorkItem> item)
 {
     if (!item)
     {
-        ATOMIC_LOGERROR("Null work item submitted to the work queue");
+        URHO3D_LOGERROR("Null work item submitted to the work queue");
         return;
     }
 

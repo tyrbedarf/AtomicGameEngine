@@ -99,7 +99,7 @@ SceneEditor3D::SceneEditor3D(Context* context, const String &fullpath, tbUITabCo
     }
     else
     {
-        ATOMIC_LOGERRORF("SceneEditor3D::SceneEditor3D - Unable to get scene asset");
+        URHO3D_LOGERRORF("SceneEditor3D::SceneEditor3D - Unable to get scene asset");
     }
 
     sceneView_->SetGravity(UI_GRAVITY_ALL);

@@ -79,7 +79,7 @@ bool OcclusionBuffer::SetSize(int width, int height, bool threaded)
 
     if (!IsPowerOfTwo((unsigned)width))
     {
-        ATOMIC_LOGERRORF("Requested occlusion buffer width %d is not a power of two", width);
+        URHO3D_LOGERRORF("Requested occlusion buffer width %d is not a power of two", width);
         return false;
     }
 
@@ -112,7 +112,7 @@ bool OcclusionBuffer::SetSize(int width, int height, bool threaded)
             break;
     }
 
-    ATOMIC_LOGDEBUG("Set occlusion buffer size " + String(width_) + "x" + String(height_) + " with " +
+    URHO3D_LOGDEBUG("Set occlusion buffer size " + String(width_) + "x" + String(height_) + " with " +
              String(mipBuffers_.Size()) + " mip levels and " + String(numThreadBuffers) + " thread buffers");
 
     CalculateViewport();

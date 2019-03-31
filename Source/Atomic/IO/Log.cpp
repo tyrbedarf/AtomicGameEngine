@@ -117,7 +117,7 @@ void Log::SetLevel(int level)
 {
     if (level < LOG_DEBUG || level > LOG_NONE)
     {
-        ATOMIC_LOGERRORF("Attempted to set erroneous log level %d", level);
+        URHO3D_LOGERRORF("Attempted to set erroneous log level %d", level);
         return;
     }
 

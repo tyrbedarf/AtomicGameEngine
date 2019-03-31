@@ -55,7 +55,7 @@ IPC::IPC(Context* context) : Object(context),
     jobHandle_ = CreateJobObject(NULL, NULL);
     if (!jobHandle_)
     {
-        ATOMIC_LOGERROR("IPC::IPC - Unable to create IPC job");
+        URHO3D_LOGERROR("IPC::IPC - Unable to create IPC job");
     }
     else
     {
@@ -65,7 +65,7 @@ IPC::IPC(Context* context) : Object(context),
         jeli.BasicLimitInformation.LimitFlags = JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE;
         if (0 == SetInformationJobObject(jobHandle_, JobObjectExtendedLimitInformation, &jeli, sizeof(jeli)))
         {
-            ATOMIC_LOGERROR("IPC::IPC - Unable set job information");
+            URHO3D_LOGERROR("IPC::IPC - Unable set job information");
             jobHandle_ = 0;
         }
     }
@@ -127,7 +127,7 @@ bool IPC::ProcessArguments(const Vector<String>& arguments, int& id, IPCHandle& 
 
             else if (argument.StartsWith("--ipc-server=") || argument.StartsWith("--ipc-client="))
             {
-                ATOMIC_LOGINFOF("Starting IPCWorker %s", argument.CString());
+                URHO3D_LOGINFOF("Starting IPCWorker %s", argument.CString());
 
                 Vector<String> ipc = argument.Split(argument.CString(), '=');
 
